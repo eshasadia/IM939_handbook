@@ -1,0 +1,1981 @@
+,Country Name,Country Code,Indicator Name,Indicator Code,year,value
+0,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1960,
+1,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1960,1334.6900560000001
+2,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1960,7703448807.0
+3,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1960,
+4,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1960,69.86829268
+5,France,FRA,Population growth (annual %),SP.POP.GROW,1960,
+6,France,FRA,Population in largest city,EN.URB.LCTY,1960,7410735.0
+7,France,FRA,"Population, total",SP.POP.TOTL,1960,46621669.0
+8,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1960,
+9,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1960,
+10,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1960,38.12
+11,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1960,
+12,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1960,
+13,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1960,
+14,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1960,
+15,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1960,69.31002439
+16,Germany,DEU,Population growth (annual %),SP.POP.GROW,1960,
+17,Germany,DEU,Population in largest city,EN.URB.LCTY,1960,3259833.0
+18,Germany,DEU,"Population, total",SP.POP.TOTL,1960,72814900.0
+19,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1960,
+20,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1960,
+21,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1960,28.616
+22,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1960,
+23,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1960,804.4926232999999
+24,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1960,
+25,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1960,
+26,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1960,69.12390244
+27,Italy,ITA,Population growth (annual %),SP.POP.GROW,1960,
+28,Italy,ITA,Population in largest city,EN.URB.LCTY,1960,2455581.0
+29,Italy,ITA,"Population, total",SP.POP.TOTL,1960,50199700.0
+30,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1960,
+31,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1960,
+32,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1960,40.639
+33,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1960,
+34,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1960,1397.594803
+35,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1960,
+36,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1960,
+37,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1960,71.12682927
+38,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1960,
+39,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1960,8195769.0
+40,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1960,52400000.0
+41,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1960,
+42,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1960,
+43,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1960,21.555999999999997
+44,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1961,
+45,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1961,1428.0454869999999
+46,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1961,8273434930.0
+47,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1961,547566.0156
+48,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1961,70.11707317
+49,France,FRA,Population growth (annual %),SP.POP.GROW,1961,1.318705271
+50,France,FRA,Population in largest city,EN.URB.LCTY,1961,7539888.0
+51,France,FRA,"Population, total",SP.POP.TOTL,1961,47240543.0
+52,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1961,
+53,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1961,
+54,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1961,37.393
+55,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1961,
+56,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1961,
+57,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1961,
+58,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1961,349130.0
+59,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1961,69.508
+60,Germany,DEU,Population growth (annual %),SP.POP.GROW,1961,0.7698543440000001
+61,Germany,DEU,Population in largest city,EN.URB.LCTY,1961,3252346.0
+62,Germany,DEU,"Population, total",SP.POP.TOTL,1961,73377632.0
+63,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1961,
+64,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1961,
+65,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1961,28.303
+66,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1961,
+67,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1961,887.3367446000001
+68,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1961,
+69,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1961,294110.0
+70,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1961,69.7602439
+71,Italy,ITA,Population growth (annual %),SP.POP.GROW,1961,0.668382874
+72,Italy,ITA,Population in largest city,EN.URB.LCTY,1961,2523274.0
+73,Italy,ITA,"Population, total",SP.POP.TOTL,1961,50536350.0
+74,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1961,
+75,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1961,
+76,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1961,40.144
+77,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1961,
+78,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1961,1472.385714
+79,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1961,
+80,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1961,241930.0
+81,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1961,70.87804878
+82,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1961,0.7604599390000001
+83,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1961,8168112.0
+84,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1961,52800000.0
+85,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1961,
+86,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1961,
+87,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1961,21.625999999999998
+88,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1962,
+89,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1962,1578.284604
+90,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1962,9042716900.0
+91,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1962,547566.0156
+92,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1962,70.31463415
+93,France,FRA,Population growth (annual %),SP.POP.GROW,1962,1.396482976
+94,France,FRA,Population in largest city,EN.URB.LCTY,1962,7650751.0
+95,France,FRA,"Population, total",SP.POP.TOTL,1962,47904877.0
+96,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1962,
+97,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1962,
+98,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1962,36.510999999999996
+99,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1962,
+100,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1962,
+101,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1962,
+102,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1962,349130.0
+103,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1962,69.69153659
+104,Germany,DEU,Population growth (annual %),SP.POP.GROW,1962,0.879431692
+105,Germany,DEU,Population in largest city,EN.URB.LCTY,1962,3247311.0
+106,Germany,DEU,"Population, total",SP.POP.TOTL,1962,74025784.0
+107,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1962,
+108,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1962,
+109,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1962,28.238000000000003
+110,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1962,
+111,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1962,990.2601522
+112,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1962,
+113,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1962,294110.0
+114,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1962,69.1497561
+115,Italy,ITA,Population growth (annual %),SP.POP.GROW,1962,0.67662299
+116,Italy,ITA,Population in largest city,EN.URB.LCTY,1962,2587008.0
+117,Italy,ITA,"Population, total",SP.POP.TOTL,1962,50879450.0
+118,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1962,
+119,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1962,
+120,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1962,39.645
+121,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1962,
+122,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1962,1525.7758529999999
+123,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1962,
+124,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1962,241930.0
+125,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1962,70.92682927
+126,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1962,0.848661388
+127,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1962,8092157.0
+128,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1962,53250000.0
+129,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1962,
+130,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1962,
+131,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1962,21.763
+132,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1963,
+133,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1963,1744.6405899999997
+134,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1963,10367369963.0
+135,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1963,547566.0156
+136,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1963,70.51463415
+137,France,FRA,Population growth (annual %),SP.POP.GROW,1963,1.4048353009999999
+138,France,FRA,Population in largest city,EN.URB.LCTY,1963,7718298.0
+139,France,FRA,"Population, total",SP.POP.TOTL,1963,48582611.0
+140,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1963,
+141,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1963,
+142,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1963,35.298
+143,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1963,
+144,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1963,
+145,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1963,
+146,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1963,349130.0
+147,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1963,69.85960976
+148,Germany,DEU,Population growth (annual %),SP.POP.GROW,1963,0.925875063
+149,Germany,DEU,Population in largest city,EN.URB.LCTY,1963,3242284.0
+150,Germany,DEU,"Population, total",SP.POP.TOTL,1963,74714353.0
+151,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1963,
+152,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1963,
+153,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1963,28.174
+154,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1963,
+155,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1963,1126.019337
+156,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1963,
+157,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1963,294110.0
+158,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1963,69.24804878
+159,Italy,ITA,Population growth (annual %),SP.POP.GROW,1963,0.729553242
+160,Italy,ITA,Population in largest city,EN.URB.LCTY,1963,2649872.0
+161,Italy,ITA,"Population, total",SP.POP.TOTL,1963,51252000.0
+162,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1963,
+163,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1963,
+164,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1963,39.147
+165,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1963,
+166,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1963,1613.456884
+167,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1963,
+168,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1963,241930.0
+169,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1963,70.82682927
+170,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1963,0.748366449
+171,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1963,8016909.0
+172,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1963,53650000.0
+173,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1963,
+174,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1963,
+175,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1963,21.901
+176,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1964,
+177,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1964,1909.541232
+178,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1964,12137117085.0
+179,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1964,547566.0156
+180,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1964,70.66341463
+181,France,FRA,Population growth (annual %),SP.POP.GROW,1964,1.32496113
+182,France,FRA,Population in largest city,EN.URB.LCTY,1964,7786535.0
+183,France,FRA,"Population, total",SP.POP.TOTL,1964,49230595.0
+184,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1964,
+185,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1964,
+186,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1964,34.102
+187,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1964,
+188,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1964,
+189,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1964,
+190,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1964,349130.0
+191,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1964,70.01370732
+192,Germany,DEU,Population growth (annual %),SP.POP.GROW,1964,0.805140883
+193,Germany,DEU,Population in largest city,EN.URB.LCTY,1964,3237257.0
+194,Germany,DEU,"Population, total",SP.POP.TOTL,1964,75318337.0
+195,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1964,
+196,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1964,
+197,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1964,28.109
+198,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1964,
+199,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1964,1222.54454
+200,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1964,
+201,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1964,294110.0
+202,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1964,70.31170732
+203,Italy,ITA,Population growth (annual %),SP.POP.GROW,1964,0.8226237
+204,Italy,ITA,Population in largest city,EN.URB.LCTY,1964,2714352.0
+205,Italy,ITA,"Population, total",SP.POP.TOTL,1964,51675350.0
+206,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1964,
+207,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1964,
+208,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1964,38.65
+209,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1964,
+210,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1964,1748.288118
+211,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1964,
+212,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1964,241930.0
+213,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1964,71.62439024
+214,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1964,0.650257749
+215,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1964,7942259.0
+216,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1964,54000000.0
+217,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1964,
+218,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1964,
+219,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1964,22.04
+220,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1965,
+221,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1965,2038.162734
+222,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1965,12575567948.0
+223,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1965,547566.0156
+224,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1965,70.81219512
+225,France,FRA,Population growth (annual %),SP.POP.GROW,1965,1.186164673
+226,France,FRA,Population in largest city,EN.URB.LCTY,1965,7855185.0
+227,France,FRA,"Population, total",SP.POP.TOTL,1965,49818028.0
+228,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1965,
+229,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1965,
+230,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1965,32.929
+231,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1965,
+232,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1965,
+233,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1965,
+234,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1965,349130.0
+235,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1965,70.15182927
+236,Germany,DEU,Population growth (annual %),SP.POP.GROW,1965,0.8531904370000001
+237,Germany,DEU,Population in largest city,EN.URB.LCTY,1965,3232253.0
+238,Germany,DEU,"Population, total",SP.POP.TOTL,1965,75963695.0
+239,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1965,
+240,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1965,
+241,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1965,28.045
+242,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1965,
+243,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1965,1304.453817
+244,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1965,
+245,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1965,294110.0
+246,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1965,70.17170732
+247,Italy,ITA,Population growth (annual %),SP.POP.GROW,1965,0.8421086170000001
+248,Italy,ITA,Population in largest city,EN.URB.LCTY,1965,2780218.0
+249,Italy,ITA,"Population, total",SP.POP.TOTL,1965,52112350.0
+250,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1965,
+251,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1965,
+252,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1965,38.157
+253,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1965,
+254,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1965,1873.5677739999999
+255,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1965,
+256,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1965,241930.0
+257,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1965,71.62439024
+258,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1965,0.642468779
+259,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1965,7868506.0
+260,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1965,54348050.0
+261,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1965,
+262,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1965,
+263,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1965,22.179000000000002
+264,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1966,
+265,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1966,2186.474852
+266,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1966,14294826788.0
+267,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1966,547566.0156
+268,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1966,70.96097561
+269,France,FRA,Population growth (annual %),SP.POP.GROW,1966,1.022959986
+270,France,FRA,Population in largest city,EN.URB.LCTY,1966,7924537.0
+271,France,FRA,"Population, total",SP.POP.TOTL,1966,50330262.0
+272,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1966,
+273,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1966,
+274,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1966,31.775
+275,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1966,
+276,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1966,
+277,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1966,
+278,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1966,349130.0
+279,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1966,70.27141463
+280,Germany,DEU,Population growth (annual %),SP.POP.GROW,1966,0.834560801
+281,Germany,DEU,Population in largest city,EN.URB.LCTY,1966,3227249.0
+282,Germany,DEU,"Population, total",SP.POP.TOTL,1966,76600311.0
+283,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1966,
+284,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1966,
+285,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1966,27.980999999999998
+286,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1966,
+287,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1966,1402.442354
+288,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1966,
+289,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1966,294110.0
+290,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1966,70.92609756
+291,Italy,ITA,Population growth (annual %),SP.POP.GROW,1966,0.777304407
+292,Italy,ITA,Population in largest city,EN.URB.LCTY,1966,2847776.0
+293,Italy,ITA,"Population, total",SP.POP.TOTL,1966,52519000.0
+294,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1966,
+295,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1966,
+296,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1966,37.666
+297,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1966,
+298,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1966,1986.747159
+299,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1966,
+300,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1966,241930.0
+301,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1966,71.57317073
+302,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1966,0.5513032489999999
+303,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1966,7795337.0
+304,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1966,54648500.0
+305,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1966,
+306,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1966,
+307,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1966,22.318
+308,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1967,
+309,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1967,2343.1042260000004
+310,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1967,15606193462.0
+311,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1967,547566.0156
+312,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1967,71.16097561
+313,France,FRA,Population growth (annual %),SP.POP.GROW,1967,0.8813218540000001
+314,France,FRA,Population in largest city,EN.URB.LCTY,1967,7994501.0
+315,France,FRA,"Population, total",SP.POP.TOTL,1967,50775794.0
+316,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1967,
+317,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1967,
+318,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1967,30.643
+319,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1967,
+320,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1967,
+321,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1967,
+322,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1967,349130.0
+323,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1967,70.374
+324,Germany,DEU,Population growth (annual %),SP.POP.GROW,1967,0.45720852700000003
+325,Germany,DEU,Population in largest city,EN.URB.LCTY,1967,3222253.0
+326,Germany,DEU,"Population, total",SP.POP.TOTL,1967,76951336.0
+327,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1967,
+328,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1967,
+329,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1967,27.916999999999998
+330,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1967,
+331,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1967,1533.692877
+332,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1967,
+333,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1967,294110.0
+334,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1967,70.95658537
+335,Italy,ITA,Population growth (annual %),SP.POP.GROW,1967,0.723778173
+336,Italy,ITA,Population in largest city,EN.URB.LCTY,1967,2916976.0
+337,Italy,ITA,"Population, total",SP.POP.TOTL,1967,52900500.0
+338,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1967,
+339,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1967,
+340,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1967,37.178000000000004
+341,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1967,
+342,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1967,2058.781882
+343,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1967,
+344,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1967,241930.0
+345,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1967,72.12439024
+346,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1967,0.53854377
+347,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1967,7722850.0
+348,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1967,54943600.0
+349,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1967,
+350,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1967,
+351,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1967,22.459
+352,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1968,
+353,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1968,2536.0850649999998
+354,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1968,17377269223.0
+355,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1968,547566.0156
+356,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1968,71.3097561
+357,France,FRA,Population growth (annual %),SP.POP.GROW,1968,0.7841313259999999
+358,France,FRA,Population in largest city,EN.URB.LCTY,1968,8065180.0
+359,France,FRA,"Population, total",SP.POP.TOTL,1968,51175508.0
+360,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1968,
+361,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1968,
+362,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1968,29.761999999999997
+363,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1968,
+364,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1968,
+365,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1968,
+366,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1968,349130.0
+367,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1968,70.46509756
+368,Germany,DEU,Population growth (annual %),SP.POP.GROW,1968,0.444717326
+369,Germany,DEU,Population in largest city,EN.URB.LCTY,1968,3217257.0
+370,Germany,DEU,"Population, total",SP.POP.TOTL,1968,77294314.0
+371,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1968,
+372,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1968,
+373,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1968,27.853
+374,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1968,
+375,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1968,1651.939377
+376,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1968,
+377,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1968,294110.0
+378,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1968,70.78
+379,Italy,ITA,Population growth (annual %),SP.POP.GROW,1968,0.6317372529999999
+380,Italy,ITA,Population in largest city,EN.URB.LCTY,1968,2987956.0
+381,Italy,ITA,"Population, total",SP.POP.TOTL,1968,53235750.0
+382,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1968,
+383,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1968,
+384,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1968,36.691
+385,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1968,
+386,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1968,1951.7585960000001
+387,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1968,
+388,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1968,241930.0
+389,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1968,71.72439024
+390,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1968,0.48676828
+391,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1968,7650937.0
+392,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1968,55211700.0
+393,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1968,
+394,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1968,
+395,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1968,22.6
+396,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1969,
+397,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1969,2752.0949539999997
+398,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1969,20853686819.0
+399,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1969,547566.0156
+400,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1969,71.45853659
+401,France,FRA,Population growth (annual %),SP.POP.GROW,1969,0.752072822
+402,France,FRA,Population in largest city,EN.URB.LCTY,1969,8136287.0
+403,France,FRA,"Population, total",SP.POP.TOTL,1969,51561836.0
+404,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1969,
+405,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1969,
+406,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1969,29.351999999999997
+407,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1969,
+408,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1969,
+409,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1969,
+410,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1969,349130.0
+411,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1969,70.55068293
+412,Germany,DEU,Population growth (annual %),SP.POP.GROW,1969,0.792983738
+413,Germany,DEU,Population in largest city,EN.URB.LCTY,1969,3212283.0
+414,Germany,DEU,"Population, total",SP.POP.TOTL,1969,77909682.0
+415,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1969,
+416,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1969,
+417,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1969,27.789
+418,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1969,
+419,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1969,1813.388126
+420,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1969,
+421,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1969,294110.0
+422,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1969,70.81195122
+423,Italy,ITA,Population growth (annual %),SP.POP.GROW,1969,0.566058509
+424,Italy,ITA,Population in largest city,EN.URB.LCTY,1969,3060460.0
+425,Italy,ITA,"Population, total",SP.POP.TOTL,1969,53537950.0
+426,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1969,
+427,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1969,
+428,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1969,36.208
+429,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1969,
+430,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1969,2100.6678690000003
+431,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1969,
+432,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1969,241930.0
+433,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1969,71.72195122
+434,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1969,0.415803269
+435,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1969,7579890.0
+436,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1969,55441750.0
+437,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1969,
+438,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1969,
+439,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1969,22.741
+440,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1970,
+441,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1970,2857.252176
+442,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1970,22918389040.0
+443,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1970,547566.0156
+444,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1970,71.65853659
+445,France,FRA,Population growth (annual %),SP.POP.GROW,1970,0.764887093
+446,France,FRA,Population in largest city,EN.URB.LCTY,1970,8208121.0
+447,France,FRA,"Population, total",SP.POP.TOTL,1970,51957738.0
+448,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1970,5.0
+449,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1970,
+450,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1970,28.945
+451,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1970,
+452,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1970,2761.166836
+453,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1970,35790765297.0
+454,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1970,349130.0
+455,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1970,70.63978049
+456,Germany,DEU,Population growth (annual %),SP.POP.GROW,1970,0.332661393
+457,Germany,DEU,Population in largest city,EN.URB.LCTY,1970,3206311.0
+458,Germany,DEU,"Population, total",SP.POP.TOTL,1970,78169289.0
+459,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1970,4.0
+460,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1970,
+461,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1970,27.726
+462,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1970,
+463,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1970,2106.863953
+464,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1970,16935940520.0
+465,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1970,294110.0
+466,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1970,71.55878049
+467,Italy,ITA,Population growth (annual %),SP.POP.GROW,1970,0.528877032
+468,Italy,ITA,Population in largest city,EN.URB.LCTY,1970,3134828.0
+469,Italy,ITA,"Population, total",SP.POP.TOTL,1970,53821850.0
+470,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1970,5.0
+471,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1970,
+472,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1970,35.728
+473,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1970,
+474,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1970,2347.5443179999997
+475,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1970,27409685145.0
+476,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1970,241930.0
+477,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1970,71.97317073
+478,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1970,0.39872245799999995
+479,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1970,7509405.0
+480,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1970,55663250.0
+481,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1970,6.0
+482,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1970,
+483,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1970,22.883000000000003
+484,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1971,
+485,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1971,3169.0349920000003
+486,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1971,25770095892.0
+487,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1971,547566.0156
+488,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1971,71.90731707
+489,France,FRA,Population growth (annual %),SP.POP.GROW,1971,0.792887595
+490,France,FRA,Population in largest city,EN.URB.LCTY,1971,8280588.0
+491,France,FRA,"Population, total",SP.POP.TOTL,1971,52371342.0
+492,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1971,5.0
+493,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1971,
+494,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1971,28.541
+495,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1971,
+496,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1971,3192.133618
+497,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1971,40706506385.0
+498,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1971,349130.0
+499,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1971,70.74287805
+500,Germany,DEU,Population growth (annual %),SP.POP.GROW,1971,0.18347531399999997
+501,Germany,DEU,Population in largest city,EN.URB.LCTY,1971,3190964.0
+502,Germany,DEU,"Population, total",SP.POP.TOTL,1971,78312842.0
+503,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1971,4.0
+504,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1971,
+505,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1971,27.668000000000003
+506,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1971,
+507,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1971,2305.609774
+508,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1971,18471502497.0
+509,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1971,294110.0
+510,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1971,71.80682927
+511,Italy,ITA,Population growth (annual %),SP.POP.GROW,1971,0.466452872
+512,Italy,ITA,Population in largest city,EN.URB.LCTY,1971,3211003.0
+513,Italy,ITA,"Population, total",SP.POP.TOTL,1971,54073490.0
+514,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1971,5.0
+515,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1971,94.29668000000001
+516,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1971,35.25
+517,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1971,
+518,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1971,2649.801514
+519,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1971,30419803358.0
+520,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1971,241930.0
+521,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1971,72.27317073
+522,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1971,0.417666617
+523,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1971,7437643.0
+524,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1971,55896223.0
+525,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1971,6.0
+526,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1971,
+527,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1971,22.97
+528,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1972,
+529,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1972,3854.5567840000003
+530,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1972,32248374512.0
+531,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1972,547566.0156
+532,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1972,72.10731707
+533,France,FRA,Population growth (annual %),SP.POP.GROW,1972,0.802168682
+534,France,FRA,Population in largest city,EN.URB.LCTY,1972,8353797.0
+535,France,FRA,"Population, total",SP.POP.TOTL,1972,52793138.0
+536,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1972,5.0
+537,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1972,
+538,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1972,28.14
+539,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1972,
+540,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1972,3809.9814469999997
+541,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1972,48506788444.0
+542,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1972,349130.0
+543,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1972,70.867
+544,Germany,DEU,Population growth (annual %),SP.POP.GROW,1972,0.478481046
+545,Germany,DEU,Population in largest city,EN.URB.LCTY,1972,3175669.0
+546,Germany,DEU,"Population, total",SP.POP.TOTL,1972,78688452.0
+547,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1972,4.0
+548,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1972,
+549,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1972,27.611
+550,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1972,
+551,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1972,2671.137308
+552,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1972,22528787517.0
+553,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1972,294110.0
+554,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1972,72.07536585
+555,Italy,ITA,Population growth (annual %),SP.POP.GROW,1972,0.567712499
+556,Italy,ITA,Population in largest city,EN.URB.LCTY,1972,3247377.0
+557,Italy,ITA,"Population, total",SP.POP.TOTL,1972,54381345.0
+558,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1972,5.0
+559,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1972,95.95765
+560,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1972,34.961
+561,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1972,
+562,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1972,3030.432514
+563,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1972,35251671079.0
+564,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1972,241930.0
+565,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1972,72.12439024
+566,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1972,0.339057516
+567,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1972,7357951.0
+568,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1972,56086065.0
+569,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1972,6.0
+570,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1972,
+571,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1972,22.805
+572,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1973,
+573,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1973,4969.763911999999
+574,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1973,44639068945.0
+575,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1973,547566.0156
+576,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1973,72.35609756
+577,France,FRA,Population growth (annual %),SP.POP.GROW,1973,0.782254158
+578,France,FRA,Population in largest city,EN.URB.LCTY,1973,8427449.0
+579,France,FRA,"Population, total",SP.POP.TOTL,1973,53207734.0
+580,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1973,5.0
+581,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1973,
+582,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1973,27.744
+583,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1973,
+584,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1973,5046.755107
+585,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1973,65125982071.0
+586,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1973,349130.0
+587,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1973,71.01668293
+588,Germany,DEU,Population growth (annual %),SP.POP.GROW,1973,0.314942451
+589,Germany,DEU,Population in largest city,EN.URB.LCTY,1973,3160490.0
+590,Germany,DEU,"Population, total",SP.POP.TOTL,1973,78936666.0
+591,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1973,4.0
+592,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1973,
+593,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1973,27.554000000000002
+594,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1973,
+595,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1973,3205.2520649999997
+596,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1973,31517002989.0
+597,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1973,294110.0
+598,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1973,72.02634146
+599,Italy,ITA,Population growth (annual %),SP.POP.GROW,1973,0.678187648
+600,Italy,ITA,Population in largest city,EN.URB.LCTY,1973,3264905.0
+601,Italy,ITA,"Population, total",SP.POP.TOTL,1973,54751406.0
+602,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1973,5.0
+603,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1973,96.74479000000001
+604,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1973,34.759
+605,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1973,
+606,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1973,3426.276221
+607,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1973,47697384860.0
+608,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1973,241930.0
+609,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1973,72.32439024
+610,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1973,0.19319818600000002
+611,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1973,7279328.0
+612,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1973,56194527.0
+613,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1973,6.0
+614,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1973,
+615,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1973,22.642
+616,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1974,
+617,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1974,5328.241747
+618,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1974,62037643208.0
+619,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1974,547566.0156
+620,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1974,72.60487805
+621,France,FRA,Population growth (annual %),SP.POP.GROW,1974,0.7200389140000001
+622,France,FRA,Population in largest city,EN.URB.LCTY,1974,8501853.0
+623,France,FRA,"Population, total",SP.POP.TOTL,1974,53592233.0
+624,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1974,5.0
+625,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1974,
+626,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1974,27.35
+627,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1974,
+628,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1974,5639.077618
+629,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1974,83342709243.0
+630,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1974,349130.0
+631,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1974,71.19541463
+632,Germany,DEU,Population growth (annual %),SP.POP.GROW,1974,0.038969223
+633,Germany,DEU,Population in largest city,EN.URB.LCTY,1974,3145362.0
+634,Germany,DEU,"Population, total",SP.POP.TOTL,1974,78967433.0
+635,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1974,4.0
+636,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1974,
+637,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1974,27.497
+638,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1974,
+639,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1974,3621.1458390000003
+640,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1974,44460726704.0
+641,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1974,294110.0
+642,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1974,72.73439024
+643,Italy,ITA,Population growth (annual %),SP.POP.GROW,1974,0.654388936
+644,Italy,ITA,Population in largest city,EN.URB.LCTY,1974,3282552.0
+645,Italy,ITA,"Population, total",SP.POP.TOTL,1974,55110868.0
+646,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1974,5.0
+647,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1974,97.19646
+648,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1974,34.558
+649,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1974,
+650,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1974,3665.8627979999997
+651,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1974,65241244039.0
+652,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1974,241930.0
+653,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1974,72.52439024
+654,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1974,0.06305921
+655,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1974,7201439.0
+656,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1974,56229974.0
+657,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1974,6.0
+658,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1974,
+659,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1974,22.479
+660,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1975,
+661,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1975,6690.57827
+662,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1975,64439345265.0
+663,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1975,547566.0156
+664,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1975,72.85365854
+665,France,FRA,Population growth (annual %),SP.POP.GROW,1975,0.630853231
+666,France,FRA,Population in largest city,EN.URB.LCTY,1975,8557844.0
+667,France,FRA,"Population, total",SP.POP.TOTL,1975,53931390.0
+668,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1975,5.0
+669,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1975,
+670,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1975,27.074
+671,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1975,
+672,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1975,6236.358885000001
+673,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1975,92221047460.0
+674,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1975,349130.0
+675,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1975,71.40173171
+676,Germany,DEU,Population growth (annual %),SP.POP.GROW,1975,-0.37284635899999996
+677,Germany,DEU,Population in largest city,EN.URB.LCTY,1975,3130306.0
+678,Germany,DEU,"Population, total",SP.POP.TOTL,1975,78673554.0
+679,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1975,4.0
+680,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1975,
+681,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1975,27.44
+682,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1975,
+683,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1975,4106.993857
+684,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1975,42506699288.0
+685,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1975,294110.0
+686,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1975,72.64731707
+687,Italy,ITA,Population growth (annual %),SP.POP.GROW,1975,0.597247219
+688,Italy,ITA,Population in largest city,EN.URB.LCTY,1975,3300294.0
+689,Italy,ITA,"Population, total",SP.POP.TOTL,1975,55441001.0
+690,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1975,5.0
+691,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1975,97.99977
+692,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1975,34.357
+693,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1975,
+694,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1975,4299.745618
+695,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1975,65516192035.0
+696,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1975,241930.0
+697,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1975,72.72439024
+698,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1975,-0.0074233630000000005
+699,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1975,7124383.0
+700,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1975,56225800.0
+701,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1975,6.0
+702,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1975,
+703,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1975,22.316999999999997
+704,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1976,
+705,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1976,6866.818286
+706,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1976,75449330784.0
+707,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1976,547566.0156
+708,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1976,73.10243902
+709,France,FRA,Population growth (annual %),SP.POP.GROW,1976,0.533756666
+710,France,FRA,Population in largest city,EN.URB.LCTY,1976,8580055.0
+711,France,FRA,"Population, total",SP.POP.TOTL,1976,54220022.0
+712,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1976,5.0
+713,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1976,100.0
+714,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1976,27.003
+715,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1976,
+716,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1976,6634.856899
+717,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1976,105502000000.0
+718,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1976,349130.0
+719,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1976,71.63414634
+720,Germany,DEU,Population growth (annual %),SP.POP.GROW,1976,-0.428766875
+721,Germany,DEU,Population in largest city,EN.URB.LCTY,1976,3115302.0
+722,Germany,DEU,"Population, total",SP.POP.TOTL,1976,78336950.0
+723,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1976,4.0
+724,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1976,
+725,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1976,27.383000000000003
+726,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1976,
+727,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1976,4033.0993670000003
+728,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1976,47521969295.0
+729,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1976,294110.0
+730,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1976,72.99195122
+731,Italy,ITA,Population growth (annual %),SP.POP.GROW,1976,0.49885105799999996
+732,Italy,ITA,Population in largest city,EN.URB.LCTY,1976,3318157.0
+733,Italy,ITA,"Population, total",SP.POP.TOTL,1976,55718260.0
+734,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1976,5.0
+735,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1976,97.89369
+736,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1976,34.156
+737,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1976,
+738,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1976,4138.167788000001
+739,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1976,67750428212.0
+740,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1976,241930.0
+741,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1976,72.77560976
+742,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1976,-0.024603833
+743,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1976,7048047.0
+744,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1976,56211968.0
+745,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1976,6.0
+746,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1976,
+747,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1976,22.156
+748,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1977,
+749,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1977,7532.527928
+750,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1977,83706873496.0
+751,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1977,547566.0156
+752,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1977,73.35121951
+753,France,FRA,Population growth (annual %),SP.POP.GROW,1977,0.455765232
+754,France,FRA,Population in largest city,EN.URB.LCTY,1977,8602261.0
+755,France,FRA,"Population, total",SP.POP.TOTL,1977,54467702.0
+756,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1977,5.0
+757,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1977,97.99243
+758,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1977,26.932
+759,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1977,
+760,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1977,7682.953776
+761,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1977,120844000000.0
+762,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1977,349130.0
+763,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1977,71.88368293
+764,Germany,DEU,Population growth (annual %),SP.POP.GROW,1977,-0.226376663
+765,Germany,DEU,Population in largest city,EN.URB.LCTY,1977,3100411.0
+766,Germany,DEU,"Population, total",SP.POP.TOTL,1977,78159814.0
+767,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1977,4.0
+768,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1977,
+769,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1977,27.326
+770,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1977,
+771,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1977,4603.599693
+772,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1977,52626623656.0
+773,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1977,294110.0
+774,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1977,73.36463415
+775,Italy,ITA,Population growth (annual %),SP.POP.GROW,1977,0.42472205700000004
+776,Italy,ITA,Population in largest city,EN.URB.LCTY,1977,3336067.0
+777,Italy,ITA,"Population, total",SP.POP.TOTL,1977,55955411.0
+778,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1977,5.0
+779,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1977,98.72519
+780,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1977,33.955999999999996
+781,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1977,
+782,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1977,4681.439932
+783,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1977,76182421594.0
+784,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1977,241930.0
+785,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1977,73.22439024
+786,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1977,-0.032873848
+787,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1977,6972736.0
+788,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1977,56193492.0
+789,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1977,6.0
+790,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1977,
+791,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1977,21.995
+792,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1978,
+793,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1978,9264.777834
+794,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1978,97265988372.0
+795,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1978,547566.0156
+796,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1978,73.60243902
+797,France,FRA,Population growth (annual %),SP.POP.GROW,1978,0.410681995
+798,France,FRA,Population in largest city,EN.URB.LCTY,1978,8624556.0
+799,France,FRA,"Population, total",SP.POP.TOTL,1978,54691851.0
+800,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1978,5.0
+801,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1978,98.6041
+802,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1978,26.86
+803,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1978,
+804,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1978,9482.042845999998
+805,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1978,144716000000.0
+806,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1978,349130.0
+807,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1978,72.14329268
+808,Germany,DEU,Population growth (annual %),SP.POP.GROW,1978,-0.087031415
+809,Germany,DEU,Population in largest city,EN.URB.LCTY,1978,3085570.0
+810,Germany,DEU,"Population, total",SP.POP.TOTL,1978,78091820.0
+811,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1978,4.0
+812,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1978,
+813,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1978,27.27
+814,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1978,
+815,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1978,5610.498107
+816,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1978,61718133014.0
+817,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1978,294110.0
+818,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1978,73.69317073
+819,Italy,ITA,Population growth (annual %),SP.POP.GROW,1978,0.35631295
+820,Italy,ITA,Population in largest city,EN.URB.LCTY,1978,3354099.0
+821,Italy,ITA,"Population, total",SP.POP.TOTL,1978,56155143.0
+822,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1978,5.0
+823,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1978,99.06099
+824,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1978,33.757
+825,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1978,
+826,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1978,5976.938169
+827,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1978,89639071716.0
+828,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1978,241930.0
+829,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1978,73.17560976
+830,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1978,0.005359908
+831,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1978,6898127.0
+832,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1978,56196504.0
+833,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1978,6.0
+834,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1978,
+835,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1978,21.836
+836,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1979,
+837,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1979,11179.63127
+838,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1979,124741000000.0
+839,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1979,547566.0156
+840,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1979,73.85121951
+841,France,FRA,Population growth (annual %),SP.POP.GROW,1979,0.41103811
+842,France,FRA,Population in largest city,EN.URB.LCTY,1979,8646908.0
+843,France,FRA,"Population, total",SP.POP.TOTL,1979,54917118.0
+844,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1979,5.0
+845,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1979,97.86309
+846,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1979,26.789
+847,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1979,
+848,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1979,11281.02332
+849,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1979,188607000000.0
+850,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1979,349130.0
+851,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1979,72.40853659
+852,Germany,DEU,Population growth (annual %),SP.POP.GROW,1979,0.044207406
+853,Germany,DEU,Population in largest city,EN.URB.LCTY,1979,3070801.0
+854,Germany,DEU,"Population, total",SP.POP.TOTL,1979,78126350.0
+855,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1979,4.0
+856,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1979,
+857,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1979,27.213
+858,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1979,
+859,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1979,6990.285793999999
+860,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1979,83952402004.0
+861,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1979,294110.0
+862,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1979,74.00268293
+863,Italy,ITA,Population growth (annual %),SP.POP.GROW,1979,0.289147208
+864,Italy,ITA,Population in largest city,EN.URB.LCTY,1979,3372228.0
+865,Italy,ITA,"Population, total",SP.POP.TOTL,1979,56317749.0
+866,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1979,5.0
+867,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1979,99.3225
+868,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1979,33.558
+869,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1979,
+870,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1979,7804.762081
+871,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1979,118544000000.0
+872,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1979,241930.0
+873,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1979,73.27560976
+874,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1979,0.089728661
+875,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1979,6824317.0
+876,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1979,56246951.0
+877,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1979,6.0
+878,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1979,
+879,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1979,21.677
+880,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1980,
+881,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1980,12713.36125
+882,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1980,157931000000.0
+883,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1980,547566.0156
+884,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1980,74.05121951
+885,France,FRA,Population growth (annual %),SP.POP.GROW,1980,0.444063245
+886,France,FRA,Population in largest city,EN.URB.LCTY,1980,8669349.0
+887,France,FRA,"Population, total",SP.POP.TOTL,1980,55161527.0
+888,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1980,5.0
+889,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1980,
+890,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1980,26.718000000000004
+891,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1980,
+892,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1980,12138.3081
+893,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1980,220780000000.0
+894,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1980,349130.0
+895,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1980,72.67790244
+896,Germany,DEU,Population growth (annual %),SP.POP.GROW,1980,0.207430406
+897,Germany,DEU,Population in largest city,EN.URB.LCTY,1980,3056082.0
+898,Germany,DEU,"Population, total",SP.POP.TOTL,1980,78288576.0
+899,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1980,4.0
+900,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1980,
+901,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1980,27.156
+902,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1980,
+903,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1980,8456.918982
+904,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1980,108750000000.0
+905,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1980,294110.0
+906,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1980,73.94317073
+907,Italy,ITA,Population growth (annual %),SP.POP.GROW,1980,0.20599975199999998
+908,Italy,ITA,Population in largest city,EN.URB.LCTY,1980,3390480.0
+909,Italy,ITA,"Population, total",SP.POP.TOTL,1980,56433883.0
+910,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1980,5.0
+911,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1980,99.28311
+912,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1980,33.36
+913,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1980,
+914,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1980,10032.06208
+915,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1980,137974000000.0
+916,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1980,241930.0
+917,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1980,73.67560976
+918,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1980,0.119517254
+919,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1980,6751196.0
+920,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1980,56314216.0
+921,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1980,6.0
+922,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1980,
+923,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1980,21.519000000000002
+924,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1981,
+925,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1981,11104.97773
+926,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1981,144292000000.0
+927,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1981,547566.0156
+928,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1981,74.3
+929,France,FRA,Population growth (annual %),SP.POP.GROW,1981,0.48605678399999996
+930,France,FRA,Population in largest city,EN.URB.LCTY,1981,8691787.0
+931,France,FRA,"Population, total",SP.POP.TOTL,1981,55430296.0
+932,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1981,5.0
+933,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1981,
+934,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1981,26.648000000000003
+935,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1981,
+936,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1981,10209.07311
+937,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1981,192500000000.0
+938,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1981,349130.0
+939,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1981,72.95039024
+940,Germany,DEU,Population growth (annual %),SP.POP.GROW,1981,0.152308489
+941,Germany,DEU,Population in largest city,EN.URB.LCTY,1981,3051544.0
+942,Germany,DEU,"Population, total",SP.POP.TOTL,1981,78407907.0
+943,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1981,4.0
+944,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1981,
+945,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1981,27.011
+946,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1981,
+947,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1981,7622.833328
+948,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1981,101718000000.0
+949,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1981,294110.0
+950,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1981,74.35390244
+951,Italy,ITA,Population growth (annual %),SP.POP.GROW,1981,0.12005432
+952,Italy,ITA,Population in largest city,EN.URB.LCTY,1981,3408780.0
+953,Italy,ITA,"Population, total",SP.POP.TOTL,1981,56501675.0
+954,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1981,5.0
+955,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1981,99.27574
+956,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1981,33.163000000000004
+957,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1981,
+958,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1981,9599.306222
+959,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1981,125162000000.0
+960,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1981,241930.0
+961,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1981,74.02682927
+962,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1981,0.034821732
+963,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1981,6698500.0
+964,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1981,56333829.0
+965,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1981,6.0
+966,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1981,
+967,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1981,21.412
+968,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1982,
+969,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1982,10496.92987
+970,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1982,139515000000.0
+971,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1982,547566.0156
+972,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1982,74.5
+973,France,FRA,Population growth (annual %),SP.POP.GROW,1982,0.519369592
+974,France,FRA,Population in largest city,EN.URB.LCTY,1982,8731086.0
+975,France,FRA,"Population, total",SP.POP.TOTL,1982,55718933.0
+976,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1982,5.0
+977,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1982,
+978,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1982,26.575
+979,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1982,
+980,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1982,9913.737643999999
+981,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1982,182634000000.0
+982,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1982,349130.0
+983,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1982,73.227
+984,Germany,DEU,Population growth (annual %),SP.POP.GROW,1982,-0.095113437
+985,Germany,DEU,Population in largest city,EN.URB.LCTY,1982,3048489.0
+986,Germany,DEU,"Population, total",SP.POP.TOTL,1982,78333366.0
+987,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1982,4.0
+988,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1982,
+989,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1982,26.893
+990,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1982,
+991,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1982,7556.523429000001
+992,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1982,95659155333.0
+993,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1982,294110.0
+994,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1982,74.81463415
+995,Italy,ITA,Population growth (annual %),SP.POP.GROW,1982,0.07408186
+996,Italy,ITA,Population in largest city,EN.URB.LCTY,1982,3437228.0
+997,Italy,ITA,"Population, total",SP.POP.TOTL,1982,56543548.0
+998,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1982,5.0
+999,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1982,99.18871
+1000,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1982,33.114000000000004
+1001,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1982,
+1002,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1982,9146.077357
+1003,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1982,122164000000.0
+1004,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1982,241930.0
+1005,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1982,74.17804878
+1006,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1982,-0.035842794
+1007,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1982,6709089.0
+1008,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1982,56313641.0
+1009,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1982,6.0
+1010,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1982,
+1011,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1982,21.461
+1012,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1983,
+1013,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1983,9993.422074
+1014,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1983,127110000000.0
+1015,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1983,547566.0156
+1016,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1983,74.8
+1017,France,FRA,Population growth (annual %),SP.POP.GROW,1983,0.545606555
+1018,France,FRA,Population in largest city,EN.URB.LCTY,1983,8805496.0
+1019,France,FRA,"Population, total",SP.POP.TOTL,1983,56023770.0
+1020,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1983,5.0
+1021,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1983,
+1022,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1983,26.5
+1023,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1983,
+1024,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1983,9864.34494
+1025,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1983,179447000000.0
+1026,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1983,349130.0
+1027,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1983,73.50519512
+1028,Germany,DEU,Population growth (annual %),SP.POP.GROW,1983,-0.262152572
+1029,Germany,DEU,Population in largest city,EN.URB.LCTY,1983,3041327.0
+1030,Germany,DEU,"Population, total",SP.POP.TOTL,1983,78128282.0
+1031,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1983,4.0
+1032,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1983,
+1033,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1983,26.897
+1034,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1983,
+1035,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1983,7832.575389
+1036,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1983,87973945054.0
+1037,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1983,294110.0
+1038,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1983,74.6402439
+1039,Italy,ITA,Population growth (annual %),SP.POP.GROW,1983,0.036294637000000005
+1040,Italy,ITA,Population in largest city,EN.URB.LCTY,1983,3470633.0
+1041,Italy,ITA,"Population, total",SP.POP.TOTL,1983,56564074.0
+1042,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1983,5.0
+1043,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1983,99.34742
+1044,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1983,33.134
+1045,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1983,
+1046,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1983,8691.518812999999
+1047,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1983,121368000000.0
+1048,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1983,241930.0
+1049,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1983,74.37804878
+1050,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1983,0.034101374
+1051,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1983,6719694.0
+1052,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1983,56332848.0
+1053,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1983,6.0
+1054,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1983,
+1055,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1983,21.511
+1056,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1984,
+1057,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1984,9419.697648000001
+1058,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1984,125806000000.0
+1059,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1984,547566.0156
+1060,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1984,75.0
+1061,France,FRA,Population growth (annual %),SP.POP.GROW,1984,0.5587269579999999
+1062,France,FRA,Population in largest city,EN.URB.LCTY,1984,8880643.0
+1063,France,FRA,"Population, total",SP.POP.TOTL,1984,56337666.0
+1064,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1984,5.0
+1065,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1984,
+1066,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1984,26.425
+1067,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1984,
+1068,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1984,9313.169414
+1069,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1984,177776000000.0
+1070,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1984,349130.0
+1071,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1984,73.78292683
+1072,Germany,DEU,Population growth (annual %),SP.POP.GROW,1984,-0.34566640200000004
+1073,Germany,DEU,Population in largest city,EN.URB.LCTY,1984,3042744.0
+1074,Germany,DEU,"Population, total",SP.POP.TOTL,1984,77858685.0
+1075,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1984,4.0
+1076,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1984,
+1077,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1984,27.057
+1078,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1984,
+1079,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1984,7739.715279999999
+1080,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1984,93843935420.0
+1081,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1984,294110.0
+1082,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1984,75.3895122
+1083,Italy,ITA,Population growth (annual %),SP.POP.GROW,1984,0.022350912999999997
+1084,Italy,ITA,Population in largest city,EN.URB.LCTY,1984,3504408.0
+1085,Italy,ITA,"Population, total",SP.POP.TOTL,1984,56576718.0
+1086,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1984,5.0
+1087,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1984,99.28792
+1088,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1984,33.154
+1089,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1984,
+1090,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1984,8179.194441
+1091,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1984,127311000000.0
+1092,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1984,241930.0
+1093,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1984,74.77804878
+1094,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1984,0.158261863
+1095,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1984,6730330.0
+1096,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1984,56422072.0
+1097,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1984,6.0
+1098,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1984,
+1099,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1984,21.56
+1100,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1985,
+1101,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1985,9763.328609999999
+1102,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1985,131051000000.0
+1103,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1985,547566.0156
+1104,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1985,75.3
+1105,France,FRA,Population growth (annual %),SP.POP.GROW,1985,0.5611544470000001
+1106,France,FRA,Population in largest city,EN.URB.LCTY,1985,8956222.0
+1107,France,FRA,"Population, total",SP.POP.TOTL,1985,56654696.0
+1108,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1985,5.0
+1109,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1985,97.81904
+1110,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1985,26.35
+1111,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1985,
+1112,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1985,9429.569212999999
+1113,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1985,182960000000.0
+1114,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1985,349130.0
+1115,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1985,74.05463415
+1116,Germany,DEU,Population growth (annual %),SP.POP.GROW,1985,-0.223489902
+1117,Germany,DEU,Population in largest city,EN.URB.LCTY,1985,3060484.0
+1118,Germany,DEU,"Population, total",SP.POP.TOTL,1985,77684873.0
+1119,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1985,4.0
+1120,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1985,
+1121,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1985,27.289
+1122,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1985,
+1123,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1985,7990.686562000001
+1124,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1985,97337834702.0
+1125,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1985,294110.0
+1126,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1985,75.47073171
+1127,Italy,ITA,Population growth (annual %),SP.POP.GROW,1985,0.028899939
+1128,Italy,ITA,Population in largest city,EN.URB.LCTY,1985,3538418.0
+1129,Italy,ITA,"Population, total",SP.POP.TOTL,1985,56593071.0
+1130,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1985,5.0
+1131,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1985,99.48355
+1132,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1985,33.174
+1133,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1985,
+1134,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1985,8652.216542
+1135,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1985,130997000000.0
+1136,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1985,241930.0
+1137,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1985,74.62926829
+1138,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1985,0.226951225
+1139,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1985,6740954.0
+1140,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1985,56550268.0
+1141,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1985,6.0
+1142,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1985,
+1143,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1985,21.61
+1144,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1986,
+1145,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1986,13540.247080000001
+1146,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1986,158186000000.0
+1147,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1986,547566.0156
+1148,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1986,75.6
+1149,France,FRA,Population growth (annual %),SP.POP.GROW,1986,0.565740633
+1150,France,FRA,Population in largest city,EN.URB.LCTY,1986,9032550.0
+1151,France,FRA,"Population, total",SP.POP.TOTL,1986,56976123.0
+1152,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1986,5.0
+1153,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1986,96.13982
+1154,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1986,26.275
+1155,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1986,
+1156,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1986,13461.83101
+1157,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1986,226594000000.0
+1158,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1986,349130.0
+1159,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1986,74.31373171
+1160,Germany,DEU,Population growth (annual %),SP.POP.GROW,1986,0.045768064000000004
+1161,Germany,DEU,Population in largest city,EN.URB.LCTY,1986,3095453.0
+1162,Germany,DEU,"Population, total",SP.POP.TOTL,1986,77720436.0
+1163,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1986,4.0
+1164,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1986,
+1165,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1986,27.383000000000003
+1166,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1986,
+1167,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1986,11315.01517
+1168,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1986,111808000000.0
+1169,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1986,294110.0
+1170,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1986,75.77073171
+1171,Italy,ITA,Population growth (annual %),SP.POP.GROW,1986,0.005449282
+1172,Italy,ITA,Population in largest city,EN.URB.LCTY,1986,3572806.0
+1173,Italy,ITA,"Population, total",SP.POP.TOTL,1986,56596155.0
+1174,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1986,5.0
+1175,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1986,99.4532
+1176,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1986,33.194
+1177,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1986,
+1178,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1986,10611.11221
+1179,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1986,152960000000.0
+1180,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1986,241930.0
+1181,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1986,74.92926829
+1182,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1986,0.23161023
+1183,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1986,6751610.0
+1184,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1986,56681396.0
+1185,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1986,6.0
+1186,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1986,
+1187,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1986,21.66
+1188,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1987,
+1189,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1987,16302.4414
+1190,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1987,193331000000.0
+1191,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1987,547566.0156
+1192,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1987,75.8
+1193,France,FRA,Population growth (annual %),SP.POP.GROW,1987,0.5714812
+1194,France,FRA,Population in largest city,EN.URB.LCTY,1987,9109528.0
+1195,France,FRA,"Population, total",SP.POP.TOTL,1987,57302663.0
+1196,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1987,5.0
+1197,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1987,
+1198,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1987,26.2
+1199,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1987,
+1200,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1987,16677.51079
+1201,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1987,272701000000.0
+1202,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1987,349130.0
+1203,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1987,74.55968293
+1204,Germany,DEU,Population growth (annual %),SP.POP.GROW,1987,0.153617575
+1205,Germany,DEU,Population in largest city,EN.URB.LCTY,1987,3272990.0
+1206,Germany,DEU,"Population, total",SP.POP.TOTL,1987,77839920.0
+1207,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1987,4.0
+1208,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1987,
+1209,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1987,27.164
+1210,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1987,
+1211,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1987,14234.72865
+1212,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1987,141633000000.0
+1213,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1987,294110.0
+1214,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1987,76.2195122
+1215,Italy,ITA,Population growth (annual %),SP.POP.GROW,1987,0.01020512
+1216,Italy,ITA,Population in largest city,EN.URB.LCTY,1987,3607528.0
+1217,Italy,ITA,"Population, total",SP.POP.TOTL,1987,56601931.0
+1218,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1987,5.0
+1219,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1987,97.59747
+1220,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1987,33.214
+1221,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1987,
+1222,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1987,13118.58653
+1223,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1987,188416000000.0
+1224,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1987,241930.0
+1225,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1987,75.2804878
+1226,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1987,0.21263726100000002
+1227,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1987,6762282.0
+1228,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1987,56802050.0
+1229,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1987,6.0
+1230,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1987,
+1231,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1987,21.71
+1232,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1988,
+1233,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1988,17679.997
+1234,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1988,214218000000.0
+1235,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1988,547566.0156
+1236,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1988,76.1
+1237,France,FRA,Population growth (annual %),SP.POP.GROW,1988,0.56459326
+1238,France,FRA,Population in largest city,EN.URB.LCTY,1988,9187270.0
+1239,France,FRA,"Population, total",SP.POP.TOTL,1988,57627105.0
+1240,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1988,5.0
+1241,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1988,97.71185
+1242,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1988,26.125
+1243,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1988,
+1244,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1988,17931.282330000002
+1245,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1988,300374000000.0
+1246,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1988,349130.0
+1247,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1988,74.7924878
+1248,Germany,DEU,Population growth (annual %),SP.POP.GROW,1988,0.39067896
+1249,Germany,DEU,Population in largest city,EN.URB.LCTY,1988,3253960.0
+1250,Germany,DEU,"Population, total",SP.POP.TOTL,1988,78144619.0
+1251,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1988,4.0
+1252,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1988,
+1253,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1988,27.000999999999998
+1254,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1988,
+1255,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1988,15744.661269999999
+1256,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1988,156327000000.0
+1257,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1988,294110.0
+1258,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1988,76.37073171
+1259,Italy,ITA,Population growth (annual %),SP.POP.GROW,1988,0.048320597
+1260,Italy,ITA,Population in largest city,EN.URB.LCTY,1988,3642636.0
+1261,Italy,ITA,"Population, total",SP.POP.TOTL,1988,56629288.0
+1262,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1988,5.0
+1263,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1988,98.21497
+1264,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1988,33.234
+1265,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1988,
+1266,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1988,15987.168080000001
+1267,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1988,229336000000.0
+1268,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1988,241930.0
+1269,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1988,75.3804878
+1270,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1988,0.22206389399999998
+1271,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1988,6772986.0
+1272,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1988,56928327.0
+1273,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1988,6.0
+1274,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1988,
+1275,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1988,21.76
+1276,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1989,
+1277,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1989,17694.30535
+1278,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1989,229070000000.0
+1279,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1989,547566.0156
+1280,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1989,76.34878049
+1281,France,FRA,Population growth (annual %),SP.POP.GROW,1989,0.541862136
+1282,France,FRA,Population in largest city,EN.URB.LCTY,1989,9265459.0
+1283,France,FRA,"Population, total",SP.POP.TOTL,1989,57940212.0
+1284,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1989,5.0
+1285,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1989,97.87749000000001
+1286,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1989,26.05
+1287,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1989,
+1288,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1989,17764.37644
+1289,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1989,320592000000.0
+1290,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1989,349130.0
+1291,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1989,75.01314634
+1292,Germany,DEU,Population growth (annual %),SP.POP.GROW,1989,0.773336991
+1293,Germany,DEU,Population in largest city,EN.URB.LCTY,1989,3381095.0
+1294,Germany,DEU,"Population, total",SP.POP.TOTL,1989,78751283.0
+1295,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1989,4.0
+1296,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1989,
+1297,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1989,27.024
+1298,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1989,
+1299,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1989,16386.66222
+1300,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1989,172138000000.0
+1301,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1989,294110.0
+1302,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1989,76.81951219999999
+1303,Italy,ITA,Population growth (annual %),SP.POP.GROW,1989,0.075009005
+1304,Italy,ITA,Population in largest city,EN.URB.LCTY,1989,3677987.0
+1305,Italy,ITA,"Population, total",SP.POP.TOTL,1989,56671781.0
+1306,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1989,5.0
+1307,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1989,97.564
+1308,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1989,33.254
+1309,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1989,
+1310,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1989,16239.2822
+1311,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1989,241406000000.0
+1312,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1989,241930.0
+1313,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1989,75.58292683
+1314,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1989,0.26031145
+1315,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1989,6783677.0
+1316,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1989,57076711.0
+1317,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1989,6.0
+1318,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1989,
+1319,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1989,21.81
+1320,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1990,100.0
+1321,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1990,21793.84265
+1322,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1990,276178000000.0
+1323,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1990,547566.0156
+1324,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1990,76.6
+1325,France,FRA,Population growth (annual %),SP.POP.GROW,1990,0.5086865939999999
+1326,France,FRA,Population in largest city,EN.URB.LCTY,1990,9330327.0
+1327,France,FRA,"Population, total",SP.POP.TOTL,1990,58235697.0
+1328,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1990,5.0
+1329,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1990,97.84966999999999
+1330,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1990,25.944000000000003
+1331,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1990,100.0
+1332,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1990,22303.961330000002
+1333,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1990,407976000000.0
+1334,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1990,349130.0
+1335,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1990,75.2277561
+1336,Germany,DEU,Population growth (annual %),SP.POP.GROW,1990,0.861969449
+1337,Germany,DEU,Population in largest city,EN.URB.LCTY,1990,3421662.0
+1338,Germany,DEU,"Population, total",SP.POP.TOTL,1990,79433029.0
+1339,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1990,4.0
+1340,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1990,
+1341,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1990,26.881999999999998
+1342,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1990,100.0
+1343,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1990,20825.784209999998
+1344,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1990,213356000000.0
+1345,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1990,294110.0
+1346,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1990,76.97073171
+1347,Italy,ITA,Population growth (annual %),SP.POP.GROW,1990,0.083708573
+1348,Italy,ITA,Population in largest city,EN.URB.LCTY,1990,3713731.0
+1349,Italy,ITA,"Population, total",SP.POP.TOTL,1990,56719240.0
+1350,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1990,5.0
+1351,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1990,98.11502
+1352,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1990,33.274
+1353,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1990,100.0
+1354,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1990,19095.467
+1355,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1990,272512000000.0
+1356,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1990,241930.0
+1357,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1990,75.8804878
+1358,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1990,0.29893055399999996
+1359,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1990,6794400.0
+1360,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1990,57247586.0
+1361,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1990,6.0
+1362,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1990,
+1363,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1990,21.86
+1364,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1991,100.0
+1365,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1991,21675.06425
+1366,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1991,274783000000.0
+1367,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1991,547566.0156
+1368,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1991,76.84878049
+1369,France,FRA,Population growth (annual %),SP.POP.GROW,1991,0.554158664
+1370,France,FRA,Population in largest city,EN.URB.LCTY,1991,9366009.0
+1371,France,FRA,"Population, total",SP.POP.TOTL,1991,58559311.0
+1372,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1991,5.0
+1373,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1991,97.73137
+1374,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1991,25.771
+1375,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1991,100.0
+1376,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1991,23357.75773
+1377,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1991,451397000000.0
+1378,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1991,349130.0
+1379,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1991,75.31951219999999
+1380,Germany,DEU,Population growth (annual %),SP.POP.GROW,1991,0.728605547
+1381,Germany,DEU,Population in largest city,EN.URB.LCTY,1991,3439841.0
+1382,Germany,DEU,"Population, total",SP.POP.TOTL,1991,80013896.0
+1383,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1991,4.0
+1384,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1991,
+1385,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1991,26.730999999999998
+1386,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1991,100.0
+1387,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1991,21956.529759999998
+1388,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1991,209894000000.0
+1389,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1991,294110.0
+1390,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1991,77.0195122
+1391,Italy,ITA,Population growth (annual %),SP.POP.GROW,1991,0.069231189
+1392,Italy,ITA,Population in largest city,EN.URB.LCTY,1991,3749823.0
+1393,Italy,ITA,"Population, total",SP.POP.TOTL,1991,56758521.0
+1394,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1991,5.0
+1395,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1991,99.69248
+1396,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1991,33.294000000000004
+1397,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1991,100.0
+1398,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1991,19900.72665
+1399,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1991,259733000000.0
+1400,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1991,241930.0
+1401,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1991,76.08292683
+1402,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1991,0.309247932
+1403,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1991,6840784.0
+1404,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1991,57424897.0
+1405,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1991,6.0
+1406,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1991,
+1407,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1991,21.888
+1408,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1992,100.0
+1409,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1992,23813.71184
+1410,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1992,289558000000.0
+1411,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1992,547566.0156
+1412,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1992,77.1
+1413,France,FRA,Population growth (annual %),SP.POP.GROW,1992,0.497240931
+1414,France,FRA,Population in largest city,EN.URB.LCTY,1992,9401876.0
+1415,France,FRA,"Population, total",SP.POP.TOTL,1992,58851217.0
+1416,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1992,5.0
+1417,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1992,
+1418,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1992,25.599
+1419,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1992,100.0
+1420,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1992,26438.23039
+1421,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1992,483785000000.0
+1422,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1992,349130.0
+1423,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1992,75.81951219999999
+1424,Germany,DEU,Population growth (annual %),SP.POP.GROW,1992,0.760346947
+1425,Germany,DEU,Population in largest city,EN.URB.LCTY,1992,3455876.0
+1426,Germany,DEU,"Population, total",SP.POP.TOTL,1992,80624598.0
+1427,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1992,4.0
+1428,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1992,
+1429,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1992,26.64
+1430,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1992,100.0
+1431,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1992,23243.47454
+1432,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1992,230164000000.0
+1433,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1992,294110.0
+1434,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1992,77.4195122
+1435,Italy,ITA,Population growth (annual %),SP.POP.GROW,1992,0.06792443299999999
+1436,Italy,ITA,Population in largest city,EN.URB.LCTY,1992,3756840.0
+1437,Italy,ITA,"Population, total",SP.POP.TOTL,1992,56797087.0
+1438,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1992,5.0
+1439,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1992,
+1440,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1992,33.258
+1441,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1992,100.0
+1442,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1992,20487.17079
+1443,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1992,275927000000.0
+1444,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1992,241930.0
+1445,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1992,76.43414634
+1446,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1992,0.270431182
+1447,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1992,6887549.0
+1448,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1992,57580402.0
+1449,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1992,6.0
+1450,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1992,
+1451,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1992,21.828000000000003
+1452,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1993,100.0
+1453,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1993,22380.10396
+1454,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1993,252824000000.0
+1455,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1993,547566.0156
+1456,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1993,77.3
+1457,France,FRA,Population growth (annual %),SP.POP.GROW,1993,0.433292244
+1458,France,FRA,Population in largest city,EN.URB.LCTY,1993,9437781.0
+1459,France,FRA,"Population, total",SP.POP.TOTL,1993,59106768.0
+1460,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1993,5.0
+1461,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1993,
+1462,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1993,25.428
+1463,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1993,100.0
+1464,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1993,25522.629569999997
+1465,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1993,419718000000.0
+1466,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1993,349120.0
+1467,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1993,75.87073171
+1468,Germany,DEU,Population growth (annual %),SP.POP.GROW,1993,0.657391218
+1469,Germany,DEU,Population in largest city,EN.URB.LCTY,1993,3470553.0
+1470,Germany,DEU,"Population, total",SP.POP.TOTL,1993,81156363.0
+1471,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1993,4.0
+1472,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1993,99.97198
+1473,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1993,26.503
+1474,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1993,100.0
+1475,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1993,18738.7639
+1476,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1993,184878000000.0
+1477,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1993,294110.0
+1478,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1993,77.72195122
+1479,Italy,ITA,Population growth (annual %),SP.POP.GROW,1993,0.061135853
+1480,Italy,ITA,Population in largest city,EN.URB.LCTY,1993,3750746.0
+1481,Italy,ITA,"Population, total",SP.POP.TOTL,1993,56831821.0
+1482,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1993,5.0
+1483,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1993,
+1484,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1993,33.198
+1485,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1993,100.0
+1486,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1993,18389.01957
+1487,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1993,264548000000.0
+1488,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1993,241930.0
+1489,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1993,76.38536585
+1490,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1993,0.23974543899999998
+1491,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1993,6934504.0
+1492,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1993,57718614.0
+1493,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1993,6.0
+1494,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1993,
+1495,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1993,21.768
+1496,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1994,100.0
+1497,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1994,23496.52332
+1498,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1994,281109000000.0
+1499,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1994,547566.0156
+1500,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1994,77.64878049
+1501,France,FRA,Population growth (annual %),SP.POP.GROW,1994,0.37223150299999996
+1502,France,FRA,Population in largest city,EN.URB.LCTY,1994,9473873.0
+1503,France,FRA,"Population, total",SP.POP.TOTL,1994,59327192.0
+1504,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1994,5.0
+1505,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1994,
+1506,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1994,25.256999999999998
+1507,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1994,100.0
+1508,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1994,27076.60675
+1509,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1994,461901000000.0
+1510,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1994,349110.0
+1511,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1994,76.27073171
+1512,Germany,DEU,Population growth (annual %),SP.POP.GROW,1994,0.34685664899999996
+1513,Germany,DEU,Population in largest city,EN.URB.LCTY,1994,3473705.0
+1514,Germany,DEU,"Population, total",SP.POP.TOTL,1994,81438348.0
+1515,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1994,4.0
+1516,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1994,99.99013000000001
+1517,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1994,26.29
+1518,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1994,100.0
+1519,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1994,19337.63091
+1520,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1994,204278000000.0
+1521,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1994,294110.0
+1522,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1994,77.92195122
+1523,Italy,ITA,Population growth (annual %),SP.POP.GROW,1994,0.020372074
+1524,Italy,ITA,Population in largest city,EN.URB.LCTY,1994,3744654.0
+1525,Italy,ITA,"Population, total",SP.POP.TOTL,1994,56843400.0
+1526,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1994,5.0
+1527,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1994,97.60876999999999
+1528,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1994,33.138000000000005
+1529,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1994,100.0
+1530,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1994,19709.2381
+1531,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1994,294440000000.0
+1532,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1994,241930.0
+1533,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1994,76.88536585
+1534,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1994,0.254586487
+1535,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1994,6981844.0
+1536,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1994,57865745.0
+1537,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1994,6.0
+1538,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1994,
+1539,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1994,21.706999999999997
+1540,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1995,100.0
+1541,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1995,26890.21988
+1542,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1995,336601000000.0
+1543,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1995,547566.0156
+1544,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1995,77.75121951
+1545,France,FRA,Population growth (annual %),SP.POP.GROW,1995,0.361249895
+1546,France,FRA,Population in largest city,EN.URB.LCTY,1995,9510103.0
+1547,France,FRA,"Population, total",SP.POP.TOTL,1995,59541899.0
+1548,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1995,5.0
+1549,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1995,
+1550,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1995,25.088
+1551,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1995,100.0
+1552,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1995,31658.34938
+1553,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1995,558205000000.0
+1554,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1995,349100.0
+1555,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1995,76.42195122
+1556,Germany,DEU,Population growth (annual %),SP.POP.GROW,1995,0.293904444
+1557,Germany,DEU,Population in largest city,EN.URB.LCTY,1995,3471395.0
+1558,Germany,DEU,"Population, total",SP.POP.TOTL,1995,81678051.0
+1559,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1995,4.0
+1560,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1995,99.92005
+1561,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1995,26.078000000000003
+1562,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1995,100.0
+1563,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1995,20664.55227
+1564,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1995,246821000000.0
+1565,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1995,294110.0
+1566,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1995,78.17073171
+1567,Italy,ITA,Population growth (annual %),SP.POP.GROW,1995,0.0015885620000000002
+1568,Italy,ITA,Population in largest city,EN.URB.LCTY,1995,3738572.0
+1569,Italy,ITA,"Population, total",SP.POP.TOTL,1995,56844303.0
+1570,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1995,5.0
+1571,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1995,99.81947
+1572,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1995,33.078
+1573,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1995,100.0
+1574,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1995,23123.17779
+1575,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1995,339187000000.0
+1576,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1995,241930.0
+1577,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1995,76.83658537
+1578,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1995,0.264547417
+1579,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1995,7029508.0
+1580,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1995,58019030.0
+1581,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1995,6.0
+1582,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1995,
+1583,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1995,21.647
+1584,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1996,100.0
+1585,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1996,26871.829019999997
+1586,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1996,341586000000.0
+1587,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1996,547566.0156
+1588,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1996,77.95365854
+1589,France,FRA,Population growth (annual %),SP.POP.GROW,1996,0.354082271
+1590,France,FRA,Population in largest city,EN.URB.LCTY,1996,9546522.0
+1591,France,FRA,"Population, total",SP.POP.TOTL,1996,59753100.0
+1592,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1996,5.0
+1593,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1996,
+1594,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1996,24.918000000000003
+1595,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1996,100.0
+1596,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1996,30485.86655
+1597,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1996,553030000000.0
+1598,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1996,349090.0
+1599,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1996,76.67317073
+1600,Germany,DEU,Population growth (annual %),SP.POP.GROW,1996,0.289474899
+1601,Germany,DEU,Population in largest city,EN.URB.LCTY,1996,3462965.0
+1602,Germany,DEU,"Population, total",SP.POP.TOTL,1996,81914831.0
+1603,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1996,4.0
+1604,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1996,99.99333
+1605,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1996,25.866999999999997
+1606,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1996,100.0
+1607,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1996,23081.60468
+1608,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1996,251645000000.0
+1609,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1996,294110.0
+1610,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1996,78.52195122
+1611,Italy,ITA,Population growth (annual %),SP.POP.GROW,1996,0.028104407999999997
+1612,Italy,ITA,Population in largest city,EN.URB.LCTY,1996,3732492.0
+1613,Italy,ITA,"Population, total",SP.POP.TOTL,1996,56860281.0
+1614,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1996,5.0
+1615,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1996,99.63163
+1616,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1996,33.018
+1617,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1996,100.0
+1618,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1996,24332.69777
+1619,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1996,367747000000.0
+1620,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1996,241930.0
+1621,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1996,77.08780488
+1622,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1996,0.254626384
+1623,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1996,7077563.0
+1624,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1996,58166950.0
+1625,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1996,6.0
+1626,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1996,
+1627,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1996,21.587
+1628,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1997,100.0
+1629,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1997,24228.94235
+1630,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1997,327049000000.0
+1631,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1997,547566.0156
+1632,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1997,78.30487805
+1633,France,FRA,Population growth (annual %),SP.POP.GROW,1997,0.353750159
+1634,France,FRA,Population in largest city,EN.URB.LCTY,1997,9582980.0
+1635,France,FRA,"Population, total",SP.POP.TOTL,1997,59964851.0
+1636,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1997,5.0
+1637,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1997,
+1638,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1997,24.75
+1639,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1997,100.0
+1640,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1997,26964.049469999998
+1641,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1997,537124000000.0
+1642,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1997,349050.0
+1643,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1997,77.07317073
+1644,Germany,DEU,Population growth (annual %),SP.POP.GROW,1997,0.146313282
+1645,Germany,DEU,Population in largest city,EN.URB.LCTY,1997,3442267.0
+1646,Germany,DEU,"Population, total",SP.POP.TOTL,1997,82034771.0
+1647,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1997,4.0
+1648,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1997,
+1649,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1997,25.658
+1650,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1997,100.0
+1651,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1997,21829.34582
+1652,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1997,253824000000.0
+1653,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1997,294110.0
+1654,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1997,78.82439024
+1655,Italy,ITA,Population growth (annual %),SP.POP.GROW,1997,0.05290695
+1656,Italy,ITA,Population in largest city,EN.URB.LCTY,1997,3726438.0
+1657,Italy,ITA,"Population, total",SP.POP.TOTL,1997,56890372.0
+1658,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1997,5.0
+1659,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1997,
+1660,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1997,32.958
+1661,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1997,100.0
+1662,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1997,26734.56261
+1663,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1997,390581000000.0
+1664,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1997,241930.0
+1665,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1997,77.21097561
+1666,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1997,0.257553323
+1667,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1997,7125813.0
+1668,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1997,58316954.0
+1669,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1997,6.0
+1670,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1997,
+1671,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1997,21.528000000000002
+1672,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1998,100.0
+1673,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1998,24974.2722
+1674,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1998,351431000000.0
+1675,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1998,547566.0156
+1676,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1998,78.60487805
+1677,France,FRA,Population growth (annual %),SP.POP.GROW,1998,0.368597839
+1678,France,FRA,Population in largest city,EN.URB.LCTY,1998,9619628.0
+1679,France,FRA,"Population, total",SP.POP.TOTL,1998,60186288.0
+1680,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1998,5.0
+1681,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1998,
+1682,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1998,24.583000000000002
+1683,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1998,100.0
+1684,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1998,27289.059360000003
+1685,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1998,563735000000.0
+1686,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1998,349020.0
+1687,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1998,77.47560976
+1688,Germany,DEU,Population growth (annual %),SP.POP.GROW,1998,0.015143651000000001
+1689,Germany,DEU,Population in largest city,EN.URB.LCTY,1998,3412301.0
+1690,Germany,DEU,"Population, total",SP.POP.TOTL,1998,82047195.0
+1691,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1998,4.0
+1692,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1998,
+1693,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1998,25.449
+1694,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1998,100.0
+1695,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1998,22318.1373
+1696,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1998,267089000000.0
+1697,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1998,294110.0
+1698,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1998,78.97560976
+1699,Italy,ITA,Population growth (annual %),SP.POP.GROW,1998,0.028774016
+1700,Italy,ITA,Population in largest city,EN.URB.LCTY,1998,3720385.0
+1701,Italy,ITA,"Population, total",SP.POP.TOTL,1998,56906744.0
+1702,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1998,5.0
+1703,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1998,
+1704,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1998,32.898
+1705,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1998,100.0
+1706,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1998,28214.274360000003
+1707,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1998,409025000000.0
+1708,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1998,241930.0
+1709,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1998,77.1902439
+1710,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1998,0.291406085
+1711,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1998,7174459.0
+1712,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1998,58487141.0
+1713,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1998,6.0
+1714,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1998,
+1715,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1998,21.468000000000004
+1716,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1999,100.0
+1717,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,1999,24673.198969999998
+1718,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1999,353524000000.0
+1719,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,1999,547566.0156
+1720,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1999,78.75609756
+1721,France,FRA,Population growth (annual %),SP.POP.GROW,1999,0.514456335
+1722,France,FRA,Population in largest city,EN.URB.LCTY,1999,9666887.0
+1723,France,FRA,"Population, total",SP.POP.TOTL,1999,60496718.0
+1724,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,1999,5.0
+1725,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,1999,
+1726,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,1999,24.386
+1727,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,1999,100.0
+1728,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,1999,26725.91522
+1729,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1999,579415000000.0
+1730,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,1999,348980.0
+1731,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1999,77.72682927
+1732,Germany,DEU,Population growth (annual %),SP.POP.GROW,1999,0.064634578
+1733,Germany,DEU,Population in largest city,EN.URB.LCTY,1999,3392756.0
+1734,Germany,DEU,"Population, total",SP.POP.TOTL,1999,82100243.0
+1735,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,1999,4.0
+1736,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,1999,99.87319000000001
+1737,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,1999,25.241999999999997
+1738,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,1999,100.0
+1739,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,1999,21997.62432
+1740,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1999,268184000000.0
+1741,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,1999,294110.0
+1742,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1999,79.42439024
+1743,Italy,ITA,Population growth (annual %),SP.POP.GROW,1999,0.016820843999999998
+1744,Italy,ITA,Population in largest city,EN.URB.LCTY,1999,3714343.0
+1745,Italy,ITA,"Population, total",SP.POP.TOTL,1999,56916317.0
+1746,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,1999,5.0
+1747,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,1999,96.70295
+1748,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,1999,32.838
+1749,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,1999,100.0
+1750,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,1999,28669.539689999998
+1751,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,1999,425844000000.0
+1752,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,1999,241930.0
+1753,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,1999,77.3902439
+1754,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,1999,0.333405882
+1755,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,1999,7223438.0
+1756,United Kingdom,GBR,"Population, total",SP.POP.TOTL,1999,58682466.0
+1757,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,1999,6.0
+1758,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,1999,
+1759,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,1999,21.409000000000002
+1760,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2000,100.0
+1761,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,2000,22364.02939
+1762,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2000,371434000000.0
+1763,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,2000,547566.9922
+1764,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2000,79.05609756
+1765,France,FRA,Population growth (annual %),SP.POP.GROW,2000,0.684929254
+1766,France,FRA,Population in largest city,EN.URB.LCTY,2000,9736538.0
+1767,France,FRA,"Population, total",SP.POP.TOTL,2000,60912500.0
+1768,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,2000,5.0
+1769,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,2000,
+1770,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,2000,24.129
+1771,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,2000,100.0
+1772,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,2000,23635.929219999998
+1773,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2000,596125000000.0
+1774,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,2000,348950.0
+1775,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2000,77.92682927
+1776,Germany,DEU,Population growth (annual %),SP.POP.GROW,2000,0.1354316
+1777,Germany,DEU,Population in largest city,EN.URB.LCTY,2000,3384417.0
+1778,Germany,DEU,"Population, total",SP.POP.TOTL,2000,82211508.0
+1779,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,2000,4.0
+1780,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,2000,99.90326
+1781,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,2000,25.035
+1782,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2000,100.0
+1783,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,2000,20087.59199
+1784,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2000,283417000000.0
+1785,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,2000,294110.0
+1786,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2000,79.77804878
+1787,Italy,ITA,Population growth (annual %),SP.POP.GROW,2000,0.045303631
+1788,Italy,ITA,Population in largest city,EN.URB.LCTY,2000,3708301.0
+1789,Italy,ITA,"Population, total",SP.POP.TOTL,2000,56942108.0
+1790,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,2000,5.0
+1791,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,2000,99.77574
+1792,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,2000,32.778
+1793,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,2000,100.0
+1794,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,2000,28149.870010000002
+1795,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2000,446500000000.0
+1796,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,2000,241930.0
+1797,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2000,77.74146341
+1798,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,2000,0.357300887
+1799,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,2000,7272819.0
+1800,United Kingdom,GBR,"Population, total",SP.POP.TOTL,2000,58892514.0
+1801,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,2000,6.0
+1802,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,2000,
+1803,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,2000,21.349
+1804,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2001,100.0
+1805,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,2001,22433.55571
+1806,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2001,367426000000.0
+1807,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,2001,547566.9922
+1808,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2001,79.15853659
+1809,France,FRA,Population growth (annual %),SP.POP.GROW,2001,0.727786405
+1810,France,FRA,Population in largest city,EN.URB.LCTY,2001,9806497.0
+1811,France,FRA,"Population, total",SP.POP.TOTL,2001,61357430.0
+1812,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,2001,5.0
+1813,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,2001,
+1814,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,2001,23.873
+1815,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,2001,100.0
+1816,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,2001,23607.882859999998
+1817,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2001,587473000000.0
+1818,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,2001,348900.0
+1819,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2001,78.32926829
+1820,Germany,DEU,Population growth (annual %),SP.POP.GROW,2001,0.16822536100000002
+1821,Germany,DEU,Population in largest city,EN.URB.LCTY,2001,3388441.0
+1822,Germany,DEU,"Population, total",SP.POP.TOTL,2001,82349925.0
+1823,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,2001,4.0
+1824,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,2001,99.78430999999999
+1825,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,2001,24.83
+1826,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2001,100.0
+1827,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,2001,20483.21599
+1828,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2001,284585000000.0
+1829,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,2001,294110.0
+1830,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2001,80.12682927
+1831,Italy,ITA,Population growth (annual %),SP.POP.GROW,2001,0.056167601
+1832,Italy,ITA,Population in largest city,EN.URB.LCTY,2001,3702287.0
+1833,Italy,ITA,"Population, total",SP.POP.TOTL,2001,56974100.0
+1834,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,2001,5.0
+1835,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,2001,99.805
+1836,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,2001,32.718
+1837,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,2001,100.0
+1838,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,2001,27744.506460000004
+1839,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2001,446758000000.0
+1840,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,2001,241930.0
+1841,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2001,77.99268293
+1842,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,2001,0.38497597
+1843,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,2001,7322400.0
+1844,United Kingdom,GBR,"Population, total",SP.POP.TOTL,2001,59119673.0
+1845,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,2001,6.0
+1846,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,2001,
+1847,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,2001,21.249000000000002
+1848,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2002,100.0
+1849,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,2002,24177.33517
+1850,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2002,381655000000.0
+1851,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,2002,547566.9922
+1852,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2002,79.26097561
+1853,France,FRA,Population growth (annual %),SP.POP.GROW,2002,0.727231515
+1854,France,FRA,Population in largest city,EN.URB.LCTY,2002,9877056.0
+1855,France,FRA,"Population, total",SP.POP.TOTL,2002,61805267.0
+1856,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,2002,5.0
+1857,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,2002,
+1858,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,2002,23.62
+1859,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,2002,100.0
+1860,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,2002,25077.72908
+1861,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2002,586296000000.0
+1862,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,2002,348860.0
+1863,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2002,78.22926829
+1864,Germany,DEU,Population growth (annual %),SP.POP.GROW,2002,0.168128319
+1865,Germany,DEU,Population in largest city,EN.URB.LCTY,2002,3391094.0
+1866,Germany,DEU,"Population, total",SP.POP.TOTL,2002,82488495.0
+1867,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,2002,4.0
+1868,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,2002,99.7615
+1869,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,2002,24.625999999999998
+1870,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2002,100.0
+1871,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,2002,22270.144119999997
+1872,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2002,300529000000.0
+1873,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,2002,294110.0
+1874,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2002,80.22926829
+1875,Italy,ITA,Population growth (annual %),SP.POP.GROW,2002,0.14891642900000002
+1876,Italy,ITA,Population in largest city,EN.URB.LCTY,2002,3720203.0
+1877,Italy,ITA,"Population, total",SP.POP.TOTL,2002,57059007.0
+1878,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,2002,5.0
+1879,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,2002,99.83511
+1880,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,2002,32.618
+1881,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,2002,100.0
+1882,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,2002,30056.586219999997
+1883,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2002,476226000000.0
+1884,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,2002,241930.0
+1885,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2002,78.14390244
+1886,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,2002,0.42333708
+1887,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,2002,7366701.0
+1888,United Kingdom,GBR,"Population, total",SP.POP.TOTL,2002,59370479.0
+1889,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,2002,6.0
+1890,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,2002,
+1891,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,2002,20.953000000000003
+1892,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2003,100.0
+1893,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,2003,29568.38595
+1894,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2003,454339000000.0
+1895,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,2003,547866.9922
+1896,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2003,79.11463415
+1897,France,FRA,Population growth (annual %),SP.POP.GROW,2003,0.7087791990000001
+1898,France,FRA,Population in largest city,EN.URB.LCTY,2003,9948123.0
+1899,France,FRA,"Population, total",SP.POP.TOTL,2003,62244886.0
+1900,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,2003,5.0
+1901,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,2003,
+1902,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,2003,23.368000000000002
+1903,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,2003,100.0
+1904,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,2003,30243.576530000002
+1905,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2003,724816000000.0
+1906,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,2003,348810.0
+1907,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2003,78.3804878
+1908,Germany,DEU,Population growth (annual %),SP.POP.GROW,2003,0.055363304
+1909,Germany,DEU,Population in largest city,EN.URB.LCTY,2003,3390456.0
+1910,Germany,DEU,"Population, total",SP.POP.TOTL,2003,82534176.0
+1911,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,2003,4.0
+1912,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,2003,99.64366
+1913,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,2003,24.423000000000002
+1914,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2003,100.0
+1915,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,2003,27465.6753
+1916,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2003,359640000000.0
+1917,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,2003,294140.0
+1918,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2003,79.98292683
+1919,Italy,ITA,Population growth (annual %),SP.POP.GROW,2003,0.44450731299999996
+1920,Italy,ITA,Population in largest city,EN.URB.LCTY,2003,3749039.0
+1921,Italy,ITA,"Population, total",SP.POP.TOTL,2003,57313203.0
+1922,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,2003,5.0
+1923,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,2003,99.59101
+1924,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,2003,32.499
+1925,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,2003,100.0
+1926,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,2003,34419.14791
+1927,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2003,534998000000.0
+1928,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,2003,241930.0
+1929,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2003,78.44634146
+1930,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,2003,0.46564111399999997
+1931,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,2003,7411269.0
+1932,United Kingdom,GBR,"Population, total",SP.POP.TOTL,2003,59647577.0
+1933,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,2003,6.0
+1934,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,2003,
+1935,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,2003,20.660999999999998
+1936,France,FRA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2004,100.0
+1937,France,FRA,GDP per capita (current US$),NY.GDP.PCAP.CD,2004,33741.26515
+1938,France,FRA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2004,538587000000.0
+1939,France,FRA,Land area (sq. km),AG.LND.TOTL.K2,2004,547566.9922
+1940,France,FRA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2004,80.16341463
+1941,France,FRA,Population growth (annual %),SP.POP.GROW,2004,0.7363135409999999
+1942,France,FRA,Population in largest city,EN.URB.LCTY,2004,10019801.0
+1943,France,FRA,"Population, total",SP.POP.TOTL,2004,62704895.0
+1944,France,FRA,"Primary education, duration (years)",SE.PRM.DURS,2004,5.0
+1945,France,FRA,Progression to secondary school (%),SE.SEC.PROG.ZS,2004,
+1946,France,FRA,Rural population (% of total population),SP.RUR.TOTL.ZS,2004,23.116999999999997
+1947,Germany,DEU,Access to electricity (% of population),EG.ELC.ACCS.ZS,2004,100.0
+1948,Germany,DEU,GDP per capita (current US$),NY.GDP.PCAP.CD,2004,34044.05363
+1949,Germany,DEU,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2004,857163000000.0
+1950,Germany,DEU,Land area (sq. km),AG.LND.TOTL.K2,2004,348770.0
+1951,Germany,DEU,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2004,78.68048780000001
+1952,Germany,DEU,Population growth (annual %),SP.POP.GROW,2004,-0.021709727999999998
+1953,Germany,DEU,Population in largest city,EN.URB.LCTY,2004,3388152.0
+1954,Germany,DEU,"Population, total",SP.POP.TOTL,2004,82516260.0
+1955,Germany,DEU,"Primary education, duration (years)",SE.PRM.DURS,2004,4.0
+1956,Germany,DEU,Progression to secondary school (%),SE.SEC.PROG.ZS,2004,99.82351
+1957,Germany,DEU,Rural population (% of total population),SP.RUR.TOTL.ZS,2004,24.221
+1958,Italy,ITA,Access to electricity (% of population),EG.ELC.ACCS.ZS,2004,100.0
+1959,Italy,ITA,GDP per capita (current US$),NY.GDP.PCAP.CD,2004,31259.7165
+1960,Italy,ITA,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2004,422325000000.0
+1961,Italy,ITA,Land area (sq. km),AG.LND.TOTL.K2,2004,294140.0
+1962,Italy,ITA,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2004,80.7804878
+1963,Italy,ITA,Population growth (annual %),SP.POP.GROW,2004,0.647182705
+1964,Italy,ITA,Population in largest city,EN.URB.LCTY,2004,3778139.0
+1965,Italy,ITA,"Population, total",SP.POP.TOTL,2004,57685327.0
+1966,Italy,ITA,"Primary education, duration (years)",SE.PRM.DURS,2004,5.0
+1967,Italy,ITA,Progression to secondary school (%),SE.SEC.PROG.ZS,2004,99.63237
+1968,Italy,ITA,Rural population (% of total population),SP.RUR.TOTL.ZS,2004,32.38
+1969,United Kingdom,GBR,Access to electricity (% of population),EG.ELC.ACCS.ZS,2004,100.0
+1970,United Kingdom,GBR,GDP per capita (current US$),NY.GDP.PCAP.CD,2004,40290.313969999996
+1971,United Kingdom,GBR,Imports of goods and services (current US$),NE.IMP.GNFS.CD,2004,634716000000.0
+1972,United Kingdom,GBR,Land area (sq. km),AG.LND.TOTL.K2,2004,241930.0
+1973,United Kingdom,GBR,"Life expectancy at birth, total (years)",SP.DYN.LE00.IN,2004,78.74634146
+1974,United Kingdom,GBR,Population growth (annual %),SP.POP.GROW,2004,0.568943113
+1975,United Kingdom,GBR,Population in largest city,EN.URB.LCTY,2004,7456170.0
+1976,United Kingdom,GBR,"Population, total",SP.POP.TOTL,2004,59987905.0
+1977,United Kingdom,GBR,"Primary education, duration (years)",SE.PRM.DURS,2004,6.0
+1978,United Kingdom,GBR,Progression to secondary school (%),SE.SEC.PROG.ZS,2004,
+1979,United Kingdom,GBR,Rural population (% of total population),SP.RUR.TOTL.ZS,2004,20.371
