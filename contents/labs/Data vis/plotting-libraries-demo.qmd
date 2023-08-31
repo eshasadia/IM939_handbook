@@ -1,0 +1,109 @@
+---
+title: "Plotting libraries gallery"
+format: html
+---
+
+Python has a number of plotting libraries, such as `matplotlib` `seaborn` `bokeh` or `altair`, plotly, bokeh amongst others. Each has it's own pros and cons.
+This is a short gallery of different visualisation types created using the most frequent plotting libraries.
+
+First, we are going to load the required libraries:
+
+``` {python #sec-setup }
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import altair as alt
+```
+
+
+## Scatterplots
+
+Let's load some sample data
+
+```{python}
+# df = pd.read_csv()
+diamonds = sns.load_dataset("diamonds")
+
+type(diamonds)
+
+diamonds.head()
+
+```
+
+And let's get some summary statistics for every variable:
+
+```{python}
+diamonds.describe()
+```
+
+::: panel-tabset
+
+### Pandas
+
+``` {python}
+diamonds.plot.scatter(x="carat", y="price", c="clarity", cmap="Set1", s="depth", title="My fancy scatterplot using Pandas")
+```
+
+Considerations: 
+
+- Works with dataframes
+- One liner
+- TODO: scale sizes within a range
+
+### Matplotlib
+
+``` {python}
+# plot
+plt.scatter(x=diamonds['carat'], y=diamonds['price'], 
+           s=diamonds['depth'], 
+           #c=diamonds['clarity'], 
+           vmin=0, vmax=100)
+
+
+```
+
+Considerations:
+
+- Matplotlib does not work with dataframes, but series. If we want to use pandas, we need to subset the specific columns and pass them to the arguments.
+- TODO: map colours to variables. Probably refer to <https://matplotlib.org/stable/tutorials/colors/colormap-manipulation.html>
+
+
+### Seaborn
+
+``` {python}
+# Draw a scatter plot while assigning point colors and sizes to different
+# variables in the dataset
+f, ax = plt.subplots(figsize=(6.5, 6.5))
+#sns.despine(f, left=True, bottom=True)
+#clarity_ranking = ["I1", "SI2", "SI1", "VS2", "VS1", "VVS2", "VVS1", "IF"]
+sns.scatterplot(data=diamonds,  # Dataset
+                x="carat", y="price", # attributes to be used as x and y
+                hue="clarity", # mappging hue to an attribute
+                size="depth", # mapping size to an attribute
+                #palette="ch:r=-.2,d=.3_r", # custom color palette
+                #hue_order=clarity_ranking,
+                sizes=(1, 8), 
+                linewidth=0,
+                ax=ax)
+
+```
+
+### Altair
+
+``` {python}
+alt.Chart(diamonds).mark_circle(size=60).encode(
+    x='carat',
+    y='price',
+    #color='clarity',
+    tooltip=['Name', 'carat', 'Price', 'Clarity']
+).interactive()
+```
+
+
+:::
+
+## Barplots
+
+## Subplots
+
