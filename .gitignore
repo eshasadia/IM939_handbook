@@ -1,4 +1,17 @@
+# OS specifics
 .DS_Store
+
+# Quarto specifics
+/.quarto/
+.Rproj.user
+
+# Quarto book specifics
+_book/
+_freeze/
+.jupyter_cache/
+.jupyter_checkpoints/
+*/.jupyter_cache/
+*/.jupyter_checkpoints/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -163,3 +176,6 @@ cython_debug/
 
 
 .Rproj.user
+
+/env/
+/.quarto/

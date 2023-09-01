@@ -1,0 +1,17 @@
+name: IM939
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python = 3.11.4
+  - pandas = 2.0.3
+  - pip
+  - altair = 5.0.1
+  - geopandas = 0.13.2
+  - jupyterlab
+  - openpyxl = 3.1.2
+  - quarto
+  - scikit-learn
+  - seaborn = 0.12.2
+  - pip:
+    - ghp-import

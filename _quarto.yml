@@ -1,0 +1,89 @@
+project:
+  type: book
+
+book:
+  title: "Data Science Across Disciplines"
+  image: media/IM939_logo.png
+  
+  author: 
+    - name: "Cagatay Turkay"
+      affiliation: University of Warwick (CIM)
+      affiliation-url: http://warwick.ac.uk/cim
+      orcid: 0000-0001-6788-251X
+    - name: "Carlos Cámara"
+      url: http://carloscamara.es/en
+      affiliation: University of Warwick (CIM)
+      affiliation-url: http://warwick.ac.uk/cim
+      orcid: 0000-0002-9378-0549
+    - name: "James Tripp"
+      affiliation:  University of Warwick (IDG)
+      orcid: 0000-0003-2471-3411
+  
+  date: "8/14/2023"
+  favicon: media/CIM_logo.png
+  #cover-image: media/IM939_logo.png
+  twitter-card: true
+  
+  site-url: https://warwickcim.github.io/IM939_handbook/
+  repo-url: https://github.com/WarwickCIM/IM939_handbook
+  repo-actions: [edit, issue]
+  
+  #downloads: [pdf, epub]
+  downloads: [pdf]
+
+  sidebar:
+    collapse-level: 1
+    logo: media/IM939_logo.png
+
+  chapters:
+    - index.qmd
+    - part: "About"
+      chapters:
+        - content/about/teaching_staff.md
+        #- content/about/conventions.qmd
+    - part: content/sessions/unit-01-overview.md
+      chapters:
+        - content/sessions/session-01.md
+        - content/labs/lab-01.md
+        - content/labs/Lab_1/IM939_Lab_1_1.ipynb
+        - content/labs/Lab_1/IM939_Lab_1_2.ipynb
+    - part: "Thinking Data: Theoretical and Practical Concerns"
+      chapters: 
+        - content/labs/Lab_2/IM939_Lab_2_1.ipynb
+        - content/labs/Lab_2/IM939_Lab_2_2.ipynb
+        - content/labs/Lab_2/IM939_Lab_2_3.ipynb
+        - content/labs/Lab_2/IM939_Lab_2_4.ipynb
+    - part: "Abstractions & Models"
+      chapters: 
+        - content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.ipynb
+    - content/references.qmd
+  appendices:
+     - README_setup.md
+
+  page-footer: 
+    left: "[Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/)" 
+    right: 
+      - icon: github
+        href: https://github.com/WarwickCIM/
+      - icon: twitter 
+        href: https://twitter.com/cimethods
+      - icon: instagram
+        href: https://www.instagram.com/cimethods/
+
+
+execute: 
+  enabled: true
+  freeze: true
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: [cosmo, css/warwick.scss] # More themes here: https://quarto.org/docs/output-formats/html-themes.html
+    reference-location: margin # Footnotes' position.
+  pdf:
+    documentclass: scrreprt
+    cover-image: media/IM939_logo.png
+
+editor: visual
+

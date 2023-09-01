@@ -1,0 +1,148 @@
+# Conventions {.unnumbered}
+
+This handbook uses the following conventions to make learning easier. Please note that many of these conventions are also used in many other books, websites, projects... about programming, so it's worth spending some time reading and understanding them.
+
+## Text format
+
+*italics* will be used for these cases:
+
+-   Highlight some technical terms
+-   Book titles
+
+Sometimes you will see text written in `monospace`. This refers to something related to code. It can be:
+
+-   a **function**: i.e. `help()` (functions always end with `()`)
+-   a **file** following the pattern `script.R` or `script.py` or something more generic like `*.py` (filenames always have a name, a `.`, and a file extension)
+-   a **folder**, like `folder_name/`. Folders always have a trailing `/` and don't have a `.` and an extension.
+-   a **package or library**, like R's `{ggplot}` or Python's `pandas` (by convention, r packages are written using curly brackets, like this `{<package-name>}`)
+-   any character or characters that need to be copied.
+
+### Placeholder texts
+
+Sometimes, instead of using an exact name that needs to be copied in your script, we will be using a placeholder that may change in certain circumstances but they will always follow a certain structure. Placeholders are always written between `<>` like this: `read.csv(<filename>.R)` this means that when you run your code, you will have to replace the placeholder `<filename>` with the actual name of your file, which may differ from one person to another. After replacing the placeholder, it could be something like this: `read.csv(my_fancy_file.R)`
+
+### Annotations and highlights
+
+From time to time, you may see some highlighted words or sentences. These highlights and annotations are an experimental feature and are community-notes and highlights. This means that anyone can highlight or comment anything they find relevant, and even engage in conversations![^conventions-1].
+
+[^conventions-1]: This feature is provided by [hypothes.is](https://hypothes.is), which is a 3rd party and requires creating a free account.
+
+In order to highlight text you have to:
+
+1.  Select a word or sentence
+2.  Click on the icon "highlight" that will show up (@fig-hypothesis)
+
+In order to annotate, you need to do the same, but you will need to have a (free) account in [hypothes.is](https://hypothes.is)
+
+![Highlighting or annotating menu](assets/img/hipothesis_highlight.png){#fig-hypothesis}
+
+## Code blocks {#sec-code-blocks}
+
+Code blocks represent what you would need to type in your programming language's terminal or script. You can copy their content and paste it in your IDE to run the code or copy and paste and try to modify it to experiment with it and learn how the code works.
+
+::: callout-tip
+### Copying code block's content
+
+For your ease of use, you can copy the whole content of the code block by hovering over them and clicking on the icon on the top right.
+:::
+
+The following is a code block:
+
+``` python
+# This is a comment in a code block.
+import pandas as pd 
+
+url = "https://raw.githubusercontent.com/WarwickCIM/IM939_handbook/main/contents/labs/Lab_1/data/office_ratings.csv?token=GHSAT0AAAAAAB5OHTRATAOBROM4NPAOJJCYZHR3F5A"
+
+df = pd.read_csv(url)
+```
+
+Some blocks have the resulting code below, exactly as it would appear if we ran it in a terminal using R or Python[^conventions-2].
+
+[^conventions-2]: In fact, this whole book has been created using literate programming, which combines text and code. The code displayed in these codeblocks has actually been run when creating the book, in exactly the same way it would have happened in a regular script. 
+
+```{python}
+# This is a code block with resulting code.
+print("This is the output resulting from the code above")
+```
+
+Output can be a simple line (like above) or something more complex, like this:
+
+```python
+
+# We are displaying the first rows (head) of a dataframe.
+df.head()
+```
+
+or even images:
+
+``` python
+
+# TODO: write some code here
+```
+
+Some code blocks may have some line numbers that make it easier to explain what's going on. For example in the code below, line 2 loads a library (we'll learn about that in @sec-extending-r). Line 4 loads an existing dataframe (the one we used before with information about cars: `mtcars`) and has a pipe operator at the end (the `%>%`) that means that the next line is chained. Line 5 takes the `mtcars` as its first argument (because of the pipe operator) and out of every column in that dataframe, selects only the following two columns: `cyl` and `wt` and continues chaining operations. Line 6 shows the first 6 rows of the resulting dataframe:
+
+```python 
+#| message: false
+#| code-line-numbers: "2,5"
+
+# This is an example of R's chaining operations for data manipulation.
+
+import pandas as pd
+
+```
+
+## Callouts
+
+Callouts are texts that outstand from the regular content for some of these reasons:
+
+::: callout-note
+This is a note, used for...
+:::
+
+::: callout-tip
+## Pro-Tip
+
+This is a tip that will make your life easier.
+:::
+
+::: callout-important
+## This is Important
+
+If you were to remember just some bits of what you've been reading, this text should be one of those important bits.
+:::
+
+::: callout-warning
+Danger, if you do not pay attention to this, things may not work as expected or not work at all!
+:::
+
+::: callout-caution
+## Action needed
+
+This is prompting you to do something, either answering a question or doing some exercise.
+:::
+
+Additionally, some callouts can be expanded to see their content. This can be either because:
+
+1.  their contents are optional, and they are collapsed by default not to overwhelm you with unnecessary information.
+
+::: {.callout-tip collapse="true"}
+## Expand to learn more
+
+Although strictly speaking, you might not need to learn this, it will make your life easier.
+:::
+
+2.  they give a solution to a question
+
+::: {.callout-caution collapse="true"}
+## Question
+
+This is an answer
+:::
+
+## Bibliographical references
+
+Sometimes you'll see texts with bliographical references such as: "See @knuth84 for additional discussion of literate programming."
+
+You can click over the reference to see the full details or visit chapter [References](references.qmd)
