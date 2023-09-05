@@ -1,6 +1,12 @@
 # Setup & Usage
 
-This repository uses the following technologies: - conda for creating and managing virtual environments - jupyter notebooks for course materials combining rich-text and code - [quarto](https://quarto.org) to generate the handbook
+This repository uses the following technologies:
+
+-   `conda environments` (part of [Anaconda](https://www.anaconda.com/)) for creating and managing virtual environments
+
+-   [jupyter](https://jupyter.org/) notebooks for course materials combining rich-text and code
+
+-   [quarto](https://quarto.org) to generate the handbook
 
 ## Setting up the environment
 
@@ -21,7 +27,9 @@ If you get a `command not found` error, you will need to install Anaconda follow
 ### Creating the virtual environment
 
 ::: callout-note
+
 You only need to do this once in the same machine. After the virtual environment is created we can always update it to follow any change in the file `environment.yml`
+
 :::
 
 To recreate the virtual environment from `environment.yml`, run the following command:
@@ -51,9 +59,11 @@ conda activate env/
 ```
 
 ::: callout-important
-## Once per session
+
+#### Once per session
 
 You will need to activate the environment every time you open your editor anew.
+
 :::
 
 **Deactivate virtual environment:**
@@ -81,7 +91,9 @@ conda env export > environment.yml
 ## Recreating the handbook
 
 ::: callout-tip
+
 Quarto has extensive documentation at their website (specifically in this page about authoring document and this other on managing books).
+
 :::
 
 The workflow can be summarised as follows (detailed instructions below):
@@ -113,6 +125,7 @@ quarto render
 ```
 
 ::: callout-warning
+
 #### First time render
 
 On its first run, this command will take several minutes to process. This is because quarto will run and execute the computations in every cell within every jupyter notebook, some of which are really time consuming. The good news, is that quarto will create a cached version of it (stored in the `/_freeze/` folder) , which means that further runs of `quarto render` will not need to execute the cells again (unless the original jupyternotebook is changed or the corresponding folder is deleted).
@@ -122,6 +135,7 @@ If you want the cache to be regenerated:
 ``` bash
 quarto render --cache-refresh
 ```
+
 :::
 
 ### Publishing book to github pages
@@ -137,7 +151,9 @@ quarto publish gh-pages
 This command will render the book in the branch gh-pages and will push it to the corresponding branch in our repo and then checking out again to the previous branch (usually, `main`). More info about it here: <https://quarto.org/docs/publishing/github-pages.html>
 
 ::: callout-note
+
 ## Other useful resources
 
 -   Notebook embedding: https://quarto.org/docs/authoring/notebook-embed.html
+
 :::
