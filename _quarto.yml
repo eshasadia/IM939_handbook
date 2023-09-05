@@ -41,10 +41,9 @@ book:
       chapters:
         - content/about/teaching_staff.md
         #- content/about/conventions.qmd
-    - part: content/sessions/unit-01-overview.md
+    - part: "Introduction and Historical Perspectives"
       chapters:
         - content/sessions/session-01.md
-        - content/labs/lab-01.md
         - content/labs/Lab_1/IM939_Lab_1_1.ipynb
         - content/labs/Lab_1/IM939_Lab_1_2.ipynb
     - part: "Thinking Data: Theoretical and Practical Concerns"
@@ -56,9 +55,34 @@ book:
     - part: "Abstractions & Models"
       chapters: 
         - content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.ipynb
+        - content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.ipynb
+        - content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.ipynb
+    - part: "Structures & Spaces"
+      chapters:
+        - content/labs/Lab_4/IM939_Lab_4_1_Iris.ipynb
+        - content/labs/Lab_4/IM939_Lab_4_2_Crime.ipynb
+        - content/labs/Lab_4/IM939_Lab_4_Exercises.ipynb
+    - part: "Multi-model thinking and rigour"
+      chapters:
+        - content/labs/Lab_5/IM939_Lab_5_1.ipynb
+        - content/labs/Lab_5/IM939_Lab_5_2.ipynb
+        - content/labs/Lab_5/IM939_Lab_5_3.ipynb
+        - content/labs/Lab_5/IM939_lab_5_Exercise.ipynb
+    - part: "Recognising and avoiding traps"
+      chapters:
+        - content/labs/Lab_6/IM939_Lab_6_1-Setup_and_illusions.ipynb
+        - content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.ipynb
+        - content/labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb
+        - content/labs/Lab_6/IM939_Lab_6_4-Exercises.ipynb
+        - content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb
+    - part: "Data Science & Society"
+      chapters:
+        - content/labs/Lab_7/IM939_Lab7-Part1.ipynb
+        - content/labs/Lab_7/IM939_Lab7-Part2.ipynb
     - content/references.qmd
   appendices:
      - README_setup.md
+     - content/files-and-folders.md
 
   page-footer: 
     left: "[Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/)" 

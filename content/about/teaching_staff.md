@@ -24,7 +24,7 @@ This module has also been taught by the following people in the past (in alphabe
 
 - **Cagatay Turkay**, Professor (202X-Present)
 - **Carlos Cámara-Menoyo**, Senior Research Software Engineer (2022-Present)
-- **James Tripp**, Senior Research Software Engineer (2021-2022)
+- **James Tripp**, Senior Research Software Engineer (2020-2022)
 - **Yulu Pi**, Teaching Assistant (2022-2023)
 - **Zofia Bednarowska-Michaiel**, Teaching Fellow (2021-2022)
 

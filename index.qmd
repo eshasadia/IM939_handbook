@@ -32,24 +32,5 @@ This week explores the cultural, ethical, and critical challenges posed by data 
 
 This handbook has been created by Carlos Cámara-Menoyo and Cagatay Turkay, based on the materials from previous years created by Cagatay Turkay and James Tripp.
 
-## Table of contents
+## Licence
 
-Currently, this book is replicating the existing structure consiting of one repo for sessions (Cagatay's repo) and another one for labs' content (James) by mapping each repo into two different sections: Sessions and Labs.
-
-::: callout-tip
-### Proposed table of contents
-
-However, I suspect, though, that if we proceed with the handbook, the structure should be based on units/weeks, and every unit should contain both, the session and the labs
-
-```         
-- 1: Introduction, Historical Perspectives & Basic Concepts
-    - Session
-    - Labs
-- 2: Thinking data
-    - Session (probably on the root?)
-    - Labs
-...
-```
-:::
-
-This week discusses data science as a field that cuts across disciplines and provides a historical perspective on the subject. We discuss the terms Data Science and Data Scientists, reflect on examples of Data Science projects, and discuss the research process at a methodological level.

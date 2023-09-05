@@ -1,4 +1,4 @@
-# Introduction, Historical Perspectives & Basic Concepts {#sec-session-1}
+# Session 1 {#sec-session-1}
 
 ::: {.callout-warning}
 This page is still a stub
