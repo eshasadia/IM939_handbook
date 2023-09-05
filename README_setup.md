@@ -124,11 +124,17 @@ quarto render --cache-refresh
 ```
 :::
 
-### Publishing book to github pages:
+### Publishing book to github pages
+
+This book is published using GitHub pages, and assumes that your rendered book will be located on a dedicated branch called `gh-pages` which needs to be created in the repo if not present already. Also, the repository needs to be configured as to use that branch's root for publishing a GithubPage.
+
+Once `gh-pages`branch has been created, run the following command:
 
 ``` bash
 quarto publish gh-pages   
 ```
+
+This command will render the book in the branch gh-pages and will push it to the corresponding branch in our repo and then checking out again to the previous branch (usually, `main`). More info about it here: <https://quarto.org/docs/publishing/github-pages.html>
 
 ::: callout-note
 ## Other useful resources
