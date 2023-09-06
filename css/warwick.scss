@@ -38,10 +38,12 @@ $link-color: $w_aubergine;
   
 .sidebar-item-section{
   font-weight: 300;
+  a.active {
+    font-weight: 500;
+  }
   > div:first-of-type {
-    font-weight: 400;
+    font-weight: 500;
     font-variant: small-caps;
-    //text-transform: uppercase;
     }
   
 }
