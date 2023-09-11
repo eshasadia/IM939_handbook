@@ -1,1 +1,1 @@
-Sitemap: https://pages.github.warwick.ac.uk/CIM-Methods/IM939_handbook/sitemap.xml
+Sitemap: https://warwickcim.github.io/IM939_handbook/sitemap.xml
