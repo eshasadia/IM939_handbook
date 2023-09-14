@@ -12,6 +12,8 @@ I have a special interest in working on problems where high-dimensional, spatio-
 
 *Assistant Professor*
 
+Agent-based Modelling, Computational Modelling for Public Policy, Network Analysis, and Participatory Research Methods are my areas of research interest and expertise. I continue to work at the intersection of academic research and public policy through which I see firsthand the impact of reliable data analysis and effective story telling using data on decision-making. 
+
 #### Carlos Cámara-Menoyo
 
 <img src="../../media/staff-carlos.png" class="img-fluid" align="right" width="150"> *Senior Research Software Engineer*
