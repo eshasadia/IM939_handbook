@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 9&nbsp; IM939 - Lab 3 - Regression</title>
+<title>Data Science Across Disciplines - 10&nbsp; IM939 - Lab 3 - Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 9&nbsp; IM939 - Lab 3 - Regression">
+<meta name="twitter:title" content="Data Science Across Disciplines - 10&nbsp; IM939 - Lab 3 - Regression">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression_files/figure-html/cell-5-output-2.png">
 <meta name="twitter:image-height" content="858">
@@ -120,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -173,6 +173,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Teaching Staff</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/about/teaching_materials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching materials</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -187,19 +193,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Session 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">IM939 - Lab 1 - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lab: Introduction to Python</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_1/IM939_Lab_1_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">IM939 - Lab 1 - Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab: Repetition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/labs/Lab_1/IM939_Lab_1_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Lab: Libraries</span></span></a>
   </div>
 </li>
       </ul>
@@ -216,25 +228,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 4</span></span></a>
   </div>
 </li>
       </ul>
@@ -251,19 +263,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -280,19 +292,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 1 - Iris</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 1 - Iris</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 2 - Crime</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 2 - Crime</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 3 - Exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 3 - Exercises</span></span></a>
   </div>
 </li>
       </ul>
@@ -309,25 +321,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_lab_5_Exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -344,31 +356,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-Setup_and_illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 1 - Setup and Illusions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 1 - Setup and Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 2 - Axes manipulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 2 - Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 3 - Choropleths</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 3 - Choropleths</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 4 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 4 - Exercise</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
   </div>
 </li>
       </ul>
@@ -385,13 +397,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -435,17 +447,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#scikit-learn" id="toc-scikit-learn" class="nav-link active" data-scroll-target="#scikit-learn"><span class="header-section-number">9.1</span> Scikit Learn</a></li>
-  <li><a href="#sea-ice-dataset" id="toc-sea-ice-dataset" class="nav-link" data-scroll-target="#sea-ice-dataset"><span class="header-section-number">9.2</span> Sea Ice Dataset</a></li>
-  <li><a href="#simple-and-multiple-linear-regression" id="toc-simple-and-multiple-linear-regression" class="nav-link" data-scroll-target="#simple-and-multiple-linear-regression"><span class="header-section-number">9.3</span> Simple and Multiple Linear Regression</a></li>
-  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">9.4</span> Ordinary Least Squares</a></li>
-  <li><a href="#case-study-climate-change-and-sea-ice-extent" id="toc-case-study-climate-change-and-sea-ice-extent" class="nav-link" data-scroll-target="#case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">10</span> Case study: Climate Change and Sea Ice Extent</a>
+  <li><a href="#scikit-learn" id="toc-scikit-learn" class="nav-link active" data-scroll-target="#scikit-learn"><span class="header-section-number">10.1</span> Scikit Learn</a></li>
+  <li><a href="#sea-ice-dataset" id="toc-sea-ice-dataset" class="nav-link" data-scroll-target="#sea-ice-dataset"><span class="header-section-number">10.2</span> Sea Ice Dataset</a></li>
+  <li><a href="#simple-and-multiple-linear-regression" id="toc-simple-and-multiple-linear-regression" class="nav-link" data-scroll-target="#simple-and-multiple-linear-regression"><span class="header-section-number">10.3</span> Simple and Multiple Linear Regression</a></li>
+  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">10.4</span> Ordinary Least Squares</a></li>
+  <li><a href="#case-study-climate-change-and-sea-ice-extent" id="toc-case-study-climate-change-and-sea-ice-extent" class="nav-link" data-scroll-target="#case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">11</span> Case study: Climate Change and Sea Ice Extent</a>
   <ul class="collapse">
-  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">10.1</span> Reading Data</a></li>
-  <li><a href="#data-visualisation-to-explore-data" id="toc-data-visualisation-to-explore-data" class="nav-link" data-scroll-target="#data-visualisation-to-explore-data"><span class="header-section-number">10.2</span> Data visualisation to explore data</a></li>
-  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization"><span class="header-section-number">10.3</span> Normalization</a></li>
-  <li><a href="#pearsons-correlation" id="toc-pearsons-correlation" class="nav-link" data-scroll-target="#pearsons-correlation"><span class="header-section-number">10.4</span> Pearson’s correlation</a></li>
-  <li><a href="#simple-ols" id="toc-simple-ols" class="nav-link" data-scroll-target="#simple-ols"><span class="header-section-number">10.5</span> Simple OLS</a></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">11.1</span> Reading Data</a></li>
+  <li><a href="#data-visualisation-to-explore-data" id="toc-data-visualisation-to-explore-data" class="nav-link" data-scroll-target="#data-visualisation-to-explore-data"><span class="header-section-number">11.2</span> Data visualisation to explore data</a></li>
+  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization"><span class="header-section-number">11.3</span> Normalization</a></li>
+  <li><a href="#pearsons-correlation" id="toc-pearsons-correlation" class="nav-link" data-scroll-target="#pearsons-correlation"><span class="header-section-number">11.4</span> Pearson’s correlation</a></li>
+  <li><a href="#simple-ols" id="toc-simple-ols" class="nav-link" data-scroll-target="#simple-ols"><span class="header-section-number">11.5</span> Simple OLS</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -455,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></h1>
 </div>
 
 
@@ -471,17 +483,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>Our aim is to introduce simple linear regression in Python.</p>
-<section id="scikit-learn" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="scikit-learn"><span class="header-section-number">9.1</span> Scikit Learn</h2>
+<section id="scikit-learn" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="scikit-learn"><span class="header-section-number">10.1</span> Scikit Learn</h2>
 <p>We are going to use Scikit Learn library. More information about the librry you can find here: https://www.tutorialspoint.com/scikit_learn/scikit_learn_linear_regression.htm</p>
 </section>
-<section id="sea-ice-dataset" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="sea-ice-dataset"><span class="header-section-number">9.2</span> Sea Ice Dataset</h2>
+<section id="sea-ice-dataset" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sea-ice-dataset"><span class="header-section-number">10.2</span> Sea Ice Dataset</h2>
 <p>The script below is the based on the Sea Ice dataset (Igual, Segui 2017). You can find the data here: ftp://sidads.colorado.edu/DATASETS/NOAA/ or read more about the project here: https://nsidc.org/data/seaice_index</p>
 <p>This notebook will walk you through an example of a simple linear regression and the other notebook “IM939 Lab 3 - Linear Regression Exercise.ipynb” will include the example of a multiple linear regression, too.</p>
 </section>
-<section id="simple-and-multiple-linear-regression" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="simple-and-multiple-linear-regression"><span class="header-section-number">9.3</span> Simple and Multiple Linear Regression</h2>
+<section id="simple-and-multiple-linear-regression" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="simple-and-multiple-linear-regression"><span class="header-section-number">10.3</span> Simple and Multiple Linear Regression</h2>
 <p>In the <strong>linear model</strong> the response <span class="math inline">\(\textbf{y}\)</span> depends linearly from the covariates <span class="math inline">\(\textbf{x}_i\)</span>.</p>
 <p>In the <strong>simple</strong> linear regression, with a single variable, we described the relationship between the predictor and the response with a straight line. The general linear model: <span class="math display">\[ \textbf{y}  =  a_0+ a_1 \textbf{x}_1 \]</span></p>
 <p>The parameter <span class="math inline">\(a_0\)</span> is called the <em>constant</em> term or the <em>intercept</em>.</p>
@@ -489,17 +501,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="math display">\[ \textbf{y}  =  a_1 \textbf{x}_1  + \dots + a_m \textbf{x}_{m} \]</span></p>
 <p>The <span class="math inline">\(a_i\)</span> are termed the <em>parameters</em> of the model or the coefficients.</p>
 </section>
-<section id="ordinary-least-squares" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">9.4</span> Ordinary Least Squares</h2>
+<section id="ordinary-least-squares" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">10.4</span> Ordinary Least Squares</h2>
 <p>Ordinary Least Squares (OLS) is the simplest and most common <strong>estimator</strong> in which the coefficients <span class="math inline">\(a\)</span>’s of the simple linear regression: <span class="math inline">\(\textbf{y} = a_0+a_1 \textbf{x}\)</span>, are chosen to minimize the <strong>square of the distance between the predicted values and the actual values</strong>.</p>
 <p><span class="math display">\[ ||a_0 + a_1 \textbf{x} -  \textbf{y} ||^2_2 = \sum_{j=1}^n (a_0+a_1 x_{j} -  y_j )^2,\]</span></p>
 <p>This expression is often called <strong>sum of squared errors of prediction (SSE)</strong>.</p>
 </section>
-<section id="case-study-climate-change-and-sea-ice-extent" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Case study: Climate Change and Sea Ice Extent</h1>
+<section id="case-study-climate-change-and-sea-ice-extent" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Case study: Climate Change and Sea Ice Extent</h1>
 <p>The question: Has there been a decrease in the amount of ice in the last years?</p>
-<section id="reading-data" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">10.1</span> Reading Data</h2>
+<section id="reading-data" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">11.1</span> Reading Data</h2>
 <p>There are five steps. First, let’s upload the data that is already in the folder: SeaIce.txt. It is a text file.</p>
 <p>The file <em>‘SeaIce.txt’</em> is a <code>Tab</code> separated file containing: + Year: 4-digit year + mo: 1- or 2-digit month + data_type: Input data set (Goddard/NRTSI-G) + region: Hemisphere that this data covers (N: Northern; S: Southern) + extent: Sea ice extent in millions of square km + area: Sea ice area in millions of square km</p>
 <p>Once we upload the data, we can create a <em>DataFrame</em> using Pandas. A reminder what is DataFrame: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html</p>
@@ -594,8 +606,8 @@ dtype: float64</code></pre>
 </div>
 <p>Did we receive a negative mean…?</p>
 </section>
-<section id="data-visualisation-to-explore-data" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="data-visualisation-to-explore-data"><span class="header-section-number">10.2</span> Data visualisation to explore data</h2>
+<section id="data-visualisation-to-explore-data" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="data-visualisation-to-explore-data"><span class="header-section-number">11.2</span> Data visualisation to explore data</h2>
 <p>Do you remember Seaborn? We will use lmplot() function from Seaborn to explore linear relationship of different forms, e.g.&nbsp;relationship between the month of the year (variable) and extent (responses):</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -666,8 +678,8 @@ dtype: float64</code></pre>
 </div>
 <p>Above you can see ice extent data by month. You can see a monthly fluctuation of the sea ice extent, as would be expected for the different seasons of the year. In order to run regression, and avoid this fluctuation we can normalize data. This will let us see the evolution of the extent over the years.</p>
 </section>
-<section id="normalization" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="normalization"><span class="header-section-number">10.3</span> Normalization</h2>
+<section id="normalization" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="normalization"><span class="header-section-number">11.3</span> Normalization</h2>
 <p>The <code>lmplot()</code> function from the Seaborn module is intended for exploring linear relationships of different forms in multidimensional datesets. Input data must be in a Pandas DataFrame. To plot them, we provide the predictor and response variable names along with the dataset</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
@@ -805,8 +817,8 @@ var: 31.983239774968798</code></pre>
 </div>
 </div>
 </section>
-<section id="pearsons-correlation" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="pearsons-correlation"><span class="header-section-number">10.4</span> Pearson’s correlation</h2>
+<section id="pearsons-correlation" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="pearsons-correlation"><span class="header-section-number">11.4</span> Pearson’s correlation</h2>
 <p>Let’s calculate Pearson’s correlation coefficient and the p-value for testing non-correlation.</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats</span>
@@ -816,8 +828,8 @@ var: 31.983239774968798</code></pre>
 </div>
 </div>
 </section>
-<section id="simple-ols" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="simple-ols"><span class="header-section-number">10.5</span> Simple OLS</h2>
+<section id="simple-ols" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="simple-ols"><span class="header-section-number">11.5</span> Simple OLS</h2>
 <p>We can also compute the trend as a simple linear regression (OLS) and quantitatively evaluate it.</p>
 <p>For that we use using <strong>Scikit-learn</strong>, library that provides a variety of both supervised and unsupervised machine learning techniques. Scikit-learn provides an object-oriented interface centered around the concept of an Estimator. The <code>Estimator.fit</code> method sets the state of the estimator based on the training data. Usually, the data is comprised of a two-dimensional numpy array <span class="math inline">\(X\)</span> of shape <code>(n_samples, n_predictors)</code> that holds the so-called feature matrix and a one-dimensional numpy array <span class="math inline">\(\textbf{y}\)</span> that holds the responses. Some estimators allow the user to control the fitting behavior. For example, the <code>sklearn.linear_model.LinearRegression</code> estimator allows the user to specify whether or not to fit an intercept term. This is done by setting the corresponding constructor arguments of the estimator object. During the fitting process, the state of the estimator is stored in instance attributes that have a trailing underscore (’<em>’). For example, the coefficients of a LinearRegression estimator are stored in the attribute coef</em>.</p>
 <p>Estimators that can generate predictions provide a <code>Estimator.predict</code> method. In the case of regression, <code>Estimator.predict</code> will return the predicted regression values, <span class="math inline">\(\hat{\textbf{y}}\)</span>.</p>
@@ -1155,12 +1167,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression Exercise</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression Exercise</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
