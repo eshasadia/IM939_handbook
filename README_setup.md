@@ -1,4 +1,4 @@
-# Setup & Usage
+# Setup & Usage {#sec-setup}
 
 This repository uses the following technologies:
 

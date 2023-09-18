@@ -1,20 +1,17 @@
 ## Welcome {.unnumbered}
 
-This is the handbook for [IM939: Data Science Across Disciplines](https://cagatayturkay.github.io/data-science-across-disciplines), taught at the [Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/) at the University of Warwick.
+This is the handbook for [IM939: Data Science Across Disciplines](https://cagatayturkay.github.io/data-science-across-disciplines), taught at the [Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/) at the University of Warwick and taught[^1] by [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader), Kavin Narasimhan
+and [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
 
-Teaching Staff[^1]:
-
-[^1]: For a comprehensive list of past and current staff members, refer to @sec-staff-past
-
--   [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader)
--   Kavin Narasimhan
--   [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
+[^1]: For a comprehensive list of past and current staff members, refer to @sec-teaching-staff
 
 ![IM939 Logo](media/IM939_logo.png)
 
 ## What this module is about?
 
-This module introduces students to the fundamental techniques, concepts and contemporary discussions across the broad field of data science. With data and data related artefacts becoming ubiquitous in all aspects of social life, data science gains access to new sources of data, is taken up across an expanding range of research fields and disciplines, and increasingly engages with societal challenges. The module provides an advanced introduction to the theoretical and scientific frameworks of data science, and to the fundamental techniques for working with data using appropriate procedures, algorithms and visualisation. Students learn how to critically approach data and data-driven artefacts, and engage with and critically reflect on contemporary discussions around the practice of data science, its compatibility with different analytics frameworks and disciplinary, and its relation to on-going digital transformations of society. As well as lectures discussing the theoretical, scientific and ethical frameworks of data science, the module features coding labs and workshops that expose students to the practice of working effectively with data, algorithms, and analytical techniques, as well as providing a platform for reflective and critical discussions on data science practices, resulting data artefacts and how they can be interpreted, actioned and influence society.
+This module introduces students to the fundamental techniques, concepts and contemporary discussions across the broad field of data science. With data and data related artefacts becoming ubiquitous in all aspects of social life, data science gains access to new sources of data, is taken up across an expanding range of research fields and disciplines, and increasingly engages with societal challenges. The module provides an advanced introduction to the theoretical and scientific frameworks of data science, and to the fundamental techniques for working with data using appropriate procedures, algorithms and visualisation. 
+
+Students learn how to critically approach data and data-driven artefacts, and engage with and critically reflect on contemporary discussions around the practice of data science, its compatibility with different analytics frameworks and disciplinary, and its relation to on-going digital transformations of society. As well as lectures discussing the theoretical, scientific and ethical frameworks of data science, the module features coding labs and workshops that expose students to the practice of working effectively with data, algorithms, and analytical techniques, as well as providing a platform for reflective and critical discussions on data science practices, resulting data artefacts and how they can be interpreted, actioned and influence society.
 
 ## Course contents
 

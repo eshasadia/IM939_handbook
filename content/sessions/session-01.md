@@ -1,4 +1,4 @@
-# Session 1 {#sec-session-1}
+# Introduction {#sec-session-1}
 
 ::: {.callout-warning}
 This page is still a stub
