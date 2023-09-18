@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 17&nbsp; IM939 Lab 5 - Part 3</title>
+<title>Data Science Across Disciplines - 17&nbsp; Lab: Investigating multidimensional scaling</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,11 +101,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 17&nbsp; IM939 Lab 5 - Part 3">
+<meta name="twitter:title" content="Data Science Across Disciplines - 17&nbsp; Lab: Investigating multidimensional scaling">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/IM939_Lab_5_3_files/figure-html/cell-8-output-1.png">
-<meta name="twitter:image-height" content="19294">
-<meta name="twitter:image-width" content="19283">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/figs/output.png">
+<meta name="twitter:image-height" content="10051">
+<meta name="twitter:image-width" content="10044">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 3</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -226,19 +226,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Visualising Data (1)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -267,13 +267,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">IM939 - Lab 3 - Regression Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -290,19 +290,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 1 - Iris</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 2 - Crime</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IM939 Lab 4 - Part 3 - Exercises</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
   </div>
 </li>
       </ul>
@@ -319,19 +319,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -454,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 3</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></h1>
 </div>
 
 
@@ -1062,15 +1062,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>We can plot out our many dimension space. This will take quite a while (around 10 minutes).</p>
+<p>We can plot out our many dimension space by uncommenting the code below (also note down how long does this take).</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns_plot <span class="op">=</span> sns.pairplot(numericColumns)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>sns_plot.savefig(<span class="st">"output.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-8-output-1.png" width="9642" height="9647"></p>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import seaborn as sns</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot = sns.pairplot(numericColumns)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot.savefig("figs/output.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>Given that this takes quite a while (around 10 minutes), this is the image that would result from uncommenting and running the code above.</p>
+<p><img src="figs/output.png" class="img-fluid"></p>
 <p>Dimension reduction will help us here!</p>
 <p>We could apply various different types of dimension reduction here. We are specifically going to capture the dissimilarity in the data using <a href="https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling">multidimensional scaling</a>. Our distance matrix will come in useful here.</p>
 <div class="cell" data-execution_count="8">
@@ -1117,7 +1116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1183" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1304" height="1294"></p>
 </div>
 </div>
 <p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
@@ -1125,39 +1124,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[-1.00687699  0.35695606]
- [ 0.23429311  0.22204455]
- [-0.2143246   0.05252925]
- [-0.2515721   0.07772959]
- [ 0.28345576 -0.08531762]
- [-0.4458167  -0.04298078]
- [ 0.22511627 -0.06581527]
- [ 0.28508353  0.11964776]
- [-0.00271511 -0.25864244]
- [-0.02344448 -0.21811441]
- [ 0.19501414  0.08850721]
- [ 0.3138104   0.08062959]
- [ 0.1217472   0.24360993]
- [ 0.17845605 -0.01029341]
- [-0.06718485 -0.14711749]
- [-0.14492549 -0.00544914]
- [-0.13171803 -0.09009905]
- [-0.06036526 -0.05889644]
- [ 0.55133907  0.02260714]
- [-0.58414949 -0.18830281]
- [ 0.11134322 -0.06112403]
- [ 0.34777352  0.09141465]
- [-0.0309475   0.14432965]
- [ 0.11533797  0.05386562]
- [ 0.03274661 -0.13059011]
- [ 0.04852505 -0.18765783]
- [-0.2139301  -0.06011297]
- [-0.05896131  0.06268551]
- [ 0.05741048  0.0582905 ]
- [-0.03441406 -0.10273179]
- [-0.10042524  0.06175322]
- [ 0.0160063  -0.07344052]
- [ 0.25431265  0.05008589]]</code></pre>
+<pre><code>[[-2.89523040e-01  1.03061494e+00]
+ [ 1.19098480e-01 -3.19129974e-01]
+ [ 1.81494501e-01  1.74798453e-01]
+ [ 1.55401756e-01  2.33333044e-01]
+ [-1.81960305e-01 -2.17699160e-01]
+ [ 8.00833799e-02  4.41766205e-01]
+ [-1.32100229e-01 -1.78766324e-01]
+ [-5.91891754e-02 -3.08122852e-01]
+ [-1.82527776e-01  8.98968333e-02]
+ [ 1.66123111e-01  3.32266254e-02]
+ [ 2.30059726e-02 -2.25486871e-01]
+ [-1.84986345e-02 -3.29234846e-01]
+ [ 1.89302099e-01 -2.30320321e-01]
+ [-5.66765234e-02 -1.64985997e-01]
+ [-6.96659041e-02  1.04079989e-01]
+ [ 7.48565561e-02  1.37419716e-01]
+ [ 1.17539826e-02  1.43799279e-01]
+ [ 1.78448714e-02  6.66988533e-02]
+ [-2.19421339e-01 -5.02896792e-01]
+ [ 8.27229166e-03  6.06593727e-01]
+ [-8.09477724e-02 -8.05729062e-02]
+ [-3.32987562e-02 -3.63503720e-01]
+ [ 1.83794495e-01 -4.89116068e-02]
+ [ 3.37654729e-02 -1.39554265e-01]
+ [-7.33860217e-02  9.81897058e-03]
+ [-1.44430397e-01  2.57495890e-02]
+ [ 5.70761284e-02  2.14617243e-01]
+ [ 1.12025689e-01  2.05208142e-02]
+ [ 5.84721727e-02 -8.93822169e-02]
+ [-2.68935074e-02  5.85993727e-02]
+ [ 1.42430372e-01  6.69016873e-02]
+ [-1.46116404e-02  3.78890360e-04]
+ [-3.16703103e-02 -2.60246379e-01]]</code></pre>
 </div>
 </div>
 <p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
@@ -1195,7 +1194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1183" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1304" height="1294"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="14">
@@ -1465,7 +1464,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">IM939 Lab 5 - Part 2</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
