@@ -72,7 +72,7 @@ book:
         - content/labs/Lab_5/IM939_lab_5_Exercise.ipynb
     - part: "Recognising and avoiding traps"
       chapters:
-        - content/labs/Lab_6/IM939_Lab_6_1-Setup_and_illusions.ipynb
+        - content/labs/Lab_6/IM939_Lab_6_1-illusions.ipynb
         - content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.ipynb
         - content/labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb
         - content/labs/Lab_6/IM939_Lab_6_4-Exercises.ipynb
@@ -81,6 +81,8 @@ book:
       chapters:
         - content/labs/Lab_7/IM939_Lab7-Part1.ipynb
         - content/labs/Lab_7/IM939_Lab7-Part2.ipynb
+        - content/labs/Lab_7/IM939_Lab7-Part3.ipynb
+        - content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.ipynb
     - content/references.qmd
   appendices:
      - README_setup.md
