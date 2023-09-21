@@ -4,7 +4,7 @@
     "href": "index.html#welcome",
     "title": "Data Science Across Disciplines",
     "section": "Welcome",
-    "text": "Welcome\nThis is the handbook for IM939: Data Science Across Disciplines, taught at the Centre for Interdisciplinary Methodologies at the University of Warwick and taught1 by Cagatay Turkay (Module leader), Kavin Narasimhan and Carlos Cámara-Menoyo1 For a comprehensive list of past and current staff members, refer to ?sec-teaching-staff\n\n\n\nIM939 Logo"
+    "text": "Welcome\nThis is the handbook for IM939: Data Science Across Disciplines, taught at the Centre for Interdisciplinary Methodologies at the University of Warwick and taught1 by Cagatay Turkay (Module leader), Kavin Narasimhan and Carlos Cámara-Menoyo1 For a comprehensive list of past and current staff members, refer to Section 1\n\n\n\nIM939 Logo"
   },
   {
     "objectID": "index.html#what-this-module-is-about",
@@ -35,11 +35,11 @@
     "text": "Licence"
   },
   {
-    "objectID": "content/about/teaching_staff.html#sec-staff-past",
-    "href": "content/about/teaching_staff.html#sec-staff-past",
+    "objectID": "content/about/teaching_staff.html#sec-staff-all",
+    "href": "content/about/teaching_staff.html#sec-staff-all",
     "title": "Teaching Staff",
-    "section": "Former staff",
-    "text": "Former staff\nThis module has also been taught by the following people in the past (in alphabetical order):\n\nCagatay Turkay, Professor (202X-Present)\nCarlos Cámara-Menoyo, Senior Research Software Engineer (2022-Present)\nJames Tripp, Senior Research Software Engineer (2020-2022)\nKavin Narasimhan, Assistant Professor (2023-Present)\nMaria Petrescu, Teaching Assistant (XX-XXX)\nYulu Pi, Teaching Assistant (2022-2023)\nZofia Bednarowska-Michaiel, Teaching Fellow (2021-2022)\n\nWe would like to thank them all for their contributions to the module, some of which are also reflected in these materials."
+    "section": "Present and former staff",
+    "text": "Present and former staff\nThis module has also been taught by the following people in the past (in alphabetical order):\n\nCagatay Turkay, Professor (202X-Present)\nCarlos Cámara-Menoyo, Senior Research Software Engineer (2022-Present)\nJames Tripp, Senior Research Software Engineer (2020-2022)\nKavin Narasimhan, Assistant Professor (2023-Present)\nMaria Petrescu, Teaching Assistant (XX-XXX)\nYulu Pi, Teaching Assistant (2022-2023)\nZofia Bednarowska-Michaiel, Teaching Fellow (2021-2022)\n\nWe would like to thank them all for their contributions to the module, some of which are also reflected in these materials."
   },
   {
     "objectID": "content/about/teaching_materials.html#handbook",
