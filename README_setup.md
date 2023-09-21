@@ -2,11 +2,11 @@
 
 This repository uses the following technologies:
 
--   `conda environments` (part of [Anaconda](https://www.anaconda.com/)) for creating and managing virtual environments
+- `conda environments` (part of [Anaconda](https://www.anaconda.com/)) for creating and managing virtual environments
 
--   [jupyter](https://jupyter.org/) notebooks for course materials combining rich-text and code
+- [jupyter](https://jupyter.org/) notebooks for course materials combining rich-text and code
 
--   [quarto](https://quarto.org) to generate the handbook
+- [quarto](https://quarto.org) to generate the handbook from the course's notebooks and some extra `md` files.
 
 ## Setting up the environment
 
