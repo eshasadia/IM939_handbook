@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 25&nbsp; IM939 - Lab 7 Part 2</title>
+<title>Data Science Across Disciplines - 25&nbsp; Lab: Poverty and Inequality</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -64,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../content/references.html" rel="next">
+<link href="../../../content/labs/Lab_7/IM939_Lab7-Part3.html" rel="next">
 <link href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" rel="prev">
 <link href="../../../media/CIM_logo.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
@@ -101,9 +120,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 25&nbsp; IM939 - Lab 7 Part 2">
+<meta name="twitter:title" content="Data Science Across Disciplines - 25&nbsp; Lab: Poverty and Inequality">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/317986e8-1-image-6.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/02382048-1-image-6.png">
 <meta name="twitter:image-height" content="649">
 <meta name="twitter:image-width" content="1184">
 <meta name="twitter:card" content="summary_large_image">
@@ -118,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html">Data Science &amp; Society</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 2</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html">Data Science &amp; Society</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -244,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">IM939 Lab 2 - Part 4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,26 +372,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-Setup_and_illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 1 - Setup and Illusions</span></span></a>
+  <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-illusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 2 - Axes manipulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 3 - Choropleths</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 - Part 4 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -395,13 +414,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/labs/Lab_7/IM939_Lab7-Part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Simpson’s Paradox</span></span></a>
   </div>
 </li>
       </ul>
@@ -445,11 +476,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#source" id="toc-source" class="nav-link active" data-scroll-target="#source"><span class="header-section-number">25.1</span> Source</a>
-  <ul class="collapse">
-  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions"><span class="header-section-number">25.1.1</span> Definitions</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="header-section-number">25.1.2</span> Questions</a></li>
-  </ul></li>
+  <li><a href="#source" id="toc-source" class="nav-link active" data-scroll-target="#source"><span class="header-section-number">25.1</span> Source</a></li>
   <li><a href="#reading-the-dataset" id="toc-reading-the-dataset" class="nav-link" data-scroll-target="#reading-the-dataset"><span class="header-section-number">25.2</span> Reading the dataset</a>
   <ul class="collapse">
   <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">25.2.1</span> Missing values</a></li>
@@ -463,7 +490,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 2</span></h1>
+<h1 class="title"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></h1>
 </div>
 
 
@@ -478,23 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>The idea of measuring Poverty and Inequality using the case study on “The Statistics of Poverty and Inequality”. (Mary Rouncefield (1995) The Statistics of Poverty and Inequality, Journal of Statistics Education, 3:2, , DOI: 10.1080/10691898.1995.11910491) By looking into 6 variables, you can investigate some major inequalites across the globe.</p>
-<section id="source" class="level2" data-number="25.1">
-<h2 data-number="25.1" class="anchored" data-anchor-id="source"><span class="header-section-number">25.1</span> Source</h2>
-<p>WDI Indicators. The data comes from:</p>
-<p>https://databank.worldbank.org/source/world-development-indicators#</p>
-<section id="definitions" class="level3" data-number="25.1.1">
-<h3 data-number="25.1.1" class="anchored" data-anchor-id="definitions"><span class="header-section-number">25.1.1</span> Definitions</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="IM939_Lab7-Part2_files/figure-html/317986e8-1-image-6.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">image-6.png</figcaption>
-</figure>
-</div>
-</section>
-<section id="questions" class="level3" data-number="25.1.2">
-<h3 data-number="25.1.2" class="anchored" data-anchor-id="questions"><span class="header-section-number">25.1.2</span> Questions</h3>
-<p>The questions that M. Rouncefield asked her students were the following:</p>
+<p>The idea of measuring Poverty and Inequality using the case study on “The Statistics of Poverty and Inequality” <span class="citation" data-cites="rouncefield_statistics_1995">(<a href="../../references.html#ref-rouncefield_statistics_1995" role="doc-biblioref">Rouncefield 1995</a>)</span>. The questions that Mary Rouncefield asked her students were the following:</p>
 <ol type="1">
 <li>Is the world’s wealth distributed evenly? What countries are outliers?</li>
 <li>Do people living in different countries have similar life expectancies?</li>
@@ -502,7 +513,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Are birth rates related to death rates?</li>
 <li>How quickly are populations growing?</li>
 </ol>
-</section>
+<p>By looking into 6 variables, you can investigate some major inequalites across the globe.</p>
+<section id="source" class="level2" data-number="25.1">
+<h2 data-number="25.1" class="anchored" data-anchor-id="source"><span class="header-section-number">25.1</span> Source</h2>
+<p>In this lab, we will be using <a href="https://databank.worldbank.org/source/world-development-indicators#">World Development Indicators dataset</a> from worldbank, which contains the following features:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="IM939_Lab7-Part2_files/figure-html/02382048-1-image-6.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Features’ definitions</figcaption>
+</figure>
+</div>
 </section>
 <section id="reading-the-dataset" class="level2" data-number="25.2">
 <h2 data-number="25.2" class="anchored" data-anchor-id="reading-the-dataset"><span class="header-section-number">25.2</span> Reading the dataset</h2>
@@ -513,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s have a look at our dataset</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="58">
 <div>
 
 
@@ -609,7 +629,7 @@ Data columns (total 7 columns):
 dtypes: float64(6), object(1)
 memory usage: 11.9+ KB</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>Country Code       0
 birthrate         11
 Deathrate         11
@@ -622,7 +642,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -631,7 +651,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="61">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -640,7 +660,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'GNI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -671,7 +691,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="64">
 <div>
 
 
@@ -768,7 +788,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'birthrate'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -784,7 +804,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'birthrate'</span>, y <span class="op">=</span> <span class="st">'Deathrate'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>&lt;Axes: xlabel='birthrate', ylabel='Deathrate'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -811,7 +831,7 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'pop'</span>] <span class="op">=</span> df[<span class="st">'birthrate'</span>] <span class="op">-</span> df[<span class="st">'Deathrate'</span>]</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="69">
 <div>
 
 
@@ -893,7 +913,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'pop'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="70">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -902,6 +922,11 @@ dtype: int64</code></pre>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-rouncefield_statistics_1995" class="csl-entry" role="listitem">
+Rouncefield, Mary. 1995. <span>“The <span>Statistics</span> of <span>Poverty</span> and <span>Inequality</span>.”</span> <em>Journal of Statistics Education</em> 3 (2): 8. <a href="https://doi.org/10.1080/10691898.1995.11910491">https://doi.org/10.1080/10691898.1995.11910491</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1141,12 +1166,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Part 1</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../content/references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../content/labs/Lab_7/IM939_Lab7-Part3.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
