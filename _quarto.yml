@@ -40,6 +40,7 @@ book:
     - part: "About"
       chapters:
         - content/about/teaching_staff.md
+        - content/about/im939.md
         - content/about/teaching_materials.md
         #- content/about/conventions.qmd
     - part: "Introduction and Historical Perspectives"

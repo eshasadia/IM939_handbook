@@ -1,4 +1,4 @@
-# Teaching Staff {#sec-teaching-staff .unnumbered}
+# Teaching Staff {.unnumbered}
 
 #### Cagatay Turkay
 
