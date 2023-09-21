@@ -3,7 +3,7 @@
 This is the handbook for [IM939: Data Science Across Disciplines](https://cagatayturkay.github.io/data-science-across-disciplines), taught at the [Centre for Interdisciplinary Methodologies](https://warwick.ac.uk/fac/cross_fac/cim/) at the University of Warwick and taught[^1] by [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader), Kavin Narasimhan
 and [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
 
-[^1]: For a comprehensive list of past and current staff members, refer to @sec-teaching-staff
+[^1]: For a comprehensive list of past and current staff members, refer to @sec-staff-all
 
 ![IM939 Logo](media/IM939_logo.png)
 
