@@ -160,7 +160,6 @@ div.csl-indent {
       <a href="../../../">Data Science Across Disciplines</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/WarwickCIM/IM939_handbook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="../../../Data-Science-Across-Disciplines.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -776,62 +775,62 @@ Name: extent, dtype: float64</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2 , x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"figs/IceExtentNormalizedByMonth.png"</span>, dpi <span class="op">=</span> <span class="dv">300</span>, bbox_inches <span class="op">=</span> <span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_5686/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7574/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
