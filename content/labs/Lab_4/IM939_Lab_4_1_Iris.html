@@ -123,8 +123,8 @@ div.csl-indent {
 <meta name="twitter:title" content="Data Science Across Disciplines - 12&nbsp; Lab: Dimension Reduction">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_4/IM939_Lab_4_1_Iris_files/figure-html/cell-9-output-2.png">
-<meta name="twitter:image-height" content="854">
-<meta name="twitter:image-width" content="1186">
+<meta name="twitter:image-height" content="858">
+<meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -531,7 +531,7 @@ div.csl-indent {
 <p>The iris dataset is in an odd format.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="514">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>sklearn.utils._bunch.Bunch</code></pre>
 </div>
 </div>
@@ -541,7 +541,7 @@ div.csl-indent {
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>iris_df <span class="op">=</span> pd.DataFrame(iris.data, columns <span class="op">=</span> iris.feature_names)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>iris_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="515">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -607,7 +607,7 @@ div.csl-indent {
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>iris_df <span class="op">=</span>  pd.DataFrame(MinMaxScaler().fit_transform(iris_df))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>iris_df.columns <span class="op">=</span> col_names <span class="co"># Column names were lost, so we need to re-introduce</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="516">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -708,7 +708,7 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>iris_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="517">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>(150, 4)</code></pre>
 </div>
 </div>
@@ -734,7 +734,7 @@ div.csl-indent {
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># some plots require a long dataframe structure</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>iris_df_long <span class="op">=</span> iris_df.melt()</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>iris_df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="518">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -811,17 +811,17 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data <span class="op">=</span> iris_df_long, x <span class="op">=</span> <span class="st">'variable'</span>, y <span class="op">=</span> <span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="519">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;Axes: xlabel='variable', ylabel='value'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-9-output-2.png" width="593" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-9-output-2.png" width="600" height="429"></p>
 </div>
 </div>
 <p>The below plots use the wide data structure.</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="520">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -922,20 +922,20 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'sepal length (cm)'</span>, y <span class="op">=</span> <span class="st">'sepal width (cm)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="521">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;Axes: xlabel='sepal length (cm)', ylabel='sepal width (cm)'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-11-output-2.png" width="585" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-11-output-2.png" width="589" height="429"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'sepal length (cm)'</span>, y <span class="op">=</span> <span class="st">'petal length (cm)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="522">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;Axes: xlabel='sepal length (cm)', ylabel='petal length (cm)'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-12-output-2.png" width="585" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-12-output-2.png" width="589" height="429"></p>
 </div>
 </div>
 <p>Interesting. There seem to be two groupings in the data.</p>
@@ -943,7 +943,7 @@ div.csl-indent {
 <div class="cell page-columns page-full" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(iris_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-right">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-13-output-1.png" width="949" height="946"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-13-output-1.png" width="949" height="945"></p>
 </div>
 </div>
 <p>There seem to be some groupings in the data. Though we cannot easily identify which point corresponds to which row.</p>
@@ -958,7 +958,7 @@ div.csl-indent {
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>iris <span class="op">=</span> iris_df.values</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="524">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>array([[0.22222222, 0.625     , 0.06779661, 0.04166667],
        [0.16666667, 0.41666667, 0.06779661, 0.04166667],
        [0.11111111, 0.5       , 0.05084746, 0.04166667],
@@ -1118,21 +1118,21 @@ div.csl-indent {
 <p>Fit our kmeans model to the data</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>k_means.fit(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="526">
-<style>#sk-container-id-9 {color: black;}#sk-container-id-9 pre{padding: 0;}#sk-container-id-9 div.sk-toggleable {background-color: white;}#sk-container-id-9 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-9 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-9 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-9 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-9 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-9 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-9 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-9 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-9 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-9 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-9 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-9 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-9 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-9 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-9 div.sk-item {position: relative;z-index: 1;}#sk-container-id-9 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-9 div.sk-item::before, #sk-container-id-9 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-9 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-9 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-9 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-9 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-9 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-9 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-9 div.sk-label-container {text-align: center;}#sk-container-id-9 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-9 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-9" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" checked=""><label for="sk-estimator-id-9" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre></div></div></div></div></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KMeans</label><div class="sk-toggleable__content"><pre>KMeans(init='random', n_clusters=3, n_init=10)</pre></div></div></div></div></div>
 </div>
 </div>
 <p>The algorithm has assigned the a label to each row.</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>k_means.labels_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="527">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1,
-       1, 1, 1, 2, 1, 1, 1, 1, 1, 2, 1, 2, 1, 2, 1, 1, 2, 2, 1, 1, 1, 1,
-       1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 2], dtype=int32)</code></pre>
+       0, 0, 0, 0, 0, 0, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2,
+       2, 2, 2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2,
+       2, 1, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1], dtype=int32)</code></pre>
 </div>
 </div>
 <p>Each row has been assigned a label.</p>
@@ -1142,7 +1142,7 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="529">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -1212,7 +1212,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -1220,7 +1220,7 @@ div.csl-indent {
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -1228,7 +1228,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -1236,7 +1236,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -1244,7 +1244,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -1256,26 +1256,26 @@ div.csl-indent {
 <div class="cell page-columns page-full" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(iris_df, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-right">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-20-output-1.png" width="1050" height="946"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-20-output-1.png" width="1060" height="945"></p>
 </div>
 </div>
 <p>That seems quite nice. We can also do individual plots if preferred.</p>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'sepal length (cm)'</span>, y <span class="op">=</span> <span class="st">'petal width (cm)'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="531">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;Axes: xlabel='sepal length (cm)', ylabel='petal width (cm)'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-21-output-2.png" width="585" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-21-output-2.png" width="589" height="429"></p>
 </div>
 </div>
 <p>K-means works by clustering the data around central points (often called centroids, means or cluster centers). We can extract the cluster centres from the kmeans object.</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>k_means.cluster_centers_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="532">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>array([[0.19611111, 0.595     , 0.07830508, 0.06083333],
-       [0.70726496, 0.4508547 , 0.79704476, 0.82478632],
-       [0.44125683, 0.30737705, 0.57571548, 0.54918033]])</code></pre>
+       [0.44125683, 0.30737705, 0.57571548, 0.54918033],
+       [0.70726496, 0.4508547 , 0.79704476, 0.82478632]])</code></pre>
 </div>
 </div>
 <p>It is tricky to plot these using seaborn but we can use a normal maplotlib scatter plot.</p>
@@ -1325,11 +1325,11 @@ div.csl-indent {
 <span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> df[<span class="st">'y'</span>], </span>
 <span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="dv">1</span>, color <span class="op">=</span> <span class="st">'black'</span></span>
 <span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="535">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x169c457d0&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x15fb54e90&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-25-output-2.png" width="568" height="410"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-25-output-2.png" width="571" height="411"></p>
 </div>
 </div>
 <section id="number-of-clusters" class="level3 page-columns page-full" data-number="12.4.1">
@@ -1346,7 +1346,7 @@ div.csl-indent {
 <div class="cell page-columns page-full" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(iris_df.loc[:, iris_df.columns <span class="op">!=</span> <span class="st">'Three clusters'</span>], hue <span class="op">=</span> <span class="st">'Two clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-right">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-27-output-1.png" width="1040" height="946"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-27-output-1.png" width="1047" height="945"></p>
 </div>
 </div>
 <p>Hmm, does the data have more than two groups in it?</p>
@@ -1360,12 +1360,12 @@ div.csl-indent {
 <div class="cell page-columns page-full" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(iris_df.loc[:, (iris_df.columns <span class="op">!=</span> <span class="st">'Three clusters'</span>) <span class="op">&amp;</span> (iris_df.columns <span class="op">!=</span> <span class="st">'Two clusters'</span>)], hue <span class="op">=</span> <span class="st">'Five clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-right">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-29-output-1.png" width="1041" height="946"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-29-output-1.png" width="1048" height="945"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="540">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -1390,8 +1390,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -1400,8 +1400,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -1410,8 +1410,8 @@ div.csl-indent {
 <td>0.050847</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -1420,8 +1420,8 @@ div.csl-indent {
 <td>0.084746</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -1430,8 +1430,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -1449,9 +1449,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -1459,9 +1459,9 @@ div.csl-indent {
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -1469,9 +1469,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
-<td>1</td>
 <td>2</td>
+<td>0</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -1479,9 +1479,9 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -1489,9 +1489,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -1503,19 +1503,19 @@ div.csl-indent {
 <p>Which did best?</p>
 <div class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>k_means.inertia_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="541">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>6.982216473785234</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>k_means_2.inertia_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="542">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>12.127790750538193</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>k_means_5.inertia_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="543">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>4.580948640117293</code></pre>
 </div>
 </div>
@@ -1538,7 +1538,7 @@ div.csl-indent {
 <p>We can look at the components.</p>
 <div class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>iris_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="545">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>array([[ 0.42494212, -0.15074824,  0.61626702,  0.64568888],
        [ 0.42320271,  0.90396711, -0.06038308, -0.00983925]])</code></pre>
 </div>
@@ -1553,7 +1553,7 @@ div.csl-indent {
 <p>We can also examine the explained variance of the each principle component.</p>
 <div class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>iris_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="546">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>array([0.23245325, 0.0324682 ])</code></pre>
 </div>
 </div>
@@ -1569,13 +1569,13 @@ div.csl-indent {
 <p>The numpy arrays contains the projected values.</p>
 <div class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(iris_pca_vals)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="548">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>numpy.ndarray</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>iris_pca_vals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="549">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>array([[-6.30702931e-01,  1.07577910e-01],
        [-6.22904943e-01, -1.04259833e-01],
        [-6.69520395e-01, -5.14170597e-02],
@@ -1731,13 +1731,13 @@ div.csl-indent {
 <p>Each row corresponds to a row in our data.</p>
 <div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>iris_pca_vals.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="550">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>(150, 2)</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>iris_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="551">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>(150, 7)</code></pre>
 </div>
 </div>
@@ -1748,7 +1748,7 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="553">
+<div class="cell-output cell-output-display" data-execution_count="41">
 <div>
 
 
@@ -1775,8 +1775,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -1787,8 +1787,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -1799,8 +1799,8 @@ div.csl-indent {
 <td>0.050847</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -1811,8 +1811,8 @@ div.csl-indent {
 <td>0.084746</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -1823,8 +1823,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -1846,9 +1846,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -1858,9 +1858,9 @@ div.csl-indent {
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -1870,9 +1870,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
-<td>1</td>
 <td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -1882,9 +1882,9 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -1894,9 +1894,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -1910,27 +1910,27 @@ div.csl-indent {
 <p>Plotting out our data on our new two component space.</p>
 <div class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="554">
+<div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-44-output-2.png" width="593" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-44-output-2.png" width="600" height="429"></p>
 </div>
 </div>
 <p>We have reduced our three dimensions to two.</p>
 <p>We can also colour by our clusters. What does this show us and is it useful?</p>
 <div class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="555">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-45-output-2.png" width="593" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-45-output-2.png" width="600" height="429"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>iris_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="556">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <div>
 
 
@@ -1957,8 +1957,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -1969,8 +1969,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -1981,8 +1981,8 @@ div.csl-indent {
 <td>0.050847</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -1993,8 +1993,8 @@ div.csl-indent {
 <td>0.084746</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -2005,8 +2005,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -2028,9 +2028,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -2040,9 +2040,9 @@ div.csl-indent {
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -2052,9 +2052,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
-<td>1</td>
 <td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -2064,9 +2064,9 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -2076,9 +2076,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -2100,7 +2100,7 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(iris_df.iloc[:,<span class="op">-</span><span class="dv">2</span>:].values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="558">
+<div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>numpy.ndarray</code></pre>
 </div>
 </div>
@@ -2111,7 +2111,7 @@ div.csl-indent {
 <pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/sklearn/base.py:464: UserWarning: X does not have valid feature names, but KMeans was fitted with feature names
   warnings.warn(</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="559">
+<div class="cell-output cell-output-display" data-execution_count="47">
 <div>
 
 
@@ -2139,8 +2139,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 <td>0</td>
@@ -2152,8 +2152,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 <td>0</td>
@@ -2165,8 +2165,8 @@ div.csl-indent {
 <td>0.050847</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 <td>0</td>
@@ -2178,8 +2178,8 @@ div.csl-indent {
 <td>0.084746</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
 <td>1</td>
+<td>4</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 <td>0</td>
@@ -2191,8 +2191,8 @@ div.csl-indent {
 <td>0.067797</td>
 <td>0.041667</td>
 <td>0</td>
-<td>0</td>
-<td>4</td>
+<td>1</td>
+<td>1</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 <td>0</td>
@@ -2216,9 +2216,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.551462</td>
 <td>0.059841</td>
 <td>2</td>
@@ -2229,9 +2229,9 @@ div.csl-indent {
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 <td>1</td>
@@ -2242,9 +2242,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
-<td>1</td>
 <td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.447143</td>
 <td>0.037560</td>
 <td>2</td>
@@ -2255,9 +2255,9 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
-<td>1</td>
-<td>3</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
 <td>0.488208</td>
 <td>0.149678</td>
 <td>2</td>
@@ -2268,9 +2268,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>1</td>
-<td>2</td>
+<td>0</td>
+<td>0</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 <td>1</td>
@@ -2288,7 +2288,7 @@ div.csl-indent {
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co"># see https://python-graph-gallery.com/104-seaborn-themes/</span></span>
 <span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"darkgrid"</span>)</span>
 <span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> iris_df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'PCA 3 clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="560">
+<div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -2340,17 +2340,17 @@ div.csl-indent {
 <span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> iris_df.mask(mask)</span>
 <span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="563">
-<pre><code>sepal length (cm)    29
-sepal width (cm)     31
-petal length (cm)    34
-petal width (cm)     30
+<div class="cell-output cell-output-display" data-execution_count="51">
+<pre><code>sepal length (cm)    26
+sepal width (cm)     38
+petal length (cm)    31
+petal width (cm)     28
 dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="564">
+<div class="cell-output cell-output-display" data-execution_count="52">
 <div>
 
 
@@ -2367,16 +2367,16 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
+<td>5.1</td>
 <td>3.5</td>
-<td>NaN</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
-<td>3.0</td>
 <td>NaN</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
@@ -2389,16 +2389,16 @@ dtype: int64</code></pre>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
-<td>3.1</td>
 <td>NaN</td>
-<td>0.2</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.0</td>
-<td>3.6</td>
 <td>NaN</td>
 <td>NaN</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2410,14 +2410,14 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.7</td>
-<td>3.0</td>
-<td>5.2</td>
+<td>NaN</td>
+<td>NaN</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
 <td>6.3</td>
-<td>NaN</td>
+<td>2.5</td>
 <td>5.0</td>
 <td>1.9</td>
 </tr>
@@ -2425,19 +2425,19 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
 <td>3.0</td>
+<td>5.2</td>
 <td>NaN</td>
-<td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.2</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>3.4</td>
+<td>5.4</td>
 <td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
-<td>5.9</td>
+<td>NaN</td>
 <td>3.0</td>
 <td>5.1</td>
 <td>1.8</td>
@@ -2459,7 +2459,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>df_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="566">
+<div class="cell-output cell-output-display" data-execution_count="54">
 <div>
 
 
@@ -2476,16 +2476,16 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>0.0</td>
+<td>5.1</td>
 <td>3.5</td>
-<td>0.0</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
-<td>3.0</td>
 <td>0.0</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="odd">
@@ -2498,16 +2498,16 @@ dtype: int64</code></pre>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
-<td>3.1</td>
 <td>0.0</td>
-<td>0.2</td>
+<td>0.0</td>
+<td>0.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.0</td>
-<td>3.6</td>
 <td>0.0</td>
 <td>0.0</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2519,14 +2519,14 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.7</td>
-<td>3.0</td>
-<td>5.2</td>
+<td>0.0</td>
+<td>0.0</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
 <td>6.3</td>
-<td>0.0</td>
+<td>2.5</td>
 <td>5.0</td>
 <td>1.9</td>
 </tr>
@@ -2534,19 +2534,19 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
 <td>3.0</td>
+<td>5.2</td>
 <td>0.0</td>
-<td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.2</td>
-<td>0.0</td>
-<td>0.0</td>
+<td>3.4</td>
+<td>5.4</td>
 <td>0.0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
-<td>5.9</td>
+<td>0.0</td>
 <td>3.0</td>
 <td>5.1</td>
 <td>1.8</td>
@@ -2586,7 +2586,7 @@ dtype: int64</code></pre>
 <span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>df_1[<span class="st">'c2'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_1_pca_vals]</span>
 <span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df_1, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="568">
+<div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -2595,15 +2595,15 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="569">
-<pre><code>array([6.67703475, 4.51442151])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>array([6.22699809, 4.00649522])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="570">
-<pre><code>array([[-0.81891649,  0.13834756, -0.53343745, -0.16025052],
-       [-0.56350831, -0.05220577,  0.8158581 ,  0.11877926]])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>array([[-0.80680373, -0.02061508, -0.57657652, -0.12728819],
+       [-0.59038745,  0.01293662,  0.79485977,  0.13954656]])</code></pre>
 </div>
 </div>
 </section>
@@ -2616,7 +2616,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>df_2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="572">
+<div class="cell-output cell-output-display" data-execution_count="60">
 <div>
 
 
@@ -2633,38 +2633,38 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>5.833058</td>
-<td>3.500000</td>
-<td>3.763793</td>
-<td>0.2000</td>
+<td>5.100000</td>
+<td>3.5000</td>
+<td>1.40000</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.900000</td>
-<td>3.000000</td>
-<td>3.763793</td>
-<td>0.2000</td>
+<td>3.0625</td>
+<td>1.40000</td>
+<td>0.20000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.700000</td>
-<td>3.200000</td>
-<td>1.300000</td>
-<td>0.2000</td>
+<td>3.2000</td>
+<td>1.30000</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.600000</td>
-<td>3.100000</td>
-<td>3.763793</td>
-<td>0.2000</td>
+<td>3.0625</td>
+<td>3.67479</td>
+<td>1.20082</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>5.000000</td>
-<td>3.600000</td>
-<td>3.763793</td>
-<td>1.1725</td>
+<td>3.0625</td>
+<td>3.67479</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2676,37 +2676,37 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.700000</td>
-<td>3.000000</td>
-<td>5.200000</td>
-<td>2.3000</td>
+<td>3.0625</td>
+<td>3.67479</td>
+<td>2.30000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
 <td>6.300000</td>
-<td>3.047059</td>
-<td>5.000000</td>
-<td>1.9000</td>
+<td>2.5000</td>
+<td>5.00000</td>
+<td>1.90000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.500000</td>
-<td>3.000000</td>
-<td>3.763793</td>
-<td>2.0000</td>
+<td>3.0000</td>
+<td>5.20000</td>
+<td>1.20082</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.200000</td>
-<td>3.047059</td>
-<td>3.763793</td>
-<td>1.1725</td>
+<td>3.4000</td>
+<td>5.40000</td>
+<td>1.20082</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
-<td>5.900000</td>
-<td>3.000000</td>
-<td>5.100000</td>
-<td>1.8000</td>
+<td>5.830645</td>
+<td>3.0000</td>
+<td>5.10000</td>
+<td>1.80000</td>
 </tr>
 </tbody>
 </table>
@@ -2741,7 +2741,7 @@ dtype: int64</code></pre>
 <span id="cb92-10"><a href="#cb92-10" aria-hidden="true" tabindex="-1"></a>df_2[<span class="st">'c2'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_2_pca_vals]</span>
 <span id="cb92-11"><a href="#cb92-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb92-12"><a href="#cb92-12" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df_2, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="574">
+<div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -2750,15 +2750,15 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="575">
-<pre><code>array([3.09985906, 0.31581117])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>array([3.01050449, 0.2914844 ])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="576">
-<pre><code>array([[ 0.33086335, -0.07640146,  0.87763691,  0.33829825],
-       [ 0.84420756,  0.30608801, -0.37826853,  0.22480357]])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<pre><code>array([[ 0.32110757, -0.08257254,  0.88214297,  0.33450782],
+       [ 0.87118675,  0.32954964, -0.33769708,  0.13561475]])</code></pre>
 </div>
 </div>
 </section>

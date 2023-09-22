@@ -514,7 +514,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting the few first rows of the dataframe</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -636,7 +636,7 @@ Visually, outliers appear to be outside the ‘normal’ range of the rest of th
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
 <span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -780,7 +780,7 @@ Visually filtering out outliers can be an effective tactic if we’re just tryin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting missing values in dataset</span></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>pd.isnull(df_tuber).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>country                      0
 iso2                        23
 iso3                         0
@@ -960,7 +960,7 @@ Results for the Standard Deviation :
 Results for the Skewness :
 Results for the Kurtosis :</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -982,27 +982,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-0.678126</td>
-<td>-1.167892</td>
-<td>-0.715072</td>
+<td>-0.319550</td>
+<td>-1.727590</td>
+<td>-0.685477</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-0.804293</td>
-<td>-1.139832</td>
-<td>3.193534</td>
+<td>0.736341</td>
+<td>-0.357161</td>
+<td>-0.191510</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.177612</td>
-<td>-0.197195</td>
-<td>-0.344788</td>
+<td>0.313557</td>
+<td>-0.119755</td>
+<td>-0.143651</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>0.030172</td>
-<td>0.011511</td>
-<td>0.237727</td>
+<td>0.024931</td>
+<td>-0.091719</td>
+<td>-0.169776</td>
 </tr>
 </tbody>
 </table>
@@ -1074,7 +1074,7 @@ Results for the Standard Deviation :
 Results for the Skewness :
 Results for the Kurtosis :</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="54">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -1096,27 +1096,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-0.921875</td>
-<td>-1.770321</td>
-<td>-1.300000</td>
+<td>-1.153061</td>
+<td>0.250000</td>
+<td>-1.833333</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-0.448980</td>
-<td>-0.764524</td>
-<td>-0.024282</td>
+<td>3.472656</td>
+<td>-0.517958</td>
+<td>-0.401902</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>1.423282</td>
-<td>1.619597</td>
-<td>-0.605165</td>
+<td>2.247232</td>
+<td>-0.437500</td>
+<td>-0.432632</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.450237</td>
-<td>1.469557</td>
-<td>-0.163725</td>
+<td>2.567911</td>
+<td>1.528535</td>
+<td>0.224824</td>
 </tr>
 </tbody>
 </table>
@@ -1136,7 +1136,7 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listing the columns</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_tuber.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>Index(['country', 'iso2', 'iso3', 'iso_numeric', 'g_whoregion', 'year',
        'e_pop_num', 'e_prev_100k', 'e_prev_100k_lo', 'e_prev_100k_hi',
        'e_prev_num', 'e_prev_num_lo', 'e_prev_num_hi', 'e_mort_exc_tbhiv_100k',
@@ -1174,7 +1174,7 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Central Tendency : Mean vs Median (Median is the robust version of the mean, because it takes into account </span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the ordering of the points and not the actual values like the mean does)</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>df_tuber[chosen_colnames].describe().loc[[<span class="st">'mean'</span>, <span class="st">'50%'</span>], :] <span class="co"># The 50% is the median (50% quantile)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -1218,7 +1218,7 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(iqrs, columns <span class="op">=</span> [<span class="st">'IQR'</span>]).T], ignore_index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(medianAD, columns <span class="op">=</span> [<span class="st">'MAD'</span>], index <span class="op">=</span> chosen_colnames).T], ignore_index<span class="op">=</span><span class="va">False</span>, names <span class="op">=</span> [<span class="st">'std'</span>, <span class="st">'iqr'</span>, <span class="st">'mad'</span>])</span>
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 

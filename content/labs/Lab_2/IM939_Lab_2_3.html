@@ -517,7 +517,7 @@ memory usage: 8.9+ KB</code></pre>
 <p>We are missing values in our imdb_rating and total votes columns.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.shape[<span class="dv">0</span>] <span class="op">-</span> df.count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>season          0
 episode         0
 title           0
@@ -538,7 +538,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -621,7 +621,7 @@ dtype: int64</code></pre>
 <p>We can plot these to see what looks most reasonable (you can probably also make an educated guess here).</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_mean'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -630,7 +630,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -641,8 +641,8 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].hist()</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ax.axvline(df[<span class="st">'imdb_rating'</span>].mean(), color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>&lt;matplotlib.lines.Line2D at 0x128d6de90&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>&lt;matplotlib.lines.Line2D at 0x134183510&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-10-output-2.png" width="566" height="411"></p>
@@ -655,7 +655,7 @@ dtype: int64</code></pre>
 <p>The distribution of votes is positively skewed (most values are low).</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -670,7 +670,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_log'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -681,7 +681,7 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>] <span class="op">=</span> np.sqrt(df[<span class="st">'total_votes'</span>])</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -692,7 +692,7 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>] <span class="op">=</span> np.reciprocal(df[<span class="st">'total_votes'</span>])</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -708,7 +708,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -717,7 +717,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -733,7 +733,7 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_24455/2716201442.py:1: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_615/2716201442.py:1: UserWarning: Parsing dates in %d/%m/%Y format when dayfirst=False (the default) was specified. Pass `dayfirst=True` or specify a format to silence this warning.
   df['air_date'] =  pd.to_datetime(df['air_date'])</code></pre>
 </div>
 </div>
@@ -746,7 +746,7 @@ dtype: int64</code></pre>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'IMDB rating'</span>)</span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>ax2.scatter( df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>)</span>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'Total votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>Text(0.5, 1.0, 'Total votes')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -755,7 +755,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-22-output-1.png" width="569" height="434"></p>
 </div>
 </div>
@@ -763,8 +763,8 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'imdb_rating_z'</span>], color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x1290e7a10&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x1345e7d50&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-23-output-2.png" width="569" height="411"></p>

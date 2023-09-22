@@ -498,7 +498,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -577,7 +577,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="48">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -587,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We can look at points instead of lines.</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].plot(title<span class="op">=</span><span class="st">'Total Votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;Axes: title={'center': 'Total Votes'}&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -599,7 +599,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -609,7 +609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Or we could create subplots.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([&lt;Axes: &gt;, &lt;Axes: &gt;, &lt;Axes: &gt;, &lt;Axes: &gt;], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -619,7 +619,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Season and episode is not at all informative here.</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([&lt;Axes: &gt;, &lt;Axes: &gt;], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -631,7 +631,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>, kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>array([&lt;Axes: ylabel='Frequency'&gt;, &lt;Axes: ylabel='Frequency'&gt;],
       dtype=object)</code></pre>
 </div>
@@ -643,7 +643,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Probably best to plot them individually.</p>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -653,7 +653,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Quite a sensible guassian shape (a central point with the frequency decreasing symmetrically).</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'total_votes'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -668,7 +668,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Scatter plots are simple ways to explore the relationship between two data variables. Note, I use the term data variables instead or just variables to avoid any confusion.</p>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'imdb_rating'</span>, y<span class="op">=</span><span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and total number of votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;Axes: title={'center': 'IMDB ratings and total number of votes'}, xlabel='imdb_rating', ylabel='total_votes'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -679,7 +679,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Which episodes were they?</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'total_votes'</span>] <span class="op">&gt;</span> <span class="dv">5000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -732,7 +732,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Excellent. Any influence of season on votes?</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'season'</span>, y<span class="op">=</span><span class="st">'imdb_rating'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and season'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;Axes: title={'center': 'IMDB ratings and season'}, xlabel='season', ylabel='imdb_rating'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -746,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Our data contains air date information. Currently, that column is ‘object’ or a string.</p>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -816,7 +816,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>season           int64
 episode          int64
 title           object
@@ -830,7 +830,7 @@ dtype: object</code></pre>
 <div class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>])</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>season                  int64
 episode                 int64
 title                  object
@@ -842,7 +842,7 @@ dtype: object</code></pre>
 </div>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'air_date'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>&lt;Axes: xlabel='air_date', ylabel='total_votes'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -852,7 +852,7 @@ dtype: object</code></pre>
 <p>We can look at multiple variables using subplots.</p>
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'air_date'</span>, <span class="st">'total_votes'</span>, <span class="st">'imdb_rating'</span>]].plot(x <span class="op">=</span> <span class="st">'air_date'</span>, subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>array([&lt;Axes: xlabel='air_date'&gt;, &lt;Axes: xlabel='air_date'&gt;], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -865,7 +865,7 @@ dtype: object</code></pre>
 <p>Our dataset is quite simple. But we can look at two variables (total_votes, imdb_rating) by a third (season).</p>
 <div class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'season'</span>).plot(kind<span class="op">=</span><span class="st">'scatter'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, x <span class="op">=</span> <span class="st">'imdb_rating'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>season
 1    Axes(0.125,0.11;0.775x0.77)
 2    Axes(0.125,0.11;0.775x0.77)

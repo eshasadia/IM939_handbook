@@ -1111,7 +1111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-10-output-1.png" width="1240" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-10-output-1.png" width="1207" height="1294"></p>
 </div>
 </div>
 <p>Our data also include happiness metrics. Pulling these out of our data and carrying out more multidimensional scaling can help us see how the boroughs differ in happiness.</p>
@@ -1134,7 +1134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1304" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1196" height="1294"></p>
 </div>
 </div>
 <p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
@@ -1142,39 +1142,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[-2.89523040e-01  1.03061494e+00]
- [ 1.19098480e-01 -3.19129974e-01]
- [ 1.81494501e-01  1.74798453e-01]
- [ 1.55401756e-01  2.33333044e-01]
- [-1.81960305e-01 -2.17699160e-01]
- [ 8.00833799e-02  4.41766205e-01]
- [-1.32100229e-01 -1.78766324e-01]
- [-5.91891754e-02 -3.08122852e-01]
- [-1.82527776e-01  8.98968333e-02]
- [ 1.66123111e-01  3.32266254e-02]
- [ 2.30059726e-02 -2.25486871e-01]
- [-1.84986345e-02 -3.29234846e-01]
- [ 1.89302099e-01 -2.30320321e-01]
- [-5.66765234e-02 -1.64985997e-01]
- [-6.96659041e-02  1.04079989e-01]
- [ 7.48565561e-02  1.37419716e-01]
- [ 1.17539826e-02  1.43799279e-01]
- [ 1.78448714e-02  6.66988533e-02]
- [-2.19421339e-01 -5.02896792e-01]
- [ 8.27229166e-03  6.06593727e-01]
- [-8.09477724e-02 -8.05729062e-02]
- [-3.32987562e-02 -3.63503720e-01]
- [ 1.83794495e-01 -4.89116068e-02]
- [ 3.37654729e-02 -1.39554265e-01]
- [-7.33860217e-02  9.81897058e-03]
- [-1.44430397e-01  2.57495890e-02]
- [ 5.70761284e-02  2.14617243e-01]
- [ 1.12025689e-01  2.05208142e-02]
- [ 5.84721727e-02 -8.93822169e-02]
- [-2.68935074e-02  5.85993727e-02]
- [ 1.42430372e-01  6.69016873e-02]
- [-1.46116404e-02  3.78890360e-04]
- [-3.16703103e-02 -2.60246379e-01]]</code></pre>
+<pre><code>[[-1.05806618e+00 -1.51710770e-01]
+ [ 3.34130116e-01  5.96730644e-02]
+ [-1.34773904e-01  2.12179429e-01]
+ [-1.95079322e-01  2.02186582e-01]
+ [ 1.80498080e-01 -2.20176766e-01]
+ [-4.13710203e-01  1.78553433e-01]
+ [ 1.50229105e-01 -1.65827130e-01]
+ [ 3.16457642e-01 -4.23246381e-02]
+ [-1.26294757e-01 -1.61693286e-01]
+ [-3.27049004e-03  1.59129176e-01]
+ [ 2.21634596e-01 -2.82599064e-02]
+ [ 3.10200525e-01 -1.04143911e-01]
+ [ 2.59053409e-01  1.43073741e-01]
+ [ 1.49336927e-01 -9.17225215e-02]
+ [-1.18063094e-01 -5.02724018e-02]
+ [-1.22539763e-01  9.73536189e-02]
+ [-1.41465340e-01  3.65237606e-02]
+ [-6.46624505e-02  2.66150188e-02]
+ [ 4.66086067e-01 -2.90821106e-01]
+ [-5.81867506e-01  1.87834366e-01]
+ [ 6.19343804e-02 -9.88854263e-02]
+ [ 3.36508829e-01 -1.30342403e-01]
+ [ 8.15565126e-02  1.70306786e-01]
+ [ 1.41288798e-01  2.91256412e-03]
+ [-2.60553033e-02 -7.32580099e-02]
+ [-5.49273816e-02 -1.38803939e-01]
+ [-2.01007771e-01  9.69204426e-02]
+ [-3.12392871e-04  1.10162704e-01]
+ [ 9.66234347e-02  3.61177198e-02]
+ [-6.52366907e-02 -1.85203846e-02]
+ [-4.02004524e-02  1.51198321e-01]
+ [-5.72755527e-03 -1.83213928e-02]
+ [ 2.47722138e-01 -8.56567350e-02]]</code></pre>
 </div>
 </div>
 <p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
@@ -1212,7 +1212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1304" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1196" height="1294"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="14">

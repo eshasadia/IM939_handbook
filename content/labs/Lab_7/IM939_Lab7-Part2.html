@@ -122,7 +122,7 @@ div.csl-indent {
 
 <meta name="twitter:title" content="Data Science Across Disciplines - 25&nbsp; Lab: Poverty and Inequality">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/02382048-1-image-6.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/5be3db81-1-image-6.png">
 <meta name="twitter:image-height" content="649">
 <meta name="twitter:image-width" content="1184">
 <meta name="twitter:card" content="summary_large_image">
@@ -525,7 +525,7 @@ div.csl-indent {
 <p>In this lab, we will be using <a href="https://databank.worldbank.org/source/world-development-indicators#">World Development Indicators dataset</a> from worldbank, which contains the following features:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="IM939_Lab7-Part2_files/figure-html/02382048-1-image-6.png" class="img-fluid figure-img"></p>
+<p><img src="IM939_Lab7-Part2_files/figure-html/5be3db81-1-image-6.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Features’ definitions</figcaption>
 </figure>
 </div>
@@ -539,7 +539,7 @@ div.csl-indent {
 <p>Let’s have a look at our dataset</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -635,7 +635,7 @@ Data columns (total 7 columns):
 dtypes: float64(6), object(1)
 memory usage: 11.9+ KB</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>Country Code       0
 birthrate         11
 Deathrate         11
@@ -648,7 +648,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -657,7 +657,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -666,7 +666,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'GNI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -697,7 +697,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -794,7 +794,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'birthrate'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -810,7 +810,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'birthrate'</span>, y <span class="op">=</span> <span class="st">'Deathrate'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>&lt;Axes: xlabel='birthrate', ylabel='Deathrate'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -837,7 +837,7 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'pop'</span>] <span class="op">=</span> df[<span class="st">'birthrate'</span>] <span class="op">-</span> df[<span class="st">'Deathrate'</span>]</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -919,7 +919,7 @@ dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'pop'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
