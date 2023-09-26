@@ -1110,7 +1110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-10-output-1.png" width="1240" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-10-output-1.png" width="1314" height="1294"></p>
 </div>
 </div>
 <p>Our data also include happiness metrics. Pulling these out of our data and carrying out more multidimensional scaling can help us see how the boroughs differ in happiness.</p>
@@ -1133,7 +1133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1284" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1223" height="1294"></p>
 </div>
 </div>
 <p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
@@ -1141,39 +1141,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[-0.49424922  0.95373066]
- [ 0.29842887 -0.14326441]
- [ 0.0225272   0.22945373]
- [-0.01735541  0.2644701 ]
- [ 0.01576037 -0.29549607]
- [-0.24339594  0.36879734]
- [ 0.01938014 -0.23334171]
- [ 0.21630593 -0.22948407]
- [-0.22993211 -0.0847395 ]
- [-0.19772386 -0.05177809]
- [ 0.16011421 -0.15234439]
- [ 0.18405849 -0.2709913 ]
- [ 0.28301502 -0.0282486 ]
- [ 0.06006407 -0.16991965]
- [-0.14497458  0.01726199]
- [-0.0319655   0.14058951]
- [-0.10799003  0.09887483]
- [-0.05723805  0.0422659 ]
- [ 0.25978764 -0.49033594]
- [-0.27461895  0.53777448]
- [-0.00841812 -0.12214018]
- [ 0.19245386 -0.30674779]
- [ 0.13806262  0.07923789]
- [ 0.10369969 -0.08738846]
- [-0.09711865 -0.07093706]
- [-0.14658122 -0.10383275]
- [-0.10354807  0.18737061]
- [ 0.05739991  0.0819762 ]
- [ 0.08962812 -0.03074088]
- [-0.09139904  0.00262778]
- [ 0.05218604  0.1239149 ]
- [-0.04747955 -0.03502033]
- [ 0.14111613 -0.22159471]]</code></pre>
+<pre><code>[[ 0.72107737 -0.79470796]
+ [ 0.04108706  0.3191256 ]
+ [ 0.16207573 -0.14978266]
+ [ 0.22900504 -0.12451231]
+ [-0.20997419  0.19853702]
+ [ 0.32129691 -0.30608483]
+ [-0.15699073  0.15135712]
+ [-0.16351652  0.27727304]
+ [-0.19228609 -0.16676114]
+ [-0.15038233 -0.15586584]
+ [-0.04076085  0.2137133 ]
+ [-0.09595592  0.30997257]
+ [-0.24668129  0.14765694]
+ [-0.0948236   0.14308036]
+ [-0.06564397 -0.14269633]
+ [ 0.09431639 -0.10604024]
+ [ 0.01738556 -0.15552978]
+ [-0.00402464 -0.08103334]
+ [-0.18734253  0.52158701]
+ [ 0.28228746 -0.53606172]
+ [-0.10191133  0.05294185]
+ [-0.09047086  0.34636998]
+ [ 0.13266984  0.0722033 ]
+ [-0.02112553  0.1280357 ]
+ [-0.11670295 -0.05626052]
+ [-0.16860588 -0.08177748]
+ [ 0.09678458 -0.1958687 ]
+ [ 0.08746704 -0.0020285 ]
+ [ 0.01237267  0.08422609]
+ [-0.05342401 -0.08948046]
+ [ 0.11343535 -0.03382874]
+ [-0.06338438 -0.03254225]
+ [-0.0872534   0.2447829 ]]</code></pre>
 </div>
 </div>
 <p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
@@ -1211,7 +1211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1284" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1223" height="1294"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="14">
@@ -1233,7 +1233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-15-output-1.png" width="1214" height="1294"></p>
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-15-output-1.png" width="1234" height="1294"></p>
 </div>
 </div>
 <p>This looks very different to the one above on “emotion” related variables. Our job now is to relate these two projections to one another. Do you see similarities? Do you see clusters of boroughs? Can you reflect on how you can relate and combine these two maps conceptually?</p>

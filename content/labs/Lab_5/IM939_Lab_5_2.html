@@ -759,13 +759,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:, <span class="st">'ViolentCrimesPerPop_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'ViolentCrimesPerPop'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:,<span class="st">'medIncome_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'medIncome'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7762/3488182522.py:5: SettingWithCopyWarning: 
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_29858/3488182522.py:5: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df_reg.loc[:, 'ViolentCrimesPerPop_log'] = np.log(df_reg['ViolentCrimesPerPop'] + 0.1)
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_7762/3488182522.py:6: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_29858/3488182522.py:6: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
