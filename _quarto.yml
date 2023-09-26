@@ -29,7 +29,7 @@ book:
   repo-actions: [edit, issue]
   
   #downloads: [pdf, epub]
-  #downloads: [pdf]
+  downloads: [pdf]
 
   sidebar:
     collapse-level: 1
@@ -110,9 +110,9 @@ format:
   html:
     theme: [cosmo, css/warwick.scss] # More themes here: https://quarto.org/docs/output-formats/html-themes.html
     reference-location: margin # Footnotes' position.
-  # pdf:
-  #   documentclass: scrreprt
-  #   cover-image: media/IM939_logo.png
+  pdf:
+    documentclass: scrreprt
+    cover-image: media/IM939_logo.png
 
 editor: visual
 
