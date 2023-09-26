@@ -14,3 +14,4 @@ dependencies:
   - seaborn
   - pip:
     - ghp-import
+    - jupyterlab-quarto
