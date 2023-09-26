@@ -1,0 +1,11 @@
+{
+  "hash": "c4fe241c9446a48d48f5f2491703ad47",
+  "result": {
+    "markdown": "# IM939 lab 5 - Exercise\n\nThe exercise this week is a chance to apply the code you have been delving into over these past week.\n\nChoose one of the datasets from a previous week:\n\n* Crime Census\n\n* London Borough\n\n* Wine\n\n* Iris\n\n* Global warming\n\nOr, if you are feeling confident, another dataset from the [sklearn datasets](https://scikit-learn.org/stable/datasets/index.html).\n\n__note__ Please do refer to the sklean and pandas documentation if you get stuck.\n\nRead in the data using pandas.\n\n\nLook at the first few rows. Get a feel for the structure of the data.\n\n\nDeal with missing values, if any.\n\n\nCreate a summary of the data. Plot any particular features or groups of features which you think are of interest.\n\n\nSettle on a possible question you want to answer. What might you be able to learn from your dataset?\n\nDecide on your initial analysis. Remember, we have covered:\n\n* Linear regressions\n* Dimension reduction\n* Clustering\n\nWhich method will best allow you to tackle your question?\n\nApply your chosen analysis method below. Please do refer to and copy and paste code from previous weeks.\n\n\nCan you visualise your result?\n\nYou may want to use a:\n\n* Scatterplot\n* Histogram\n* Any other plot, such as those in the [seaborn example library](http://seaborn.pydata.org/examples/index.html).\n\n\nAre you able to check if your method is robust (e.g., kfold test of regressions or cluster stability checks)? Perhaps do that below.\n\n\nHmm, what have you learned?\n\n\nYou may want to consider if you could convince a friend of your conclusion. Perhaps another type of analysis is needed or there are issues with the analysis you chose above!\n\nUse the space below to explore a bit more. \n\n\n",
+    "supporting": [
+      "IM939_lab_5_Exercise_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
