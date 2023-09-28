@@ -158,6 +158,7 @@ div.csl-indent {
       <a href="../../../">Data Science Across Disciplines</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/WarwickCIM/IM939_handbook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="../../../Data-Science-Across-Disciplines.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -1125,13 +1126,13 @@ div.csl-indent {
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>k_means.labels_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>array([2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1,
-       1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1,
-       1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0], dtype=int32)</code></pre>
+<pre><code>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2,
+       2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2, 2, 2, 2,
+       2, 0, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 0], dtype=int32)</code></pre>
 </div>
 </div>
 <p>Each row has been assigned a label.</p>
@@ -1163,7 +1164,7 @@ div.csl-indent {
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -1171,7 +1172,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -1179,7 +1180,7 @@ div.csl-indent {
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -1187,7 +1188,7 @@ div.csl-indent {
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -1195,7 +1196,7 @@ div.csl-indent {
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -1211,7 +1212,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -1227,7 +1228,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -1235,7 +1236,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -1273,8 +1274,8 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>k_means.cluster_centers_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>array([[0.44125683, 0.30737705, 0.57571548, 0.54918033],
-       [0.70726496, 0.4508547 , 0.79704476, 0.82478632],
-       [0.19611111, 0.595     , 0.07830508, 0.06083333]])</code></pre>
+       [0.19611111, 0.595     , 0.07830508, 0.06083333],
+       [0.70726496, 0.4508547 , 0.79704476, 0.82478632]])</code></pre>
 </div>
 </div>
 <p>It is tricky to plot these using seaborn but we can use a normal maplotlib scatter plot.</p>
@@ -1325,7 +1326,7 @@ div.csl-indent {
 <span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="dv">1</span>, color <span class="op">=</span> <span class="st">'black'</span></span>
 <span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x15dcfd710&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x160770cd0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-25-output-2.png" width="571" height="411"></p>
@@ -1388,7 +1389,7 @@ div.csl-indent {
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1398,9 +1399,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -1408,9 +1409,9 @@ div.csl-indent {
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -1418,9 +1419,9 @@ div.csl-indent {
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -1428,7 +1429,7 @@ div.csl-indent {
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 </tr>
@@ -1448,7 +1449,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 </tr>
@@ -1468,7 +1469,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>4</td>
 </tr>
@@ -1478,7 +1479,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 </tr>
@@ -1773,7 +1774,7 @@ div.csl-indent {
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.630703</td>
@@ -1785,9 +1786,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -1797,9 +1798,9 @@ div.csl-indent {
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -1809,9 +1810,9 @@ div.csl-indent {
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -1821,7 +1822,7 @@ div.csl-indent {
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.648788</td>
@@ -1845,7 +1846,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.551462</td>
@@ -1869,7 +1870,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>4</td>
 <td>0.447143</td>
@@ -1881,7 +1882,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.488208</td>
@@ -1955,7 +1956,7 @@ div.csl-indent {
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.630703</td>
@@ -1967,9 +1968,9 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -1979,9 +1980,9 @@ div.csl-indent {
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -1991,9 +1992,9 @@ div.csl-indent {
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -2003,7 +2004,7 @@ div.csl-indent {
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.648788</td>
@@ -2027,7 +2028,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.551462</td>
@@ -2051,7 +2052,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>4</td>
 <td>0.447143</td>
@@ -2063,7 +2064,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.488208</td>
@@ -2137,12 +2138,12 @@ div.csl-indent {
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.630703</td>
 <td>0.107578</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -2150,12 +2151,12 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -2163,12 +2164,12 @@ div.csl-indent {
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -2176,12 +2177,12 @@ div.csl-indent {
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>2</td>
 <td>1</td>
 <td>1</td>
+<td>3</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -2189,12 +2190,12 @@ div.csl-indent {
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>2</td>
+<td>1</td>
 <td>1</td>
 <td>0</td>
 <td>-0.648788</td>
 <td>0.133488</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2215,7 +2216,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.551462</td>
@@ -2233,7 +2234,7 @@ div.csl-indent {
 <td>4</td>
 <td>0.407146</td>
 <td>-0.171821</td>
-<td>0</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -2241,7 +2242,7 @@ div.csl-indent {
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>4</td>
 <td>0.447143</td>
@@ -2254,7 +2255,7 @@ div.csl-indent {
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>1</td>
+<td>2</td>
 <td>0</td>
 <td>2</td>
 <td>0.488208</td>
@@ -2272,7 +2273,7 @@ div.csl-indent {
 <td>4</td>
 <td>0.312066</td>
 <td>-0.031130</td>
-<td>0</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -2340,10 +2341,10 @@ div.csl-indent {
 <span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="51">
-<pre><code>sepal length (cm)    22
-sepal width (cm)     29
-petal length (cm)    36
-petal width (cm)     35
+<pre><code>sepal length (cm)    26
+sepal width (cm)     31
+petal length (cm)    29
+petal width (cm)     34
 dtype: int64</code></pre>
 </div>
 </div>
@@ -2366,7 +2367,7 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
+<td>5.1</td>
 <td>3.5</td>
 <td>1.4</td>
 <td>0.2</td>
@@ -2381,7 +2382,7 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.7</td>
-<td>3.2</td>
+<td>NaN</td>
 <td>NaN</td>
 <td>0.2</td>
 </tr>
@@ -2394,10 +2395,10 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
+<td>5.0</td>
 <td>3.6</td>
-<td>1.4</td>
 <td>NaN</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2408,14 +2409,14 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>NaN</td>
+<td>6.7</td>
 <td>3.0</td>
-<td>NaN</td>
+<td>5.2</td>
 <td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>NaN</td>
+<td>6.3</td>
 <td>2.5</td>
 <td>5.0</td>
 <td>1.9</td>
@@ -2423,23 +2424,23 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
-<td>NaN</td>
+<td>3.0</td>
 <td>5.2</td>
-<td>NaN</td>
+<td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.2</td>
-<td>NaN</td>
+<td>3.4</td>
 <td>5.4</td>
-<td>NaN</td>
+<td>2.3</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
 <td>3.0</td>
 <td>5.1</td>
-<td>1.8</td>
+<td>NaN</td>
 </tr>
 </tbody>
 </table>
@@ -2475,7 +2476,7 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>0.0</td>
+<td>5.1</td>
 <td>3.5</td>
 <td>1.4</td>
 <td>0.2</td>
@@ -2490,7 +2491,7 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4.7</td>
-<td>3.2</td>
+<td>0.0</td>
 <td>0.0</td>
 <td>0.2</td>
 </tr>
@@ -2503,10 +2504,10 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>0.0</td>
+<td>5.0</td>
 <td>3.6</td>
-<td>1.4</td>
 <td>0.0</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2517,14 +2518,14 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>0.0</td>
+<td>6.7</td>
 <td>3.0</td>
-<td>0.0</td>
+<td>5.2</td>
 <td>0.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>0.0</td>
+<td>6.3</td>
 <td>2.5</td>
 <td>5.0</td>
 <td>1.9</td>
@@ -2532,23 +2533,23 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
-<td>0.0</td>
+<td>3.0</td>
 <td>5.2</td>
-<td>0.0</td>
+<td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
 <td>6.2</td>
-<td>0.0</td>
+<td>3.4</td>
 <td>5.4</td>
-<td>0.0</td>
+<td>2.3</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
 <td>3.0</td>
 <td>5.1</td>
-<td>1.8</td>
+<td>0.0</td>
 </tr>
 </tbody>
 </table>
@@ -2589,20 +2590,20 @@ dtype: int64</code></pre>
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-58-output-2.png" width="585" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-58-output-2.png" width="582" height="427"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
-<pre><code>array([5.78604868, 4.18797652])</code></pre>
+<pre><code>array([5.79371112, 4.55934375])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
-<pre><code>array([[-0.63152597,  0.06537402, -0.75583382, -0.16005135],
-       [-0.77095816, -0.13446517,  0.61946114,  0.06172949]])</code></pre>
+<pre><code>array([[-0.86986681,  0.06623728, -0.46988902, -0.13471699],
+       [-0.48335295,  0.05975098,  0.8607085 ,  0.14825862]])</code></pre>
 </div>
 </div>
 </section>
@@ -2632,38 +2633,38 @@ dtype: int64</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>5.799219</td>
+<td>5.1</td>
 <td>3.500000</td>
-<td>1.400000</td>
-<td>0.200000</td>
+<td>1.40000</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>4.900000</td>
+<td>4.9</td>
 <td>3.000000</td>
-<td>1.400000</td>
-<td>1.184348</td>
+<td>1.40000</td>
+<td>1.22069</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>4.700000</td>
-<td>3.200000</td>
-<td>3.707018</td>
-<td>0.200000</td>
+<td>4.7</td>
+<td>3.063025</td>
+<td>3.82562</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>4.600000</td>
+<td>4.6</td>
 <td>3.100000</td>
-<td>1.500000</td>
-<td>0.200000</td>
+<td>1.50000</td>
+<td>0.20000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>5.799219</td>
+<td>5.0</td>
 <td>3.600000</td>
-<td>1.400000</td>
-<td>1.184348</td>
+<td>3.82562</td>
+<td>0.20000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2674,38 +2675,38 @@ dtype: int64</code></pre>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
-<td>5.799219</td>
+<td>6.7</td>
 <td>3.000000</td>
-<td>3.707018</td>
-<td>1.184348</td>
+<td>5.20000</td>
+<td>1.22069</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>5.799219</td>
+<td>6.3</td>
 <td>2.500000</td>
-<td>5.000000</td>
-<td>1.900000</td>
+<td>5.00000</td>
+<td>1.90000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
-<td>6.500000</td>
-<td>3.080165</td>
-<td>5.200000</td>
-<td>1.184348</td>
+<td>6.5</td>
+<td>3.000000</td>
+<td>5.20000</td>
+<td>2.00000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
-<td>6.200000</td>
-<td>3.080165</td>
-<td>5.400000</td>
-<td>1.184348</td>
+<td>6.2</td>
+<td>3.400000</td>
+<td>5.40000</td>
+<td>2.30000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
-<td>5.900000</td>
+<td>5.9</td>
 <td>3.000000</td>
-<td>5.100000</td>
-<td>1.800000</td>
+<td>5.10000</td>
+<td>1.22069</td>
 </tr>
 </tbody>
 </table>
@@ -2750,14 +2751,14 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="63">
-<pre><code>array([3.08838905, 0.25802945])</code></pre>
+<pre><code>array([2.93542917, 0.27908233])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="64">
-<pre><code>array([[ 0.35264535, -0.0700706 ,  0.87809263,  0.31572884],
-       [ 0.78089625,  0.3548337 , -0.40097792,  0.32173095]])</code></pre>
+<pre><code>array([[ 0.32660641, -0.08120829,  0.89071462,  0.3055502 ],
+       [ 0.87370405,  0.21768933, -0.37573644,  0.21925946]])</code></pre>
 </div>
 </div>
 </section>
