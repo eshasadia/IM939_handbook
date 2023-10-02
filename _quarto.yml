@@ -41,8 +41,8 @@ book:
       chapters:
         - content/about/teaching_staff.md
         - content/about/im939.md
-        - content/about/teaching_materials.md
-        #- content/about/conventions.qmd
+        - content/about/teaching_materials.qmd
+        - content/about/conventions.qmd
     - part: "Introduction and Historical Perspectives"
       chapters:
         - content/sessions/session-01.md
