@@ -128,3 +128,6 @@ Running the same command yields different results depending on whether the envir
 
 :::
 
+## Working as usual
+
+Now that the environment has been created and activated, you can use your jupyter notebooks using your favourite IDE, like you would do normally. For your convenience, the environment includes Jupyter Lab (and some extensions).
