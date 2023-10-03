@@ -51,28 +51,33 @@ book:
         - content/labs/Lab_1/IM939_Lab_1_3.ipynb
     - part: "Thinking Data: Theoretical and Practical Concerns"
       chapters: 
+        - content/sessions/session-02.md
         - content/labs/Lab_2/IM939_Lab_2_1.ipynb
         - content/labs/Lab_2/IM939_Lab_2_2.ipynb
         - content/labs/Lab_2/IM939_Lab_2_3.ipynb
         - content/labs/Lab_2/IM939_Lab_2_4.ipynb
     - part: "Abstractions & Models"
       chapters: 
+        - content/sessions/session-03.md
         - content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.ipynb
         - content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.ipynb
         - content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.ipynb
     - part: "Structures & Spaces"
       chapters:
+        - content/sessions/session-04.md
         - content/labs/Lab_4/IM939_Lab_4_1_Iris.ipynb
         - content/labs/Lab_4/IM939_Lab_4_2_Crime.ipynb
         - content/labs/Lab_4/IM939_Lab_4_Exercises.ipynb
     - part: "Multi-model thinking and rigour"
       chapters:
+        - content/sessions/session-05.md
         - content/labs/Lab_5/IM939_Lab_5_1.ipynb
         - content/labs/Lab_5/IM939_Lab_5_2.ipynb
         - content/labs/Lab_5/IM939_Lab_5_3.ipynb
         - content/labs/Lab_5/IM939_lab_5_Exercise.ipynb
     - part: "Recognising and avoiding traps"
       chapters:
+        - content/sessions/session-06.md
         - content/labs/Lab_6/IM939_Lab_6_1-illusions.ipynb
         - content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.ipynb
         - content/labs/Lab_6/IM939_Lab_6_3-Choropleths.ipynb
@@ -80,10 +85,16 @@ book:
         - content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.ipynb
     - part: "Data Science & Society"
       chapters:
+        - content/sessions/session-07.md
         - content/labs/Lab_7/IM939_Lab7-Part1.ipynb
         - content/labs/Lab_7/IM939_Lab7-Part2.ipynb
         - content/labs/Lab_7/IM939_Lab7-Part3.ipynb
         - content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.ipynb
+    - part: "Data Science Workshop"
+      chapters:
+        - content/sessions/session-08.md
+        - content/sessions/session-08_WorkshopBrief.md
+        - content/sessions/session-09.md 
     - content/references.qmd
   appendices:
      - README_setup.md

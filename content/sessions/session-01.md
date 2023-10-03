@@ -25,9 +25,9 @@ At the end of the session, you should  ..
 - have tried out basic Python commands and reflect on how they operate
 - have loaded your first data file into Python and read the data in it
 
-### Reading lists & Resources
+## Reading lists & Resources
 
-**Required reading**
+### Required reading
 
 - **On the origins of Data Science and Data Analysis (first 10 pages):** Tukey, J.W., 1962. The future of data analysis. *The annals of mathematical statistics*, *33*(1), pp.1-67. [[pdf](https://projecteuclid.org/euclid.aoms/1177704711)]
 - **A formal look at data science:** Dhar, V., 2013. Data science and prediction. *Communications of the ACM*, *56*(12), pp.64-73. [[library pdf link](https://encore.lib.warwick.ac.uk/iii/encore/eds/C__S%22Data%20science%20and%20prediction%22__Orightresult__U__X0?lang=eng&link=http%3A%2F%2F0-search.ebscohost.com.pugwash.lib.warwick.ac.uk%2Flogin.aspx%3Fdirect%3Dtrue%26site%3Deds-live%26db%3Dbth%26AN%3D92604156%26group%3Dtrial&suite=cobalt)]
@@ -36,7 +36,7 @@ At the end of the session, you should  ..
 - **On the critique of the Google Flu Trend project:** Lazer, D., Kennedy, R., King, G. and Vespignani, A., 2014. The parable of Google Flu: traps in big data analysis. *Science*, *343*(6176), pp.1203-1205. [[pdf](http://0-search.ebscohost.com.pugwash.lib.warwick.ac.uk/login.aspx%3fdirect%3dtrue%26db%3dedsjsr%26AN%3dedsjsr.24743402%26site%3deds-live&group=trial)]
 - **An applied Data Science example:** Quercia, D., Schifanella, R. and Aiello, L.M., 2014, September. The shortest path to happiness: Recommending beautiful, quiet, and happy routes in the city. In *Proceedings of the 25th ACM conference on Hypertext and social media* (pp. 116-125). [[pdf](https://arxiv.org/pdf/1407.1031.pdf)]
 
-**Optional reading and resources**
+### Optional reading and resources
 
 - **On the information pyramid:** Ackoff, R.L., 1989. From data to wisdom. *Journal of applied systems analysis*, *16*(1), pp.3-9. [[a pdf link to a short extract](http://faculty.ung.edu/kmelton/Documents/DataWisdom.pdf)]
 - **A critique of the information pyramid:** https://hbr.org/2010/02/data-is-to-info-as-info-is-not
@@ -44,7 +44,7 @@ At the end of the session, you should  ..
 - **A public facing intro to Data Science :** Data Science: A guide for society by Sense about Science - [[pdf link](https://senseaboutscience.org/wp-content/uploads/2019/06/SaS-DataScienceGuide-V8-SinglePages.pdf)] 
 - **On data biography:** D'Ignazio, C., 2017. Creative data literacy: Bridging the gap between the data-haves and data-have nots. *Information Design Journal*, *23*(1), pp.6-18. [[pdf](https://www.researchgate.net/publication/318249308_Creative_data_literacy_Bridging_the_gap_between_the_data-haves_and_data-have_nots)]
 
-### Python related resources:
+## Python related resources
 
 Although we try to cover the basics in Python programming in this  tutorial, some of you, especially those who are new to Python, might  benefit from some external tutorials which cover the basics. There are  many resources online but here are some good links:
 

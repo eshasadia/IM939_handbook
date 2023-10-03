@@ -53,13 +53,20 @@ You can use this handbook as a regular book you can read prior to, during or aft
 
 But you can also use this handbook as an invitation to experiment: you can copy the code in the examples, pasting it into your notebook and even changing some parameters to see how the output changes.
 
+::: callout-caution
+### Work in progress
+
+This first edition of the handbook is a live document. That means that teaching staff will be updating the materials on a weekly basis, making sure that materials for the current week are updated. This means you may want to check for changes on the handbook every week.
+
+:::
+
 From a technical standpoint, this book has been created with [quarto](https://quarto.org) and most of the chapters (i.e., all the labs) are actually the same jupyter notebooks that you will be using during the labs' sessions. You can see the code in this Github Repository and even try to reproduce the entire book! (see below)
 
 ## Labs' notebooks
 
 **Labs notebooks are jupyter notebooks that will be using during the weekly face to face workshops**[^ipynb]. They contain explanations and code that students will have to work during the session to reproduced, modify and understand the code and concepts for every unit. Strictly speaking, each of those noteooks is exactly the same as every chapter in the book prefixed as "Labs:".
 
-## Git repo?
+## GitHub repository
 
 This is where the source code for the online handbook (and therefore, the labs and exercises) reside. Strictly speaking you do not need to do anything with this, but if you are familiar with Git, you may want to get yourself a copy and learn a complementary set of valuable skills by reproducing its contents.
 
