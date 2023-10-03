@@ -104,7 +104,7 @@ You will see that the environment is active because you will see its name in the
 
 ::: callout-warning
 
-If you do not do it, chances are that the code will not work due to missing libraries or using different versions of some libraries. Image below shows how the same command (`import altar as alt`) yields an error on @fig-environment-ko because the environment has not been activated, whereas @fig-environment-ok shows that the same code just works after activating the environment using the command `conda activate IM939`.
+If you do not activate the environment, chances are that the code will not work due to missing libraries or using different versions of some libraries. Image below shows how the same command (`import altar as alt`) yields an error on @fig-environment-ko because the environment has not been activated, whereas @fig-environment-ok shows that the same code just works after activating the environment using the command `conda activate IM939`.
 
 ::: aside
 
