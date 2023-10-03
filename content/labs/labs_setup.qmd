@@ -110,7 +110,9 @@ If you do not do it, chances are that the code will not work due to missing libr
 
 ::: callout-tip
 
-Did you notice that the terminal on @fig-environment-ko shows `(base)` next to the command prompt, whereas @fig-environment-ok shows `(IM939)` instead after having activated the environment? You've guessed right: this is how the terminal will us which is our current environment.
+Did you notice that the terminal on @fig-environment-ko shows `(base)` next to the command prompt, whereas @fig-environment-ok shows `(IM939)` instead after having activated the environment? 
+
+You've guessed right: this is how the terminal will tell us which is our current environment.
 
 :::
 
