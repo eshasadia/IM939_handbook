@@ -97,7 +97,7 @@ book:
         - content/sessions/session-09.md 
     - content/references.qmd
   appendices:
-     - README_setup.md
+     - content/labs/labs_setup.qmd
      - content/files-and-folders.md
 
   page-footer: 

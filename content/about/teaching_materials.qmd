@@ -66,6 +66,13 @@ From a technical standpoint, this book has been created with [quarto](https://qu
 
 **Labs notebooks are jupyter notebooks that will be using during the weekly face to face workshops**[^ipynb]. They contain explanations and code that students will have to work during the session to reproduced, modify and understand the code and concepts for every unit. Strictly speaking, each of those noteooks is exactly the same as every chapter in the book prefixed as "Labs:".
 
+::: callout-important
+### Setting up your machine
+
+To follow the Labs' sessions, basides Python, you will need to install the required software and packages that we will be using. Please refer to @sec-setup for instructions on how to do it.
+
+:::
+
 ## GitHub repository
 
 This is where the source code for the online handbook (and therefore, the labs and exercises) reside. Strictly speaking you do not need to do anything with this, but if you are familiar with Git, you may want to get yourself a copy and learn a complementary set of valuable skills by reproducing its contents.

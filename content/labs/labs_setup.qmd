@@ -1,0 +1,130 @@
+# Setting up your machine {#sec-setup}
+
+This section covers all the steps needed to set up your machine in order to follow the labs sessions. The technological stack used for this module is composed of the following main components:
+
+- **Python + libraries:** Python is the programming language of choice for this module. Besides regular Python, we will be using a number of libraries that extend Python's features for specific tasks. These libraries need to be installed, too, before they can be loaded.
+- **Anaconda:** to install and handle all the libraries needed for this module, locking them to specific versions that 
+
+::: callout-tip
+
+@sec-technological-stack provides a more detailed description of what every component does, and why are they needed.
+
+:::
+
+## Install Anaconda
+
+You will need to install [Anaconda distribution](https://www.anaconda.com) your machine if it is not already installed. You can run the following command to see if it is already present in your system:
+
+``` {.bash filename="Terminal"}
+conda --help
+```
+
+If you get a `command not found` error, you will need to install Anaconda. You can do so by:
+
+1. Download it from the official website: <https://www.anaconda.com/download>
+2. Execute the binary you downloaded in previous steps and follow instructions
+
+![Download the right version for your system from Anaconda's website](media/anaconda-download.png){#fig-anaconda-download}
+
+Once you've done it, Anaconda, Python, some popular libraries and a software called Anaconda Navigator will be installed in your system. We will be using Anaconda Navigator as an interface (GUI) to Anaconda.
+
+## Create a virtual environment
+
+::: callout-important
+
+You will only need to do this step once per machine. After the virtual environment is created, you will not need to create it again, unless you delete it or you want to use it in a different machine.
+
+:::
+
+1. Download the file [`environment.yml`](https://github.com/WarwickCIM/IM939_handbook/raw/main/environment.yml) in your laptop
+   1. Right click on [`environment.yml`](https://github.com/WarwickCIM/IM939_handbook/raw/main/environment.yml) and select "Save Link As..."
+   2. Create a folder dedicated to `IM939` (where you will be adding your notebooks and exercises) and save it in there without changing its name.
+2. Open Anaconda Navigator
+   1. Click on Environments' tab
+   2. Click on Import
+   
+![Import environment from Anaconda Navigator](media/anaconda-evironment-import.png){#fig-environment-import1}
+
+   3. Select the file `environment.yml` you downloaded on the previous step.
+   4. Write `IM939` as the environment's name
+
+![Select the file](media/anaconda-evironment-import-2.png){#fig-environment-import2}
+
+   1. After downloading the required packages and installing them (this can take time), an environment called `IM939` will be created
+
+![Anaconda Navigator displaying the newly created environment as the active environment](media/anaconda-evironment-import-3.png){#fig-environment-created}
+
+::: callout-tip
+
+### Command Line alternative
+
+Instead of using anaconda navigator, you can also do the same from the command line.
+
+Open your terminal and type the following command:
+
+``` {.bash filename="Terminal"}
+conda env create -f environment.yml
+```
+
+:::
+
+## Activate the virtual environment
+
+::: callout-important
+
+You will need to do this every time you restart your session. Prior to every lab session, you will need to make sure that the `IM939`  environment has been activated.  
+
+:::
+
+To activate an existing environment you need to:
+
+1. Open Anaconda Navigator
+2. Click on Environments' tab
+3. Click on `IM939` to activate it. After a brief lapse of time, you will see a green border and arrow next to it, indicating that the environment has been activated.
+
+![Anaconda Navigator showing IM939 as the active environment, and a listing of every library and versions installed.](media/anaconda-navigator-active.png){#fig-environment-active}
+
+
+::: callout-tip
+
+### Command Line alternative
+
+Instead of using anaconda navigator, you can also do the same from the command line.
+
+Open your terminal and type the following command:
+
+``` {.bash filename="Terminal"}
+conda activate IM939
+```
+
+You will see that the environment is active because you will see its name in the command line.
+
+:::
+
+
+::: callout-warning
+
+If you do not do it, chances are that the code will not work due to missing libraries or using different versions of some libraries. Image below shows how the same command (`import altar as alt`) yields an error on @fig-environment-ko because the environment has not been activated, whereas @fig-environment-ok shows that the same code just works after activating the environment using the command `conda activate IM939`.
+
+::: aside
+
+::: callout-tip
+
+Did you notice that the terminal on @fig-environment-ko shows `(base)` next to the command prompt, whereas @fig-environment-ok shows `(IM939)` instead after having activated the environment? You've guessed right: this is how the terminal will us which is our current environment.
+
+:::
+
+:::
+
+::: {#fig-environments-selected layout-ncol=1}
+
+![Error caused by not loading the environment](media/environment-not-activated.png){#fig-environment-ko}
+
+![IM939 activated does not trigger any error](media/environment-activated.png){#fig-environment-ok}
+
+Running the same command yields different results depending on whether the environment has not been activated (A) or it has been activated (B).
+:::
+
+
+:::
+
