@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 10&nbsp; Lab: Regressions</title>
+<title>Data Science Across Disciplines - 12&nbsp; Lab: Regressions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 10&nbsp; Lab: Regressions">
+<meta name="twitter:title" content="Data Science Across Disciplines - 12&nbsp; Lab: Regressions">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression_files/figure-html/cell-5-output-2.png">
 <meta name="twitter:image-height" content="858">
@@ -139,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-03.html">Abstractions &amp; Models</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -160,7 +160,6 @@ div.csl-indent {
       <a href="../../../">Data Science Across Disciplines</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/WarwickCIM/IM939_handbook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="../../../Data-Science-Across-Disciplines.pdf" rel="" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -258,26 +257,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Pandas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lab: Visualising Data (1)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Visualising Data (1)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Missing data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_2/IM939_Lab_2_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></a>
   </div>
 </li>
       </ul>
@@ -293,20 +298,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -322,20 +333,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
   </div>
 </li>
       </ul>
@@ -351,26 +368,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_lab_5_Exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -386,32 +409,38 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-06.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
   </div>
 </li>
       </ul>
@@ -427,26 +456,61 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Simpson’s Paradox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Simpson’s Paradox</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+ <span class="menu-text">Data Science Workshop</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Session 1: Design Thinking in Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-08_WorkshopBrief.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Brief: Analysing Health Indicators</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/sessions/session-09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Session 2: Bring Your Own Data (BYOD)</span></span></a>
   </div>
 </li>
       </ul>
@@ -459,13 +523,13 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../README_setup.html" class="sidebar-item-text sidebar-link">
@@ -490,16 +554,16 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sea-ice-dataset" id="toc-sea-ice-dataset" class="nav-link active" data-scroll-target="#sea-ice-dataset"><span class="header-section-number">10.1</span> Sea Ice Dataset</a></li>
-  <li><a href="#simple-and-multiple-linear-regression" id="toc-simple-and-multiple-linear-regression" class="nav-link" data-scroll-target="#simple-and-multiple-linear-regression"><span class="header-section-number">10.2</span> Simple and Multiple Linear Regression</a></li>
-  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">10.3</span> Ordinary Least Squares</a></li>
-  <li><a href="#case-study-climate-change-and-sea-ice-extent" id="toc-case-study-climate-change-and-sea-ice-extent" class="nav-link" data-scroll-target="#case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">10.4</span> Case study: Climate Change and Sea Ice Extent</a>
+  <li><a href="#sea-ice-dataset" id="toc-sea-ice-dataset" class="nav-link active" data-scroll-target="#sea-ice-dataset"><span class="header-section-number">12.1</span> Sea Ice Dataset</a></li>
+  <li><a href="#simple-and-multiple-linear-regression" id="toc-simple-and-multiple-linear-regression" class="nav-link" data-scroll-target="#simple-and-multiple-linear-regression"><span class="header-section-number">12.2</span> Simple and Multiple Linear Regression</a></li>
+  <li><a href="#ordinary-least-squares" id="toc-ordinary-least-squares" class="nav-link" data-scroll-target="#ordinary-least-squares"><span class="header-section-number">12.3</span> Ordinary Least Squares</a></li>
+  <li><a href="#case-study-climate-change-and-sea-ice-extent" id="toc-case-study-climate-change-and-sea-ice-extent" class="nav-link" data-scroll-target="#case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">12.4</span> Case study: Climate Change and Sea Ice Extent</a>
   <ul class="collapse">
-  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">10.4.1</span> Reading Data</a></li>
-  <li><a href="#data-visualisation-to-explore-data" id="toc-data-visualisation-to-explore-data" class="nav-link" data-scroll-target="#data-visualisation-to-explore-data"><span class="header-section-number">10.4.2</span> Data visualisation to explore data</a></li>
-  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization"><span class="header-section-number">10.4.3</span> Normalization</a></li>
-  <li><a href="#pearsons-correlation" id="toc-pearsons-correlation" class="nav-link" data-scroll-target="#pearsons-correlation"><span class="header-section-number">10.4.4</span> Pearson’s correlation</a></li>
-  <li><a href="#simple-ols" id="toc-simple-ols" class="nav-link" data-scroll-target="#simple-ols"><span class="header-section-number">10.4.5</span> Simple OLS</a></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data"><span class="header-section-number">12.4.1</span> Reading Data</a></li>
+  <li><a href="#data-visualisation-to-explore-data" id="toc-data-visualisation-to-explore-data" class="nav-link" data-scroll-target="#data-visualisation-to-explore-data"><span class="header-section-number">12.4.2</span> Data visualisation to explore data</a></li>
+  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization"><span class="header-section-number">12.4.3</span> Normalization</a></li>
+  <li><a href="#pearsons-correlation" id="toc-pearsons-correlation" class="nav-link" data-scroll-target="#pearsons-correlation"><span class="header-section-number">12.4.4</span> Pearson’s correlation</a></li>
+  <li><a href="#simple-ols" id="toc-simple-ols" class="nav-link" data-scroll-target="#simple-ols"><span class="header-section-number">12.4.5</span> Simple OLS</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_3/IM939_Lab_3_2_Linear_Regression.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -509,7 +573,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Lab: Regressions</span></h1>
 </div>
 
 
@@ -525,13 +589,13 @@ div.csl-indent {
 </header>
 
 <p>In this lab we will introduce simple linear regression in Python. We are going to use <code>Scikit Learn</code> library. More information about the library you can find here: <a href="https://www.tutorialspoint.com/scikit_learn/scikit_learn_linear_regression.htm" class="uri">https://www.tutorialspoint.com/scikit_learn/scikit_learn_linear_regression.htm</a></p>
-<section id="sea-ice-dataset" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="sea-ice-dataset"><span class="header-section-number">10.1</span> Sea Ice Dataset</h2>
+<section id="sea-ice-dataset" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sea-ice-dataset"><span class="header-section-number">12.1</span> Sea Ice Dataset</h2>
 <p>The script below is the based on the Sea Ice dataset from <span class="citation" data-cites="igual_regression_2017">Igual and Seguí (<a href="../../references.html#ref-igual_regression_2017" role="doc-biblioref">2017</a>)</span>. You can find the data here: <a href="ftp://sidads.colorado.edu/DATASETS/NOAA/" class="uri">ftp://sidads.colorado.edu/DATASETS/NOAA/</a> or read more about the project here: <a href="https://nsidc.org/data/seaice_index" class="uri">https://nsidc.org/data/seaice_index</a></p>
 <p>This notebook will walk you through an example of a simple linear regression and the other notebook “IM939 Lab 3 - Linear Regression Exercise.ipynb” will include the example of a multiple linear regression, too.</p>
 </section>
-<section id="simple-and-multiple-linear-regression" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="simple-and-multiple-linear-regression"><span class="header-section-number">10.2</span> Simple and Multiple Linear Regression</h2>
+<section id="simple-and-multiple-linear-regression" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="simple-and-multiple-linear-regression"><span class="header-section-number">12.2</span> Simple and Multiple Linear Regression</h2>
 <p>In the <strong>linear model</strong> the response <span class="math inline">\(\textbf{y}\)</span> depends linearly from the covariates <span class="math inline">\(\textbf{x}_i\)</span>.</p>
 <p>In the <strong>simple</strong> linear regression, with a single variable, we described the relationship between the predictor and the response with a straight line. The general linear model: <span class="math display">\[ \textbf{y}  =  a_0+ a_1 \textbf{x}_1 \]</span></p>
 <p>The parameter <span class="math inline">\(a_0\)</span> is called the <em>constant</em> term or the <em>intercept</em>.</p>
@@ -539,17 +603,17 @@ div.csl-indent {
 <p><span class="math display">\[ \textbf{y}  =  a_1 \textbf{x}_1  + \dots + a_m \textbf{x}_{m} \]</span></p>
 <p>The <span class="math inline">\(a_i\)</span> are termed the <em>parameters</em> of the model or the coefficients.</p>
 </section>
-<section id="ordinary-least-squares" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">10.3</span> Ordinary Least Squares</h2>
+<section id="ordinary-least-squares" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="ordinary-least-squares"><span class="header-section-number">12.3</span> Ordinary Least Squares</h2>
 <p>Ordinary Least Squares (OLS) is the simplest and most common <strong>estimator</strong> in which the coefficients <span class="math inline">\(a\)</span>’s of the simple linear regression: <span class="math inline">\(\textbf{y} = a_0+a_1 \textbf{x}\)</span>, are chosen to minimize the <strong>square of the distance between the predicted values and the actual values</strong>.</p>
 <p><span class="math display">\[ ||a_0 + a_1 \textbf{x} -  \textbf{y} ||^2_2 = \sum_{j=1}^n (a_0+a_1 x_{j} -  y_j )^2,\]</span></p>
 <p>This expression is often called <strong>sum of squared errors of prediction (SSE)</strong>.</p>
 </section>
-<section id="case-study-climate-change-and-sea-ice-extent" class="level2 page-columns page-full" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">10.4</span> Case study: Climate Change and Sea Ice Extent</h2>
+<section id="case-study-climate-change-and-sea-ice-extent" class="level2 page-columns page-full" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="case-study-climate-change-and-sea-ice-extent"><span class="header-section-number">12.4</span> Case study: Climate Change and Sea Ice Extent</h2>
 <p>The question: Has there been a decrease in the amount of ice in the last years?</p>
-<section id="reading-data" class="level3 page-columns page-full" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">10.4.1</span> Reading Data</h3>
+<section id="reading-data" class="level3 page-columns page-full" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="reading-data"><span class="header-section-number">12.4.1</span> Reading Data</h3>
 <p>There are five steps. First, let’s load the data that is already in the <code>data</code> folder: <code>SeaIce.txt</code>. It is a text file, specifically is a <code>Tab</code> separated file where each <code>Tab</code> delimites the following columns:</p>
 <ul>
 <li><code>Year</code>: 4-digit year</li>
@@ -651,8 +715,8 @@ dtype: float64</code></pre>
 </div>
 <p>Did we receive a negative mean…?</p>
 </section>
-<section id="data-visualisation-to-explore-data" class="level3" data-number="10.4.2">
-<h3 data-number="10.4.2" class="anchored" data-anchor-id="data-visualisation-to-explore-data"><span class="header-section-number">10.4.2</span> Data visualisation to explore data</h3>
+<section id="data-visualisation-to-explore-data" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="data-visualisation-to-explore-data"><span class="header-section-number">12.4.2</span> Data visualisation to explore data</h3>
 <p>Do you remember Seaborn? We will use lmplot() function from Seaborn to explore linear relationship of different forms, e.g.&nbsp;relationship between the month of the year (variable) and extent (responses):</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -723,8 +787,8 @@ dtype: float64</code></pre>
 </div>
 <p>Above you can see ice extent data by month. You can see a monthly fluctuation of the sea ice extent, as would be expected for the different seasons of the year. In order to run regression, and avoid this fluctuation we can normalize data. This will let us see the evolution of the extent over the years.</p>
 </section>
-<section id="normalization" class="level3 page-columns page-full" data-number="10.4.3">
-<h3 data-number="10.4.3" class="anchored" data-anchor-id="normalization"><span class="header-section-number">10.4.3</span> Normalization</h3>
+<section id="normalization" class="level3 page-columns page-full" data-number="12.4.3">
+<h3 data-number="12.4.3" class="anchored" data-anchor-id="normalization"><span class="header-section-number">12.4.3</span> Normalization</h3>
 <p>The <code>lmplot()</code> function from the Seaborn module is intended for exploring linear relationships of different forms in multidimensional datesets. Input data must be in a Pandas DataFrame. To plot them, we provide the predictor and response variable names along with the dataset</p>
 <div class="cell page-columns page-full" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
@@ -782,62 +846,62 @@ Name: extent, dtype: float64</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2 , x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"figs/IceExtentNormalizedByMonth.png"</span>, dpi <span class="op">=</span> <span class="dv">300</span>, bbox_inches <span class="op">=</span> <span class="st">'tight'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean().copy()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_40896/751478846.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80350/751478846.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -864,8 +928,8 @@ var: 31.983239774968798</code></pre>
 </div>
 </div>
 </section>
-<section id="pearsons-correlation" class="level3" data-number="10.4.4">
-<h3 data-number="10.4.4" class="anchored" data-anchor-id="pearsons-correlation"><span class="header-section-number">10.4.4</span> Pearson’s correlation</h3>
+<section id="pearsons-correlation" class="level3" data-number="12.4.4">
+<h3 data-number="12.4.4" class="anchored" data-anchor-id="pearsons-correlation"><span class="header-section-number">12.4.4</span> Pearson’s correlation</h3>
 <p>Let’s calculate Pearson’s correlation coefficient and the p-value for testing non-correlation.</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats</span>
@@ -875,8 +939,8 @@ var: 31.983239774968798</code></pre>
 </div>
 </div>
 </section>
-<section id="simple-ols" class="level3" data-number="10.4.5">
-<h3 data-number="10.4.5" class="anchored" data-anchor-id="simple-ols"><span class="header-section-number">10.4.5</span> Simple OLS</h3>
+<section id="simple-ols" class="level3" data-number="12.4.5">
+<h3 data-number="12.4.5" class="anchored" data-anchor-id="simple-ols"><span class="header-section-number">12.4.5</span> Simple OLS</h3>
 <p>We can also compute the trend as a simple linear regression (OLS) and quantitatively evaluate it.</p>
 <p>For that we use using <strong>Scikit-learn</strong>, library that provides a variety of both supervised and unsupervised machine learning techniques. Scikit-learn provides an object-oriented interface centered around the concept of an Estimator. The <code>Estimator.fit</code> method sets the state of the estimator based on the training data. Usually, the data is comprised of a two-dimensional numpy array <span class="math inline">\(X\)</span> of shape <code>(n_samples, n_predictors)</code> that holds the so-called feature matrix and a one-dimensional numpy array <span class="math inline">\(\textbf{y}\)</span> that holds the responses. Some estimators allow the user to control the fitting behavior. For example, the <code>sklearn.linear_model.LinearRegression</code> estimator allows the user to specify whether or not to fit an intercept term. This is done by setting the corresponding constructor arguments of the estimator object. During the fitting process, the state of the estimator is stored in instance attributes that have a trailing underscore (’<em>’). For example, the coefficients of a LinearRegression estimator are stored in the attribute coef</em>.</p>
 <p>Estimators that can generate predictions provide a <code>Estimator.predict</code> method. In the case of regression, <code>Estimator.predict</code> will return the predicted regression values, <span class="math inline">\(\hat{\textbf{y}}\)</span>.</p>
@@ -967,7 +1031,7 @@ R^2: 0.7810636041396216</code></pre>
 <pre><code>Prediction of extent for January 2025 (in millions of square km): [[13.14449923]]</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/sklearn/base.py:464: UserWarning: X does not have valid feature names, but LinearRegression was fitted with feature names
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/sklearn/base.py:465: UserWarning: X does not have valid feature names, but LinearRegression was fitted with feature names
   warnings.warn(</code></pre>
 </div>
 </div>
@@ -1220,12 +1284,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lab: Data Processing and Summarization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_3/IM939_Lab_3_Exercise_Linear_Regression.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Exercise: Regression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
