@@ -81,14 +81,14 @@
     "href": "content/about/teaching_materials.html#moodle",
     "title": "Teaching materials",
     "section": "Moodle",
-    "text": "Moodle\nThis is the primary source of information and communication. As a source of information, Moodle contains all links to every teaching materials that we will be used in this module. Materials are organised by units/weeks and can be of different types:\n\nPre-recorded videos\nLabs’ materials\nHandbook units\nReadings\n…\n\nAs a communication tool, Moodle provides contains an Announcement board, where teaching staff can post any important updates about the module1, and a Discussion Forum, where anyone can ask (and answer!) questions, expand on some topic or discuss anything related to the module.1 Every time a new message is created on the announcements’ board, Students will receive a copy in their email inboxes."
+    "text": "Moodle\nThis is the primary source of information and communication. As a source of information, Moodle contains all links to every teaching materials that we will be used in this module. Materials are organised by units/weeks and can be of different types:\n\nPre-recorded videos\nLabs’ materials\nHandbook units\nReadings\n…\n\nAs a communication tool, Moodle provides contains an Announcement board, where teaching staff can post any important updates about the module1, and a Discussion Forum, where anyone can ask (and answer!) questions, expand on some topic or discuss anything related to the module.1 Every time a new message is created on the announcements’ board, Students will receive a copy in their email inboxes.\n\n\n\nIM939 Moodle course"
   },
   {
-    "objectID": "content/about/teaching_materials.html#teams-channel",
-    "href": "content/about/teaching_materials.html#teams-channel",
+    "objectID": "content/about/teaching_materials.html#microsoft-teams",
+    "href": "content/about/teaching_materials.html#microsoft-teams",
     "title": "Teaching materials",
-    "section": "Teams’ channel",
-    "text": "Teams’ channel\nThis is where the real-time communication takes place. IM939 has a dedicated team channel for students and staff. You can use it to ask questions, make comments, react… or even share materials with the rest of the class on real time. Please note that every student will have access to what it is said or shared, so treat this channel as if it was public, and never share private information."
+    "section": "Microsoft Teams",
+    "text": "Microsoft Teams\nThis is where the real-time communication takes place. IM939 has a dedicated team channel for students and staff. You can use it to ask questions, make comments, react… or even share materials with the rest of the class on real time. Please note that every student will have access to what it is said or shared, so treat this channel as if it was public, and never share private information.\n\n\n\nIM939’s team on Microsoft Teams"
   },
   {
     "objectID": "content/about/teaching_materials.html#online-handbook",
@@ -109,7 +109,7 @@
     "href": "content/about/teaching_materials.html#github-repository",
     "title": "Teaching materials",
     "section": "GitHub repository",
-    "text": "GitHub repository\nThis is where the source code for the online handbook (and therefore, the labs and exercises) reside. Strictly speaking you do not need to do anything with this, but if you are familiar with Git, you may want to get yourself a copy and learn a complementary set of valuable skills by reproducing its contents."
+    "text": "GitHub repository\nThis is where the source code for the online handbook (and therefore, the labs and exercises) reside. Strictly speaking you do not need to do anything with this, but if you are familiar with Git, you may want to get yourself a copy and learn a complementary set of valuable skills by reproducing its contents.\n\n\n\nGitHub Repository containing the handbook /teaching materials’ source code"
   },
   {
     "objectID": "content/about/conventions.html#text-format",
