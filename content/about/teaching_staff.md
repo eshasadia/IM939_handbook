@@ -22,7 +22,9 @@ I am a versatile, transdisciplinary, and passionate person with a mixed technica
 
 #### Busola Oronti
 
+<img src="../../media/staff-busola.png" class="img-fluid" align="right" width="150"/> *Teaching Assistant*
 
+My current research interests include the design optimization of medical devices for low resource settings (LRS) using Artificial Intelligence, Machine Learning and the Internet of Things (IoT).
 
 ## Present and former staff {#sec-staff-all}
 
