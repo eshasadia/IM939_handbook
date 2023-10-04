@@ -20,10 +20,15 @@ Agent-based Modelling, Computational Modelling for Public Policy, Network Analys
 
 I am a versatile, transdisciplinary, and passionate person with a mixed technical and sociological background. As a Senior Research Software Engineer, I am responsible to support research and teaching by using and developing research software while promoting an open, reproducible research culture and outputs.
 
+#### Busola Oronti
+
+
+
 ## Present and former staff {#sec-staff-all}
 
 This module has also been taught by the following people in the past (in alphabetical order):
 
+-   **Busola Oronti**, Teaching Assistant (2022-Present)
 -   **Cagatay Turkay**, Professor (202X-Present)
 -   **Carlos Cámara-Menoyo**, Senior Research Software Engineer (2022-Present)
 -   **James Tripp**, Senior Research Software Engineer (2020-2022)
