@@ -22,7 +22,7 @@ As a communication tool, Moodle provides contains an Announcement board, where t
 
 ## Online Handbook
 
-**The online book that you are reading now is the companion book for the module**[^handbook]. It contains all the contents you'll need to follow the course presented in an read-friendly format and organised around sections (one per week). Each session consists of information about the session, one or more "labs" and some of them also include exercises. 
+**The online book that you are reading now is the companion handbook for the module**[^handbook]. It contains the contents you'll need to follow the coding labs and the hands-on parts of the module presented in an read-friendly format and organised around sections (one per week). Each session consists of information about the session, one or more "labs" which are narrated computational artefacts and some exercises that encourage you to tackle specific questions. 
 
 Additionally, every page combines detailed explanations, code blocks showing code and output (see @fig-code-block), bibliographical references, side notes... as well as clear sign posting and search features to help you find the information you are looking for and to make the learning process, easier.
 
@@ -49,7 +49,7 @@ df.head()
 ```
 :::
 
-You can use this handbook as a regular book you can read prior to, during or after the teaching sessions to either prepare, follow or refresh key concepts for every unit.
+You can use this handbook as a regular book you can read prior to, during or after the teaching sessions to either prepare, follow or refresh key concepts in the coding labs for every unit.
 
 But you can also use this handbook as an invitation to experiment: you can copy the code in the examples, pasting it into your notebook and even changing some parameters to see how the output changes.
 
