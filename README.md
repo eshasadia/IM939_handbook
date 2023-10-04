@@ -9,7 +9,7 @@ This handbook has been created by Carlos Cámara-Menoyo and Cagatay Turkay, base
 Teaching Staff (2023-24):
 
 - [Cagatay Turkay](https://warwick.ac.uk/fac/cross_fac/cim/people/cagatay-turkay/) (Module leader)
-- Kavin Narasimhan
+- [Kavin Narasimhan](https://warwick.ac.uk/fac/cross_fac/cim/people/kavin-narasimhan/)
 - [Carlos Cámara-Menoyo](https://warwick.ac.uk/fac/cross_fac/cim/people/carlos-camara/)
 
 
