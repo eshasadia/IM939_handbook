@@ -538,7 +538,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help"><span class="header-section-number">6.3</span> Help!</a></li>
   <li><a href="#structure" id="toc-structure" class="nav-link" data-scroll-target="#structure"><span class="header-section-number">6.4</span> Structure</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6.5</span> Summary</a></li>
-  <li><a href="#selecting-subsets" id="toc-selecting-subsets" class="nav-link" data-scroll-target="#selecting-subsets"><span class="header-section-number">6.6</span> Selecting subsets</a></li>
+  <li><a href="#subsetting" id="toc-subsetting" class="nav-link" data-scroll-target="#subsetting"><span class="header-section-number">6.6</span> Subsetting</a>
+  <ul class="collapse">
+  <li><a href="#selecting-columns" id="toc-selecting-columns" class="nav-link" data-scroll-target="#selecting-columns"><span class="header-section-number">6.6.1</span> Selecting columns</a></li>
+  <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows"><span class="header-section-number">6.6.2</span> Filtering rows</a></li>
+  </ul></li>
   <li><a href="#adding-columns" id="toc-adding-columns" class="nav-link" data-scroll-target="#adding-columns"><span class="header-section-number">6.7</span> Adding columns</a></li>
   <li><a href="#writing-data" id="toc-writing-data" class="nav-link" data-scroll-target="#writing-data"><span class="header-section-number">6.8</span> Writing data</a></li>
   <li><a href="#combining-datasets" id="toc-combining-datasets" class="nav-link" data-scroll-target="#combining-datasets"><span class="header-section-number">6.9</span> Combining datasets</a></li>
@@ -684,7 +688,7 @@ Data frames
 <p>So let’s check the what our newly created object’s (<code>df</code>) data type:</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="54">
+<div class="cell-output cell-output-display" data-execution_count="109">
 <pre><code>pandas.core.frame.DataFrame</code></pre>
 </div>
 </div>
@@ -712,7 +716,7 @@ memory usage: 8.9+ KB</code></pre>
 <p>We can just <code>dtypes</code> to check the data types of every variable in the data frame.</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="56">
+<div class="cell-output cell-output-display" data-execution_count="111">
 <pre><code>season           int64
 episode          int64
 title           object
@@ -725,14 +729,14 @@ dtype: object</code></pre>
 <p>Or just the dimensions (e.g., rows and columns).</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="57">
+<div class="cell-output cell-output-display" data-execution_count="112">
 <pre><code>(188, 6)</code></pre>
 </div>
 </div>
 <p>In this case, there are only 188 rows. But for larger datasets we might want to look at the head (top 5) and tail (bottom 5) rows using <code>.head()</code> and <code>.tail()</code>, respectively.</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="58">
+<div class="cell-output cell-output-display" data-execution_count="113">
 <div>
 
 
@@ -802,7 +806,7 @@ dtype: object</code></pre>
 </div>
 <div class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="114">
 <div>
 
 
@@ -876,7 +880,7 @@ dtype: object</code></pre>
 <p>To get an overview of our data we can ask Python to ‘<em>describe</em> our (numeric) data’</p>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="60">
+<div class="cell-output cell-output-display" data-execution_count="115">
 <div>
 
 
@@ -964,7 +968,7 @@ dtype: object</code></pre>
 <p>Note the error triggered above due to pandas attempting to calculate the mean of the wrong type (i.e.&nbsp;non-numeric values). We can address that by only computing the mean of numeric values (see below):</p>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="117">
 <pre><code>season            5.468085
 episode          11.877660
 imdb_rating       8.257447
@@ -975,7 +979,7 @@ dtype: float64</code></pre>
 <p>or the sum of every value within the same column:</p>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="118">
 <pre><code>season                                                      1028
 episode                                                     2233
 title          PilotDiversity DayHealth CareThe AllianceBaske...
@@ -989,7 +993,7 @@ dtype: object</code></pre>
 <p>Again, we can force to use numeric values only:</p>
 <div class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df.<span class="bu">sum</span>(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="119">
 <pre><code>season           1028.0
 episode          2233.0
 imdb_rating      1552.4
@@ -997,43 +1001,187 @@ total_votes    399810.0
 dtype: float64</code></pre>
 </div>
 </div>
-<p>Calculating these statistics for specific columns is straight forward.</p>
+</section>
+<section id="subsetting" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="subsetting"><span class="header-section-number">6.6</span> Subsetting</h2>
+<p>Often times we may have a large dataset and we only need to work with just a part of it (a subset) consisting of certain columns and/or rows. Selecting specific columns and/or rows is known as subsetting.</p>
+<section id="selecting-columns" class="level3" data-number="6.6.1">
+<h3 data-number="6.6.1" class="anchored" data-anchor-id="selecting-columns"><span class="header-section-number">6.6.1</span> Selecting columns</h3>
+<p>Because in pandas every column has a name, we can select columns by their name or their position.</p>
+<section id="selecting-by-name" class="level4" data-number="6.6.1.1">
+<h4 data-number="6.6.1.1" class="anchored" data-anchor-id="selecting-by-name"><span class="header-section-number">6.6.1.1</span> Selecting by name</h4>
+<p>To select by name we will use the syntax <code>df['&lt;column_name&gt;']</code>. For example, if we wanted to select the ratings:</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="120">
+<pre><code>0      7.6
+1      8.3
+2      7.9
+3      8.1
+4      8.4
+      ... 
+183    8.0
+184    8.0
+185    8.9
+186    9.3
+187    9.7
+Name: imdb_rating, Length: 188, dtype: float64</code></pre>
+</div>
+</div>
+<p>or we could select the date in which the chapters were first aired:</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="121">
+<pre><code>0      2005-03-24
+1      2005-03-29
+2      2005-04-05
+3      2005-04-12
+4      2005-04-19
+          ...    
+183    2013-04-11
+184    2013-04-25
+185    2013-05-02
+186    2013-05-09
+187    2013-05-16
+Name: air_date, Length: 188, dtype: object</code></pre>
+</div>
+</div>
+<p>We can even select more than one column!</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="122">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">imdb_rating</th>
+<th data-quarto-table-cell-role="th">total_votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>7.6</td>
+<td>3706</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>8.3</td>
+<td>3566</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>7.9</td>
+<td>2983</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>8.1</td>
+<td>2886</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8.4</td>
+<td>3179</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">183</td>
+<td>8.0</td>
+<td>1484</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">184</td>
+<td>8.0</td>
+<td>1482</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">185</td>
+<td>8.9</td>
+<td>2041</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">186</td>
+<td>9.3</td>
+<td>2860</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">187</td>
+<td>9.7</td>
+<td>7934</td>
+</tr>
+</tbody>
+</table>
+
+<p>188 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Did you notice that we used two sets of squared brackets (<code>[[]]</code>)? This is needed because we need to passing a <em>list</em> of the column names to the <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics"><code>__getitem__</code></a> method of the pandas dataframe object, and as you may remember from <a href="../Lab_1/IM939_Lab_1_1.html#sec-list-dictionaries"><span>Section&nbsp;2.3.2</span></a>, this is the syntax used for lists (thank <a href="https://stackoverflow.com/questions/11285613/selecting-multiple-columns-in-a-pandas-dataframe">this stackoverflow question</a>).</p>
+<p>This is what we’d get otherwise:</p>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>KeyError: ('imdb_rating', 'total_votes')</code></pre>
+</div>
+</div>
+<p>You can also check out the pandas documentation on <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics">indexing and selecting data</a>.</p>
+</div>
+</div>
+<p>We can also apply methods to subset, such as this one to get the average rating:</p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="124">
 <pre><code>8.25744680851064</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<p>Or to calculate the total number of votes:</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="125">
 <pre><code>399810</code></pre>
 </div>
 </div>
-</section>
-<section id="selecting-subsets" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="selecting-subsets"><span class="header-section-number">6.6</span> Selecting subsets</h2>
-<p>We can even select more than one column!</p>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<p>Or a combination of multiple columns:</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="126">
 <pre><code>imdb_rating       8.257447
 total_votes    2126.648936
 dtype: float64</code></pre>
 </div>
 </div>
-<p>Two sets of squared brackets is needed because you are passing a list of the column names to the getitem dunder method of the pandas dataframe object (thank <a href="https://stackoverflow.com/questions/11285613/selecting-multiple-columns-in-a-pandas-dataframe">this stackoverflow question</a>). You can also check out the pandas documentation on <a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#basics">indexing and selecting data</a>.</p>
-<p>You can also select by row and column name using the iloc method. You can specify the [row, column]. So to choose the value in the 2nd row and 4th column.</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">2</span>,<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
-<pre><code>2983</code></pre>
+</section>
+<section id="selecting-by-position" class="level4" data-number="6.6.1.2">
+<h4 data-number="6.6.1.2" class="anchored" data-anchor-id="selecting-by-position"><span class="header-section-number">6.6.1.2</span> Selecting by position</h4>
+<p>If we do not want to use column names, we can use <code>iloc</code> method by using the syntax <code>&lt;object&gt;.iloc[&lt;row slice&gt;, &lt;column slice&gt;]</code>, where a slice is a range of numbers separated by a colon <code>:</code>. So, if we were to select the value in the 4th row and 2nd column, we’d use:</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">4</span>,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="127">
+<pre><code>'Basketball'</code></pre>
 </div>
 </div>
-<p>All the rows or all the columns are indicated by :. Such as,</p>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<p>But if we just wanted to select a column? In that case, we can use the same method but instead of specifiying a row, we will need to use <code>:</code> to indicate that we are selecting all the rows, such as:</p>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="128">
 <pre><code>0                 Pilot
 1         Diversity Day
 2           Health Care
@@ -1048,22 +1196,23 @@ dtype: float64</code></pre>
 Name: title, Length: 188, dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">2</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
-<pre><code>season                   1
-episode                  3
-title          Health Care
-imdb_rating            7.9
-total_votes           2983
-air_date        2005-04-05
-Name: 2, dtype: object</code></pre>
+<p>Conversely, if we just wanted to select all the columns from a given row, we’d use <code>:</code> on the right side of the <code>,</code> like this:</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">4</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="129">
+<pre><code>season                  1
+episode                 5
+title          Basketball
+imdb_rating           8.4
+total_votes          3179
+air_date       2005-04-19
+Name: 4, dtype: object</code></pre>
 </div>
 </div>
 <p>We can use negative values in indexes to indicate ‘from the end’. So, an index of [-10, :] returns the 10th from last row.</p>
-<div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="71">
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="130">
 <pre><code>season                  9
 episode                14
 title           Vandalism
@@ -1073,10 +1222,10 @@ air_date       2013-01-31
 Name: 178, dtype: object</code></pre>
 </div>
 </div>
-<p>Instead of using tail, we could ask for the last 10 rows with an index of [-10:, :]. I read : as ‘and everything else’ in these cases.</p>
-<div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">5</span>:,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="72">
+<p>Instead of using tail, we could ask for the last 5 rows with an index of <code>[-5:, :]</code>. I read <code>:</code> as ‘and everything else’ in these cases.</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">5</span>:,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="131">
 <div>
 
 
@@ -1144,9 +1293,9 @@ Name: 178, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="73">
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="132">
 <div>
 
 
@@ -1216,9 +1365,9 @@ Name: 178, dtype: object</code></pre>
 </div>
 <p>Note that the row is shown on the left. That will stop you getting lost in slices of the data.</p>
 <p>For the top ten rows</p>
-<div class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="133">
 <div>
 
 
@@ -1332,28 +1481,28 @@ Name: 178, dtype: object</code></pre>
 </div>
 </div>
 <p>Of course, we can run methods on these slices. We could, if we wanted to, calculate the mean imdb rating of only the first and last 100 episodes. <em>Note</em> the indexing starts at 0 so we want the column index of 3 (0:season, 1:episode, 2:title, 3:imdb_rating).</p>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">100</span>,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:<span class="dv">100</span>,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="134">
 <pre><code>8.483</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="135">
 <pre><code>8.062</code></pre>
 </div>
 </div>
 <p>If you are unsure how many rows you have then the count method comes to the rescue.</p>
-<div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="77">
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="op">-</span><span class="dv">100</span>:,<span class="dv">3</span>].count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="136">
 <pre><code>100</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="137">
 <div>
 
 
@@ -1432,9 +1581,9 @@ Name: 178, dtype: object</code></pre>
 </div>
 <p>So it looks like the last 100 episodes were less good than the first 100. I guess that is why it was cancelled.</p>
 <p>Our data is organised by season. Looking at the average by season might help.</p>
-<div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'season'</span>, <span class="st">'imdb_rating'</span>]].groupby(<span class="st">'season'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'season'</span>, <span class="st">'imdb_rating'</span>]].groupby(<span class="st">'season'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="138">
 <div>
 
 
@@ -1494,9 +1643,9 @@ Name: 178, dtype: object</code></pre>
 </div>
 <p>The above line groups our dataframe by values in the season column and then displays the mean for each group. Pretty nifty.</p>
 <p>Season 8 looks pretty bad. We can look at just the rows for season 8.</p>
-<div class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="139">
 <div>
 
 
@@ -1735,10 +1884,288 @@ Name: 178, dtype: object</code></pre>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="filtering-rows" class="level3" data-number="6.6.2">
+<h3 data-number="6.6.2" class="anchored" data-anchor-id="filtering-rows"><span class="header-section-number">6.6.2</span> Filtering rows</h3>
+<p>We can filter rows matching some criteria by using the syntax <code>&lt;object&gt;.loc[&lt;criteria&gt;]</code>. So, if we wanted to filter all the episodes from the 8th season, we would do the following:</p>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">season</th>
+<th data-quarto-table-cell-role="th">episode</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">imdb_rating</th>
+<th data-quarto-table-cell-role="th">total_votes</th>
+<th data-quarto-table-cell-role="th">air_date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">141</td>
+<td>8</td>
+<td>1</td>
+<td>The List</td>
+<td>8.2</td>
+<td>1829</td>
+<td>2011-09-22</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">142</td>
+<td>8</td>
+<td>2</td>
+<td>The Incentive</td>
+<td>8.2</td>
+<td>1668</td>
+<td>2011-09-29</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">143</td>
+<td>8</td>
+<td>3</td>
+<td>Lotto</td>
+<td>7.3</td>
+<td>1601</td>
+<td>2011-10-06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">144</td>
+<td>8</td>
+<td>4</td>
+<td>Garden Party</td>
+<td>8.1</td>
+<td>1717</td>
+<td>2011-10-13</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">145</td>
+<td>8</td>
+<td>5</td>
+<td>Spooked</td>
+<td>7.6</td>
+<td>1543</td>
+<td>2011-10-27</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">146</td>
+<td>8</td>
+<td>6</td>
+<td>Doomsday</td>
+<td>7.8</td>
+<td>1476</td>
+<td>2011-11-03</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">147</td>
+<td>8</td>
+<td>7</td>
+<td>Pam's Replacement</td>
+<td>7.7</td>
+<td>1563</td>
+<td>2011-11-10</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">148</td>
+<td>8</td>
+<td>8</td>
+<td>Gettysburg</td>
+<td>7.0</td>
+<td>1584</td>
+<td>2011-11-17</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">149</td>
+<td>8</td>
+<td>9</td>
+<td>Mrs. California</td>
+<td>7.7</td>
+<td>1553</td>
+<td>2011-12-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">150</td>
+<td>8</td>
+<td>10</td>
+<td>Christmas Wishes</td>
+<td>8.0</td>
+<td>1547</td>
+<td>2011-12-08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">151</td>
+<td>8</td>
+<td>11</td>
+<td>Trivia</td>
+<td>7.9</td>
+<td>1488</td>
+<td>2012-01-12</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">152</td>
+<td>8</td>
+<td>12</td>
+<td>Pool Party</td>
+<td>8.0</td>
+<td>1612</td>
+<td>2012-01-19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">153</td>
+<td>8</td>
+<td>13</td>
+<td>Jury Duty</td>
+<td>7.5</td>
+<td>1478</td>
+<td>2012-02-02</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">154</td>
+<td>8</td>
+<td>14</td>
+<td>Special Project</td>
+<td>7.8</td>
+<td>1432</td>
+<td>2012-02-09</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">155</td>
+<td>8</td>
+<td>15</td>
+<td>Tallahassee</td>
+<td>7.9</td>
+<td>1522</td>
+<td>2012-02-16</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">156</td>
+<td>8</td>
+<td>16</td>
+<td>After Hours</td>
+<td>8.1</td>
+<td>1567</td>
+<td>2012-02-23</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">157</td>
+<td>8</td>
+<td>17</td>
+<td>Test the Store</td>
+<td>7.8</td>
+<td>1478</td>
+<td>2012-03-01</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">158</td>
+<td>8</td>
+<td>18</td>
+<td>Last Day in Florida</td>
+<td>7.8</td>
+<td>1429</td>
+<td>2012-03-08</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">159</td>
+<td>8</td>
+<td>19</td>
+<td>Get the Girl</td>
+<td>6.7</td>
+<td>1642</td>
+<td>2012-03-15</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">160</td>
+<td>8</td>
+<td>20</td>
+<td>Welcome Party</td>
+<td>7.2</td>
+<td>1489</td>
+<td>2012-04-12</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">161</td>
+<td>8</td>
+<td>21</td>
+<td>Angry Andy</td>
+<td>7.1</td>
+<td>1585</td>
+<td>2012-04-19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">162</td>
+<td>8</td>
+<td>22</td>
+<td>Fundraiser</td>
+<td>7.1</td>
+<td>1453</td>
+<td>2012-04-26</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">163</td>
+<td>8</td>
+<td>23</td>
+<td>Turf War</td>
+<td>7.7</td>
+<td>1393</td>
+<td>2012-05-03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">164</td>
+<td>8</td>
+<td>24</td>
+<td>Free Family Portrait Studio</td>
+<td>7.8</td>
+<td>1464</td>
+<td>2012-05-10</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding the criteria
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To understand why we have to write the name of the dataframe twice, we can focus on the output provided by the filtering criteria only:</p>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="141">
+<pre><code>0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+183     True
+184     True
+185     True
+186     True
+187     True
+Name: season, Length: 188, dtype: bool</code></pre>
+</div>
+</div>
+<p>As you can see, it returns a boolean serie specifiying which rows are matching the criteria (<code>True</code>) and which ones are not (<code>False</code>)</p>
+<p>As a side note, while writing the name of the dataframe twice may seem redundant, this means that we could filter rows based on other objects.</p>
+</div>
+</div>
 <p>We can get an overview of the rating of all chapters within season 8 by:</p>
-<div class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span>, <span class="st">'imdb_rating'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="81">
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span>, <span class="st">'imdb_rating'</span>].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="142">
 <pre><code>count    24.000000
 mean      7.666667
 std       0.405041
@@ -1750,32 +2177,16 @@ max       8.200000
 Name: imdb_rating, dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'season'</span>] <span class="op">==</span> <span class="dv">8</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="82">
-<pre><code>0      False
-1      False
-2      False
-3      False
-4      False
-       ...  
-183    False
-184    False
-185    False
-186    False
-187    False
-Name: season, Length: 188, dtype: bool</code></pre>
-</div>
-</div>
 <p>Generally pretty bad, but there is clearly one very disliked episode.</p>
+</section>
 </section>
 <section id="adding-columns" class="level2" data-number="6.7">
 <h2 data-number="6.7" class="anchored" data-anchor-id="adding-columns"><span class="header-section-number">6.7</span> Adding columns</h2>
 <p>We can add new columns pretty simply.</p>
-<div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'x'</span>] <span class="op">=</span> <span class="dv">44</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="83">
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'x'</span>] <span class="op">=</span> <span class="dv">44</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="143">
 <div>
 
 
@@ -1850,10 +2261,10 @@ Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
 <p>Our new column can be an operation on other columns</p>
-<div class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'rating_div_total_votes'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>] <span class="op">/</span> df[<span class="st">'total_votes'</span>]</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'rating_div_total_votes'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>] <span class="op">/</span> df[<span class="st">'total_votes'</span>]</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="144">
 <div>
 
 
@@ -1934,10 +2345,10 @@ Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
 <p>or as simple as adding one to every value.</p>
-<div class="cell" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'y'</span>] <span class="op">=</span> df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">5</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="85">
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'y'</span>] <span class="op">=</span> df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>df.iloc[<span class="dv">0</span>:<span class="dv">5</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="145">
 <div>
 
 
@@ -2023,39 +2434,40 @@ Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span>  df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span>  df[<span class="st">'season'</span>] <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="writing-data" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="writing-data"><span class="header-section-number">6.8</span> Writing data</h2>
 <p>Pandas supports writing out data frames to various formats.</p>
-<div class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>?df.to_csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>?df.to_csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now you can uncomment the code below to save your dataframe into a csv file. But before doing so, check that your <code>data/output</code> folder is empty:</p>
-<div class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df.to_csv('data/output/my_output_ratings.csv', encoding='UTF-8')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now you can uncomment the code below to save your dataframe into a csv file. But before doing so, check that your <code>data/output</code> folder is empty, as it would override its content:</p>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'data/output/my_output_ratings.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>?df.to_excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Likewise, we could export our dataset to an excel file by using <code>to_excel</code>:</p>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>?df.to_excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now you can uncomment the code below to save your dataframe into an excel file. But before doing so, check that your <code>data/output</code> folder is empty:</p>
-<div class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df.to_excel('data/output/my_output_ratings.xlsx')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df.to_excel('data/output/my_output_ratings.xlsx')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="combining-datasets" class="level2" data-number="6.9">
 <h2 data-number="6.9" class="anchored" data-anchor-id="combining-datasets"><span class="header-section-number">6.9</span> Combining datasets</h2>
 <p>In this notebook, our dataset was created from a single file that contained all the data that was needed. However, often times data will be spread into different files that we will need to combine to create our own dataset.</p>
 <p>Consider the two dataframes below:</p>
-<div class="cell" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office1.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office2.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>df_1 <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office1.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>df_2 <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office2.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>df_1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="92">
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>df_1.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="151">
 <div>
 
 
@@ -2111,9 +2523,9 @@ Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>df_2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>df_2.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="152">
 <div>
 
 
@@ -2158,10 +2570,10 @@ Name: season, Length: 188, dtype: bool</code></pre>
 </div>
 </div>
 <p>As can be seen, the total votes and imdb ratings data are split between files that we will need to combine. Usually this is done by using a shared column between the two datasets that works as an index. Gladly, <code>head()</code> reveals that in both cases there is a common column called <code>id</code>. We can <em>join</em> the two dataframes together using the common column.</p>
-<div class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>inner_join_office_df <span class="op">=</span> pd.merge(df_1, df_2, on<span class="op">=</span><span class="st">'id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>inner_join_office_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="94">
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>inner_join_office_df <span class="op">=</span> pd.merge(df_1, df_2, on<span class="op">=</span><span class="st">'id'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>inner_join_office_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="153">
 <div>
 
 
