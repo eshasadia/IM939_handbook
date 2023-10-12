@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -533,16 +533,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#plots" id="toc-plots" class="nav-link active" data-scroll-target="#plots"><span class="header-section-number">7.1</span> Plots</a></li>
-  <li><a href="#univariate---a-single-variable" id="toc-univariate---a-single-variable" class="nav-link" data-scroll-target="#univariate---a-single-variable"><span class="header-section-number">7.2</span> Univariate - a single variable</a></li>
-  <li><a href="#bivariate" id="toc-bivariate" class="nav-link" data-scroll-target="#bivariate"><span class="header-section-number">7.3</span> Bivariate</a></li>
+  <li><a href="#starting" id="toc-starting" class="nav-link active" data-scroll-target="#starting"><span class="header-section-number">7.1</span> Starting</a></li>
+  <li><a href="#univariate-plots---a-single-variable" id="toc-univariate-plots---a-single-variable" class="nav-link" data-scroll-target="#univariate-plots---a-single-variable"><span class="header-section-number">7.2</span> Univariate plots - a single variable</a>
+  <ul class="collapse">
+  <li><a href="#subplots" id="toc-subplots" class="nav-link" data-scroll-target="#subplots"><span class="header-section-number">7.2.1</span> Subplots</a></li>
+  <li><a href="#histograms" id="toc-histograms" class="nav-link" data-scroll-target="#histograms"><span class="header-section-number">7.2.2</span> Histograms</a></li>
+  </ul></li>
+  <li><a href="#sec-dv-bibariate" id="toc-sec-dv-bibariate" class="nav-link" data-scroll-target="#sec-dv-bibariate"><span class="header-section-number">7.3</span> Bivariate - Two variables</a></li>
   <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates"><span class="header-section-number">7.4</span> Dates</a></li>
   <li><a href="#multivariate" id="toc-multivariate" class="nav-link" data-scroll-target="#multivariate"><span class="header-section-number">7.5</span> Multivariate</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_2/IM939_Lab_2_2.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -561,13 +565,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>It is far easier to look at trends in data by creating plots. Below we do just that and briefly look at plotting data by date.</p>
+<p>In the previous chapter we started exploring some data by using some methods such as <code>describe</code>, <code>info</code>, <code>head</code>, <code>shape</code>… However, it is usually far easier to look at trends in data by creating plots.</p>
+<p>In this chapter we will be using <code>pandas</code>’ built-in visualisation capabilities via <a href="https://matplotlib.org/"><code>matplotlib</code></a> to create some basic (but quick!) data visualisations from the <em>The Office</em> dataset. We will be using these visualisations on the next chapter, whereas on <a href="IM939_Lab_2_4.html"><span>Chapter&nbsp;9</span></a> we will use another plotting library to create customised visualisations.</p>
+<section id="starting" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="starting"><span class="header-section-number">7.1</span> Starting</h2>
+<p>As usual, we will be starting by loading the required libraries and dataset(s):</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office_ratings.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check our dataset.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -636,17 +645,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="plots" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="plots"><span class="header-section-number">7.1</span> Plots</h2>
 </section>
-<section id="univariate---a-single-variable" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="univariate---a-single-variable"><span class="header-section-number">7.2</span> Univariate - a single variable</h2>
-<p>Plots are a great way to see trends.</p>
+<section id="univariate-plots---a-single-variable" class="level2 page-columns page-full" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="univariate-plots---a-single-variable"><span class="header-section-number">7.2</span> Univariate plots - a single variable</h2>
+<p>Univariate plots are a great way to see trends. We will create them using <code>plot</code> method.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>?df.plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the documentation to understand how to use plot.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>?df.plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="page-columns page-full"><p>We can use <code>plot</code> to quicky visualise every variable<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in the dataset.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Actually this may not be accurate. Are you missing any column? Can you guess why are they missing?</p></li></div></div>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a plot for every variable in the dataset</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -654,9 +664,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="IM939_Lab_2_2_files/figure-html/cell-5-output-2.png" width="583" height="411"></p>
 </div>
 </div>
-<p>We can look at points instead of lines.</p>
+<p>We can look at a specific column</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].plot(title<span class="op">=</span><span class="st">'Total Votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise a column and add a title.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].plot(title<span class="op">=</span><span class="st">'Total Votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;Axes: title={'center': 'Total Votes'}&gt;</code></pre>
 </div>
@@ -664,92 +675,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="IM939_Lab_2_2_files/figure-html/cell-6-output-2.png" width="583" height="431"></p>
 </div>
 </div>
+<section id="subplots" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="subplots"><span class="header-section-number">7.2.1</span> Subplots</h3>
+<p>We can also create subplots, where every variable is plotted individually and put next to the others, while sharing the axis.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>?df.plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>&lt;Axes: &gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-8-output-2.png" width="571" height="411"></p>
-</div>
-</div>
-<p>Or we could create subplots.</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>array([&lt;Axes: &gt;, &lt;Axes: &gt;, &lt;Axes: &gt;, &lt;Axes: &gt;], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-9-output-2.png" width="583" height="411"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-7-output-2.png" width="583" height="411"></p>
 </div>
 </div>
 <p>Season and episode is not at all informative here.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array([&lt;Axes: &gt;, &lt;Axes: &gt;], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-10-output-2.png" width="583" height="411"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-8-output-2.png" width="583" height="411"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>?df.plot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>, kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+</section>
+<section id="histograms" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">7.2.2</span> Histograms</h3>
+<p>Often times, instead of seeing the actual values we may be interested in seeing how they are distributed. This is known as a <a href="https://en.wikipedia.org/wiki/Histogram">histogram</a>, and we can create them vy changing the plot type using the <code>kind</code> argument:</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>]].plot(subplots<span class="op">=</span><span class="va">True</span>, kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([&lt;Axes: ylabel='Frequency'&gt;, &lt;Axes: ylabel='Frequency'&gt;],
       dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-12-output-2.png" width="593" height="411"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-9-output-2.png" width="593" height="411"></p>
 </div>
 </div>
-<p>Unfortunatly, our x axis is bunched up. The above tells us that the all our IMDB ratings are between 0 and a little less than 1000… not useful.</p>
+<p>Unfortunatly, since subplots share axes, our x axis is bunched up. The above tells us that the all our IMDB ratings are between 0 and a little less than 1000… not useful.</p>
 <p>Probably best to plot them individually.</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, title <span class="op">=</span> <span class="st">"Ratings per episode"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>&lt;Axes: title={'center': 'Ratings per episode'}, ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-13-output-2.png" width="585" height="411"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-10-output-2.png" width="585" height="431"></p>
 </div>
 </div>
-<p>Quite a sensible guassian shape (a central point with the frequency decreasing symmetrically).</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'total_votes'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
+<p>Quite a sensible gaussian shape (a central point with the frequency decreasing symmetrically).</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'total_votes'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, title<span class="op">=</span> <span class="st">"Total votes per chapter"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>&lt;Axes: title={'center': 'Total votes per chapter'}, ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-14-output-2.png" width="593" height="411"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-11-output-2.png" width="593" height="431"></p>
 </div>
 </div>
 <p>A positively skewed distribution - many smaller values and very few high values.</p>
 </section>
-<section id="bivariate" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="bivariate"><span class="header-section-number">7.3</span> Bivariate</h2>
-<p>The number of votes and the imdb rating are not independent events. These two data variables are related.</p>
-<p>Scatter plots are simple ways to explore the relationship between two data variables. Note, I use the term data variables instead or just variables to avoid any confusion.</p>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'imdb_rating'</span>, y<span class="op">=</span><span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and total number of votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+</section>
+<section id="sec-dv-bibariate" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-dv-bibariate"><span class="header-section-number">7.3</span> Bivariate - Two variables</h2>
+<p>Sometimes, instead of visualising variables individually, we may want to see them in relation to others, so we can identify possible correlations. <strong>Scatter plots</strong> are simple ways to explore the relationship between two variables, where one is displayed on the <code>X</code> axis and the other one in the <code>Y</code> axis.</p>
+<p>We may want to see if the number of votes and the imdb rating are not independent events. In other words, we want to know if these two data variables are related. We will be creating a scatterplot using the following syntax: <code>&lt;object&gt;.plot(x = "&lt;variable1&gt;", y = "&lt;variable2&gt;", kind = "scatter")</code></p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a scatterplot</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'imdb_rating'</span>, y<span class="op">=</span><span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and total number of votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>&lt;Axes: title={'center': 'IMDB ratings and total number of votes'}, xlabel='imdb_rating', ylabel='total_votes'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-15-output-2.png" width="602" height="449"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-12-output-2.png" width="602" height="449"></p>
 </div>
 </div>
 <p>That is really interesting. The episodes with the highest rating also have the greatest number of votes. There was a cleary a great outpouring of happiness there.</p>
-<p>Which episodes were they?</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'total_votes'</span>] <span class="op">&gt;</span> <span class="dv">5000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Which episodes were the most voted?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>As seen previously, we could filter our dataset:</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'total_votes'</span>] <span class="op">&gt;</span> <span class="dv">5000</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -799,24 +815,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Excellent. Any influence of season on votes?</p>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'season'</span>, y<span class="op">=</span><span class="st">'imdb_rating'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and season'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<p>There are three chapters which received more than 5,000 votes.</p>
+</div>
+</div>
+</div>
+<p>Excellent. We may want to know if there’s any influence of season on the ratings:</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'season'</span>, y<span class="op">=</span><span class="st">'imdb_rating'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">'IMDB ratings and season'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;Axes: title={'center': 'IMDB ratings and season'}, xlabel='season', ylabel='imdb_rating'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-17-output-2.png" width="589" height="449"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-14-output-2.png" width="589" height="449"></p>
 </div>
 </div>
 <p>Season 8 seems to be a bit low. But nothing too extreme.</p>
 </section>
 <section id="dates" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="dates"><span class="header-section-number">7.4</span> Dates</h2>
-<p>Our data contains air date information. Currently, that column is ‘object’ or a string.</p>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<p>Our data contains air date information. Currently, that column is <code>object</code> or a string.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -884,9 +904,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>season           int64
 episode          int64
 title           object
@@ -896,46 +916,76 @@ air_date        object
 dtype: object</code></pre>
 </div>
 </div>
-<p>We can set this to be datetime instead. That will help us plot the time series of the data.</p>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>])</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<p>We know this is not accurate, so we can set this to be datetime instead by using the method <code>datetime</code>. That will help us plot the time series of the data.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert air_date to a date.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date2'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the result</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>season                  int64
 episode                 int64
 title                  object
 imdb_rating           float64
 total_votes             int64
-air_date       datetime64[ns]
+air_date               object
+air_date2      datetime64[ns]
 dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'air_date'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'air_date2'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>&lt;Axes: xlabel='air_date2', ylabel='total_votes'&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-18-output-2.png" width="602" height="429"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The importance of using the right data type
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can you spot any difference when trying to plot a date that is not stored as a date data type?</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'air_date'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>&lt;Axes: xlabel='air_date', ylabel='total_votes'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-2.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-19-output-2.png" width="617" height="429"></p>
+</div>
+</div>
+<p>Right, this is probably not what we would expect!</p>
 </div>
 </div>
 <p>We can look at multiple variables using subplots.</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'air_date'</span>, <span class="st">'total_votes'</span>, <span class="st">'imdb_rating'</span>]].plot(x <span class="op">=</span> <span class="st">'air_date'</span>, subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>array([&lt;Axes: xlabel='air_date'&gt;, &lt;Axes: xlabel='air_date'&gt;], dtype=object)</code></pre>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'air_date2'</span>, <span class="st">'total_votes'</span>, <span class="st">'imdb_rating'</span>]].plot(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">'air_date2'</span>, subplots<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>array([&lt;Axes: xlabel='air_date2'&gt;, &lt;Axes: xlabel='air_date2'&gt;],
+      dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-22-output-2.png" width="583" height="402"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-20-output-2.png" width="583" height="402"></p>
 </div>
 </div>
 </section>
 <section id="multivariate" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="multivariate"><span class="header-section-number">7.5</span> Multivariate</h2>
-<p>Our dataset is quite simple. But we can look at two variables (total_votes, imdb_rating) by a third (season).</p>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'season'</span>).plot(kind<span class="op">=</span><span class="st">'scatter'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, x <span class="op">=</span> <span class="st">'imdb_rating'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<p>Our dataset is quite simple. But we can look at two variables (<code>total_votes</code>, <code>imdb_rating</code>) by a third one (<code>season</code>), used as grouping.</p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'season'</span>).plot(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    kind<span class="op">=</span><span class="st">'scatter'</span>, y <span class="op">=</span> <span class="st">'total_votes'</span>, x <span class="op">=</span> <span class="st">'imdb_rating'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>season
 1    Axes(0.125,0.11;0.775x0.77)
 2    Axes(0.125,0.11;0.775x0.77)
@@ -949,37 +999,38 @@ dtype: object</code></pre>
 dtype: object</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-2.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-2.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-3.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-3.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-4.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-4.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-5.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-5.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-6.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-6.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-7.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-7.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-8.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-8.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-9.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-9.png" width="602" height="429"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_2_files/figure-html/cell-23-output-10.png" width="602" height="429"></p>
+<p><img src="IM939_Lab_2_2_files/figure-html/cell-21-output-10.png" width="602" height="429"></p>
 </div>
 </div>
 <p>There is a lot more you can do with plots with Pandas and Matplotlib. A good resource is the <a href="https://pandas.pydata.org/docs/user_guide/visualization.html#basic-plotting-plot">visualisation section of the pandas documentation</a>.</p>
 
 
 </section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

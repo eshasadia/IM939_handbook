@@ -533,7 +533,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#functions" id="toc-functions" class="nav-link active" data-scroll-target="#functions"><span class="header-section-number">9.1</span> Functions</a></li>
+  <li><a href="#preparations" id="toc-preparations" class="nav-link active" data-scroll-target="#preparations"><span class="header-section-number">9.1</span> Preparations</a></li>
+  <li><a href="#scatterplots" id="toc-scatterplots" class="nav-link" data-scroll-target="#scatterplots"><span class="header-section-number">9.2</span> Scatterplots</a>
+  <ul class="collapse">
+  <li><a href="#dates" id="toc-dates" class="nav-link" data-scroll-target="#dates"><span class="header-section-number">9.2.1</span> Dates</a></li>
+  </ul></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">9.3</span> Functions</a>
+  <ul class="collapse">
+  <li><a href="#long-format" id="toc-long-format" class="nav-link" data-scroll-target="#long-format"><span class="header-section-number">9.3.1</span> Long format</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_2/IM939_Lab_2_4.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -542,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></h1>
+<h1 class="title"><span id="sec-seaborn" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Lab: Seaborn</span></span></h1>
 </div>
 
 
@@ -557,17 +565,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Seaborn is another plotting library. Some consider it the <a href="https://ggplot2.tidyverse.org/"><code>ggplot</code></a> of Python with excellent default setting which make your data life easier. There is rather good <a href="https://seaborn.pydata.org/">documentation online</a> and it comes with Anaconda Python.</p>
+<p>In the previous notebooks we created basic, yet fast, visualisations using <code>matplotlib</code>. In this one we will be using a different plotting library called <a href="https://seaborn.pydata.org/"><code>Seaborn</code></a>. Some consider it the <a href="https://ggplot2.tidyverse.org/"><code>ggplot</code></a> of Python with excellent default setting which make your data life easier.</p>
+<section id="preparations" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="preparations"><span class="header-section-number">9.1</span> Preparations</h2>
+<p>As usual, we need to load any package and data needed for our work.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>office_df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office_ratings.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>We can load and create the same plots as before.</p>
+<p>And check our data:</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>office_df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office_ratings.csv'</span>, encoding<span class="op">=</span><span class="st">'UTF-8'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>office_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>office_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -635,12 +647,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>We can try to replicate the same plots as in the previous notebooks.</p>
+</section>
+<section id="scatterplots" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="scatterplots"><span class="header-section-number">9.2</span> Scatterplots</h2>
+<p>This is relatively similar to what we did in <a href="IM939_Lab_2_2.html#sec-dv-bibariate"><span>Section&nbsp;7.3</span></a>, but in this case we will be using seaborn’s <code>replot()</code> method.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(x<span class="op">=</span><span class="st">'total_votes'</span>, y<span class="op">=</span><span class="st">'imdb_rating'</span>, data<span class="op">=</span>office_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_2_4_files/figure-html/cell-4-output-1.png" width="470" height="468"></p>
 </div>
 </div>
+<section id="dates" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="dates"><span class="header-section-number">9.2.1</span> Dates</h3>
+<p>If we want to create a scatterplot with dates, we will need to convert them to dates, too:</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>office_df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(office_df[<span class="st">'air_date'</span>], errors<span class="op">=</span><span class="st">'ignore'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -649,13 +669,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="IM939_Lab_2_4_files/figure-html/cell-5-output-1.png" width="469" height="468"></p>
 </div>
 </div>
-<section id="functions" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="functions"><span class="header-section-number">9.1</span> Functions</h2>
+</section>
+</section>
+<section id="functions" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="functions"><span class="header-section-number">9.3</span> Functions</h2>
 <p>We can define our own functions. A function helps us with code we are going to run multiple times. For instance, the below function scales values between 0 and 1.</p>
 <p>Here is a modified function from <a href="https://stackoverflow.com/questions/26414913/normalize-columns-of-pandas-data-frame">stackoverflow</a>.</p>
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>office_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -737,7 +759,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Passing the dataframe and name of the column will return a dataframe with that column scaled between 0 and 1.</p>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>normalize(office_df, <span class="st">'imdb_rating'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -869,7 +891,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>office_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -992,11 +1014,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="long-format" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="long-format"><span class="header-section-number">9.3.1</span> Long format</h3>
 <p>Seaborn prefers a long format table. Details of melt can be found <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.melt.html">here</a>.</p>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>office_df_long<span class="op">=</span>pd.melt(office_df, id_vars<span class="op">=</span>[<span class="st">'season'</span>, <span class="st">'episode'</span>, <span class="st">'title'</span>, <span class="st">'air_date'</span>], value_vars<span class="op">=</span>[<span class="st">'imdb_rating'</span>, <span class="st">'total_votes'</span>])</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>office_df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -1131,6 +1155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
