@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta name="twitter:title" content="Data Science Across Disciplines - 8&nbsp; Lab: Missing data">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_2/IM939_Lab_2_3_files/figure-html/cell-10-output-2.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_2/IM939_Lab_2_3_files/figure-html/cell-11-output-2.png">
 <meta name="twitter:image-height" content="822">
 <meta name="twitter:image-width" content="1141">
 <meta name="twitter:card" content="summary_large_image">
@@ -536,6 +536,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#assessing-missing-values" id="toc-assessing-missing-values" class="nav-link active" data-scroll-target="#assessing-missing-values"><span class="header-section-number">8.1</span> Assessing Missing values</a></li>
   <li><a href="#inputting-values" id="toc-inputting-values" class="nav-link" data-scroll-target="#inputting-values"><span class="header-section-number">8.2</span> Inputting values</a></li>
   <li><a href="#transformations" id="toc-transformations" class="nav-link" data-scroll-target="#transformations"><span class="header-section-number">8.3</span> Transformations</a></li>
+  <li><a href="#numpy-library" id="toc-numpy-library" class="nav-link" data-scroll-target="#numpy-library"><span class="header-section-number">8.4</span> <code>numpy</code> Library</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_2/IM939_Lab_2_3.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -559,19 +560,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>In these exercises, we have provided “good” datasets where data is properly structured in rows and columns, there’s no missing data, or mixed types… Unfortunately, in real-world cases this may not be as common as we may think of. One of the main issues we may encounter is that some data may be missing.</p>
 <p>This can be due to a number of reasons i.e., because the measurements failed during a specific period of time, because criteria changed… and the implications of this can be serious depending on the proportion of missing data and how we deal with it. Unfortunately there’s not a single, correct way of dealing with missing data: some times we may want to get rid of them if they are anecdotal, sometimes we may want to infer their values based on existing data…</p>
 <p>In this notebook we will be working with a modified version of the <em>The Office</em> dataset that we have been using, where some values have been removed.</p>
 <section id="assessing-missing-values" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="assessing-missing-values"><span class="header-section-number">8.1</span> Assessing Missing values</h2>
 <p>In this case we will be reading the modified dataset stored in <code>office_ratings_missing.csv</code> where some values have been removed. The first thing we may want to do is to know where and how many of those values have been removed to inform what to do next with them.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office_ratings_missing.csv'</span>, encoding <span class="op">=</span> <span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/office_ratings_missing.csv'</span>, encoding <span class="op">=</span> <span class="st">'UTF-8'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -654,8 +663,8 @@ Storing missing values
 </div>
 </div>
 <p>Regretfully, exploring the head or the tail of the dataframe may not be a good idea, especially in large datasets. We may want to use <code>info</code> instead:</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 188 entries, 0 to 187
@@ -673,10 +682,10 @@ memory usage: 8.9+ KB</code></pre>
 </div>
 </div>
 <p>We are missing values in our <code>imdb_rating</code> and <code>total_votes</code> columns. Now, we need to know how many values are missing. We can do that in multiple ways. One is to combine the method <code>.isna</code> , which returns either <code>True</code> (<code>1</code>) or <code>False</code> (<code>2</code>), and then sum the values that are true (and thus, are null):</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>season          0
 episode         0
 title           0
@@ -687,10 +696,11 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>Another method is to get the maximum possible values and substract the sum of existing values:</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.shape[<span class="dv">0</span>] <span class="op">-</span> df.count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.shape[<span class="dv">0</span>] <span class="op">-</span> df.count()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># df.shape returns the size of the dataframe and count() will only count the rows where there is a value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>season          0
 episode         0
 title           0
@@ -706,10 +716,9 @@ dtype: int64</code></pre>
 <h2 data-number="8.2" class="anchored" data-anchor-id="inputting-values"><span class="header-section-number">8.2</span> Inputting values</h2>
 <p>A quick solution is to replace missing values with either <code>0</code> or give them a roughtly central value (the mean).</p>
 <p>To do this we use the <code>fillna</code> method, which <em>fills</em> any missing values (<code>NA</code> -Not Available or <code>NaN</code> )</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].fillna(<span class="dv">0</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 188 entries, 0 to 187
@@ -728,9 +737,11 @@ memory usage: 10.4+ KB</code></pre>
 </div>
 </div>
 <p>This worked! <code>imdb_rating_with_0</code> does not have any missing value. However, we are significantly altering some statistical values:</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'imdb_rating_with_0'</span>]].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<p>::: callout-important</p>
+<p>In the above, we are saving the “fixed” (in more technical terms, “imputed”) data column in <code>imdb_rating</code> in a new column named <code>imdb_rating_with_0</code>. It is a good practice to keep the “original” data and make “copies” of data features where you have made changes. In this way, you can always go back and do things differently and also compare the data sets with and without the intervention (for instance, in the following, we will be able to compare the descriptive statistics of the two columns)</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'imdb_rating_with_0'</span>]].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -790,11 +801,11 @@ memory usage: 10.4+ KB</code></pre>
 </div>
 </div>
 <p>In order to try to avoid that, we can fill them with the mean:</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_mean'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].fillna(df[<span class="st">'imdb_rating'</span>].mean())</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'imdb_rating_with_0'</span>, <span class="st">'imdb_rating_with_mean'</span>]].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_mean'</span>] <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].fillna(df[<span class="st">'imdb_rating'</span>].mean())</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'imdb_rating'</span>, <span class="st">'imdb_rating_with_0'</span>, <span class="st">'imdb_rating_with_mean'</span>]].describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -863,35 +874,35 @@ memory usage: 10.4+ KB</code></pre>
 </div>
 </div>
 <p>We can plot these to see what looks most reasonable (you can probably also make an educated guess here).</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_mean'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&lt;Axes: &gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-10-output-2.png" width="571" height="411"></p>
-</div>
-</div>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_mean'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-11-output-2.png" width="566" height="411"></p>
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-11-output-2.png" width="571" height="411"></p>
 </div>
 </div>
-<p>Going with the mean seems quite sensible in this case. Especially as the data is gaussian so the mean is probably an accurate represenation of the central value.</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].hist()</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the histogram and add a vertical line on the mean</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ax.axvline(df[<span class="st">'imdb_rating'</span>].mean(), color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_with_0'</span>].plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>&lt;matplotlib.lines.Line2D at 0x121d82790&gt;</code></pre>
+<pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-12-output-2.png" width="566" height="411"></p>
+</div>
+</div>
+<p>Going with the mean seems quite sensible in this case. Especially as the data is gaussian so the mean is probably an accurate represenation of the central value.</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a histogram</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df[<span class="st">'imdb_rating'</span>].hist()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the histogram and add a vertical line on the mean</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>ax.axvline(df[<span class="st">'imdb_rating'</span>].mean(), color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>&lt;matplotlib.lines.Line2D at 0x12f8c3690&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-13-output-2.png" width="566" height="411"></p>
 </div>
 </div>
 </section>
@@ -899,34 +910,31 @@ memory usage: 10.4+ KB</code></pre>
 <h2 data-number="8.3" class="anchored" data-anchor-id="transformations"><span class="header-section-number">8.3</span> Transformations</h2>
 <p>Some statistical models, such as standard linear regression, require the predicted variable to be gaussian distributed (a single central point and a roughly symmetrical decrease in frequency, see <a href="https://www.wolframalpha.com/input/?i=gaussian+0+1">this Wolfram alpha page</a>.</p>
 <p>The distribution of votes is positively skewed (most values are low).</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>&lt;Axes: &gt;</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-13-output-2.png" width="566" height="411"></p>
-</div>
-</div>
-<p>A log transformation can make this data closer to a gaussian distributed data variable. For the log transformation we are going to use <code>log2</code> method provided by <code>numpy</code> (numerical python), which is a rather excellent library.</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_log'</span>] <span class="op">=</span> np.log2(df[<span class="st">'total_votes'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_log'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-15-output-2.png" width="566" height="411"></p>
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-14-output-2.png" width="566" height="411"></p>
 </div>
 </div>
-<p>That is less skewed, but not ideal. Perhaps a <em>square root</em> transformation instead?</p>
+<p>A log transformation can make this data closer to a gaussian distributed data variable.</p>
+<p>::: callout-caution</p>
+</section>
+<section id="numpy-library" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="numpy-library"><span class="header-section-number">8.4</span> <code>numpy</code> Library</h2>
+<p>We are now brining in another library called numpy – see here: https://numpy.org/</p>
+<p>Numpy is a central library that most of data analysis protocols make use of. Pandas makes regular use of Numpy for instance. Several of the underlying data structures such as arrays, indexes we use in Pandas and elsewhere will build on Numpy structures. Don’t worry too much about it for now. We’ll use Numpy more later – Here is a useful user guide to give you an idea: https://numpy.org/doc/stable/user/index.html#user</p>
+<p>For the log transformation we are going to use <code>log2</code> method provided by <code>numpy</code> (numerical python).</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is how we import numpy, usually the convention is to use np as the short variable name and you can access numpy functions by `np.`</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_log'</span>] <span class="op">=</span> np.log2(df[<span class="st">'total_votes'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>] <span class="op">=</span> np.sqrt(df[<span class="st">'total_votes'</span>])</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_log'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -934,10 +942,10 @@ memory usage: 10.4+ KB</code></pre>
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-16-output-2.png" width="566" height="411"></p>
 </div>
 </div>
-<p>…well, maybe a inverse/reciprocal transformation. It is possible we have hit the limit on what we can do.</p>
+<p>That is less skewed, but not ideal. Perhaps a <em>square root</em> transformation instead?</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>] <span class="op">=</span> np.reciprocal(df[<span class="st">'total_votes'</span>])</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>] <span class="op">=</span> np.sqrt(df[<span class="st">'total_votes'</span>])</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_sqrt'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -945,29 +953,40 @@ memory usage: 10.4+ KB</code></pre>
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-17-output-2.png" width="566" height="411"></p>
 </div>
 </div>
-<p>At this point, I think we should conceded that we can make the distribution less positively skewed. However, transformation are not magic and we cannot turn a heavily positively skewed distribution into a normally distributed one.</p>
-<p>Oh well.</p>
-<p>We can calculate <code>z</code> scores though so we can plot both <code>total_votes</code> and <code>imdb_ratings</code> on a single plot. Currently, the IMDB scores vary between 0 and 10 whereas the number of votes number in the thousands.</p>
+<p>…well, maybe a inverse/reciprocal transformation. It is possible we have hit the limit on what we can do.</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_z'</span>] <span class="op">=</span> (df[<span class="st">'total_votes'</span>] <span class="op">-</span> df[<span class="st">'total_votes'</span>].mean()) <span class="op">/</span> df[<span class="st">'total_votes'</span>].std()</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_z'</span>] <span class="op">=</span> (df[<span class="st">'imdb_rating'</span>] <span class="op">-</span> df[<span class="st">'imdb_rating'</span>].mean()) <span class="op">/</span> df[<span class="st">'imdb_rating'</span>].std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>] <span class="op">=</span> np.reciprocal(df[<span class="st">'total_votes'</span>])</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_recip'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-19-output-2.png" width="566" height="411"></p>
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-18-output-2.png" width="566" height="411"></p>
 </div>
+</div>
+<p>At this point, I think we should conceded that we can make the distribution less positively skewed. However, transformation are not magic and we cannot turn a heavily positively skewed distribution into a normally distributed one.</p>
+<p>Oh well.</p>
+<p>We can calculate <code>z</code> scores though so we can plot both <code>total_votes</code> and <code>imdb_ratings</code> on a single plot. Currently, the IMDB scores vary between 0 and 10 whereas the number of votes number in the thousands.</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_z'</span>] <span class="op">=</span> (df[<span class="st">'total_votes'</span>] <span class="op">-</span> df[<span class="st">'total_votes'</span>].mean()) <span class="op">/</span> df[<span class="st">'total_votes'</span>].std()</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_z'</span>] <span class="op">=</span> (df[<span class="st">'imdb_rating'</span>] <span class="op">-</span> df[<span class="st">'imdb_rating'</span>].mean()) <span class="op">/</span> df[<span class="st">'imdb_rating'</span>].std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'total_votes_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_2_3_files/figure-html/cell-20-output-2.png" width="566" height="411"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'imdb_rating_z'</span>].hist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>&lt;Axes: &gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-21-output-2.png" width="566" height="411"></p>
 </div>
 </div>
 <p>Now we can compare the trends in score and number of votes on a single plot.</p>
@@ -984,38 +1003,38 @@ Warning
 <p>We are going to use a slightly different approach to creating the plots. Called to the <code>plot()</code> method from Pandas actually use a library called <code>matplotlib</code>. We are going to use the <code>pyplot</code> module of <code>matplotlib</code> directly.</p>
 </div>
 </div>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Convert the <code>air_date</code> into a datetime object.</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>], dayfirst<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'air_date'</span>] <span class="op">=</span>  pd.to_datetime(df[<span class="st">'air_date'</span>], dayfirst<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then call the subplots function fom pyplot to create two plots. From this we take the two plot axis (<code>ax1</code>, <code>ax2</code>) and call the method <code>scatter</code> for each to plot <code>imdb_rating_z</code> and <code>total_votes_z</code>.</p>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>f, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>ax1.scatter( df[<span class="st">'air_date'</span>], df[<span class="st">'imdb_rating_z'</span>], color <span class="op">=</span> <span class="st">'red'</span>)</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'IMDB rating'</span>)</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>ax2.scatter( df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>)</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'Total votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'ggplot'</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>f, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, sharey<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>ax1.scatter( df[<span class="st">'air_date'</span>], df[<span class="st">'imdb_rating_z'</span>], color <span class="op">=</span> <span class="st">'red'</span>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'IMDB rating'</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>ax2.scatter( df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'Total votes'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>Text(0.5, 1.0, 'Total votes')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-23-output-2.png" width="569" height="434"></p>
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-24-output-2.png" width="569" height="434"></p>
 </div>
 </div>
 <p>We can do better than that.</p>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'imdb_rating_z'</span>], color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x127bd41d0&gt;</code></pre>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'imdb_rating_z'</span>], color <span class="op">=</span> <span class="st">'red'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'air_date'</span>], df[<span class="st">'total_votes_z'</span>], color <span class="op">=</span> <span class="st">'blue'</span>, alpha <span class="op">=</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x12f853990&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_2_3_files/figure-html/cell-24-output-2.png" width="569" height="411"></p>
+<p><img src="IM939_Lab_2_3_files/figure-html/cell-25-output-2.png" width="569" height="411"></p>
 </div>
 </div>
 <p>We have done a lot so far. Exploring data in part 1, plotting data with the inbuilt Pandas methods in part 2 and dealing with both missing data and transfromations in part 3.</p>
