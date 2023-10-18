@@ -537,14 +537,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#assess-data" id="toc-assess-data" class="nav-link" data-scroll-target="#assess-data"><span class="header-section-number">11.1.1</span> Assess data</a></li>
   <li><a href="#identify-outliers-visually" id="toc-identify-outliers-visually" class="nav-link" data-scroll-target="#identify-outliers-visually"><span class="header-section-number">11.1.2</span> Identify outliers visually</a></li>
+  <li><a href="#computing-outliers-threshold" id="toc-computing-outliers-threshold" class="nav-link" data-scroll-target="#computing-outliers-threshold"><span class="header-section-number">11.1.3</span> Computing outliers’ threshold</a></li>
+  <li><a href="#mahalanobis-distance" id="toc-mahalanobis-distance" class="nav-link" data-scroll-target="#mahalanobis-distance"><span class="header-section-number">11.1.4</span> Mahalanobis distance</a></li>
   </ul></li>
-  <li><a href="#computing-outliers-threshold" id="toc-computing-outliers-threshold" class="nav-link" data-scroll-target="#computing-outliers-threshold"><span class="header-section-number">11.2</span> Computing outliers’ threshold</a>
-  <ul class="collapse">
-  <li><a href="#mahalanobis-distance" id="toc-mahalanobis-distance" class="nav-link" data-scroll-target="#mahalanobis-distance"><span class="header-section-number">11.2.1</span> Mahalanobis distance</a></li>
-  </ul></li>
-  <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots"><span class="header-section-number">11.3</span> Q-Q Plots</a></li>
-  <li><a href="#distributions-sampling" id="toc-distributions-sampling" class="nav-link" data-scroll-target="#distributions-sampling"><span class="header-section-number">11.4</span> Distributions, Sampling</a></li>
-  <li><a href="#robust-statistics" id="toc-robust-statistics" class="nav-link" data-scroll-target="#robust-statistics"><span class="header-section-number">11.5</span> Robust Statistics</a></li>
+  <li><a href="#q-q-plots" id="toc-q-q-plots" class="nav-link" data-scroll-target="#q-q-plots"><span class="header-section-number">11.2</span> Q-Q Plots</a></li>
+  <li><a href="#distributions-sampling" id="toc-distributions-sampling" class="nav-link" data-scroll-target="#distributions-sampling"><span class="header-section-number">11.3</span> Distributions, Sampling</a></li>
+  <li><a href="#robust-statistics" id="toc-robust-statistics" class="nav-link" data-scroll-target="#robust-statistics"><span class="header-section-number">11.4</span> Robust Statistics</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -776,9 +774,8 @@ Note
 </div>
 </div>
 </section>
-</section>
-<section id="computing-outliers-threshold" class="level2 page-columns page-full" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="computing-outliers-threshold"><span class="header-section-number">11.2</span> Computing outliers’ threshold</h2>
+<section id="computing-outliers-threshold" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="computing-outliers-threshold"><span class="header-section-number">11.1.3</span> Computing outliers’ threshold</h3>
 <p>Add two new columns to the dataframe called <code>isOutlierPrice</code> and <code>isOutlierMileage</code>. We will define our threshold as <strong>2 times standard deviations away from the mean</strong> for <code>price</code> and <code>mileage</code>, respectively.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierPrice column</span></span>
@@ -1001,8 +998,9 @@ Alternative method
 <p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-10-output-1.png" width="582" height="431"></p>
 </div>
 </div>
-<section id="mahalanobis-distance" class="level3 page-columns page-full" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="mahalanobis-distance"><span class="header-section-number">11.2.1</span> Mahalanobis distance</h3>
+</section>
+<section id="mahalanobis-distance" class="level3 page-columns page-full" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="mahalanobis-distance"><span class="header-section-number">11.1.4</span> Mahalanobis distance</h3>
 <ol type="1">
 <li>Using the 2D Mahalanobis distance to find outliers</li>
 </ol>
@@ -1028,8 +1026,8 @@ Alternative method
 </div>
 </section>
 </section>
-<section id="q-q-plots" class="level2 page-columns page-full" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="q-q-plots"><span class="header-section-number">11.3</span> Q-Q Plots</h2>
+<section id="q-q-plots" class="level2 page-columns page-full" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="q-q-plots"><span class="header-section-number">11.2</span> Q-Q Plots</h2>
 <div class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the Data in</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/TB_burden_countries_2014-09-29.csv'</span>)</span>
@@ -1161,8 +1159,8 @@ Ok ? Now try to guess the shape of the distribution of our selected column (shap
 Of course it does ! From the shape of the Q-Q Plot above (convex, slope upwards) and the Slide of Q-Q Plots from Week 3, we could conclude before looking at the histogram that our distribution was right tailed (or positively skewed if you’re into complex vocabulary lol). And it is !
 </p>
 </section>
-<section id="distributions-sampling" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="distributions-sampling"><span class="header-section-number">11.4</span> Distributions, Sampling</h2>
+<section id="distributions-sampling" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="distributions-sampling"><span class="header-section-number">11.3</span> Distributions, Sampling</h2>
 <ol type="1">
 <li>Inspecting the effect of sample size on descriptive statistics</li>
 </ol>
@@ -1241,27 +1239,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-0.559811</td>
-<td>0.039484</td>
-<td>-1.150575</td>
+<td>-1.231118</td>
+<td>-1.375399</td>
+<td>-1.485453</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>0.066515</td>
-<td>-1.021888</td>
-<td>-0.178457</td>
+<td>-1.294993</td>
+<td>-1.062541</td>
+<td>-0.490318</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.238192</td>
-<td>-0.852055</td>
-<td>-0.012660</td>
+<td>-0.487004</td>
+<td>-0.691711</td>
+<td>-0.122172</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>0.126590</td>
-<td>0.011198</td>
-<td>-0.044190</td>
+<td>0.013811</td>
+<td>-0.052512</td>
+<td>-0.064225</td>
 </tr>
 </tbody>
 </table>
@@ -1355,27 +1353,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-0.921875</td>
-<td>-0.270833</td>
-<td>-1.750000</td>
+<td>-0.500000</td>
+<td>-1.044379</td>
+<td>-1.673077</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>0.129646</td>
-<td>0.314879</td>
-<td>-1.356271</td>
+<td>5.390533</td>
+<td>-0.090764</td>
+<td>-0.488000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>1.153720</td>
-<td>-0.578581</td>
-<td>-0.599036</td>
+<td>1.717890</td>
+<td>-0.013517</td>
+<td>-0.487112</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.463024</td>
-<td>0.901877</td>
-<td>-0.082689</td>
+<td>2.567806</td>
+<td>0.579421</td>
+<td>0.194428</td>
 </tr>
 </tbody>
 </table>
@@ -1387,8 +1385,8 @@ Results for the Kurtosis :</code></pre>
 Just remember, the lambda parameter that defines the Poisson distribution is also the mean of the distribution. This is confirmed in the first DataFrame where the values (means of samples) are close to the column labels (theoretical lambda which is also equal to theoretical mean), especially in the last row.
 </p>
 </section>
-<section id="robust-statistics" class="level2 page-columns page-full" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="robust-statistics"><span class="header-section-number">11.5</span> Robust Statistics</h2>
+<section id="robust-statistics" class="level2 page-columns page-full" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="robust-statistics"><span class="header-section-number">11.4</span> Robust Statistics</h2>
 <ol type="1">
 <li>Choose a number of columns with different shapes, for instance, “e_prev_100k_hi” is left skewed or some columns where the variation is high or you notice potential outliers. You can make use of a series of boxplots to exploratively analyse the data for outliers</li>
 </ol>
