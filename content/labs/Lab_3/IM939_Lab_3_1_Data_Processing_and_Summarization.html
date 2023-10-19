@@ -1039,8 +1039,7 @@ Alternative method
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the Data</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/TB_burden_countries_2014-09-29.csv'</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df_tuber.head()</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df_tuber.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
@@ -1256,8 +1255,8 @@ memory usage: 1.5+ MB</code></pre>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing numeric values ONLY (categorical values will be untouched)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> df_tuber.fillna(value<span class="op">=</span>df_tuber.mean(numeric_only <span class="op">=</span> <span class="va">True</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspecting missing values in dataset</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>pd.isnull(df_tuber).<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_tuber.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>country                      0
 iso2                        23
@@ -1461,27 +1460,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-1.638947</td>
-<td>-0.973941</td>
-<td>-1.494822</td>
+<td>-0.544615</td>
+<td>-1.114771</td>
+<td>-0.481163</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-0.699195</td>
-<td>-1.352169</td>
-<td>0.391128</td>
+<td>1.676887</td>
+<td>0.336644</td>
+<td>-0.263502</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.290269</td>
-<td>-0.476770</td>
-<td>-0.531971</td>
+<td>-0.565966</td>
+<td>0.430112</td>
+<td>0.250231</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>0.035795</td>
-<td>-0.044869</td>
-<td>-0.105964</td>
+<td>-0.007222</td>
+<td>-0.032346</td>
+<td>0.015260</td>
 </tr>
 </tbody>
 </table>
@@ -1577,25 +1576,25 @@ Results for the Kurtosis :</code></pre>
 <td data-quarto-table-cell-role="th">5</td>
 <td>-1.833333</td>
 <td>-1.153061</td>
-<td>-1.833333</td>
+<td>-1.005478</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-1.959596</td>
-<td>-1.148148</td>
-<td>-1.087712</td>
+<td>-0.141090</td>
+<td>-0.741655</td>
+<td>1.215686</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.228231</td>
-<td>0.759933</td>
-<td>1.798323</td>
+<td>-0.285029</td>
+<td>-0.628894</td>
+<td>0.295114</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.073614</td>
-<td>0.632878</td>
-<td>0.105153</td>
+<td>1.782577</td>
+<td>0.463486</td>
+<td>0.503687</td>
 </tr>
 </tbody>
 </table>
