@@ -653,7 +653,7 @@ memory usage: 20.0+ KB</code></pre>
 </div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ice.head() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -724,7 +724,7 @@ memory usage: 20.0+ KB</code></pre>
 <p>And we can get some summary statistics from the numerical attributes:</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ice.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -829,7 +829,7 @@ Warning
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(ice.mo, ice.extent, color <span class="op">=</span> <span class="st">'red'</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Extent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>Text(0, 0.5, 'Extent')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -858,12 +858,46 @@ Warning
 </div>
 <p>Let’s see what type of data we have, other than the ones printed above</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (ice[(ice.data_type <span class="op">!=</span> <span class="st">'Goddard'</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>          <span class="op">&amp;</span> (ice.data_type <span class="op">!=</span> <span class="st">'NRTSI-G'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     year  mo data_type region  extent    area
-9    1988   1     -9999      N -9999.0 -9999.0
-397  1987  12     -9999      N -9999.0 -9999.0</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ice[(ice.data_type <span class="op">!=</span> <span class="st">'Goddard'</span>) <span class="op">&amp;</span> (ice.data_type <span class="op">!=</span> <span class="st">'NRTSI-G'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">mo</th>
+<th data-quarto-table-cell-role="th">data_type</th>
+<th data-quarto-table-cell-role="th">region</th>
+<th data-quarto-table-cell-role="th">extent</th>
+<th data-quarto-table-cell-role="th">area</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">9</td>
+<td>1988</td>
+<td>1</td>
+<td>-9999</td>
+<td>N</td>
+<td>-9999.0</td>
+<td>-9999.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">397</td>
+<td>1987</td>
+<td>12</td>
+<td>-9999</td>
+<td>N</td>
+<td>-9999.0</td>
+<td>-9999.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 </section>
@@ -886,20 +920,20 @@ Dataframe copies vs instances
 </div>
 </div>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can easily clean the data now:</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ice2 <span class="op">=</span> ice[ice.data_type <span class="op">!=</span> <span class="st">'-9999'</span>].copy()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'shape:'</span>, ice2.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can easily clean the data now:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ice2 <span class="op">=</span> ice[ice.data_type <span class="op">!=</span> <span class="st">'-9999'</span>].copy()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'shape:'</span>, ice2.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>shape: (422, 6)</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># And repeat the plot, without the outliers</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(ice2.mo, ice2.extent, color <span class="op">=</span> <span class="st">'red'</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Month'</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Extent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># And repeat the plot, without the outliers</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(ice2.mo, ice2.extent, color <span class="op">=</span> <span class="st">'red'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Month'</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Extent'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>Text(0, 0.5, 'Extent')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -907,7 +941,7 @@ Dataframe copies vs instances
 </div>
 </div>
 <div class="cell page-columns page-full" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, aspect <span class="op">=</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, aspect <span class="op">=</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
   if pd.api.types.is_categorical_dtype(vector):
@@ -933,10 +967,10 @@ Dataframe copies vs instances
 <p>Now that we have a clean dataset, we can use Seaborn’s <a href="https://seaborn.pydata.org/generated/seaborn.lmplot.html"><code>lmplot()</code></a> function comparing month vs extent.</p>
 <p>The <code>lmplot()</code> function from the Seaborn module is intended for exploring linear relationships of different forms in multidimensional datesets. Input data must be in a Pandas DataFrame. To plot them, we provide the predictor (<code>mo</code>) and response (<code>extent</code>) variable names along with the dataset (<code>ice2</code>).</p>
 <div class="cell page-columns page-full" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, aspect<span class="op">=</span><span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment below to save the resulting plot.</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/CleanedByMonth.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, aspect<span class="op">=</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Uncomment below to save the resulting plot.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/CleanedByMonth.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-right">
 <p><img src="IM939_Lab_3_2_Linear_Regression_files/figure-html/cell-12-output-1.png" width="949" height="468"></p>
 </div>
@@ -945,16 +979,16 @@ Dataframe copies vs instances
 <section id="normalization" class="level3" data-number="12.3.1">
 <h3 data-number="12.3.1" class="anchored" data-anchor-id="normalization"><span class="header-section-number">12.3.1</span> Normalization</h3>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the mean for each month.</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>month_means <span class="op">=</span> ice2.groupby(<span class="st">'mo'</span>).extent.mean()</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the variance for each month.</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>month_variances <span class="op">=</span> ice2.groupby(<span class="st">'mo'</span>).extent.var()</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the values:</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Means:'</span>, month_means)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>) <span class="co"># Add a new line between the two prints, so they are easily distinguishible.</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'Variances:'</span>,month_variances)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the mean for each month.</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>month_means <span class="op">=</span> ice2.groupby(<span class="st">'mo'</span>).extent.mean()</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the variance for each month.</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>month_variances <span class="op">=</span> ice2.groupby(<span class="st">'mo'</span>).extent.var()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the values:</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Means:'</span>, month_means)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>) <span class="co"># Add a new line between the two prints, so they are easily distinguishible.</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'Variances:'</span>,month_variances)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Means: mo
 1     14.479429
@@ -990,69 +1024,69 @@ Name: extent, dtype: float64</code></pre>
 </div>
 <p>To capture variation per month, we can compute mean for the i-th interval of time (using 1979-2014) and subtract it from the set of extent values for that month . This can be converted to a relative pecentage difference by dividing it by the total avareage (1979-2014) and multiplying by 100.</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data normalization</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>):</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    ice2.extent[ice2.mo <span class="op">==</span> i<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> <span class="dv">100</span><span class="op">*</span>(ice2.extent[ice2.mo <span class="op">==</span> i<span class="op">+</span><span class="dv">1</span>] <span class="op">-</span> month_means[i<span class="op">+</span><span class="dv">1</span>])<span class="op">/</span>month_means.mean()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2 , x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentNormalizedByMonth.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Data normalization</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>):</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    ice2.extent[ice2.mo <span class="op">==</span> i<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> <span class="dv">100</span><span class="op">*</span>(ice2.extent[ice2.mo <span class="op">==</span> i<span class="op">+</span><span class="dv">1</span>] <span class="op">-</span> month_means[i<span class="op">+</span><span class="dv">1</span>])<span class="op">/</span>month_means.mean()</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2 , x <span class="op">=</span> <span class="st">"mo"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentNormalizedByMonth.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   ice2.extent[ice2.mo == i+1] = 100*(ice2.extent[ice2.mo == i+1] - month_means[i+1])/month_means.mean()
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_73230/2141240604.py:3: SettingWithCopyWarning: 
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_75501/2141240604.py:3: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -1063,8 +1097,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'mean:'</span>, ice2.extent.mean())</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'var:'</span>, ice2.extent.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'mean:'</span>, ice2.extent.mean())</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'var:'</span>, ice2.extent.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>mean: -7.745252569896827e-16
 var: 31.983239774968798</code></pre>
@@ -1072,8 +1106,8 @@ var: 31.983239774968798</code></pre>
 </div>
 <p>Let us consider the entire year</p>
 <div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"year"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentAllMonthsByYearlmplot.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(ice2, x <span class="op">=</span> <span class="st">"year"</span>, y <span class="op">=</span> <span class="st">"extent"</span>, height <span class="op">=</span> <span class="fl">5.2</span>, aspect <span class="op">=</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentAllMonthsByYearlmplot.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_3_2_Linear_Regression_files/figure-html/cell-16-output-1.png" width="988" height="488"></p>
 </div>
@@ -1083,9 +1117,9 @@ var: 31.983239774968798</code></pre>
 <h3 data-number="12.3.2" class="anchored" data-anchor-id="pearsons-correlation"><span class="header-section-number">12.3.2</span> Pearson’s correlation</h3>
 <p>Let’s calculate Pearson’s correlation coefficient and the p-value for testing non-correlation.</p>
 <div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>scipy.stats.pearsonr(ice2.year.values, ice2.extent.values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>scipy.stats.pearsonr(ice2.year.values, ice2.extent.values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>PearsonRResult(statistic=-0.8183500709897178, pvalue=4.4492318168687107e-103)</code></pre>
 </div>
 </div>
@@ -1096,17 +1130,17 @@ var: 31.983239774968798</code></pre>
 <p>For that we use using <strong>Scikit-learn</strong>, library that provides a variety of both supervised and unsupervised machine learning techniques. Scikit-learn provides an object-oriented interface centered around the concept of an Estimator. The <code>Estimator.fit</code> method sets the state of the estimator based on the training data. Usually, the data is comprised of a two-dimensional numpy array <span class="math inline">\(X\)</span> of shape <code>(n_samples, n_predictors)</code> that holds the so-called feature matrix and a one-dimensional numpy array <span class="math inline">\(\textbf{y}\)</span> that holds the responses. Some estimators allow the user to control the fitting behavior. For example, the <code>sklearn.linear_model.LinearRegression</code> estimator allows the user to specify whether or not to fit an intercept term. This is done by setting the corresponding constructor arguments of the estimator object. During the fitting process, the state of the estimator is stored in instance attributes that have a trailing underscore (<code>_</code>). For example, the coefficients of a LinearRegression estimator are stored in the attribute <code>coef_</code>.</p>
 <p>Estimators that can generate predictions provide a <code>Estimator.predict</code> method. In the case of regression, <code>Estimator.predict</code> will return the predicted regression values, <span class="math inline">\(\hat{\textbf{y}}\)</span>.</p>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>est <span class="op">=</span> LinearRegression(fit_intercept <span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ice2[[<span class="st">'year'</span>]]</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ice2[[<span class="st">'extent'</span>]]</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>est.fit(x, y)</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Coefficients:"</span>, est.coef_)</span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Intercept:"</span>, est.intercept_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>est <span class="op">=</span> LinearRegression(fit_intercept <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ice2[[<span class="st">'year'</span>]]</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ice2[[<span class="st">'extent'</span>]]</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>est.fit(x, y)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Coefficients:"</span>, est.coef_)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Intercept:"</span>, est.intercept_)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coefficients: [[-0.45275459]]
 Intercept: [903.71640207]</code></pre>
@@ -1114,22 +1148,22 @@ Intercept: [903.71640207]</code></pre>
 </div>
 <p>We can evaluate the model fitting by computing the mean squared error (<span class="math inline">\(MSE\)</span>) and the coefficient of determination (<span class="math inline">\(R^2\)</span>) of the model. The coefficient <span class="math inline">\(R^2\)</span> is defined as <span class="math inline">\((1 - \textbf{u}/\textbf{v})\)</span>, where <span class="math inline">\(\textbf{u}\)</span> is the residual sum of squares <span class="math inline">\(\sum (\textbf{y} - \hat{\textbf{y}})^2\)</span> and <span class="math inline">\(\textbf{v}\)</span> is the regression sum of squares <span class="math inline">\(\sum (\textbf{y} - \bar{\textbf{y}})^2\)</span>, where <span class="math inline">\(\bar{\textbf{y}}\)</span> is the mean. The best possible score for <span class="math inline">\(R^2\)</span> is 1.0: lower values are worse. These measures can provide a quantitative answer to the question we are facing: Is there a negative trend in the evolution of sea ice extent over recent years?</p>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis for all months together.</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ice2[[<span class="st">'year'</span>]]</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ice2[[<span class="st">'extent'</span>]]</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'year'</span>)</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'extent (All months)'</span>)</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat, y))</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentLinearRegressionAllMonthsByYearPrediction.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis for all months together.</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> ice2[[<span class="st">'year'</span>]]</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> ice2[[<span class="st">'extent'</span>]]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'year'</span>)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'extent (All months)'</span>)</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat, y))</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("figs/IceExtentLinearRegressionAllMonthsByYearPrediction.png", dpi = 300, bbox_inches = 'tight')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MSE: 10.539131639803488
 R^2: 0.5067870382100226
@@ -1142,26 +1176,26 @@ dtype: float64</code></pre>
 </div>
 <p>We can conclude that the data show a long-term negative trend in recent years.</p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis for a particular month.</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#For January</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>jan <span class="op">=</span> ice2[ice2.mo <span class="op">==</span> <span class="dv">1</span>]<span class="op">;</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jan[[<span class="st">'year'</span>]]</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> jan[[<span class="st">'extent'</span>]]</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'-o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'year'</span>)</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'extent (January)'</span>)</span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Analysis for a particular month.</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#For January</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>jan <span class="op">=</span> ice2[ice2.mo <span class="op">==</span> <span class="dv">1</span>]<span class="op">;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> jan[[<span class="st">'year'</span>]]</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> jan[[<span class="st">'extent'</span>]]</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'-o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'year'</span>)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'extent (January)'</span>)</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y_hat, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MSE: 3.8395160752867565
 R^2: 0.7810636041396216</code></pre>
@@ -1172,12 +1206,12 @@ R^2: 0.7810636041396216</code></pre>
 </div>
 <p>We can also estimate the extent value for 2025. For that we use the function predict of the model.</p>
 <div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(<span class="dv">2025</span>) </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(X.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">1</span> <span class="co"># January</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Original value (before normalization)</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> (y_hat<span class="op">*</span>month_means.mean()<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span> month_means[j]</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Prediction of extent for January 2025 (in millions of square km):"</span>, y_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.array(<span class="dv">2025</span>) </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(X.reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>j <span class="op">=</span> <span class="dv">1</span> <span class="co"># January</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Original value (before normalization)</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> (y_hat<span class="op">*</span>month_means.mean()<span class="op">/</span><span class="dv">100</span>) <span class="op">+</span> month_means[j]</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"Prediction of extent for January 2025 (in millions of square km):"</span>, y_hat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Prediction of extent for January 2025 (in millions of square km): [[13.14449923]]</code></pre>
 </div>
