@@ -53,7 +53,7 @@ This workshop week will involve you working hands-on towards your final assessme
 
 ## Acknowledgements
 
-This handbook has been created by Carlos Cámara-Menoyo and Cagatay Turkay, based on the materials from previous years created by Cagatay Turkay and James Tripp.
+This handbook has been created by Carlos Cámara-Menoyo and Cagatay Turkay, based on the materials from previous years created by Cagatay Turkay, James Tripp and Zofia Bednarowska-Michaiel.
 
 ## Licence
 
