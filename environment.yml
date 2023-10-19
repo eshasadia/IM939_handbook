@@ -11,7 +11,7 @@ dependencies:
   - jupyterlab
   - openpyxl
   - scikit-learn
-  - seaborn
+  - seaborn=0.13.*
   - pip:
     - ghp-import
     - jupyterlab-quarto
