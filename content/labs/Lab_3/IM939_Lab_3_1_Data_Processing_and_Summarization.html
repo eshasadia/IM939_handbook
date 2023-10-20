@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <meta name="twitter:title" content="Data Science Across Disciplines - 11&nbsp; Lab: Data Processing and Summarization">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-5-output-1.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_3/IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-7-output-1.png">
 <meta name="twitter:image-height" content="862">
 <meta name="twitter:image-width" content="1481">
 <meta name="twitter:card" content="summary_large_image">
@@ -571,15 +571,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Here we will be exploring different functions in data processing and summarization.</p>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing libraries</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> cdist <span class="co"># This is the function that computes the Mahalanobis distance</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skew, kurtosis <span class="co"># The skew and kurtosis of a distribution</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.robust.scale <span class="im">import</span> mad <span class="co"># This computes the median absolute deviation of a distribution</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline # Display matplotlib plots inline with the text. +info: https://stackoverflow.com/a/43028034/1913457</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing libraries</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.spatial.distance <span class="im">import</span> cdist <span class="co"># This is the function that computes the Mahalanobis distance</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> skew, kurtosis <span class="co"># The skew and kurtosis of a distribution</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.robust.scale <span class="im">import</span> mad <span class="co"># This computes the median absolute deviation of a distribution</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#%matplotlib inline # Display matplotlib plots inline with the text. +info: https://stackoverflow.com/a/43028034/1913457</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="outliers" class="level2 page-columns page-full" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="outliers"><span class="header-section-number">11.1</span> Outliers</h2>
@@ -732,35 +736,178 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>But this might be difficult to spot outliers. This is where We can use data visualisations to identify outliers visually.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do this yourself:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We only get the summaries for the numeric values here. How about the others, such as <code>trim</code>, <code>engine</code> or <code>transmission</code>? Can you think of a way to get an idea of statistics that will provide you an overview of the distribution of these values? Also, do you think the mean of the <code>year</code> values make sense? What could be a better statistics here?</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## One thing to try is the describe function with an "all" parameter:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">mileage</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">trim</th>
+<th data-quarto-table-cell-role="th">engine</th>
+<th data-quarto-table-cell-role="th">transmission</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>417.000000</td>
+<td>417.000000</td>
+<td>417.0</td>
+<td>417</td>
+<td>417</td>
+<td>417</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">unique</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">top</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>ex</td>
+<td>4 Cyl</td>
+<td>Automatic</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">freq</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>288</td>
+<td>238</td>
+<td>382</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>12084.242206</td>
+<td>89725.779376</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">std</td>
+<td>2061.430034</td>
+<td>25957.872271</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">min</td>
+<td>6900.000000</td>
+<td>19160.000000</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>10779.000000</td>
+<td>71844.000000</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>11995.000000</td>
+<td>89900.000000</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>13000.000000</td>
+<td>106705.000000</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">max</td>
+<td>18995.000000</td>
+<td>149269.000000</td>
+<td>2006.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But this doesn't address out question. Think about visuals that can help you here? Maybe a histrogram would help?</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(data<span class="op">=</span>?, x<span class="op">=</span><span class="st">"?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Once you have an idea of the descriptive statistics, you might want to focus on the outliers. It might be difficult to spot outliers just with the descriptive statistics. This is where we can use data visualisations to identify outliers visually and also make use of a few proxy metrics to help us assess data points.</p>
 </section>
 <section id="identify-outliers-visually" class="level3 page-columns page-full" data-number="11.1.2">
 <h3 data-number="11.1.2" class="anchored" data-anchor-id="identify-outliers-visually"><span class="header-section-number">11.1.2</span> Identify outliers visually</h3>
 <div class="page-columns page-full"><p>In this case we will <strong>explore variables individually (1D)</strong> by creating a <em>boxplot</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. We will visualise the columns <code>price</code> and <code>mileage</code> using matplotlib’s subplots, which combines multiple plots into a single figure:</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;Boxplots may be difficult to interpret if we are not used to them. It is used to visualise distributions, where the box represents the <em>Interquartile range (IQR)</em>, whereas the whiskers can be defined in multiple ways (e.g.&nbsp;the first and third quartiles, 1.5 IQR…) . <img src="figs/440px-Boxplot_vs_PDF.svg.png" class="img-fluid" alt="A visualisation depicting how a Box Plot works. Source: Wikipedia"> From <a href="https://en.wikipedia.org/wiki/Box_plot">Wikipedia</a>: “In descriptive statistics, a box plot or boxplot is a method for graphically demonstrating the locality, spread and skewness groups of numerical data through their quartiles.”</p></li></div></div>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1D Visualizations</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>)) <span class="co"># Setting the figure's size: format width, height (in inches)</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="co"># subplot(nrows, ncols, index, **kwargs)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.price)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Price attribute"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.mileage)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Mileage attribute"</span>)<span class="op">;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A semicolon in Python denotes separation, rather than termination. </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># It allows you to write multiple statements on the same line. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1D Visualizations</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>)) <span class="co"># Setting the figure's size: format width, height (in inches)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>) <span class="co"># subplot(nrows, ncols, index, **kwargs)</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.price)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Price attribute"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df.mileage)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot of the Mileage attribute"</span>)<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A semicolon in Python denotes separation, rather than termination. </span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># It allows you to write multiple statements on the same line. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-5-output-1.png" width="741" height="431"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-7-output-1.png" width="741" height="431"></p>
 </div>
 </div>
 <p>But we may want to <strong>identify the 2D outliers</strong> using a scatterplot</p>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D Visualization</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, alpha <span class="op">=</span> <span class="fl">.5</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2D Visualization</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, alpha <span class="op">=</span> <span class="fl">.5</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-6-output-1.png" width="619" height="467"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-8-output-1.png" width="619" height="467"></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -780,20 +927,20 @@ Note
 <section id="computing-outliers-threshold-standard-deviation" class="level3" data-number="11.1.3">
 <h3 data-number="11.1.3" class="anchored" data-anchor-id="computing-outliers-threshold-standard-deviation"><span class="header-section-number">11.1.3</span> Computing outliers’ threshold: standard deviation</h3>
 <p>Add two new columns to the dataframe called <code>isOutlierPrice</code> and <code>isOutlierMileage</code>. We will define our threshold as <strong>2 times standard deviations away from the mean</strong> for <code>price</code> and <code>mileage</code>, respectively.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierPrice column</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>upper_threshold_price <span class="op">=</span> df.price.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>df.price.std() </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>lower_threshold_price <span class="op">=</span> df.price.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>df.price.std()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> ((df.price <span class="op">&gt;</span> upper_threshold_price) <span class="op">|</span> (df.price <span class="op">&lt;</span> lower_threshold_price))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierMileage column</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>upper_threshold_mileage <span class="op">=</span> df.mileage.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>lower_threshold_mileage <span class="op">=</span> df.mileage.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> ((df.mileage <span class="op">&gt;</span> upper_threshold_mileage) <span class="op">|</span> (df.mileage <span class="op">&lt;</span> lower_threshold_mileage))</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierPrice column</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>upper_threshold_price <span class="op">=</span> df.price.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>df.price.std() </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>lower_threshold_price <span class="op">=</span> df.price.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>df.price.std()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> ((df.price <span class="op">&gt;</span> upper_threshold_price) <span class="op">|</span> (df.price <span class="op">&lt;</span> lower_threshold_price))</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the isOutlierMileage column</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>upper_threshold_mileage <span class="op">=</span> df.mileage.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std()</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>lower_threshold_mileage <span class="op">=</span> df.mileage.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std()</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> ((df.mileage <span class="op">&gt;</span> upper_threshold_mileage) <span class="op">|</span> (df.mileage <span class="op">&lt;</span> lower_threshold_mileage))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -884,14 +1031,14 @@ Alternative method
 </div>
 <div class="callout-body-container callout-body">
 <p>We may want to use this more succint approach:</p>
-<div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second way of doing the above using the np.where() function</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.price <span class="op">-</span> df.price.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.price.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.mileage <span class="op">-</span> df.mileage.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Second way of doing the above using the np.where() function</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierPrice'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.price <span class="op">-</span> df.price.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.price.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'isOutlierMileage'</span>] <span class="op">=</span> np.where(<span class="bu">abs</span>(df.mileage <span class="op">-</span> df.mileage.mean()) <span class="op">&lt;</span> <span class="dv">2</span><span class="op">*</span>df.mileage.std(), <span class="va">False</span>, <span class="va">True</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the new DataFrame with the added columns</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -975,30 +1122,30 @@ Alternative method
 </div>
 </div>
 <p>Now that we have these two new columns, we could visualize these values with a different color in the plot. Observe whether they are the same as you would mark them:</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing outliers in a different color</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> [<span class="st">'tomato'</span> <span class="cf">if</span> i<span class="op">+</span>j <span class="cf">else</span> <span class="st">'seagreen'</span> <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(df.isOutlierPrice, df.isOutlierMileage)]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, color <span class="op">=</span> col)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price : Outliers 2+ std</span><span class="ch">\'</span><span class="st">s away from the mean</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing outliers in a different color</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> [<span class="st">'tomato'</span> <span class="cf">if</span> i<span class="op">+</span>j <span class="cf">else</span> <span class="st">'seagreen'</span> <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(df.isOutlierPrice, df.isOutlierMileage)]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, color <span class="op">=</span> col)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price : Outliers 2+ std</span><span class="ch">\'</span><span class="st">s away from the mean</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-9-output-1.png" width="619" height="467"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-11-output-1.png" width="619" height="467"></p>
 </div>
 </div>
 <p>Visually filtering out outliers can be an effective tactic if we’re just trying to conduct a quick and dirty experimentation. However, when we need to perform a solid and founded analysis, it’s better to have a robust justification for our choices.</p>
 <p>In this case, we can use the deviation from the mean to define a threshold that separates ‘normal’ values from ‘outliers’. Here, we opted for a two standard deviation threshold.</p>
 <p>The mathematical intuition behind this, is that under the normality assumption (if we assume our variable is normally distributed, which it almost is, refer to the next plot), then the probability of it having a value two standard deviations OR MORE away from the mean, is around 5%, which is very unlikely to happen. This is why we label these data points as outliers with respect to the (assumed) probability distribution of the variable. But this remains a way to identify 1D outliers only (identifying outliers within each column separately)</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms of Price and Mileage (checking the normality assumption)</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.hist(df.price, bins <span class="op">=</span> <span class="dv">12</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Price'</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.hist(df.mileage, bins <span class="op">=</span> <span class="dv">15</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histograms of Price and Mileage (checking the normality assumption)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.hist(df.price, bins <span class="op">=</span> <span class="dv">12</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Price'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.hist(df.mileage, bins <span class="op">=</span> <span class="dv">15</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-10-output-1.png" width="582" height="431"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-12-output-1.png" width="582" height="431"></p>
 </div>
 </div>
 </section>
@@ -1007,24 +1154,24 @@ Alternative method
 <ol type="1">
 <li>Using the 2D Mahalanobis distance to find outliers</li>
 </ol>
-<div class="cell page-columns page-full" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean vector (computing the mean returns a Series, which we need to convert back to a DataFrame because cdist requires it)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>mean_v <span class="op">=</span> df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>].mean().to_frame().T <span class="co"># DataFrame.T returns the Transpose of the DataFrame</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_v = np.asarray([df.price.mean(), df.mileage.mean() ]).reshape(1,2) # This is a better way of writing the line before (for our use case : cdist function)</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the Mahalanobis distance of each row to the mean vector</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> cdist(df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>], mean_v, metric<span class="op">=</span><span class="st">'mahalanobis'</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#d = cdist(df[['price', 'mileage']].values, mean_v, metric='mahalanobis') # Another way of writing the line before</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the scatter plot while coloring each point (i.e row) with a color from a chosen gradient colormap corresponding to the mahalanobis score</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, c <span class="op">=</span> d.flatten(), cmap <span class="op">=</span> <span class="st">'plasma'</span>) <span class="co"># in order to know why we use flatten() on d, try printing d with and without flatten</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.colorbar() <span class="co"># to show the colorbar</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price colored by a 2D Mahalanobis score</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell page-columns page-full" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean vector (computing the mean returns a Series, which we need to convert back to a DataFrame because cdist requires it)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>mean_v <span class="op">=</span> df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>].mean().to_frame().T <span class="co"># DataFrame.T returns the Transpose of the DataFrame</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#mean_v = np.asarray([df.price.mean(), df.mileage.mean() ]).reshape(1,2) # This is a better way of writing the line before (for our use case : cdist function)</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Computing the Mahalanobis distance of each row to the mean vector</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> cdist(df.iloc[:, <span class="dv">0</span>:<span class="dv">2</span>], mean_v, metric<span class="op">=</span><span class="st">'mahalanobis'</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#d = cdist(df[['price', 'mileage']].values, mean_v, metric='mahalanobis') # Another way of writing the line before</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizing the scatter plot while coloring each point (i.e row) with a color from a chosen gradient colormap corresponding to the mahalanobis score</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(df.price, df.mileage, c <span class="op">=</span> d.flatten(), cmap <span class="op">=</span> <span class="st">'plasma'</span>) <span class="co"># in order to know why we use flatten() on d, try printing d with and without flatten</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.colorbar() <span class="co"># to show the colorbar</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price'</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Mileage'</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Mileage vs. Price colored by a 2D Mahalanobis score</span><span class="ch">\n</span><span class="st">'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-inset-right">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-11-output-1.png" width="893" height="467"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-13-output-1.png" width="893" height="467"></p>
 </div>
 </div>
 </section>
@@ -1035,12 +1182,12 @@ Alternative method
 <h3 data-number="11.2.1" class="anchored" data-anchor-id="data"><span class="header-section-number">11.2.1</span> Data</h3>
 <p>In this case, we will be using data reported by countries to WHO and estimates of tuberculosis burden generated by WHO for the <em>Global Tuberculosis Report</em>, as part of WHO’s <a href="https://www.who.int/teams/global-tuberculosis-programme/data">Global Tuberculosis Programme</a>. You can refer to <a href="https://www.who.int/teams/global-tuberculosis-programme/data#csv_files">this section</a> at WHO’s website to know more about the data and their variables.</p>
 <p>For your convenience, we have stored a copy in a csv file, but you could try to replicate the code with more up-to-date data from the original website. As usual, it is a best practice to explore the data before proceeding any further:</p>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the Data</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/TB_burden_countries_2014-09-29.csv'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>df_tuber.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Getting the Data</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> pd.read_csv(<span class="st">'data/raw/TB_burden_countries_2014-09-29.csv'</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>df_tuber.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1199,8 +1346,8 @@ Alternative method
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_tuber.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_tuber.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 4903 entries, 0 to 4902
@@ -1251,13 +1398,13 @@ memory usage: 1.5+ MB</code></pre>
 </div>
 </div>
 <div class="page-columns page-full"><p>As you can see we have a pretty large dataset numerical and categorical variables, some of which have many missing values. In this case we will be filling missing values with the mean<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Refer to <a href="../Lab_2/IM939_Lab_2_3.html#sec-inputting-missing-data"><span>Section&nbsp;8.2</span></a> for a detailed explanation and alternative methods to inputting missing values.</p></li></div></div>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing numeric values ONLY (categorical values will be untouched)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> df_tuber.fillna(value<span class="op">=</span>df_tuber.mean(numeric_only <span class="op">=</span> <span class="va">True</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_tuber.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling missing numeric values ONLY (categorical values will be untouched)</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_tuber <span class="op">=</span> df_tuber.fillna(value<span class="op">=</span>df_tuber.mean(numeric_only <span class="op">=</span> <span class="va">True</span>))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Count missing values</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>df_tuber.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>country                      0
 iso2                        23
 iso3                         0
@@ -1303,15 +1450,15 @@ dtype: int64</code></pre>
 <ol type="1">
 <li>Pick one of the columns from the Tuberculosis data and copy it into a numpy array as before</li>
 </ol>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Picking a column (I created a variable for this so I (and you (: ) can modify the column easily here and the change will be carried out everywhere I use the variable colname)</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'e_prev_100k'</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a numpy array from our column</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> np.array(df_tuber[colname])</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing the type of our newly created column</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(col))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Picking a column (I created a variable for this so I (and you (: ) can modify the column easily here and the change will be carried out everywhere I use the variable colname)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'e_prev_100k'</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a numpy array from our column</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>col <span class="op">=</span> np.array(df_tuber[colname])</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing the type of our newly created column</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(col))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'numpy.ndarray'&gt;</code></pre>
 </div>
@@ -1319,35 +1466,35 @@ dtype: int64</code></pre>
 <ol type="1">
 <li>Compare this selected column to a Normal distribution. Then Sample from a Normal distribution and show a second Q-Q plot</li>
 </ol>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Q-Q Plot for our column</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(col, line<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the "</span><span class="sc">{}</span><span class="st">" column of our dataset'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Q-Q Plot for the log of our column</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>sm.qqplot(np.log(col), line<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the Log of the "</span><span class="sc">{}</span><span class="st">" column'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sampling from a Gaussian and a uniform distribution</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>sample_norm <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>sample_unif <span class="op">=</span> np.random.rand(<span class="dv">1000</span>)</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the second Q-Q Plot for our sample (that was generated using a normal distribution)</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>sm.qqplot(sample_norm, line<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the generated sample (Gaussian)'</span>)</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>sm.qqplot(sample_unif, line<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the generated sample (Uniform)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Q-Q Plot for our column</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sm.qqplot(col, line<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the "</span><span class="sc">{}</span><span class="st">" column of our dataset'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the Q-Q Plot for the log of our column</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>sm.qqplot(np.log(col), line<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the Log of the "</span><span class="sc">{}</span><span class="st">" column'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Sampling from a Gaussian and a uniform distribution</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>sample_norm <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>sample_unif <span class="op">=</span> np.random.rand(<span class="dv">1000</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the second Q-Q Plot for our sample (that was generated using a normal distribution)</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>sm.qqplot(sample_norm, line<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the generated sample (Gaussian)'</span>)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>sm.qqplot(sample_unif, line<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Q-Q Plot of the generated sample (Uniform)'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-16-output-1.png" width="604" height="449"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-18-output-1.png" width="604" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-16-output-2.png" width="585" height="449"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-18-output-2.png" width="585" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-16-output-3.png" width="587" height="449"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-18-output-3.png" width="587" height="449"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-16-output-4.png" width="609" height="449"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-18-output-4.png" width="609" height="449"></p>
 </div>
 </div>
 <p>
@@ -1362,17 +1509,17 @@ Ok ? Now try to guess the shape of the distribution of our selected column (shap
 <ol type="1">
 <li>Visualise the column on a histogram and reflect on whether the shape you inferred from Q-Q plots and the shape of the histogram correlate</li>
 </ol>
-<div class="cell page-columns page-full" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogramming the column we picked (not sure the verb exists though)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.hist(col)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Log "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.hist(np.log(col))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell page-columns page-full" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Histogramming the column we picked (not sure the verb exists though)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>plt.hist(col)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of Log "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.hist(np.log(col))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-inset-right">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-17-output-1.png" width="955" height="431"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-19-output-1.png" width="955" height="431"></p>
 </div>
 </div>
 <p>
@@ -1385,51 +1532,51 @@ Of course it does ! From the shape of the Q-Q Plot above (convex, slope upwards)
 <ol type="1">
 <li>Inspecting the effect of sample size on descriptive statistics</li>
 </ol>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_std <span class="kw">in</span> <span class="bu">enumerate</span>(stds):</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span>theoritical_std, size<span class="op">=</span>sample_size)</span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
-<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
-<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
-<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
-<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
-<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
-<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
-<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
-<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"GAUSSIAN DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
-<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
-<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
-<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std and sample size</span></span>
-<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
-<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample size</span></span>
-<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
-<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(stds)])</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_std <span class="kw">in</span> <span class="bu">enumerate</span>(stds):</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.normal(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span>theoritical_std, size<span class="op">=</span>sample_size)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> stds, index <span class="op">=</span> n)</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Standard Deviation"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"GAUSSIAN DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std and sample size</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample size</span></span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample size</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>GAUSSIAN DISTRIBUTION
 
@@ -1438,7 +1585,7 @@ Results for the Standard Deviation :
 Results for the Skewness :
 Results for the Kurtosis :</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -1460,27 +1607,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-0.544615</td>
-<td>-1.114771</td>
-<td>-0.481163</td>
+<td>-1.029044</td>
+<td>-1.288337</td>
+<td>-0.563479</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>1.676887</td>
-<td>0.336644</td>
-<td>-0.263502</td>
+<td>-0.684362</td>
+<td>-1.001904</td>
+<td>-0.838442</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.565966</td>
-<td>0.430112</td>
-<td>0.250231</td>
+<td>-0.648011</td>
+<td>0.258733</td>
+<td>-0.349484</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>-0.007222</td>
-<td>-0.032346</td>
-<td>0.015260</td>
+<td>-0.162924</td>
+<td>-0.105166</td>
+<td>-0.094361</td>
 </tr>
 </tbody>
 </table>
@@ -1492,58 +1639,58 @@ Results for the Kurtosis :</code></pre>
 Basically, the more data you have (the bigger your sample), the more accurate your empirical estimates are going to be. Observe for example the values of mean (1st DataFrame) and variance (2nd DataFrame) for the 2000 sample size (last row). In the first one, the values are all close to 0, because we generated our sample from a Gaussian with mean 0, and the values in the second one are all close to the values in the column names (which refer to the variance of the distribution of the sample). This means that for with a sample size of 2000, our estimates are really close to the “True” values (with which we generated the sample). Also, the Skew of a Gaussian distribution should be 0, and it is confirmed in the 3rd DataFrame where the values are close to 0 in the last row (i.e big sample size).
 </p>
 <p><b>2) Same as before but with a Poisson distribution (which has just one parameter lambda instead of 2 like the gaussian)</b></p>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>lambd <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>] <span class="co"># In a gaussian we had two parameters, a var specified here and a mean we chose to be 0 </span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#everywhere. Here we have one parameter called lambda.</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_lambd <span class="kw">in</span> <span class="bu">enumerate</span>(lambd):</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.poisson(lam <span class="op">=</span> theoritical_lambd, size <span class="op">=</span> sample_size) <span class="co"># THIS IS WHAT WE CHANGED IN Q2 !</span></span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
-<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
-<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
-<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"POISSON DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
-<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
-<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
-<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std </span></span>
-<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a><span class="co">#and sample size</span></span>
-<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
-<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample </span></span>
-<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
-<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
-<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample </span></span>
-<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
-<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining a few variables se we can change their values easiliy without having to change the rest of the code</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">2000</span>]</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>lambd <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">3</span>] <span class="co"># In a gaussian we had two parameters, a var specified here and a mean we chose to be 0 </span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#everywhere. Here we have one parameter called lambda.</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing empty 2D arrays where we're going to store the results of our simulation</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> np.empty([<span class="bu">len</span>(n), <span class="bu">len</span>(lambd)])</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Conducting the experiments and storing the results in the respective 2D arrays</span></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, sample_size <span class="kw">in</span> <span class="bu">enumerate</span>(n):</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, theoritical_lambd <span class="kw">in</span> <span class="bu">enumerate</span>(lambd):</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>        sample <span class="op">=</span> np.random.poisson(lam <span class="op">=</span> theoritical_lambd, size <span class="op">=</span> sample_size) <span class="co"># THIS IS WHAT WE CHANGED IN Q2 !</span></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>        <span class="co">#**********************************************************************</span></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>        mean[i,j] <span class="op">=</span> sample.mean()</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>        std[i,j] <span class="op">=</span> sample.std()</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>        skewness[i,j] <span class="op">=</span> skew(sample)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>        kurtos[i,j] <span class="op">=</span> kurtosis(sample)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the mean 2D array into a pandas dataframe</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pd.DataFrame(mean, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> mean.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the std 2D array into a pandas dataframe</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> pd.DataFrame(std, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> std.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the skewness 2D array into a pandas dataframe</span></span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> pd.DataFrame(skewness, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>skewness <span class="op">=</span> skewness.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Turning the kurtosis 2D array into a pandas dataframe</span></span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> pd.DataFrame(kurtos, columns <span class="op">=</span> lambd, index <span class="op">=</span> n)</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>kurtos <span class="op">=</span> kurtos.rename_axis(<span class="st">'Sample Size'</span>).rename_axis(<span class="st">"Lambda"</span>, axis<span class="op">=</span><span class="st">"columns"</span>)</span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"POISSON DISTRIBUTION</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Mean :'</span>)</span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>mean <span class="co"># This is a dataframe containing the means of the samples generated with different values of std and sample size</span></span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Standard Deviation :'</span>)</span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>std <span class="co"># This is a dataframe containing the standard deviations of the samples generated with different values of std </span></span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="co">#and sample size</span></span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Skewness :'</span>)</span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>skewness <span class="co"># This is a dataframe containing the skews of the samples generated with different values of std and sample </span></span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Results for the Kurtosis :'</span>)</span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>kurtos <span class="co"># This is a dataframe containing the kurtosis of the samples generated with different values of std and sample </span></span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="co">#size</span></span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>POISSON DISTRIBUTION
 
@@ -1552,7 +1699,7 @@ Results for the Standard Deviation :
 Results for the Skewness :
 Results for the Kurtosis :</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -1574,27 +1721,27 @@ Results for the Kurtosis :</code></pre>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">5</td>
-<td>-1.833333</td>
-<td>-1.153061</td>
-<td>-1.005478</td>
+<td>0.250000</td>
+<td>-1.371972</td>
+<td>-1.046875</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">20</td>
-<td>-0.141090</td>
-<td>-0.741655</td>
-<td>1.215686</td>
+<td>1.908429</td>
+<td>-0.535492</td>
+<td>0.604442</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">100</td>
-<td>-0.285029</td>
-<td>-0.628894</td>
-<td>0.295114</td>
+<td>0.132415</td>
+<td>-0.750681</td>
+<td>1.388406</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">2000</td>
-<td>1.782577</td>
-<td>0.463486</td>
-<td>0.503687</td>
+<td>2.095785</td>
+<td>1.057435</td>
+<td>0.458483</td>
 </tr>
 </tbody>
 </table>
@@ -1611,10 +1758,10 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <ol type="1">
 <li>Choose a number of columns with different shapes, for instance, “e_prev_100k_hi” is left skewed or some columns where the variation is high or you notice potential outliers. You can make use of a series of boxplots to exploratively analyse the data for outliers</li>
 </ol>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listing the columns</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_tuber.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listing the columns</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df_tuber.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>Index(['country', 'iso2', 'iso3', 'iso_numeric', 'g_whoregion', 'year',
        'e_pop_num', 'e_prev_100k', 'e_prev_100k_lo', 'e_prev_100k_hi',
        'e_prev_num', 'e_prev_num_lo', 'e_prev_num_hi', 'e_mort_exc_tbhiv_100k',
@@ -1629,30 +1776,30 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
       dtype='object')</code></pre>
 </div>
 </div>
-<div class="cell page-columns page-full" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alright I already know a few columns with outliers but let's try to find them together exploratively using BoxPlots</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'c_cdr'</span> <span class="co"># change the column name by choosing different ones from above (numeric ones)</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[colname])</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[colname])<span class="op">;</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell page-columns page-full" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alright I already know a few columns with outliers but let's try to find them together exploratively using BoxPlots</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>colname <span class="op">=</span> <span class="st">'c_cdr'</span> <span class="co"># change the column name by choosing different ones from above (numeric ones)</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">15</span>,<span class="dv">5</span>))</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[colname])</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[colname])<span class="op">;</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(colname))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-screen-inset">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-21-output-1.png" width="1179" height="431"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-23-output-1.png" width="1179" height="431"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chosen columns : I picked 3, feel free to change them and experiment</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>chosen_colnames <span class="op">=</span> [<span class="st">'e_pop_num'</span>, <span class="st">'e_prev_100k'</span>, <span class="st">'c_cdr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chosen columns : I picked 3, feel free to change them and experiment</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>chosen_colnames <span class="op">=</span> [<span class="st">'e_pop_num'</span>, <span class="st">'e_prev_100k'</span>, <span class="st">'c_cdr'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><b>2) For the chosen columns, estimate both the conventional and the robust descriptive statistics and compare. Observe how these pairs deviate from each other based on the characteristics of the underlying data</b></p>
-<div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Central Tendency : Mean vs Median (Median is the robust version of the mean, because it takes into account </span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the ordering of the points and not the actual values like the mean does)</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df_tuber[chosen_colnames].describe().loc[[<span class="st">'mean'</span>, <span class="st">'50%'</span>], :] <span class="co"># The 50% is the median (50% quantile)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Central Tendency : Mean vs Median (Median is the robust version of the mean, because it takes into account </span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">#the ordering of the points and not the actual values like the mean does)</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>df_tuber[chosen_colnames].describe().loc[[<span class="st">'mean'</span>, <span class="st">'50%'</span>], :] <span class="co"># The 50% is the median (50% quantile)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -1686,17 +1833,17 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 </div>
 <p>Look at how the values are different between the mean and the median … LOOOOOOOK ! This is why when you have a skewed (unsymmetrical) distribution it’s usually more interesting to use the median as a measure of the central tendency of the data. One important thing to note here, for the two first attributes, the mean is higher than the median, but for the last it’s the opposite. This can tell you a thing or two about the shape of your distribution : if the mean is higher than the median, this means that the distribution is skewed to the right (right tail) which pulls the mean higher. And vice-versa.</p>
 <p>Moral of the story is … outliers are a pain in the a**.</p>
-<div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spread : Standard Deviation vs Inter-Quartile Range vs Median Absolute Deviation (MAD)</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> df_tuber[chosen_colnames].std()</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>iqrs <span class="op">=</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.75</span>) <span class="op">-</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.25</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>medianAD <span class="op">=</span> mad(df_tuber[chosen_colnames])</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.DataFrame(stds, columns <span class="op">=</span> [<span class="st">'std'</span>]).T</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(iqrs, columns <span class="op">=</span> [<span class="st">'IQR'</span>]).T], ignore_index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(medianAD, columns <span class="op">=</span> [<span class="st">'MAD'</span>], index <span class="op">=</span> chosen_colnames).T], ignore_index<span class="op">=</span><span class="va">False</span>, names <span class="op">=</span> [<span class="st">'std'</span>, <span class="st">'iqr'</span>, <span class="st">'mad'</span>])</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Spread : Standard Deviation vs Inter-Quartile Range vs Median Absolute Deviation (MAD)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>stds <span class="op">=</span> df_tuber[chosen_colnames].std()</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>iqrs <span class="op">=</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.75</span>) <span class="op">-</span> df_tuber[chosen_colnames].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>medianAD <span class="op">=</span> mad(df_tuber[chosen_colnames])</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.DataFrame(stds, columns <span class="op">=</span> [<span class="st">'std'</span>]).T</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(iqrs, columns <span class="op">=</span> [<span class="st">'IQR'</span>]).T], ignore_index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>output <span class="op">=</span> pd.concat([output, pd.DataFrame(medianAD, columns <span class="op">=</span> [<span class="st">'MAD'</span>], index <span class="op">=</span> chosen_colnames).T], ignore_index<span class="op">=</span><span class="va">False</span>, names <span class="op">=</span> [<span class="st">'std'</span>, <span class="st">'iqr'</span>, <span class="st">'mad'</span>])</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -1737,32 +1884,32 @@ Just remember, the lambda parameter that defines the Poisson distribution is als
 <p>The values here are different as well, maybe more so for the “e_pop_num” attribute than the others, but that is just because of the scaling : “e_pop_num” takes big values overall compared to the other columns, which you can check with the mean values right above.</p>
 <p>For the first attribute, the standard deviation is higher, and both the IQR and MAD are close to each other. For the second attribute, the inter-quartile range is slightly higher than the standard deviation, but the MAD is far below (less than half) the other two values, and the reason for that is a little bit involved : Basically, the standard deviation measures the spread by computing the squared deviation from the mean while the median absolute deviation evaluates the spread by computing the absolute deviation. This means that when the outliers have much bigger values than the “normal” points, the squared difference explodes (figuratively of course ;p) compared to the absolute difference. And this is actually the case for our second distribution (e_prev_100k) where most values are between 50 and 300 while many outliers lay above the 750 mark and go all the way up to 1800 (look at the boxplots below). For the third attribute the values are somewhat close, especially the std and the MAD, that’s because if you inspect the boxplot, this column doesn’t have many outliers to begin with.</p>
 <p>Nonetheless, the differences are real, and if we don’t want to have to handle outliers, then we should be using robust statistics like the median to describe the central tendency and inter-quartile range or median absolute deviation to measure the spread of our data.</p>
-<div class="cell page-columns page-full" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots of the different columns</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">20</span>))</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))</span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>)</span>
-<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
-<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell page-columns page-full" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplots of the different columns</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">20</span>))</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">0</span>]])</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">0</span>]))</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">1</span>]])</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">1</span>]))</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>plt.hist(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">6</span>)</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_tuber[chosen_colnames[<span class="dv">2</span>]])</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of "</span><span class="sc">{}</span><span class="st">"'</span>.<span class="bu">format</span>(chosen_colnames[<span class="dv">2</span>]))<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page-inset-right">
-<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-25-output-1.png" width="955" height="1540"></p>
+<p><img src="IM939_Lab_3_1_Data_Processing_and_Summarization_files/figure-html/cell-27-output-1.png" width="955" height="1540"></p>
 </div>
 </div>
 
