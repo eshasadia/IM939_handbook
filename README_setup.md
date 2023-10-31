@@ -88,6 +88,19 @@ We can create a file (in this case `environment.yml`) containing the exact libra
 conda env export > environment.yml
 ```
 
+## Preventing commits with execution cells
+
+This handbook relies on jupyter notebooks. Quarto renders any `*.ipynb` file into a handbook, and displays the output of any code block, according to the settings. Regretfully, that means that it executes every code cell and therefore, jupyter notebooks stores the results in the notebook too, which is not what we'd like to do.
+
+To have clean notebooks (this is, without any executed cell) in an automated way, the following command must be run within the repository's root:
+
+```bash
+$ git config --local include.path ../.gitconfig
+```
+
+Please note that this command only needs to be run once: the first time we are setting up the repo. More information about the implemented solution here: <https://zhauniarovich.com/post/2020/2020-10-clearing-jupyter-output-p3/>
+
+
 ## Recreating the handbook
 
 ::: callout-tip
