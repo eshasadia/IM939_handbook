@@ -65,6 +65,7 @@ book:
     - part: "Structures & Spaces"
       chapters:
         - content/sessions/session-04.md
+        - content/labs/Lab_4/IM939_Session-04_PCA_playground.ipynb
         - content/labs/Lab_4/IM939_Lab_4_1_Iris.ipynb
         - content/labs/Lab_4/IM939_Lab_4_2_Crime.ipynb
         - content/labs/Lab_4/IM939_Lab_4_Exercises.ipynb
