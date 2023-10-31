@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 16&nbsp; Lab: Dimension reduction (2)</title>
+<title>Data Science Across Disciplines - 17&nbsp; Lab: Dimension reduction (2)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,7 +120,7 @@ div.csl-indent {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 16&nbsp; Lab: Dimension reduction (2)">
+<meta name="twitter:title" content="Data Science Across Disciplines - 17&nbsp; Lab: Dimension reduction (2)">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_4/IM939_Lab_4_2_Crime_files/figure-html/cell-6-output-2.png">
 <meta name="twitter:image-height" content="863">
@@ -137,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-04.html">Structures &amp; Spaces</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -337,20 +337,26 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../content/labs/Lab_4/IM939_Session-04_PCA_playground.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Working with Dimension Reduction Methods</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_2_Crime.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span></a>
   </div>
 </li>
       </ul>
@@ -367,31 +373,37 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../content/labs/Lab_5/week5_recap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Recap</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_lab_5_Exercise.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">IM939 lab 5 - Exercise</span></span></a>
   </div>
 </li>
       </ul>
@@ -408,37 +420,37 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_1-illusions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Illusions</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_2-AxisManipulation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Lab: Axes manipulation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_3-Choropleths.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Lab: Choropleth Maps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_4-Exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Exercise: Data visualisation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_6/IM939_Lab_6_5-Simpsons_Paradox.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">IM939 - Lab 6 Part 5 Simpson’s Paradox</span></span></a>
   </div>
 </li>
       </ul>
@@ -455,31 +467,31 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Lab: Hate crimes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Lab: Poverty and Inequality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Lab: Gender gaps</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Simpson’s Paradox</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">IM939 - Lab 7 Simpson’s Paradox</span></span></a>
   </div>
 </li>
       </ul>
@@ -496,19 +508,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Session 1: Design Thinking in Data Science</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Session 1: Design Thinking in Data Science</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-08_WorkshopBrief.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Brief: Analysing Health Indicators</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Brief: Analysing Health Indicators</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/sessions/session-09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Session 2: Bring Your Own Data (BYOD)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Session 2: Bring Your Own Data (BYOD)</span></span></a>
   </div>
 </li>
       </ul>
@@ -552,13 +564,13 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">16.1</span> Data</a></li>
-  <li><a href="#principal-component-analysis" id="toc-principal-component-analysis" class="nav-link" data-scroll-target="#principal-component-analysis"><span class="header-section-number">16.2</span> Principal Component Analysis</a></li>
-  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering"><span class="header-section-number">16.3</span> Clustering</a>
+  <li><a href="#data" id="toc-data" class="nav-link active" data-scroll-target="#data"><span class="header-section-number">17.1</span> Data</a></li>
+  <li><a href="#principal-component-analysis" id="toc-principal-component-analysis" class="nav-link" data-scroll-target="#principal-component-analysis"><span class="header-section-number">17.2</span> Principal Component Analysis</a></li>
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering"><span class="header-section-number">17.3</span> Clustering</a>
   <ul class="collapse">
-  <li><a href="#defining-number-of-clusters" id="toc-defining-number-of-clusters" class="nav-link" data-scroll-target="#defining-number-of-clusters"><span class="header-section-number">16.3.1</span> Defining number of clusters</a></li>
+  <li><a href="#defining-number-of-clusters" id="toc-defining-number-of-clusters" class="nav-link" data-scroll-target="#defining-number-of-clusters"><span class="header-section-number">17.3.1</span> Defining number of clusters</a></li>
   </ul></li>
-  <li><a href="#visualising-clusters" id="toc-visualising-clusters" class="nav-link" data-scroll-target="#visualising-clusters"><span class="header-section-number">16.4</span> Visualising clusters</a></li>
+  <li><a href="#visualising-clusters" id="toc-visualising-clusters" class="nav-link" data-scroll-target="#visualising-clusters"><span class="header-section-number">17.4</span> Visualising clusters</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_4/IM939_Lab_4_2_Crime.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -567,7 +579,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Lab: Dimension reduction (2)</span></h1>
 </div>
 
 
@@ -584,14 +596,17 @@ div.csl-indent {
 
 <p>In the previous lab, we learned how to work with dimension reduction in a relatively simple dataset. In this lab we are going to work with a much larger dataset: a subset of the US Census &amp; Crime data <span class="citation" data-cites="misc_communities_and_crime_183">(<a href="../../references.html#ref-misc_communities_and_crime_183" role="doc-biblioref">Redmond 2009</a>)</span>. Details about the various variables can be found <a href="http://archive.ics.uci.edu/ml/datasets/communities+and+crime">here</a>.</p>
 <p>How can we tackle a dataset with 100 different dimensions? We try using PCA and clustering. There is a lot you can do with this dataset. We encourage you to dig in. Try and find some interesting patterns in the data. Even upload your findings to the Teams channel and discuss.</p>
-<section id="data" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="data"><span class="header-section-number">16.1</span> Data</h2>
+<section id="data" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="data"><span class="header-section-number">17.1</span> Data</h2>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/censusCrimeClean.csv'</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/censusCrimeClean.csv'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -894,9 +909,39 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do-this-yourself: Let’s say “hi” to the data
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You have probably learnt by now that the best start to working with a new data set is to get to know it. What would be a good way to approach this?</p>
+<p>A few steps we always take: - Use the internal spreadsheet viewer in JupyterLab, go into the data folder and have a look at the data. - Check the size of the dataset. Do you remember how to look at the <code>shape</code> of a dataset? - Get a summary of the data, observe the <em>descriptive</em> statistics. - Check the data types and see if there are mixes of different types, such as numerical, categorical, textual, etc.. - Create a visualisation to get a first peek into the relations. Think about the number of features. Is a visualisation feasible?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do-this-yourself: Check if we need to do any normalisation for this case?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What are the descriptive statistics look like, see if we need to do anything more?</p>
+<p>Usually a standardisation is recommended before you apply PCA on a dataset. Here is that link again – https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html</p>
+</div>
+</div>
 </section>
-<section id="principal-component-analysis" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="principal-component-analysis"><span class="header-section-number">16.2</span> Principal Component Analysis</h2>
+<section id="principal-component-analysis" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="principal-component-analysis"><span class="header-section-number">17.2</span> Principal Component Analysis</h2>
+<p><strong>Note for the above:</strong> In case you wondered, we have done some cleaning and preprocessing on this data to make things easier for you, so normalisation might not be needed or at least won’t make a lot of difference to the results. But the real life will always be much more messier.</p>
+<p>OK, you probably have noticed that there is a lot of data features we have here. Let’s start experimenting with the PCA technique and see what it could surface. Maybe it will help us reduce the dimensionality a little but and tell us something about the features.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -906,11 +951,21 @@ div.csl-indent {
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df_pca <span class="op">=</span> pca.fit(df.iloc[:, <span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>array([8.26130789, 1.08655844])</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_pca.explained_variance_ratio_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>array([0.67387831, 0.08863102])</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What do these numbers mean?
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_pca_vals <span class="op">=</span> pca.fit_transform(df.iloc[:,<span class="dv">1</span>:])</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c1'</span>] <span class="op">=</span> [item[<span class="dv">0</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
@@ -919,15 +974,17 @@ div.csl-indent {
 <div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_4_2_Crime_files/figure-html/cell-6-output-2.png" width="587" height="432"></p>
 </div>
 </div>
-<p>Hmm, that looks problematic. What is going on?</p>
+<p>Hmm, that looks problematic. What is going on? When you see patterns like this, you will need to take a step back and look at everything closely.</p>
 <p>We should look at the component loadings. Though there are going to be over 200 of them. We can put them into a Pandas dataframe and then sort them.</p>
+</div>
+</div>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'columns'</span> : df.columns[<span class="dv">1</span>:<span class="dv">102</span>],</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'component 1'</span> : df_pca.components_[<span class="dv">0</span>],</span>
@@ -935,8 +992,8 @@ div.csl-indent {
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>loadings.sort_values(by<span class="op">=</span>[<span class="st">'component 1'</span>], ascending<span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="42">
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>loadings.sort_values(by<span class="op">=</span>[<span class="st">'component 1'</span>], ascending<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="bu">abs</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -963,22 +1020,22 @@ div.csl-indent {
 <td>0.146079</td>
 </tr>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">37</td>
+<td>PctOccupManu</td>
+<td>-0.004403</td>
+<td>-0.132659</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">85</td>
 <td>RentHighQ</td>
 <td>0.004078</td>
 <td>0.188187</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">13</td>
 <td>medIncome</td>
 <td>0.003932</td>
 <td>0.185649</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">46</td>
-<td>PctYoungKids2Par</td>
-<td>0.003818</td>
-<td>0.178675</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -987,34 +1044,34 @@ div.csl-indent {
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">17</td>
-<td>pctWSocSec</td>
-<td>-0.003353</td>
-<td>-0.059245</td>
+<td data-quarto-table-cell-role="th">92</td>
+<td>PctForeignBorn</td>
+<td>0.000076</td>
+<td>0.024639</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">29</td>
-<td>PctPopUnderPov</td>
-<td>-0.003594</td>
-<td>-0.190548</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>racepctblack</td>
+<td>0.000066</td>
+<td>-0.130905</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">18</td>
-<td>pctWPubAsst</td>
-<td>-0.003697</td>
-<td>-0.173593</td>
+<td data-quarto-table-cell-role="th">5</td>
+<td>racePctAsian</td>
+<td>0.000064</td>
+<td>0.061561</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">10</td>
-<td>agePct65up</td>
-<td>-0.003767</td>
-<td>-0.033010</td>
+<td data-quarto-table-cell-role="th">99</td>
+<td>PctUsePubTrans</td>
+<td>0.000037</td>
+<td>0.036078</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">37</td>
-<td>PctOccupManu</td>
-<td>-0.004403</td>
-<td>-0.132659</td>
+<td data-quarto-table-cell-role="th">6</td>
+<td>racePctHisp</td>
+<td>-0.000002</td>
+<td>-0.064135</td>
 </tr>
 </tbody>
 </table>
@@ -1025,7 +1082,7 @@ div.csl-indent {
 </div>
 <div class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>loadings.sort_values(by<span class="op">=</span>[<span class="st">'component 2'</span>], ascending<span class="op">=</span><span class="va">False</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="43">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -1112,10 +1169,24 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do you notice anything extraordinary within these variable loadings?</p>
+<p>Remember, the variable loadings tell us to what extent the information encoded along a principal component axis is determined by a single variable. In other words, how important a variable is. Haev a look and see if anything is too problematic here.</p>
+</div>
+</div>
 <p>The fold variable is messing with our PCA. What does that variable look like.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.fold.value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="44">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>fold
 1     200
 2     200
@@ -1132,7 +1203,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'fold'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])</code></pre>
 </div>
 </div>
@@ -1140,7 +1211,7 @@ Name: count, dtype: int64</code></pre>
 <p>We should not include this variable in our analysis.</p>
 <div class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:, <span class="dv">2</span>:<span class="op">-</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <div>
 
 
@@ -1457,7 +1528,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c2_no_fold'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1_no_fold'</span>, y <span class="op">=</span> <span class="st">'c2_no_fold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="47">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>&lt;Axes: xlabel='c1_no_fold', ylabel='c2_no_fold'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1474,7 +1545,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>loadings <span class="op">=</span> pd.DataFrame(data)</span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>loadings_sorted <span class="op">=</span> loadings.sort_values(by<span class="op">=</span>[<span class="st">'component 1'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>loadings_sorted.iloc[<span class="dv">1</span>:<span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="48">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1551,7 +1622,7 @@ Name: count, dtype: int64</code></pre>
 <div class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>loadings_sorted <span class="op">=</span> loadings.sort_values(by<span class="op">=</span>[<span class="st">'component 2'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>loadings_sorted.iloc[<span class="dv">1</span>:<span class="dv">10</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="49">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1632,7 +1703,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                y <span class="op">=</span> <span class="st">'c2_no_fold'</span>,</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                hue <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>,</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                size <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;Axes: xlabel='c1_no_fold', ylabel='c2_no_fold'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1640,11 +1711,11 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
-<section id="clustering" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="clustering"><span class="header-section-number">16.3</span> Clustering</h2>
+<section id="clustering" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="clustering"><span class="header-section-number">17.3</span> Clustering</h2>
 <p>What about clustering using these <code>income</code> and <code>immigration</code> components?</p>
-<section id="defining-number-of-clusters" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="defining-number-of-clusters"><span class="header-section-number">16.3.1</span> Defining number of clusters</h3>
+<section id="defining-number-of-clusters" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="defining-number-of-clusters"><span class="header-section-number">17.3.1</span> Defining number of clusters</h3>
 <div class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1674,20 +1745,16 @@ Name: count, dtype: int64</code></pre>
 <p>Four clusters looks good.</p>
 </section>
 </section>
-<section id="visualising-clusters" class="level2 page-columns page-full" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="visualising-clusters"><span class="header-section-number">16.4</span> Visualising clusters</h2>
+<section id="visualising-clusters" class="level2 page-columns page-full" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="visualising-clusters"><span class="header-section-number">17.4</span> Visualising clusters</h2>
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>k_means_4 <span class="op">=</span> KMeans(n_clusters <span class="op">=</span> <span class="dv">3</span>, init <span class="op">=</span> <span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>k_means_4.fit(df[[<span class="st">'c1_no_fold'</span>, <span class="st">'c2_no_fold'</span>]])</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Four clusters'</span>] <span class="op">=</span> pd.Series(k_means_4.predict(df[[<span class="st">'c1_no_fold'</span>, <span class="st">'c2_no_fold'</span>]].values), index <span class="op">=</span> df.index)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/sklearn/base.py:465: UserWarning: X does not have valid feature names, but KMeans was fitted with feature names
-  warnings.warn(</code></pre>
-</div>
 </div>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1_no_fold'</span>, y <span class="op">=</span> <span class="st">'c2_no_fold'</span>, hue <span class="op">=</span> <span class="st">'Four clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1_no_fold'</span>, y <span class="op">=</span> <span class="st">'c2_no_fold'</span>, hue <span class="op">=</span> <span class="st">'Four clusters'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;Axes: xlabel='c1_no_fold', ylabel='c2_no_fold'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1697,11 +1764,11 @@ Name: count, dtype: int64</code></pre>
 <p>Hmm, might we interpret this plot? The plot is unclear. Let us assume c1 is an income component and c2 is an immigration component. Cluster 0 are places high on income and low on immigration. Cluster 2 are low on income and low on immigration. The interesting group are those high on immigration and relatively low on income.</p>
 <p>We can include crime on the plot.</p>
 <div class="cell page-columns page-full" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">15</span>,<span class="dv">10</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1_no_fold'</span>, y <span class="op">=</span> <span class="st">'c2_no_fold'</span>, hue <span class="op">=</span> <span class="st">'Four clusters'</span>, size <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display column-screen" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">"figure.figsize"</span>] <span class="op">=</span> (<span class="dv">15</span>,<span class="dv">10</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1_no_fold'</span>, y <span class="op">=</span> <span class="st">'c2_no_fold'</span>, hue <span class="op">=</span> <span class="st">'Four clusters'</span>, size <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display column-screen" data-execution_count="18">
 <pre><code>&lt;Axes: xlabel='c1_no_fold', ylabel='c2_no_fold'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display column-screen">
@@ -1955,12 +2022,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_4/IM939_Lab_4_1_Iris.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Lab: Dimension Reduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_4/IM939_Lab_4_Exercises.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Exercise: Wine dataset</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
