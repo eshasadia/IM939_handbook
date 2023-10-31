@@ -1,0 +1,54 @@
+# Recap
+
+Time flies and we have already reached the half of this module, so it is time to reflect on what we have done so far:
+
+## Workflow
+
+Our labs have focused on data analysis. The goal here is to try and understand informative patterns in our data. These patterns allow us to answer questions.
+
+To do this we:
+
+1. Read data into Python.
+2. Look at our data. 
+3. Wrangling our data. Often exploring raw data and dealing with missing values (imputation techniques), transformaing, normalising, standardising, outliers or reshaping.
+4. Carry out a series of analysis to better understand our data via clustering, regressions analysis, dimension reduction, and many other techniques.
+5. Reflect on what the patterns in our data can tell us.
+
+These are not mutually exclusive processes and are not exhaustive. One may review our data after cleaning, load in more data, carry out additional analysis and/or fit multiple models, tweak data summaries or adopt new techniques. Reflecting on the patterns are in our data can give way to additional analysis and processing.
+
+## So far
+
+A quick reminder, our toolkit comprises of:
+
+* [Pandas](https://pandas.pydata.org/) - table like data structures. Packed with methods for summarising and manipulating data. [Documentation](https://pandas.pydata.org/docs/user_guide/dsintro.html#dsintro). [Cheat sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf).
+* [Seaborn](https://seaborn.pydata.org/) - helping us create statistical data visualisations. [Tutorials](https://seaborn.pydata.org/tutorial.html).
+* [Scikit-learn](https://scikit-learn.org/stable/index.html) - An accessible collection of functions and object for analysing data. These analysis include dimension reduction, clustering, regressions and evaluating our models. [Examples](https://scikit-learn.org/stable/auto_examples/index.html).
+
+These tools comprise some of the core Python data science stack and allow us to tackle many of the elements from each week.
+
+### Week 2
+Tidy data, data types, wrangling data, imputation ([missing data](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html)), transformations.
+
+### Week 3
+[Descriptive statistics](https://pandas.pydata.org/pandas-docs/stable/user_guide/computation.html), distributions, models (e.g., [regression](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)).
+
+### Week 4
+Feature selection, dimension reduction (e.g., [Principle Component Analysis](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html), [Multidimensional scaling](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.MDS.html?highlight=mds#sklearn.manifold.MDS), [Linear Discriminant Analysis](https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#:~:text=sklearn.discriminant_analysis.LinearDiscriminantAnalysis%C2%B6.%20Linear%20Discriminant%20Analysis.%20A%20classifier%20with%20a,that%20all%20classes%20share%20the%20same%20covariance%20matrix.), [t-SNE](https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html?highlight=tsne#sklearn.manifold.TSNE), Correspondance Analysis), [clustering](https://scikit-learn.org/stable/modules/clustering.html) (e.g., [Hierarchical Clustering](https://scikit-learn.org/stable/modules/clustering.html#hierarchical-clustering), Partioning-based clustering such as [K-means](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#:~:text=sklearn.cluster%20.KMeans%20%C2%B6%20%20,fit%20%28X%203%20more%20rows%20)).
+
+We have also encountered two dataset sources.
+
+* [sklearn example datasets](https://scikit-learn.org/stable/datasets/index.html#:~:text=The%20sklearn.datasets%20package%20embeds%20some%20small%20toy%20datasets,on%20data%20that%20comes%20from%20the%20%E2%80%98real%20world%E2%80%99.)
+* [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets.php)
+
+You can learn a lot by picking a dataset, choosing a possible research question and carrying a series of analysis. I encourage you to do so outside of the session. It certainly forces one to read the documentation and explore the wonderful possabilities.
+
+## This week
+
+Trying to understand patterns in data often requires us to fit multiple models. We need to consider how well a given model (a kmeans cluster, a linear regression, dimension reduction, etc.) performs.
+
+Specifically, we will look at:
+
+1. Comparing clusters to the 'ground truth' - the wine dataset
+2. Cross validation of linear regression - the crime dataset
+3. Investigating multidimensional scaling - the london borough dataset
+4. Visualising the overlap in clustering results

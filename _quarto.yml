@@ -71,6 +71,7 @@ book:
     - part: "Multi-model thinking and rigour"
       chapters:
         - content/sessions/session-05.md
+        - content/labs/Lab_5/week5_recap.qmd
         - content/labs/Lab_5/IM939_Lab_5_1.ipynb
         - content/labs/Lab_5/IM939_Lab_5_2.ipynb
         - content/labs/Lab_5/IM939_Lab_5_3.ipynb
