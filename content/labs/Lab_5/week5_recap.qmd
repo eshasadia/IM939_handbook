@@ -1,4 +1,4 @@
-# Recap
+# Recap {#sec-week-5-recap}
 
 Time flies and we have already reached the half of this module, so it is time to reflect on what we have done so far:
 
