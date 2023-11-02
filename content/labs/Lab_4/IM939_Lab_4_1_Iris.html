@@ -1651,13 +1651,13 @@ Wide vs long data
 <div class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>k_means.labels_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 0, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
-       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0,
-       0, 0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0, 2, 2, 0, 0, 0, 0,
-       0, 2, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 2], dtype=int32)</code></pre>
+<pre><code>array([2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1,
+       1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1,
+       1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0], dtype=int32)</code></pre>
 </div>
 </div>
 <p>Each row has been assigned a label.</p>
@@ -1689,7 +1689,7 @@ Wide vs long data
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -1697,7 +1697,7 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -1705,7 +1705,7 @@ Wide vs long data
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -1713,7 +1713,7 @@ Wide vs long data
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -1721,7 +1721,7 @@ Wide vs long data
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -1737,7 +1737,7 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -1745,7 +1745,7 @@ Wide vs long data
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -1753,7 +1753,7 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -1761,7 +1761,7 @@ Wide vs long data
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -1769,7 +1769,7 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -1798,9 +1798,9 @@ Wide vs long data
 <div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>k_means.cluster_centers_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>array([[0.70726496, 0.4508547 , 0.79704476, 0.82478632],
-       [0.19611111, 0.595     , 0.07830508, 0.06083333],
-       [0.44125683, 0.30737705, 0.57571548, 0.54918033]])</code></pre>
+<pre><code>array([[0.44125683, 0.30737705, 0.57571548, 0.54918033],
+       [0.70726496, 0.4508547 , 0.79704476, 0.82478632],
+       [0.19611111, 0.595     , 0.07830508, 0.06083333]])</code></pre>
 </div>
 </div>
 <p>It is tricky to plot these using seaborn but we can use a normal maplotlib scatter plot.</p>
@@ -1851,7 +1851,7 @@ Wide vs long data
 <span id="cb33-26"><a href="#cb33-26" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> <span class="dv">1</span>, color <span class="op">=</span> <span class="st">'black'</span></span>
 <span id="cb33-27"><a href="#cb33-27" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
-<pre><code>&lt;matplotlib.collections.PathCollection at 0x14fe387d0&gt;</code></pre>
+<pre><code>&lt;matplotlib.collections.PathCollection at 0x162e90390&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-25-output-2.png" width="571" height="411"></p>
@@ -1914,9 +1914,9 @@ Wide vs long data
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -1924,9 +1924,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -1934,9 +1934,9 @@ Wide vs long data
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -1944,9 +1944,9 @@ Wide vs long data
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -1954,9 +1954,9 @@ Wide vs long data
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -1974,9 +1974,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -1984,9 +1984,9 @@ Wide vs long data
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
@@ -1994,9 +1994,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>3</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -2004,9 +2004,9 @@ Wide vs long data
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -2014,9 +2014,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -2041,7 +2041,7 @@ Wide vs long data
 <div class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>k_means_5.inertia_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>4.58977540011789</code></pre>
+<pre><code>4.580948640117293</code></pre>
 </div>
 </div>
 <p>It looks like our k = 5 model captures the data well. Intertia, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">looking at the sklearn documentation</a> as the <em>Sum of squared distances of samples to their closest cluster center.</em>.</p>
@@ -2315,9 +2315,9 @@ Wide vs long data
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -2327,9 +2327,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -2339,9 +2339,9 @@ Wide vs long data
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -2351,9 +2351,9 @@ Wide vs long data
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -2363,9 +2363,9 @@ Wide vs long data
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -2387,9 +2387,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -2399,9 +2399,9 @@ Wide vs long data
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -2411,9 +2411,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>3</td>
+<td>2</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -2423,9 +2423,9 @@ Wide vs long data
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -2435,9 +2435,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -2497,9 +2497,9 @@ Wide vs long data
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.630703</td>
 <td>0.107578</td>
 </tr>
@@ -2509,9 +2509,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
 </tr>
@@ -2521,9 +2521,9 @@ Wide vs long data
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
 </tr>
@@ -2533,9 +2533,9 @@ Wide vs long data
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
 </tr>
@@ -2545,9 +2545,9 @@ Wide vs long data
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.648788</td>
 <td>0.133488</td>
 </tr>
@@ -2569,9 +2569,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.551462</td>
 <td>0.059841</td>
 </tr>
@@ -2581,9 +2581,9 @@ Wide vs long data
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 </tr>
@@ -2593,9 +2593,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>3</td>
+<td>2</td>
 <td>0.447143</td>
 <td>0.037560</td>
 </tr>
@@ -2605,9 +2605,9 @@ Wide vs long data
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.488208</td>
 <td>0.149678</td>
 </tr>
@@ -2617,9 +2617,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 </tr>
@@ -2675,12 +2675,12 @@ Wide vs long data
 <td>0.625000</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.630703</td>
 <td>0.107578</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
@@ -2688,12 +2688,12 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.622905</td>
 <td>-0.104260</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
@@ -2701,12 +2701,12 @@ Wide vs long data
 <td>0.500000</td>
 <td>0.050847</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.669520</td>
 <td>-0.051417</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
@@ -2714,12 +2714,12 @@ Wide vs long data
 <td>0.458333</td>
 <td>0.084746</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
 <td>1</td>
-<td>0</td>
 <td>-0.654153</td>
 <td>-0.102885</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
@@ -2727,12 +2727,12 @@ Wide vs long data
 <td>0.666667</td>
 <td>0.067797</td>
 <td>0.041667</td>
+<td>2</td>
 <td>1</td>
-<td>1</td>
-<td>4</td>
+<td>3</td>
 <td>-0.648788</td>
 <td>0.133488</td>
-<td>1</td>
+<td>0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2753,12 +2753,12 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.551462</td>
 <td>0.059841</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
@@ -2766,9 +2766,9 @@ Wide vs long data
 <td>0.208333</td>
 <td>0.677966</td>
 <td>0.750000</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.407146</td>
 <td>-0.171821</td>
 <td>2</td>
@@ -2779,12 +2779,12 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.711864</td>
 <td>0.791667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>3</td>
+<td>2</td>
 <td>0.447143</td>
 <td>0.037560</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
@@ -2792,12 +2792,12 @@ Wide vs long data
 <td>0.583333</td>
 <td>0.745763</td>
 <td>0.916667</td>
+<td>1</td>
 <td>0</td>
-<td>0</td>
-<td>2</td>
+<td>4</td>
 <td>0.488208</td>
 <td>0.149678</td>
-<td>0</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
@@ -2805,9 +2805,9 @@ Wide vs long data
 <td>0.416667</td>
 <td>0.694915</td>
 <td>0.708333</td>
-<td>2</td>
 <td>0</td>
-<td>3</td>
+<td>0</td>
+<td>2</td>
 <td>0.312066</td>
 <td>-0.031130</td>
 <td>2</td>
@@ -2853,7 +2853,7 @@ Wide vs long data
 <span id="cb76-16"><a href="#cb76-16" aria-hidden="true" tabindex="-1"></a>plt.xticks(ks)</span>
 <span id="cb76-17"><a href="#cb76-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-53-output-1.png" width="589" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-53-output-1.png" width="589" height="430"></p>
 </div>
 </div>
 <p>Three seems ok. We clearly want no more than three.</p>
@@ -2878,10 +2878,10 @@ Wide vs long data
 <span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>df.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
-<pre><code>sepal length (cm)    32
-sepal width (cm)     34
-petal length (cm)    37
-petal width (cm)     29
+<pre><code>sepal length (cm)    29
+sepal width (cm)     21
+petal length (cm)    32
+petal width (cm)     21
 dtype: int64</code></pre>
 </div>
 </div>
@@ -2905,14 +2905,14 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>5.1</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>3.5</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
-<td>NaN</td>
+<td>3.0</td>
 <td>NaN</td>
 <td>0.2</td>
 </tr>
@@ -2927,15 +2927,15 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
 <td>3.1</td>
-<td>1.5</td>
 <td>NaN</td>
+<td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>5.0</td>
 <td>NaN</td>
+<td>3.6</td>
 <td>1.4</td>
-<td>NaN</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2947,28 +2947,28 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.7</td>
-<td>3.0</td>
+<td>NaN</td>
 <td>5.2</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>NaN</td>
+<td>6.3</td>
 <td>2.5</td>
-<td>5.0</td>
+<td>NaN</td>
 <td>1.9</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>3.0</td>
+<td>5.2</td>
 <td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
-<td>6.2</td>
 <td>NaN</td>
+<td>3.4</td>
 <td>5.4</td>
 <td>2.3</td>
 </tr>
@@ -2976,8 +2976,8 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
 <td>3.0</td>
-<td>5.1</td>
-<td>1.8</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 </tbody>
 </table>
@@ -3014,14 +3014,14 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>5.1</td>
-<td>0.0</td>
-<td>0.0</td>
+<td>3.5</td>
+<td>1.4</td>
 <td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.9</td>
-<td>0.0</td>
+<td>3.0</td>
 <td>0.0</td>
 <td>0.2</td>
 </tr>
@@ -3036,15 +3036,15 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.6</td>
 <td>3.1</td>
-<td>1.5</td>
 <td>0.0</td>
+<td>0.2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>5.0</td>
 <td>0.0</td>
+<td>3.6</td>
 <td>1.4</td>
-<td>0.0</td>
+<td>0.2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3056,28 +3056,28 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.7</td>
-<td>3.0</td>
+<td>0.0</td>
 <td>5.2</td>
 <td>2.3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>0.0</td>
+<td>6.3</td>
 <td>2.5</td>
-<td>5.0</td>
+<td>0.0</td>
 <td>1.9</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.5</td>
-<td>0.0</td>
-<td>0.0</td>
+<td>3.0</td>
+<td>5.2</td>
 <td>2.0</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
-<td>6.2</td>
 <td>0.0</td>
+<td>3.4</td>
 <td>5.4</td>
 <td>2.3</td>
 </tr>
@@ -3085,8 +3085,8 @@ dtype: int64</code></pre>
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.9</td>
 <td>3.0</td>
-<td>5.1</td>
-<td>1.8</td>
+<td>0.0</td>
+<td>0.0</td>
 </tr>
 </tbody>
 </table>
@@ -3123,20 +3123,20 @@ dtype: int64</code></pre>
 <pre><code>&lt;Axes: xlabel='c1', ylabel='c2'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-60-output-2.png" width="585" height="427"></p>
+<p><img src="IM939_Lab_4_1_Iris_files/figure-html/cell-60-output-2.png" width="582" height="427"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
-<pre><code>array([6.71803744, 4.89376791])</code></pre>
+<pre><code>array([6.24279356, 4.84811544])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>df_1_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="61">
-<pre><code>array([[-0.91235845,  0.02968512, -0.38161438, -0.14522853],
-       [-0.39939351,  0.05086373,  0.90393389,  0.14422629]])</code></pre>
+<pre><code>array([[-0.86129917,  0.04084996, -0.48641492, -0.14105157],
+       [-0.50682662, -0.04550418,  0.84286268,  0.175039  ]])</code></pre>
 </div>
 </div>
 </section>
@@ -3167,37 +3167,37 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>5.100000</td>
-<td>3.00431</td>
-<td>3.90885</td>
+<td>3.500000</td>
+<td>1.400000</td>
 <td>0.200000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>4.900000</td>
-<td>3.00431</td>
-<td>3.90885</td>
+<td>3.000000</td>
+<td>3.877119</td>
 <td>0.200000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>5.866102</td>
-<td>3.20000</td>
-<td>1.30000</td>
+<td>5.839669</td>
+<td>3.200000</td>
+<td>1.300000</td>
 <td>0.200000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>4.600000</td>
-<td>3.10000</td>
-<td>1.50000</td>
-<td>1.210744</td>
+<td>3.100000</td>
+<td>3.877119</td>
+<td>0.200000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>5.000000</td>
-<td>3.00431</td>
-<td>1.40000</td>
-<td>1.210744</td>
+<td>5.839669</td>
+<td>3.600000</td>
+<td>1.400000</td>
+<td>0.200000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -3209,37 +3209,37 @@ dtype: int64</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">145</td>
 <td>6.700000</td>
-<td>3.00000</td>
-<td>5.20000</td>
+<td>3.054264</td>
+<td>5.200000</td>
 <td>2.300000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">146</td>
-<td>5.866102</td>
-<td>2.50000</td>
-<td>5.00000</td>
+<td>6.300000</td>
+<td>2.500000</td>
+<td>3.877119</td>
 <td>1.900000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">147</td>
 <td>6.500000</td>
-<td>3.00431</td>
-<td>3.90885</td>
+<td>3.000000</td>
+<td>5.200000</td>
 <td>2.000000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">148</td>
-<td>6.200000</td>
-<td>3.00431</td>
-<td>5.40000</td>
+<td>5.839669</td>
+<td>3.400000</td>
+<td>5.400000</td>
 <td>2.300000</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">149</td>
 <td>5.900000</td>
-<td>3.00000</td>
-<td>5.10000</td>
-<td>1.800000</td>
+<td>3.000000</td>
+<td>3.877119</td>
+<td>1.205426</td>
 </tr>
 </tbody>
 </table>
@@ -3280,14 +3280,14 @@ dtype: int64</code></pre>
 <div class="cell" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.explained_variance_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="66">
-<pre><code>array([2.68417915, 0.33506061])</code></pre>
+<pre><code>array([3.01818399, 0.26633671])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>df_2_pca.components_</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
-<pre><code>array([[ 0.33775908, -0.04345744,  0.87824143,  0.33574133],
-       [ 0.82803166,  0.20108365, -0.42517727,  0.30521014]])</code></pre>
+<pre><code>array([[ 0.31417904, -0.06487468,  0.88369345,  0.34083528],
+       [ 0.89110506,  0.17000084, -0.37665661,  0.18751344]])</code></pre>
 </div>
 </div>
 </section>
