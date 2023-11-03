@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -545,16 +564,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#it-is-now-your-turn" id="toc-it-is-now-your-turn" class="nav-link active" data-scroll-target="#it-is-now-your-turn"><span class="header-section-number">22</span> It is now your turn!</a>
-  <ul class="collapse">
-  <li><a href="#first-task" id="toc-first-task" class="nav-link" data-scroll-target="#first-task"><span class="header-section-number">22.1</span> First task:</a></li>
-  <li><a href="#second-task" id="toc-second-task" class="nav-link" data-scroll-target="#second-task"><span class="header-section-number">22.2</span> Second task:</a></li>
-  </ul></li>
+  <li><a href="#data-exploration-and-wrangling" id="toc-data-exploration-and-wrangling" class="nav-link active" data-scroll-target="#data-exploration-and-wrangling"><span class="header-section-number">21.1</span> Data exploration and wrangling</a></li>
+  <li><a href="#dimension-reduction" id="toc-dimension-reduction" class="nav-link" data-scroll-target="#dimension-reduction"><span class="header-section-number">21.2</span> Dimension reduction</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_1.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -574,14 +590,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>In this notebook, we will look at the London Borough data that we already encountered when we worked with the London Borough profiles and the Borough Cards that we utilised in the session.</p>
-<p>You can have a look at the data through this online tool provided by GLA: https://data.london.gov.uk/london-area-profiles/</p>
+<p>You can have a look at the data through this online tool provided by GLA: <a href="https://data.london.gov.uk/london-area-profiles/" class="uri">https://data.london.gov.uk/london-area-profiles/</a></p>
 <p>However, unlike the data that we explored during the session, this data set has several features (i.e., columns or variables), 76 of them to be precise.</p>
-<p>What we would like to do in this notebook is to make use of a dimension reduction algorithm – Multidimensial Scaling – to help us create various different “spaces”. Each of these space will be a different way of “seeing this data” and if we adopt the language from Scott Page, they will have different “attentions”.</p>
+<p>What we would like to do in this notebook is to make use of a dimension reduction algorithm – Multidimensional Scaling – to help us create various different “spaces”. Each of these space will be a different way of “seeing this data” and if we adopt the language from Scott Page <span class="citation" data-cites="pageWhyManyModelThinkers2018">(<a href="../../references.html#ref-pageWhyManyModelThinkers2018" role="doc-biblioref">2018</a>)</span>, they will have different “attentions”.</p>
 <p>What the following exercise will do is to walk you through the variables of this data set through a few visualisations. It will then create a few different projections and will give them some names. What we expect you to do is to create your own projections and try to interpret them.</p>
 <p>If you want to be reminded of what MDS is, you can have a look at the slides from last week. In a super tiny nutshell, MDS tries to create a space where “real” distances in the data are preserved as much as possible while “projecting” the data elements on a lower dimensional space. For instance, the following is from the slide deck:</p>
-<p><img src="figs/mds.png" alt="An MDS plot of cities." style="width: 800px;"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/mds.png" class="img-fluid figure-img" width="800"></p>
+<figcaption class="figure-caption">An MDS plot of cities.</figcaption>
+</figure>
+</div>
 <p>What we see here are a few cities that would normally “exist” in our 3-dimensional world and the distances between them would normally be on this spherical coordinate system. But we create here is a 2D map and the distances between cities are preserved as much as possible. Near cities in the world are closer, and the further ones are further but not as accurate as it is in the world. The dimensions here carry no real meaning it is the distances that will “tell a story” (if there is one).</p>
 <p>OK, let’s get on with the data now.</p>
+<section id="data-exploration-and-wrangling" class="level2 page-columns page-full" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="data-exploration-and-wrangling"><span class="header-section-number">21.1</span> Data exploration and wrangling</h2>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
@@ -590,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/london-borough-profilesV3.xlsx'</span>, engine <span class="op">=</span> <span class="st">'openpyxl'</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="71">
 <pre><code>Index(['Code', 'Area/INDICATOR', 'Inner/ Outer London',
        'GLA Population Estimate 2013', 'GLA Household Estimate 2013',
        'Inland Area (Hectares)', 'Population density (per hectare) 2013',
@@ -658,7 +681,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="72">
 <div>
 
 
@@ -817,7 +840,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Lots of different features. We also have really odd NaN values such as x and not available. We can try and get rid of this.</p>
+<p>Lots of different features. We also have really odd <code>NaN</code> values such as <code>x</code> and <code>not available</code>. We can try and get rid of this.</p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isnumber(x):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
@@ -832,7 +855,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># apply isnumber function to every element</span></span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df.applymap(isnumber)]</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="73">
 <div>
 
 
@@ -992,7 +1015,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>That looks much cleaner.</p>
-<p>Replace the NaN values in numeric columns with the mean.</p>
+<p>Replace the <code>NaN</code> values in numeric columns with the mean.</p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get only numeric columns</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">=</span> df._get_numeric_data()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1018,7 +1041,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Check to make sure everything looks ok.</p>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numericColumns.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="76">
 <div>
 
 
@@ -1184,7 +1207,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot.savefig("figs/output.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Given that this takes quite a while (around 10 minutes), this is the image that would result from uncommenting and running the code above.</p>
+<div class="column-page">
 <p><img src="figs/output.png" class="img-fluid"></p>
+</div>
+</section>
+<section id="dimension-reduction" class="level2 page-columns page-full" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="dimension-reduction"><span class="header-section-number">21.2</span> Dimension reduction</h2>
 <p>Dimension reduction will help us here!</p>
 <p>We could apply various different types of dimension reduction here. We are specifically going to capture the dissimilarity in the data using <a href="https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling">multidimensional scaling</a>. Our distance matrix will come in useful here.</p>
 <div class="cell" data-execution_count="8">
@@ -1197,7 +1225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> mds.fit_transform(distMatrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To interpret what is happening, let us plot the boroughs on the projected two dimensional space.</p>
-<div class="cell" data-execution_count="9">
+<div class="cell page-columns page-full" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
@@ -1207,12 +1235,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-10-output-1.png" width="1229" height="1294"></p>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-10-output-1.png" width="1314" height="1294"></p>
 </div>
 </div>
 <p>Our data also include happiness metrics. Pulling these out of our data and carrying out more multidimensional scaling can help us see how the boroughs differ in happiness.</p>
-<div class="cell" data-execution_count="10">
+<div class="cell page-columns page-full" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dataOnEmotions <span class="op">=</span> numericColumns[[<span class="st">"Life satisfaction score 2012-13 (out of 10)"</span>, <span class="st">"Worthwhileness score 2012-13 (out of 10)"</span>,<span class="st">"Happiness score 2012-13 (out of 10)"</span>]]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1230,8 +1258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-11-output-1.png" width="1223" height="1294"></p>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-11-output-1.png" width="1287" height="1294"></p>
 </div>
 </div>
 <p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
@@ -1239,39 +1267,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 0.69748015 -0.81185707]
- [ 0.10899922  0.30108097]
- [ 0.136424   -0.16806795]
- [ 0.14093651 -0.21554052]
- [-0.1955195   0.22624968]
- [ 0.11407816 -0.43327937]
- [-0.15588862  0.17993318]
- [-0.002926    0.30743178]
- [-0.24032095 -0.1095705 ]
- [-0.19206059 -0.11253457]
- [-0.00332174  0.21289684]
- [-0.05208774  0.31915627]
- [ 0.17067002  0.20747103]
- [-0.08759646  0.15876571]
- [-0.11614813 -0.12219902]
- [ 0.04170797 -0.13784647]
- [-0.0391623  -0.15857883]
- [-0.03689777 -0.07960966]
- [-0.17214418  0.5249188 ]
- [ 0.27412767 -0.53867284]
- [-0.11080249  0.07685239]
- [-0.05270751  0.3549546 ]
- [ 0.1381328   0.02876136]
- [-0.00367913  0.12615481]
- [-0.13965941 -0.0227915 ]
- [-0.19901919 -0.03232374]
- [ 0.01668134 -0.22351004]
- [ 0.07414358 -0.02966198]
- [ 0.02302576  0.07491519]
- [-0.08739731 -0.07324658]
- [ 0.09066387 -0.06756996]
- [-0.07999907 -0.01517745]
- [-0.05973298  0.25249544]]</code></pre>
+<pre><code>[[ 0.26955023 -1.03193546]
+ [-0.30697124  0.04988649]
+ [ 0.11267823 -0.18603719]
+ [ 0.09951239 -0.23709264]
+ [-0.11233607  0.27677033]
+ [ 0.31687906 -0.31587447]
+ [-0.08799261  0.21880538]
+ [-0.20905701  0.24461554]
+ [ 0.21012164  0.17125381]
+ [ 0.19306487  0.13163987]
+ [-0.18659     0.0989468 ]
+ [-0.2618981   0.18342251]
+ [-0.2551384  -0.05507685]
+ [-0.10018359  0.14805073]
+ [ 0.16711463  0.05098098]
+ [ 0.10854867 -0.09812561]
+ [ 0.16605853 -0.03341054]
+ [ 0.09654886  0.00279667]
+ [-0.49153577  0.23630239]
+ [ 0.4181435  -0.44518512]
+ [-0.01774271  0.12920108]
+ [-0.29575096  0.19446001]
+ [-0.07852039 -0.10487395]
+ [-0.10459205  0.06451135]
+ [ 0.09001571  0.12021746]
+ [ 0.12164733  0.16641986]
+ [ 0.19424041 -0.11717992]
+ [ 0.00238345 -0.07364946]
+ [-0.07160448  0.01590297]
+ [ 0.11278589  0.05034198]
+ [ 0.03510502 -0.10010882]
+ [ 0.05868884  0.07204286]
+ [-0.19317386  0.17198096]]</code></pre>
 </div>
 </div>
 <p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
@@ -1287,7 +1315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>(33, 2)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>array([ 0.81636364, -0.22363636,  0.06636364,  0.18636364, -0.05363636,
         0.34636364, -0.06363636, -0.28363636, -0.04363636, -0.10363636,
        -0.12363636, -0.21363636, -0.05363636, -0.08363636,  0.05636364,
@@ -1298,7 +1326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Finally, we can plot this. What can you see?</p>
-<div class="cell" data-execution_count="13">
+<div class="cell page-columns page-full" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's look at the results</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
@@ -1308,11 +1336,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-14-output-1.png" width="1223" height="1294"></p>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-14-output-1.png" width="1287" height="1294"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="14">
+<div class="cell page-columns page-full" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dataOnDiversity <span class="op">=</span> numericColumns[[<span class="st">"Proportion of population aged 0-15, 2013"</span>, <span class="st">"Proportion of population of working-age, 2013"</span>, <span class="st">"Proportion of population aged 65 and over, 2013"</span>, <span class="st">"</span><span class="sc">% o</span><span class="st">f population from BAME groups (2013)"</span>, <span class="st">"% people aged 3+ whose main language is not English (2011 census)"</span>]]</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1330,24 +1358,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-15-output-1.png" width="1181" height="1294"></p>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-15-output-1.png" width="1200" height="1294"></p>
 </div>
 </div>
-<p>::: callout-note</p>
-<section id="it-is-now-your-turn" class="level1" data-number="22">
-<h1 data-number="22"><span class="header-section-number">22</span> It is now your turn!</h1>
-<section id="first-task" class="level2" data-number="22.1">
-<h2 data-number="22.1" class="anchored" data-anchor-id="first-task"><span class="header-section-number">22.1</span> First task:</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+It is now your turn!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<section id="first-task" class="level3" data-number="21.2.1">
+<h3 data-number="21.2.1" class="anchored" data-anchor-id="first-task"><span class="header-section-number">21.2.1</span> First task:</h3>
 <p>This looks very different to the one above on “emotion” related variables. Our job now is to relate these two projections to one another. Do you see similarities? Do you see clusters of boroughs? Can you reflect on how you can relate and combine these two maps conceptually?</p>
 </section>
-<section id="second-task" class="level2" data-number="22.2">
-<h2 data-number="22.2" class="anchored" data-anchor-id="second-task"><span class="header-section-number">22.2</span> Second task:</h2>
+<section id="second-task" class="level3" data-number="21.2.2">
+<h3 data-number="21.2.2" class="anchored" data-anchor-id="second-task"><span class="header-section-number">21.2.2</span> Second task:</h3>
 <p>Can you think of and then generate other maps that you can produce with this data? Have a look at the variables once again and try to produce new “perspectives” to the data and see what they have to say.</p>
 <p>Also think of visualisations to help you here, can you colour them with a different variable? What would that change?</p>
-
-
 </section>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-pageWhyManyModelThinkers2018" class="csl-entry" role="listitem">
+Page, Scott E. 2018. <span>“Why <span>‘<span>Many-Model Thinkers</span>’</span> <span>Make Better Decisions</span>.”</span> <em>Harvard Business Review</em>, November. <a href="https://hbr.org/2018/11/why-many-model-thinkers-make-better-decisions">https://hbr.org/2018/11/why-many-model-thinkers-make-better-decisions</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
