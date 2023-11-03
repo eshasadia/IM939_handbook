@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 21&nbsp; Lab: Clustering and Ground Truth</title>
+<title>Data Science Across Disciplines - 21&nbsp; Lab: Working with multiple models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,26 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -120,11 +101,11 @@ div.csl-indent {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 21&nbsp; Lab: Clustering and Ground Truth">
+<meta name="twitter:title" content="Data Science Across Disciplines - 21&nbsp; Lab: Working with multiple models">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/IM939_Lab_5_1_files/figure-html/cell-7-output-2.png">
-<meta name="twitter:image-height" content="858">
-<meta name="twitter:image-width" content="1290">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/figs/mds.png">
+<meta name="twitter:image-height" content="877">
+<meta name="twitter:image-width" content="1552">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -137,7 +118,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -385,19 +366,19 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -564,25 +545,20 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link active" data-scroll-target="#data-wrangling"><span class="header-section-number">21.1</span> Data Wrangling</a></li>
-  <li><a href="#cluster-analysis" id="toc-cluster-analysis" class="nav-link" data-scroll-target="#cluster-analysis"><span class="header-section-number">21.2</span> Cluster analysis</a>
+  <li><a href="#it-is-now-your-turn" id="toc-it-is-now-your-turn" class="nav-link active" data-scroll-target="#it-is-now-your-turn"><span class="header-section-number">22</span> It is now your turn!</a>
   <ul class="collapse">
-  <li><a href="#determining-the-number-of-clusters" id="toc-determining-the-number-of-clusters" class="nav-link" data-scroll-target="#determining-the-number-of-clusters"><span class="header-section-number">21.2.1</span> Determining the number of clusters</a></li>
-  <li><a href="#computing-the-clusters" id="toc-computing-the-clusters" class="nav-link" data-scroll-target="#computing-the-clusters"><span class="header-section-number">21.2.2</span> Computing the clusters</a></li>
-  </ul></li>
-  <li><a href="#clusters-and-ground-truth" id="toc-clusters-and-ground-truth" class="nav-link" data-scroll-target="#clusters-and-ground-truth"><span class="header-section-number">21.3</span> Clusters and Ground Truth</a>
-  <ul class="collapse">
-  <li><a href="#principal-components-analysis" id="toc-principal-components-analysis" class="nav-link" data-scroll-target="#principal-components-analysis"><span class="header-section-number">21.3.1</span> Principal Components Analysis</a></li>
+  <li><a href="#first-task" id="toc-first-task" class="nav-link" data-scroll-target="#first-task"><span class="header-section-number">22.1</span> First task:</a></li>
+  <li><a href="#second-task" id="toc-second-task" class="nav-link" data-scroll-target="#second-task"><span class="header-section-number">22.2</span> Second task:</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_1.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></h1>
 </div>
 
 
@@ -597,17 +573,265 @@ div.csl-indent {
 
 </header>
 
-<p>We are going to use the Wine Quality Dataset from <span class="citation" data-cites="cortezWineQuality2009">Cortez et al. (<a href="../../references.html#ref-cortezWineQuality2009" role="doc-biblioref">2009</a>)</span> that you may be familiar with by now (but if you don’t, tou can find more information about it here: <a href="https://doi.org/10.24432/C56S3T" class="uri">https://doi.org/10.24432/C56S3T</a>).</p>
-<section id="data-wrangling" class="level2 page-columns page-full" data-number="21.1">
-<h2 data-number="21.1" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">21.1</span> Data Wrangling</h2>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/wine.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this notebook, we will look at the London Borough data that we already encountered when we worked with the London Borough profiles and the Borough Cards that we utilised in the session.</p>
+<p>You can have a look at the data through this online tool provided by GLA: https://data.london.gov.uk/london-area-profiles/</p>
+<p>However, unlike the data that we explored during the session, this data set has several features (i.e., columns or variables), 76 of them to be precise.</p>
+<p>What we would like to do in this notebook is to make use of a dimension reduction algorithm – Multidimensial Scaling – to help us create various different “spaces”. Each of these space will be a different way of “seeing this data” and if we adopt the language from Scott Page, they will have different “attentions”.</p>
+<p>What the following exercise will do is to walk you through the variables of this data set through a few visualisations. It will then create a few different projections and will give them some names. What we expect you to do is to create your own projections and try to interpret them.</p>
+<p>If you want to be reminded of what MDS is, you can have a look at the slides from last week. In a super tiny nutshell, MDS tries to create a space where “real” distances in the data are preserved as much as possible while “projecting” the data elements on a lower dimensional space. For instance, the following is from the slide deck:</p>
+<p><img src="figs/mds.png" alt="An MDS plot of cities." style="width: 800px;"></p>
+<p>What we see here are a few cities that would normally “exist” in our 3-dimensional world and the distances between them would normally be on this spherical coordinate system. But we create here is a 2D map and the distances between cities are preserved as much as possible. Near cities in the world are closer, and the further ones are further but not as accurate as it is in the world. The dimensions here carry no real meaning it is the distances that will “tell a story” (if there is one).</p>
+<p>OK, let’s get on with the data now.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/london-borough-profilesV3.xlsx'</span>, engine <span class="op">=</span> <span class="st">'openpyxl'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>Index(['Code', 'Area/INDICATOR', 'Inner/ Outer London',
+       'GLA Population Estimate 2013', 'GLA Household Estimate 2013',
+       'Inland Area (Hectares)', 'Population density (per hectare) 2013',
+       'Average Age, 2013', 'Proportion of population aged 0-15, 2013',
+       'Proportion of population of working-age, 2013',
+       'Proportion of population aged 65 and over, 2013',
+       '% of resident population born abroad (2013)',
+       'Largest migrant population by country of birth (2013)',
+       '% of largest migrant population (2013)',
+       'Second largest migrant population by country of birth (2013)',
+       '% of second largest migrant population (2013)',
+       'Third largest migrant population by country of birth (2013)',
+       '% of third largest migrant population (2013)',
+       '% of population from BAME groups (2013)',
+       '% people aged 3+ whose main language is not English (2011 census)',
+       'Overseas nationals entering the UK (NINo), (2013/14)',
+       'New migrant (NINo) rates, (2013/14)', 'Employment rate (%) (2013/14)',
+       'Male employment rate (2013/14)', 'Female employment rate (2013/14)',
+       'Unemployment rate (2013/14)', 'Youth Unemployment rate (2013/14)',
+       'Proportion of 16-18 year olds who are NEET (%) (2013)',
+       'Proportion of the working-age population who claim benefits (%) (Feb-2014)',
+       '% working-age with a disability (2012)',
+       'Proportion of working age people with no qualifications (%) 2013',
+       'Proportion of working age people in London with degree or equivalent and above (%) 2013',
+       'Gross Annual Pay, (2013)', 'Gross Annual Pay - Male (2013)',
+       'Gross Annual Pay - Female (2013)',
+       '% adults that volunteered in past 12 months (2010/11 to 2012/13)',
+       'Number of jobs by workplace (2012)',
+       '% of employment that is in public sector (2012)', 'Jobs Density, 2012',
+       'Number of active businesses, 2012',
+       'Two-year business survival rates 2012',
+       'Crime rates per thousand population 2013/14',
+       'Fires per thousand population (2013)',
+       'Ambulance incidents per hundred population (2013)',
+       'Median House Price, 2013',
+       'Average Band D Council Tax charge (£), 2014/15',
+       'New Homes (net) 2012/13', 'Homes Owned outright, (2013) %',
+       'Being bought with mortgage or loan, (2013) %',
+       'Rented from Local Authority or Housing Association, (2013) %',
+       'Rented from Private landlord, (2013) %',
+       '% of area that is Greenspace, 2005', 'Total carbon emissions (2012)',
+       'Household Waste Recycling Rate, 2012/13',
+       'Number of cars, (2011 Census)',
+       'Number of cars per household, (2011 Census)',
+       '% of adults who cycle at least once per month, 2011/12',
+       'Average Public Transport Accessibility score, 2012',
+       'Indices of Multiple Deprivation 2010 Rank of Average Score',
+       'Income Support claimant rate (Feb-14)',
+       '% children living in out-of-work families (2013)',
+       'Achievement of 5 or more A*- C grades at GCSE or equivalent including English and Maths, 2012/13',
+       'Rates of Children Looked After (2013)',
+       '% of pupils whose first language is not English (2014)',
+       'Male life expectancy, (2010-12)', 'Female life expectancy, (2010-12)',
+       'Teenage conception rate (2012)',
+       'Life satisfaction score 2012-13 (out of 10)',
+       'Worthwhileness score 2012-13 (out of 10)',
+       'Happiness score 2012-13 (out of 10)',
+       'Anxiety score 2012-13 (out of 10)', 'Political control in council',
+       'Proportion of seats won by Conservatives in 2014 election',
+       'Proportion of seats won by Labour in 2014 election',
+       'Proportion of seats won by Lib Dems in 2014 election',
+       'Turnout at 2014 local elections'],
+      dtype='object')</code></pre>
 </div>
-<p>Look at our data.</p>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Code</th>
+<th data-quarto-table-cell-role="th">Area/INDICATOR</th>
+<th data-quarto-table-cell-role="th">Inner/ Outer London</th>
+<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
+<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
+<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
+<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
+<th data-quarto-table-cell-role="th">Average Age, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Teenage conception rate (2012)</th>
+<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Anxiety score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Political control in council</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
+<th data-quarto-table-cell-role="th">Turnout at 2014 local elections</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>E09000001</td>
+<td>City of London</td>
+<td>Inner London</td>
+<td>8000</td>
+<td>4514.371383</td>
+<td>290.4</td>
+<td>27.525868</td>
+<td>41.303887</td>
+<td>7.948036</td>
+<td>77.541617</td>
+<td>...</td>
+<td>.</td>
+<td>8.10</td>
+<td>8.23</td>
+<td>7.44</td>
+<td>x</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>E09000002</td>
+<td>Barking and Dagenham</td>
+<td>Outer London</td>
+<td>195600</td>
+<td>73261.408580</td>
+<td>3610.8</td>
+<td>54.160527</td>
+<td>33.228935</td>
+<td>26.072939</td>
+<td>63.835021</td>
+<td>...</td>
+<td>35.4</td>
+<td>7.06</td>
+<td>7.57</td>
+<td>6.97</td>
+<td>3.3</td>
+<td>Lab</td>
+<td>0.000000</td>
+<td>100.000000</td>
+<td>0.000000</td>
+<td>38.16</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>E09000003</td>
+<td>Barnet</td>
+<td>Outer London</td>
+<td>370000</td>
+<td>141385.794900</td>
+<td>8674.8</td>
+<td>42.651374</td>
+<td>36.896246</td>
+<td>20.886408</td>
+<td>65.505593</td>
+<td>...</td>
+<td>14.7</td>
+<td>7.35</td>
+<td>7.79</td>
+<td>7.27</td>
+<td>2.63</td>
+<td>Cons</td>
+<td>50.793651</td>
+<td>42.857143</td>
+<td>1.587302</td>
+<td>41.1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>E09000004</td>
+<td>Bexley</td>
+<td>Outer London</td>
+<td>236500</td>
+<td>94701.226400</td>
+<td>6058.1</td>
+<td>39.044243</td>
+<td>38.883039</td>
+<td>20.282830</td>
+<td>63.146450</td>
+<td>...</td>
+<td>25.8</td>
+<td>7.47</td>
+<td>7.75</td>
+<td>7.21</td>
+<td>3.22</td>
+<td>Cons</td>
+<td>71.428571</td>
+<td>23.809524</td>
+<td>0.000000</td>
+<td>not avail</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>E09000005</td>
+<td>Brent</td>
+<td>Outer London</td>
+<td>320200</td>
+<td>114318.553900</td>
+<td>4323.3</td>
+<td>74.063670</td>
+<td>35.262694</td>
+<td>20.462585</td>
+<td>68.714872</td>
+<td>...</td>
+<td>19.6</td>
+<td>7.23</td>
+<td>7.32</td>
+<td>7.09</td>
+<td>3.33</td>
+<td>Lab</td>
+<td>9.523810</td>
+<td>88.888889</td>
+<td>1.587302</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 76 columns</p>
+</div>
+</div>
+</div>
+<p>Lots of different features. We also have really odd NaN values such as x and not available. We can try and get rid of this.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isnumber(x):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">float</span>(x)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="bu">len</span>(x) <span class="op">&gt;</span> <span class="dv">1</span>) <span class="op">&amp;</span> (<span class="st">"not avail"</span> <span class="kw">not</span> <span class="kw">in</span> x):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># apply isnumber function to every element</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df.applymap(isnumber)]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -616,1145 +840,513 @@ div.csl-indent {
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Class label</th>
-<th data-quarto-table-cell-role="th">Alcohol</th>
-<th data-quarto-table-cell-role="th">Malic acid</th>
-<th data-quarto-table-cell-role="th">Ash</th>
-<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
-<th data-quarto-table-cell-role="th">Magnesium</th>
-<th data-quarto-table-cell-role="th">Total phenols</th>
-<th data-quarto-table-cell-role="th">Flavanoids</th>
-<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
-<th data-quarto-table-cell-role="th">Proanthocyanins</th>
-<th data-quarto-table-cell-role="th">Color intensity</th>
-<th data-quarto-table-cell-role="th">Hue</th>
-<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
-<th data-quarto-table-cell-role="th">Proline</th>
+<th data-quarto-table-cell-role="th">Code</th>
+<th data-quarto-table-cell-role="th">Area/INDICATOR</th>
+<th data-quarto-table-cell-role="th">Inner/ Outer London</th>
+<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
+<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
+<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
+<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
+<th data-quarto-table-cell-role="th">Average Age, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Teenage conception rate (2012)</th>
+<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Anxiety score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Political control in council</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
+<th data-quarto-table-cell-role="th">Turnout at 2014 local elections</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>14.23</td>
-<td>1.71</td>
-<td>2.43</td>
-<td>15.6</td>
-<td>127</td>
-<td>2.80</td>
-<td>3.06</td>
-<td>0.28</td>
-<td>2.29</td>
-<td>5.64</td>
-<td>1.04</td>
-<td>3.92</td>
-<td>1065</td>
+<td>E09000001</td>
+<td>City of London</td>
+<td>Inner London</td>
+<td>8000</td>
+<td>4514.371383</td>
+<td>290.4</td>
+<td>27.525868</td>
+<td>41.303887</td>
+<td>7.948036</td>
+<td>77.541617</td>
+<td>...</td>
+<td>NaN</td>
+<td>8.10</td>
+<td>8.23</td>
+<td>7.44</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>13.20</td>
-<td>1.78</td>
-<td>2.14</td>
-<td>11.2</td>
-<td>100</td>
-<td>2.65</td>
-<td>2.76</td>
-<td>0.26</td>
-<td>1.28</td>
-<td>4.38</td>
-<td>1.05</td>
-<td>3.40</td>
-<td>1050</td>
+<td>E09000002</td>
+<td>Barking and Dagenham</td>
+<td>Outer London</td>
+<td>195600</td>
+<td>73261.408580</td>
+<td>3610.8</td>
+<td>54.160527</td>
+<td>33.228935</td>
+<td>26.072939</td>
+<td>63.835021</td>
+<td>...</td>
+<td>35.4</td>
+<td>7.06</td>
+<td>7.57</td>
+<td>6.97</td>
+<td>3.3</td>
+<td>Lab</td>
+<td>0.000000</td>
+<td>100.000000</td>
+<td>0.000000</td>
+<td>38.16</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>1</td>
-<td>13.16</td>
-<td>2.36</td>
-<td>2.67</td>
-<td>18.6</td>
-<td>101</td>
-<td>2.80</td>
-<td>3.24</td>
-<td>0.30</td>
-<td>2.81</td>
-<td>5.68</td>
-<td>1.03</td>
-<td>3.17</td>
-<td>1185</td>
+<td>E09000003</td>
+<td>Barnet</td>
+<td>Outer London</td>
+<td>370000</td>
+<td>141385.794900</td>
+<td>8674.8</td>
+<td>42.651374</td>
+<td>36.896246</td>
+<td>20.886408</td>
+<td>65.505593</td>
+<td>...</td>
+<td>14.7</td>
+<td>7.35</td>
+<td>7.79</td>
+<td>7.27</td>
+<td>2.63</td>
+<td>Cons</td>
+<td>50.793651</td>
+<td>42.857143</td>
+<td>1.587302</td>
+<td>41.1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>1</td>
-<td>14.37</td>
-<td>1.95</td>
-<td>2.50</td>
-<td>16.8</td>
-<td>113</td>
-<td>3.85</td>
-<td>3.49</td>
-<td>0.24</td>
-<td>2.18</td>
-<td>7.80</td>
-<td>0.86</td>
-<td>3.45</td>
-<td>1480</td>
+<td>E09000004</td>
+<td>Bexley</td>
+<td>Outer London</td>
+<td>236500</td>
+<td>94701.226400</td>
+<td>6058.1</td>
+<td>39.044243</td>
+<td>38.883039</td>
+<td>20.282830</td>
+<td>63.146450</td>
+<td>...</td>
+<td>25.8</td>
+<td>7.47</td>
+<td>7.75</td>
+<td>7.21</td>
+<td>3.22</td>
+<td>Cons</td>
+<td>71.428571</td>
+<td>23.809524</td>
+<td>0.000000</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>1</td>
-<td>13.24</td>
-<td>2.59</td>
-<td>2.87</td>
-<td>21.0</td>
-<td>118</td>
-<td>2.80</td>
-<td>2.69</td>
-<td>0.39</td>
-<td>1.82</td>
-<td>4.32</td>
-<td>1.04</td>
-<td>2.93</td>
-<td>735</td>
+<td>E09000005</td>
+<td>Brent</td>
+<td>Outer London</td>
+<td>320200</td>
+<td>114318.553900</td>
+<td>4323.3</td>
+<td>74.063670</td>
+<td>35.262694</td>
+<td>20.462585</td>
+<td>68.714872</td>
+<td>...</td>
+<td>19.6</td>
+<td>7.23</td>
+<td>7.32</td>
+<td>7.09</td>
+<td>3.33</td>
+<td>Lab</td>
+<td>9.523810</td>
+<td>88.888889</td>
+<td>1.587302</td>
+<td>33</td>
 </tr>
 </tbody>
 </table>
 
+<p>5 rows × 76 columns</p>
 </div>
 </div>
 </div>
-<p>There is a column called Class label that gives us the ground truth. The wines come from three different cultivars. Knowing the actual grouping helps us to identify how well our methods can capture this ground truth.</p>
-<p>Following our process above, we should first get a sense of our data.</p>
+<p>That looks much cleaner.</p>
+<p>Replace the NaN values in numeric columns with the mean.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Class label</th>
-<th data-quarto-table-cell-role="th">Alcohol</th>
-<th data-quarto-table-cell-role="th">Malic acid</th>
-<th data-quarto-table-cell-role="th">Ash</th>
-<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
-<th data-quarto-table-cell-role="th">Magnesium</th>
-<th data-quarto-table-cell-role="th">Total phenols</th>
-<th data-quarto-table-cell-role="th">Flavanoids</th>
-<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
-<th data-quarto-table-cell-role="th">Proanthocyanins</th>
-<th data-quarto-table-cell-role="th">Color intensity</th>
-<th data-quarto-table-cell-role="th">Hue</th>
-<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
-<th data-quarto-table-cell-role="th">Proline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">count</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-<td>178.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">mean</td>
-<td>1.938202</td>
-<td>13.000618</td>
-<td>2.336348</td>
-<td>2.366517</td>
-<td>19.494944</td>
-<td>99.741573</td>
-<td>2.295112</td>
-<td>2.029270</td>
-<td>0.361854</td>
-<td>1.590899</td>
-<td>5.058090</td>
-<td>0.957449</td>
-<td>2.611685</td>
-<td>746.893258</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">std</td>
-<td>0.775035</td>
-<td>0.811827</td>
-<td>1.117146</td>
-<td>0.274344</td>
-<td>3.339564</td>
-<td>14.282484</td>
-<td>0.625851</td>
-<td>0.998859</td>
-<td>0.124453</td>
-<td>0.572359</td>
-<td>2.318286</td>
-<td>0.228572</td>
-<td>0.709990</td>
-<td>314.907474</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">min</td>
-<td>1.000000</td>
-<td>11.030000</td>
-<td>0.740000</td>
-<td>1.360000</td>
-<td>10.600000</td>
-<td>70.000000</td>
-<td>0.980000</td>
-<td>0.340000</td>
-<td>0.130000</td>
-<td>0.410000</td>
-<td>1.280000</td>
-<td>0.480000</td>
-<td>1.270000</td>
-<td>278.000000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">25%</td>
-<td>1.000000</td>
-<td>12.362500</td>
-<td>1.602500</td>
-<td>2.210000</td>
-<td>17.200000</td>
-<td>88.000000</td>
-<td>1.742500</td>
-<td>1.205000</td>
-<td>0.270000</td>
-<td>1.250000</td>
-<td>3.220000</td>
-<td>0.782500</td>
-<td>1.937500</td>
-<td>500.500000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">50%</td>
-<td>2.000000</td>
-<td>13.050000</td>
-<td>1.865000</td>
-<td>2.360000</td>
-<td>19.500000</td>
-<td>98.000000</td>
-<td>2.355000</td>
-<td>2.135000</td>
-<td>0.340000</td>
-<td>1.555000</td>
-<td>4.690000</td>
-<td>0.965000</td>
-<td>2.780000</td>
-<td>673.500000</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">75%</td>
-<td>3.000000</td>
-<td>13.677500</td>
-<td>3.082500</td>
-<td>2.557500</td>
-<td>21.500000</td>
-<td>107.000000</td>
-<td>2.800000</td>
-<td>2.875000</td>
-<td>0.437500</td>
-<td>1.950000</td>
-<td>6.200000</td>
-<td>1.120000</td>
-<td>3.170000</td>
-<td>985.000000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">max</td>
-<td>3.000000</td>
-<td>14.830000</td>
-<td>5.800000</td>
-<td>3.230000</td>
-<td>30.000000</td>
-<td>162.000000</td>
-<td>3.880000</td>
-<td>5.080000</td>
-<td>0.660000</td>
-<td>3.580000</td>
-<td>13.000000</td>
-<td>1.710000</td>
-<td>4.000000</td>
-<td>1680.000000</td>
-</tr>
-</tbody>
-</table>
-
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get only numeric columns</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">=</span> df._get_numeric_data()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>No missing data. The scales of our features vary (e.g., Magnesium is in the 100s whereas Hue is in the low single digits).</p>
-<p>How about our feature distributions?</p>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df.melt(id_vars<span class="op">=</span><span class="st">'Class label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> euclidean_distances</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># keep place names and store them in a variable</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>placeNames <span class="op">=</span> df[<span class="st">"Area/INDICATOR"</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># let's fill the missing values with mean()</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">=</span> numericColumns.fillna(numericColumns.mean())</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># let's centralize the data</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">-=</span> numericColumns.mean()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># now we compute the euclidean distances between the columns by passing the same data twice</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the resulting data matrix now has the pairwise distances between the boroughs.</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">CAUTION</span><span class="co">: note that we are now building a distance matrix in a high-dimensional data space</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># remember the Curse of Dimensionality -- we need to be cautious with the distance values</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>distMatrix <span class="op">=</span> euclidean_distances(numericColumns, numericColumns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Check to make sure everything looks ok.</p>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data <span class="op">=</span> df_long, x <span class="op">=</span> <span class="st">'variable'</span>, y <span class="op">=</span> <span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>numericColumns.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>&lt;Axes: xlabel='variable', ylabel='value'&gt;</code></pre>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
+<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
+<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
+<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
+<th data-quarto-table-cell-role="th">Average Age, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
+<th data-quarto-table-cell-role="th">Proportion of population aged 65 and over, 2013</th>
+<th data-quarto-table-cell-role="th">% of population from BAME groups (2013)</th>
+<th data-quarto-table-cell-role="th">% people aged 3+ whose main language is not English (2011 census)</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Average Public Transport Accessibility score, 2012</th>
+<th data-quarto-table-cell-role="th">Indices of Multiple Deprivation 2010 Rank of Average Score</th>
+<th data-quarto-table-cell-role="th">Income Support claimant rate (Feb-14)</th>
+<th data-quarto-table-cell-role="th">Rates of Children Looked After (2013)</th>
+<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
+<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>-247760.606061</td>
+<td>-97761.616805</td>
+<td>-4473.681818</td>
+<td>-43.279630</td>
+<td>5.426932</td>
+<td>-11.500067</td>
+<td>8.480871</td>
+<td>3.019196</td>
+<td>-17.390874</td>
+<td>-4.491385</td>
+<td>...</td>
+<td>3.753658</td>
+<td>157.424242</td>
+<td>-1.726749</td>
+<td>42.212121</td>
+<td>0.816364</td>
+<td>0.651212</td>
+<td>0.23303</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>-8.881784e-16</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>-60160.606061</td>
+<td>-29014.579608</td>
+<td>-1153.281818</td>
+<td>-16.644971</td>
+<td>-2.648021</td>
+<td>6.624837</td>
+<td>-5.225725</td>
+<td>-1.399112</td>
+<td>5.764246</td>
+<td>-2.905288</td>
+<td>...</td>
+<td>-0.882730</td>
+<td>-82.575758</td>
+<td>1.787041</td>
+<td>20.212121</td>
+<td>-0.223636</td>
+<td>-0.008788</td>
+<td>-0.23697</td>
+<td>-32.854444</td>
+<td>43.384181</td>
+<td>-6.598065e+00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>114239.393939</td>
+<td>39109.806712</td>
+<td>3910.718182</td>
+<td>-28.154125</td>
+<td>1.019290</td>
+<td>1.438305</td>
+<td>-3.555153</td>
+<td>2.116847</td>
+<td>-2.799300</td>
+<td>1.775548</td>
+<td>...</td>
+<td>-0.883020</td>
+<td>71.424242</td>
+<td>-0.517827</td>
+<td>-18.787879</td>
+<td>0.066364</td>
+<td>0.211212</td>
+<td>0.06303</td>
+<td>17.939207</td>
+<td>-13.758676</td>
+<td>-5.010764e+00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>-19260.606061</td>
+<td>-7574.761788</td>
+<td>1294.018182</td>
+<td>-31.761255</td>
+<td>3.006083</td>
+<td>0.834727</td>
+<td>-5.914296</td>
+<td>5.079569</td>
+<td>-20.328016</td>
+<td>-15.598200</td>
+<td>...</td>
+<td>-1.364540</td>
+<td>69.424242</td>
+<td>-0.018377</td>
+<td>-8.787879</td>
+<td>0.186364</td>
+<td>0.171212</td>
+<td>0.00303</td>
+<td>38.574127</td>
+<td>-32.806295</td>
+<td>-6.598065e+00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>64439.393939</td>
+<td>12042.565712</td>
+<td>-440.781818</td>
+<td>3.258171</td>
+<td>-0.614262</td>
+<td>1.014482</td>
+<td>-0.345874</td>
+<td>-0.668608</td>
+<td>25.000030</td>
+<td>15.521631</td>
+<td>...</td>
+<td>-0.174795</td>
+<td>-69.575758</td>
+<td>0.001370</td>
+<td>-6.787879</td>
+<td>-0.053636</td>
+<td>-0.258788</td>
+<td>-0.11697</td>
+<td>-23.330634</td>
+<td>32.273070</td>
+<td>-5.010764e+00</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 41 columns</p>
 </div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-7-output-2.png" width="645" height="429"></p>
 </div>
 </div>
-<p>Makes sense to normalise our data.</p>
+<p>We can plot out our many dimension space by uncommenting the code below (also note down how long does this take).</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create a scaler object</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> MinMaxScaler()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># fit and transform the data</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>df_norm <span class="op">=</span> pd.DataFrame(scaler.fit_transform(df), columns <span class="op">=</span> df.columns)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_norm.melt(id_vars<span class="op">=</span><span class="st">'Class label'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>df_long</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Class label</th>
-<th data-quarto-table-cell-role="th">variable</th>
-<th data-quarto-table-cell-role="th">value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0.0</td>
-<td>Alcohol</td>
-<td>0.842105</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>0.0</td>
-<td>Alcohol</td>
-<td>0.571053</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>0.0</td>
-<td>Alcohol</td>
-<td>0.560526</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>0.0</td>
-<td>Alcohol</td>
-<td>0.878947</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>0.0</td>
-<td>Alcohol</td>
-<td>0.581579</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2309</td>
-<td>1.0</td>
-<td>Proline</td>
-<td>0.329529</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2310</td>
-<td>1.0</td>
-<td>Proline</td>
-<td>0.336662</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2311</td>
-<td>1.0</td>
-<td>Proline</td>
-<td>0.397290</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2312</td>
-<td>1.0</td>
-<td>Proline</td>
-<td>0.400856</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2313</td>
-<td>1.0</td>
-<td>Proline</td>
-<td>0.201141</td>
-</tr>
-</tbody>
-</table>
-
-<p>2314 rows × 3 columns</p>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import seaborn as sns</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot = sns.pairplot(numericColumns)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot.savefig("figs/output.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
+<p>Given that this takes quite a while (around 10 minutes), this is the image that would result from uncommenting and running the code above.</p>
+<p><img src="figs/output.png" class="img-fluid"></p>
+<p>Dimension reduction will help us here!</p>
+<p>We could apply various different types of dimension reduction here. We are specifically going to capture the dissimilarity in the data using <a href="https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling">multidimensional scaling</a>. Our distance matrix will come in useful here.</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create seaborn violin plot</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my_plot <span class="op">=</span> sns.violinplot(data <span class="op">=</span> df_long, x <span class="op">=</span> <span class="st">'variable'</span>, y <span class="op">=</span> <span class="st">'value'</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#rotate x-axis labels</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>my_plot.set_xticklabels(my_plot.get_xticklabels(), rotation<span class="op">=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>[Text(0, 0, 'Alcohol'),
- Text(1, 0, 'Malic acid'),
- Text(2, 0, 'Ash'),
- Text(3, 0, 'Alcalinity of ash'),
- Text(4, 0, 'Magnesium'),
- Text(5, 0, 'Total phenols'),
- Text(6, 0, 'Flavanoids'),
- Text(7, 0, 'Nonflavanoid phenols'),
- Text(8, 0, 'Proanthocyanins'),
- Text(9, 0, 'Color intensity'),
- Text(10, 0, 'Hue'),
- Text(11, 0, 'OD280/OD315 of diluted wines'),
- Text(12, 0, 'Proline ')]</code></pre>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> manifold</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for instance, typing distMatrix.shape on the console gives:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Out[115]: (38, 38) # i.e., the number of rows</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># first we generate an MDS object and extract the projections</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mds <span class="op">=</span> manifold.MDS(n_components <span class="op">=</span> <span class="dv">2</span>, max_iter<span class="op">=</span><span class="dv">3000</span>, n_init<span class="op">=</span><span class="dv">1</span>, dissimilarity<span class="op">=</span><span class="st">"precomputed"</span>, normalized_stress<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> mds.fit_transform(distMatrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>To interpret what is happening, let us plot the boroughs on the projected two dimensional space.</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'MDS on only London boroughs'</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y[:, <span class="dv">0</span>], Y[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">"#D06B36"</span>, s <span class="op">=</span> <span class="dv">100</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, linewidth<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-9-output-2.png" width="600" height="624"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-10-output-1.png" width="1229" height="1294"></p>
 </div>
 </div>
-<p>Are there any patterns?</p>
-<p>How about a pairplot?</p>
-<div class="cell page-columns page-full" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(data <span class="op">=</span> df_norm.iloc[:,<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display column-page">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-10-output-1.png" width="3062" height="3061"></p>
-</div>
-</div>
-<p>Hmm, a few interesting correlations. Some of our variables are skewed. We could apply some PCA here to look at fewer dimension or even log transform some of the skewed variables.</p>
-</section>
-<section id="cluster-analysis" class="level2" data-number="21.2">
-<h2 data-number="21.2" class="anchored" data-anchor-id="cluster-analysis"><span class="header-section-number">21.2</span> Cluster analysis</h2>
-<p>For now we will just run a kmeans cluster and then check our results against the ground truth.</p>
-<section id="determining-the-number-of-clusters" class="level3" data-number="21.2.1">
-<h3 data-number="21.2.1" class="anchored" data-anchor-id="determining-the-number-of-clusters"><span class="header-section-number">21.2.1</span> Determining the number of clusters</h3>
-<p>Lets decide how many clusters we need.</p>
+<p>Our data also include happiness metrics. Pulling these out of our data and carrying out more multidimensional scaling can help us see how the boroughs differ in happiness.</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>inertias <span class="op">=</span> []</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> ks:</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a KMeans instance with k clusters: model</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit model to samples</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    model.fit(df.iloc[:,<span class="dv">1</span>:])</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the inertia to the list of inertias</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    inertias.append(model.inertia_)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>plt.plot(ks, inertias, <span class="st">'-o'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'number of clusters, k'</span>)</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'inertia'</span>)</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(ks)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>dataOnEmotions <span class="op">=</span> numericColumns[[<span class="st">"Life satisfaction score 2012-13 (out of 10)"</span>, <span class="st">"Worthwhileness score 2012-13 (out of 10)"</span>,<span class="st">"Happiness score 2012-13 (out of 10)"</span>]]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a new distance matrix to represent "emotional distance"s</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>distMatrix2 <span class="op">=</span> euclidean_distances(dataOnEmotions, dataOnEmotions)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a new "embedding" (machine learners' word for projection)</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>Y2 <span class="op">=</span> mds.fit_transform(distMatrix2)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># let's look at the results</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">emotional</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y2[:, <span class="dv">0</span>], Y2[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">"#D06B36"</span>, s <span class="op">=</span> <span class="dv">100</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, linewidth<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-11-output-1.png" width="597" height="443"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-11-output-1.png" width="1223" height="1294"></p>
 </div>
 </div>
-<p>What happens if we use the normalised data instead?</p>
+<p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>inertias <span class="op">=</span> []</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> ks:</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a KMeans instance with k clusters: model</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit model to samples</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    model.fit(df_norm.iloc[:,<span class="dv">1</span>:])</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the inertia to the list of inertias</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    inertias.append(model.inertia_)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>plt.plot(ks, inertias, <span class="st">'-o'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'number of clusters, k'</span>)</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'inertia'</span>)</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(ks)</span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-12-output-1.png" width="585" height="429"></p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 0.69748015 -0.81185707]
+ [ 0.10899922  0.30108097]
+ [ 0.136424   -0.16806795]
+ [ 0.14093651 -0.21554052]
+ [-0.1955195   0.22624968]
+ [ 0.11407816 -0.43327937]
+ [-0.15588862  0.17993318]
+ [-0.002926    0.30743178]
+ [-0.24032095 -0.1095705 ]
+ [-0.19206059 -0.11253457]
+ [-0.00332174  0.21289684]
+ [-0.05208774  0.31915627]
+ [ 0.17067002  0.20747103]
+ [-0.08759646  0.15876571]
+ [-0.11614813 -0.12219902]
+ [ 0.04170797 -0.13784647]
+ [-0.0391623  -0.15857883]
+ [-0.03689777 -0.07960966]
+ [-0.17214418  0.5249188 ]
+ [ 0.27412767 -0.53867284]
+ [-0.11080249  0.07685239]
+ [-0.05270751  0.3549546 ]
+ [ 0.1381328   0.02876136]
+ [-0.00367913  0.12615481]
+ [-0.13965941 -0.0227915 ]
+ [-0.19901919 -0.03232374]
+ [ 0.01668134 -0.22351004]
+ [ 0.07414358 -0.02966198]
+ [ 0.02302576  0.07491519]
+ [-0.08739731 -0.07324658]
+ [ 0.09066387 -0.06756996]
+ [-0.07999907 -0.01517745]
+ [-0.05973298  0.25249544]]</code></pre>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pause for thought
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Both of the graphs are the same. Is that what you would expect?</p>
-</div>
-</div>
-<p>Three clusters seems about right (and matches our number of origonal labels).</p>
+<p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Class label'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness <span class="op">=</span> np.asarray(dataOnEmotions[[<span class="st">"Life satisfaction score 2012-13 (out of 10)"</span>]]).flatten()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed.shape)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness.shape</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#c = colorMappingValuesCrime, cmap = plt.cm.Greens</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(33, 2)</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>Class label
-2    71
-1    59
-3    48
-Name: count, dtype: int64</code></pre>
+<pre><code>array([ 0.81636364, -0.22363636,  0.06636364,  0.18636364, -0.05363636,
+        0.34636364, -0.06363636, -0.28363636, -0.04363636, -0.10363636,
+       -0.12363636, -0.21363636, -0.05363636, -0.08363636,  0.05636364,
+        0.11636364,  0.06636364,  0.01636364, -0.20363636,  0.39636364,
+        0.00636364, -0.19363636, -0.05363636, -0.10363636, -0.06363636,
+       -0.00363636,  0.13636364, -0.01363636, -0.03363636, -0.00363636,
+       -0.04363636, -0.05363636, -0.19363636])</code></pre>
 </div>
 </div>
-</section>
-<section id="computing-the-clusters" class="level3" data-number="21.2.2">
-<h3 data-number="21.2.2" class="anchored" data-anchor-id="computing-the-clusters"><span class="header-section-number">21.2.2</span> Computing the clusters</h3>
+<p>Finally, we can plot this. What can you see?</p>
 <div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df.iloc[:,<span class="dv">1</span>:])</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df.iloc[:,<span class="dv">1</span>:].values), index <span class="op">=</span> df.index)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Class label</th>
-<th data-quarto-table-cell-role="th">Alcohol</th>
-<th data-quarto-table-cell-role="th">Malic acid</th>
-<th data-quarto-table-cell-role="th">Ash</th>
-<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
-<th data-quarto-table-cell-role="th">Magnesium</th>
-<th data-quarto-table-cell-role="th">Total phenols</th>
-<th data-quarto-table-cell-role="th">Flavanoids</th>
-<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
-<th data-quarto-table-cell-role="th">Proanthocyanins</th>
-<th data-quarto-table-cell-role="th">Color intensity</th>
-<th data-quarto-table-cell-role="th">Hue</th>
-<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
-<th data-quarto-table-cell-role="th">Proline</th>
-<th data-quarto-table-cell-role="th">Three clusters</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>14.23</td>
-<td>1.71</td>
-<td>2.43</td>
-<td>15.6</td>
-<td>127</td>
-<td>2.80</td>
-<td>3.06</td>
-<td>0.28</td>
-<td>2.29</td>
-<td>5.64</td>
-<td>1.04</td>
-<td>3.92</td>
-<td>1065</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1</td>
-<td>13.20</td>
-<td>1.78</td>
-<td>2.14</td>
-<td>11.2</td>
-<td>100</td>
-<td>2.65</td>
-<td>2.76</td>
-<td>0.26</td>
-<td>1.28</td>
-<td>4.38</td>
-<td>1.05</td>
-<td>3.40</td>
-<td>1050</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>1</td>
-<td>13.16</td>
-<td>2.36</td>
-<td>2.67</td>
-<td>18.6</td>
-<td>101</td>
-<td>2.80</td>
-<td>3.24</td>
-<td>0.30</td>
-<td>2.81</td>
-<td>5.68</td>
-<td>1.03</td>
-<td>3.17</td>
-<td>1185</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>1</td>
-<td>14.37</td>
-<td>1.95</td>
-<td>2.50</td>
-<td>16.8</td>
-<td>113</td>
-<td>3.85</td>
-<td>3.49</td>
-<td>0.24</td>
-<td>2.18</td>
-<td>7.80</td>
-<td>0.86</td>
-<td>3.45</td>
-<td>1480</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>1</td>
-<td>13.24</td>
-<td>2.59</td>
-<td>2.87</td>
-<td>21.0</td>
-<td>118</td>
-<td>2.80</td>
-<td>2.69</td>
-<td>0.39</td>
-<td>1.82</td>
-<td>4.32</td>
-<td>1.04</td>
-<td>2.93</td>
-<td>735</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">173</td>
-<td>3</td>
-<td>13.71</td>
-<td>5.65</td>
-<td>2.45</td>
-<td>20.5</td>
-<td>95</td>
-<td>1.68</td>
-<td>0.61</td>
-<td>0.52</td>
-<td>1.06</td>
-<td>7.70</td>
-<td>0.64</td>
-<td>1.74</td>
-<td>740</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">174</td>
-<td>3</td>
-<td>13.40</td>
-<td>3.91</td>
-<td>2.48</td>
-<td>23.0</td>
-<td>102</td>
-<td>1.80</td>
-<td>0.75</td>
-<td>0.43</td>
-<td>1.41</td>
-<td>7.30</td>
-<td>0.70</td>
-<td>1.56</td>
-<td>750</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">175</td>
-<td>3</td>
-<td>13.27</td>
-<td>4.28</td>
-<td>2.26</td>
-<td>20.0</td>
-<td>120</td>
-<td>1.59</td>
-<td>0.69</td>
-<td>0.43</td>
-<td>1.35</td>
-<td>10.20</td>
-<td>0.59</td>
-<td>1.56</td>
-<td>835</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">176</td>
-<td>3</td>
-<td>13.17</td>
-<td>2.59</td>
-<td>2.37</td>
-<td>20.0</td>
-<td>120</td>
-<td>1.65</td>
-<td>0.68</td>
-<td>0.53</td>
-<td>1.46</td>
-<td>9.30</td>
-<td>0.60</td>
-<td>1.62</td>
-<td>840</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">177</td>
-<td>3</td>
-<td>14.13</td>
-<td>4.10</td>
-<td>2.74</td>
-<td>24.5</td>
-<td>96</td>
-<td>2.05</td>
-<td>0.76</td>
-<td>0.56</td>
-<td>1.35</td>
-<td>9.20</td>
-<td>0.61</td>
-<td>1.60</td>
-<td>560</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-
-<p>178 rows × 15 columns</p>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's look at the results</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">emotional</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.scatter(results_fixed[:, 0], results_fixed[:, 1], c = colorMappingValuesHappiness, cmap='viridis')</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(results_fixed[:, <span class="dv">0</span>], results_fixed[:, <span class="dv">1</span>], c <span class="op">=</span> colorMappingValuesHappiness, s <span class="op">=</span> <span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.Greens)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-14-output-1.png" width="1223" height="1294"></p>
 </div>
 </div>
-</div>
-</section>
-</section>
-<section id="clusters-and-ground-truth" class="level2" data-number="21.3">
-<h2 data-number="21.3" class="anchored" data-anchor-id="clusters-and-ground-truth"><span class="header-section-number">21.3</span> Clusters and Ground Truth</h2>
-<p>Now that we have created three clusters, we may ask ourselves: Do our cluster labels match our ground truth? Did our cluster model capture reality?</p>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">'Three clusters'</span>], df[<span class="st">'Class label'</span>])</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Class label</th>
-<th data-quarto-table-cell-role="th">1</th>
-<th data-quarto-table-cell-role="th">2</th>
-<th data-quarto-table-cell-role="th">3</th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">Three clusters</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0</td>
-<td>50</td>
-<td>19</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>46</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>13</td>
-<td>20</td>
-<td>29</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>It might be easier to see as a stacked plot (see <a href="https://stackoverflow.com/questions/43544694/using-pandas-crosstab-with-seaborn-stacked-barplots">this post</a>).</p>
-<div class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ct.plot.bar(stacked<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Class label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>&lt;matplotlib.legend.Legend at 0x1798f3e50&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dataOnDiversity <span class="op">=</span> numericColumns[[<span class="st">"Proportion of population aged 0-15, 2013"</span>, <span class="st">"Proportion of population of working-age, 2013"</span>, <span class="st">"Proportion of population aged 65 and over, 2013"</span>, <span class="st">"</span><span class="sc">% o</span><span class="st">f population from BAME groups (2013)"</span>, <span class="st">"% people aged 3+ whose main language is not English (2011 census)"</span>]]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a new distance matrix to represent "emotional distance"s</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>distMatrix3 <span class="op">=</span> euclidean_distances(dataOnDiversity, dataOnDiversity)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>mds <span class="op">=</span> manifold.MDS(n_components <span class="op">=</span> <span class="dv">2</span>, max_iter<span class="op">=</span><span class="dv">3000</span>, n_init<span class="op">=</span><span class="dv">1</span>, dissimilarity<span class="op">=</span><span class="st">"precomputed"</span>, normalized_stress <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> mds.fit_transform(distMatrix3)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualising the data.</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">diversity</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y[:, <span class="dv">0</span>], Y[:, <span class="dv">1</span>], s <span class="op">=</span> <span class="dv">100</span>, c <span class="op">=</span> colorMappingValuesHappiness, cmap<span class="op">=</span>plt.cm.Greens)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-16-output-2.png" width="566" height="425"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-15-output-1.png" width="1181" height="1294"></p>
 </div>
 </div>
-<p>How has the kmeans model done compared to our ground truth?</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We need to be really careful here. We notice that it is not easily possible to compare the known class labels to clustering labels. The reason is that the clustering algorithm labels are just arbitrary and not assigned to any deterministic criteria. Each time you run the algorithm, you might get a different id for the labels. <strong>The reason is that the label itself doesn’t actually mean anything, what is important is the list of items that are in the same cluster and their relations.</strong></p>
-</div>
-</div>
-<section id="principal-components-analysis" class="level3" data-number="21.3.1">
-<h3 data-number="21.3.1" class="anchored" data-anchor-id="principal-components-analysis"><span class="header-section-number">21.3.1</span> Principal Components Analysis</h3>
-<p>A way to come over this ambiguity and evaluate the results is to look at a visualisations of the results and compare. But this brings in the question of what type of visualisation to use for looking at the clusters. An immediate alternative is to use scatterplots. However, it is not clear which axis to use for clustering. A common method to apply at this stage is to make use of PCA to get a 2D plane where we can project the data points and visualise them over this projection.</p>
-<div class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
-<div>
+<p>::: callout-note</p>
+<section id="it-is-now-your-turn" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> It is now your turn!</h1>
+<section id="first-task" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="first-task"><span class="header-section-number">22.1</span> First task:</h2>
+<p>This looks very different to the one above on “emotion” related variables. Our job now is to relate these two projections to one another. Do you see similarities? Do you see clusters of boroughs? Can you reflect on how you can relate and combine these two maps conceptually?</p>
+</section>
+<section id="second-task" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="second-task"><span class="header-section-number">22.2</span> Second task:</h2>
+<p>Can you think of and then generate other maps that you can produce with this data? Have a look at the variables once again and try to produce new “perspectives” to the data and see what they have to say.</p>
+<p>Also think of visualisations to help you here, can you colour them with a different variable? What would that change?</p>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Alcohol</th>
-<th data-quarto-table-cell-role="th">Malic acid</th>
-<th data-quarto-table-cell-role="th">Ash</th>
-<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
-<th data-quarto-table-cell-role="th">Magnesium</th>
-<th data-quarto-table-cell-role="th">Total phenols</th>
-<th data-quarto-table-cell-role="th">Flavanoids</th>
-<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
-<th data-quarto-table-cell-role="th">Proanthocyanins</th>
-<th data-quarto-table-cell-role="th">Color intensity</th>
-<th data-quarto-table-cell-role="th">Hue</th>
-<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
-<th data-quarto-table-cell-role="th">Proline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>14.23</td>
-<td>1.71</td>
-<td>2.43</td>
-<td>15.6</td>
-<td>127</td>
-<td>2.80</td>
-<td>3.06</td>
-<td>0.28</td>
-<td>2.29</td>
-<td>5.64</td>
-<td>1.04</td>
-<td>3.92</td>
-<td>1065</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>13.20</td>
-<td>1.78</td>
-<td>2.14</td>
-<td>11.2</td>
-<td>100</td>
-<td>2.65</td>
-<td>2.76</td>
-<td>0.26</td>
-<td>1.28</td>
-<td>4.38</td>
-<td>1.05</td>
-<td>3.40</td>
-<td>1050</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>13.16</td>
-<td>2.36</td>
-<td>2.67</td>
-<td>18.6</td>
-<td>101</td>
-<td>2.80</td>
-<td>3.24</td>
-<td>0.30</td>
-<td>2.81</td>
-<td>5.68</td>
-<td>1.03</td>
-<td>3.17</td>
-<td>1185</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>14.37</td>
-<td>1.95</td>
-<td>2.50</td>
-<td>16.8</td>
-<td>113</td>
-<td>3.85</td>
-<td>3.49</td>
-<td>0.24</td>
-<td>2.18</td>
-<td>7.80</td>
-<td>0.86</td>
-<td>3.45</td>
-<td>1480</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>13.24</td>
-<td>2.59</td>
-<td>2.87</td>
-<td>21.0</td>
-<td>118</td>
-<td>2.80</td>
-<td>2.69</td>
-<td>0.39</td>
-<td>1.82</td>
-<td>4.32</td>
-<td>1.04</td>
-<td>2.93</td>
-<td>735</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">173</td>
-<td>13.71</td>
-<td>5.65</td>
-<td>2.45</td>
-<td>20.5</td>
-<td>95</td>
-<td>1.68</td>
-<td>0.61</td>
-<td>0.52</td>
-<td>1.06</td>
-<td>7.70</td>
-<td>0.64</td>
-<td>1.74</td>
-<td>740</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">174</td>
-<td>13.40</td>
-<td>3.91</td>
-<td>2.48</td>
-<td>23.0</td>
-<td>102</td>
-<td>1.80</td>
-<td>0.75</td>
-<td>0.43</td>
-<td>1.41</td>
-<td>7.30</td>
-<td>0.70</td>
-<td>1.56</td>
-<td>750</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">175</td>
-<td>13.27</td>
-<td>4.28</td>
-<td>2.26</td>
-<td>20.0</td>
-<td>120</td>
-<td>1.59</td>
-<td>0.69</td>
-<td>0.43</td>
-<td>1.35</td>
-<td>10.20</td>
-<td>0.59</td>
-<td>1.56</td>
-<td>835</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">176</td>
-<td>13.17</td>
-<td>2.59</td>
-<td>2.37</td>
-<td>20.0</td>
-<td>120</td>
-<td>1.65</td>
-<td>0.68</td>
-<td>0.53</td>
-<td>1.46</td>
-<td>9.30</td>
-<td>0.60</td>
-<td>1.62</td>
-<td>840</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">177</td>
-<td>14.13</td>
-<td>4.10</td>
-<td>2.74</td>
-<td>24.5</td>
-<td>96</td>
-<td>2.05</td>
-<td>0.76</td>
-<td>0.56</td>
-<td>1.35</td>
-<td>9.20</td>
-<td>0.61</td>
-<td>1.60</td>
-<td>560</td>
-</tr>
-</tbody>
-</table>
-
-<p>178 rows × 13 columns</p>
-</div>
-</div>
-</div>
-<div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span>n_components)</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df_pca <span class="op">=</span> pca.fit(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>df_pca_vals <span class="op">=</span> df_pca.transform(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Grab our projections and plot along with our cluster names.</p>
-<div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c1'</span>] <span class="op">=</span> [item[<span class="dv">0</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c2'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Class label'</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Known labels visualised over PCs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>Text(0.5, 1.0, 'Known labels visualised over PCs')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-19-output-2.png" width="612" height="449"></p>
-</div>
-</div>
-<p>In the figure above, we colored the points based on the actual labels, we observe that there has been several misclassifications in the figure above (i.e., in the algorithm’s results). So one may choose to use an alternative algorithm or devise a better distance metric.</p>
-<div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-20-output-2.png" width="612" height="449"></p>
-</div>
-</div>
-<p>This shows the parallelism between the clustering algorithm and PCA. By looking at the PCA loadings, we can find out what the x-axis mean and try to interpret the clusters (We leave this as an additional exercise for those interested).</p>
-<p>How might your interpret the above plots? Did the kmeans model identify the ground truth?</p>
-<p>How robust is our clustering? It may be that the kmeans algorithm becamse stuck or that a few outliers have biased the clustering.</p>
-<p>Two ways to check are:</p>
-<ul>
-<li>Running the model multiple times with different initial values.</li>
-<li>Removing some data and running the modelling multiple times.</li>
-</ul>
-<p>Run the below cell a few times. What do you see?</p>
-<div class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, init<span class="op">=</span><span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>].values), index <span class="op">=</span> df.index)</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-21-output-2.png" width="612" height="449"></p>
-</div>
-</div>
-<p>How about with only 80% of the data?</p>
-<div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_sample <span class="op">=</span> df.sample(frac<span class="op">=</span><span class="fl">0.8</span>, replace<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, init<span class="op">=</span><span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df_sample.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>df_sample[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df_sample.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>].values), index <span class="op">=</span> df_sample.index)</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df_sample, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
-<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-22-output-2.png" width="612" height="449"></p>
-</div>
-</div>
-<p>We may want to automate the process of resampling the data or rerunning the model then perhaps plotting the different inertia values or creating different plots.</p>
-<p>Do you think our clustering algorithm is stable and provide similiar results even when some data is removed or the initial values are random?</p>
-<p>If so, then is our algorithm capturing the ground truth?</p>
-
-
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-cortezWineQuality2009" class="csl-entry" role="listitem">
-Cortez, Paulo, A Cerdeira, F Almeida, T Matos, and J. Reis. 2009. <span>“Wine <span>Quality</span>.”</span> <span>UCI Machine Learning Repository</span>. <a href="https://doi.org/10.24432/C56S3T">https://doi.org/10.24432/C56S3T</a>.
-</div>
-</div>
 </section>
 </section>
 
@@ -2000,7 +1592,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

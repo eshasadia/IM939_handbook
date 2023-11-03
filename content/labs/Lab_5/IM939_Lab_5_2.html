@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 22&nbsp; Lab: Cross validation</title>
+<title>Data Science Across Disciplines - 22&nbsp; Lab: Clustering and Ground Truth</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -101,11 +120,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 22&nbsp; Lab: Cross validation">
+<meta name="twitter:title" content="Data Science Across Disciplines - 22&nbsp; Lab: Clustering and Ground Truth">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/IM939_Lab_5_2_files/figure-html/cell-4-output-1.png">
-<meta name="twitter:image-height" content="1128">
-<meta name="twitter:image-width" content="1130">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/IM939_Lab_5_2_files/figure-html/cell-7-output-2.png">
+<meta name="twitter:image-height" content="858">
+<meta name="twitter:image-width" content="1290">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -118,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -366,19 +385,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -541,14 +560,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link active" data-scroll-target="#data-wrangling"><span class="header-section-number">22.1</span> Data Wrangling</a></li>
+  <li><a href="#cluster-analysis" id="toc-cluster-analysis" class="nav-link" data-scroll-target="#cluster-analysis"><span class="header-section-number">22.2</span> Cluster analysis</a>
+  <ul class="collapse">
+  <li><a href="#determining-the-number-of-clusters" id="toc-determining-the-number-of-clusters" class="nav-link" data-scroll-target="#determining-the-number-of-clusters"><span class="header-section-number">22.2.1</span> Determining the number of clusters</a></li>
+  <li><a href="#computing-the-clusters" id="toc-computing-the-clusters" class="nav-link" data-scroll-target="#computing-the-clusters"><span class="header-section-number">22.2.2</span> Computing the clusters</a></li>
+  </ul></li>
+  <li><a href="#clusters-and-ground-truth" id="toc-clusters-and-ground-truth" class="nav-link" data-scroll-target="#clusters-and-ground-truth"><span class="header-section-number">22.3</span> Clusters and Ground Truth</a>
+  <ul class="collapse">
+  <li><a href="#principal-components-analysis" id="toc-principal-components-analysis" class="nav-link" data-scroll-target="#principal-components-analysis"><span class="header-section-number">22.3.1</span> Principal Components Analysis</a></li>
+  <li><a href="#running-the-model-multiple-times" id="toc-running-the-model-multiple-times" class="nav-link" data-scroll-target="#running-the-model-multiple-times"><span class="header-section-number">22.3.2</span> Running the model multiple times</a></li>
+  <li><a href="#removing-some-data" id="toc-removing-some-data" class="nav-link" data-scroll-target="#removing-some-data"><span class="header-section-number">22.3.3</span> Removing some data</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_2.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></h1>
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></h1>
 </div>
 
 
@@ -563,302 +599,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Details of the crime dataset are <a href="https://archive.ics.uci.edu/ml/datasets/Communities+and+Crime">here</a>.</p>
-<p>We are going to examine the data, fit and then cross-validate a regression model.</p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/censusCrimeClean.csv'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">communityname</th>
-<th data-quarto-table-cell-role="th">fold</th>
-<th data-quarto-table-cell-role="th">population</th>
-<th data-quarto-table-cell-role="th">householdsize</th>
-<th data-quarto-table-cell-role="th">racepctblack</th>
-<th data-quarto-table-cell-role="th">racePctWhite</th>
-<th data-quarto-table-cell-role="th">racePctAsian</th>
-<th data-quarto-table-cell-role="th">racePctHisp</th>
-<th data-quarto-table-cell-role="th">agePct12t21</th>
-<th data-quarto-table-cell-role="th">agePct12t29</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">NumStreet</th>
-<th data-quarto-table-cell-role="th">PctForeignBorn</th>
-<th data-quarto-table-cell-role="th">PctBornSameState</th>
-<th data-quarto-table-cell-role="th">PctSameHouse85</th>
-<th data-quarto-table-cell-role="th">PctSameCity85</th>
-<th data-quarto-table-cell-role="th">PctSameState85</th>
-<th data-quarto-table-cell-role="th">LandArea</th>
-<th data-quarto-table-cell-role="th">PopDens</th>
-<th data-quarto-table-cell-role="th">PctUsePubTrans</th>
-<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Lakewoodcity</td>
-<td>1</td>
-<td>0.19</td>
-<td>0.33</td>
-<td>0.02</td>
-<td>0.90</td>
-<td>0.12</td>
-<td>0.17</td>
-<td>0.34</td>
-<td>0.47</td>
-<td>...</td>
-<td>0.0</td>
-<td>0.12</td>
-<td>0.42</td>
-<td>0.50</td>
-<td>0.51</td>
-<td>0.64</td>
-<td>0.12</td>
-<td>0.26</td>
-<td>0.20</td>
-<td>0.20</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Tukwilacity</td>
-<td>1</td>
-<td>0.00</td>
-<td>0.16</td>
-<td>0.12</td>
-<td>0.74</td>
-<td>0.45</td>
-<td>0.07</td>
-<td>0.26</td>
-<td>0.59</td>
-<td>...</td>
-<td>0.0</td>
-<td>0.21</td>
-<td>0.50</td>
-<td>0.34</td>
-<td>0.60</td>
-<td>0.52</td>
-<td>0.02</td>
-<td>0.12</td>
-<td>0.45</td>
-<td>0.67</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Aberdeentown</td>
-<td>1</td>
-<td>0.00</td>
-<td>0.42</td>
-<td>0.49</td>
-<td>0.56</td>
-<td>0.17</td>
-<td>0.04</td>
-<td>0.39</td>
-<td>0.47</td>
-<td>...</td>
-<td>0.0</td>
-<td>0.14</td>
-<td>0.49</td>
-<td>0.54</td>
-<td>0.67</td>
-<td>0.56</td>
-<td>0.01</td>
-<td>0.21</td>
-<td>0.02</td>
-<td>0.43</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Willingborotownship</td>
-<td>1</td>
-<td>0.04</td>
-<td>0.77</td>
-<td>1.00</td>
-<td>0.08</td>
-<td>0.12</td>
-<td>0.10</td>
-<td>0.51</td>
-<td>0.50</td>
-<td>...</td>
-<td>0.0</td>
-<td>0.19</td>
-<td>0.30</td>
-<td>0.73</td>
-<td>0.64</td>
-<td>0.65</td>
-<td>0.02</td>
-<td>0.39</td>
-<td>0.28</td>
-<td>0.12</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Bethlehemtownship</td>
-<td>1</td>
-<td>0.01</td>
-<td>0.55</td>
-<td>0.02</td>
-<td>0.95</td>
-<td>0.09</td>
-<td>0.05</td>
-<td>0.38</td>
-<td>0.38</td>
-<td>...</td>
-<td>0.0</td>
-<td>0.11</td>
-<td>0.72</td>
-<td>0.64</td>
-<td>0.61</td>
-<td>0.53</td>
-<td>0.04</td>
-<td>0.09</td>
-<td>0.02</td>
-<td>0.03</td>
-</tr>
-</tbody>
-</table>
-
-<p>5 rows × 102 columns</p>
-</div>
-</div>
-</div>
-<p>One hundred features. Too many for us to visualise at once.</p>
-<p>Instead, we can pick out particular variables and carry out a linear regression. To make our work simple we will look at ViolentCrimesPerPop as our dependent variable and medIncome as our indpendent variable.</p>
-<p>We may wonder if there is more violent crime in low income areas.</p>
-<p>Let us create a new dataframe containing our regression variables. We do not have to do this I find it makes our work clearer.</p>
+<p>We are going to use the Wine Quality Dataset from <span class="citation" data-cites="cortezWineQuality2009">Cortez et al. (<a href="../../references.html#ref-cortezWineQuality2009" role="doc-biblioref">2009</a>)</span> that you may be familiar with by now (but if you don’t, tou can find more information about it here: <a href="https://doi.org/10.24432/C56S3T" class="uri">https://doi.org/10.24432/C56S3T</a>).</p>
+<section id="data-wrangling" class="level2 page-columns page-full" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="data-wrangling"><span class="header-section-number">22.1</span> Data Wrangling</h2>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_reg <span class="op">=</span> df[[<span class="st">'communityname'</span>, <span class="st">'medIncome'</span>, <span class="st">'ViolentCrimesPerPop'</span>]]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">communityname</th>
-<th data-quarto-table-cell-role="th">medIncome</th>
-<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Lakewoodcity</td>
-<td>0.37</td>
-<td>0.20</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Tukwilacity</td>
-<td>0.31</td>
-<td>0.67</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Aberdeentown</td>
-<td>0.30</td>
-<td>0.43</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Willingborotownship</td>
-<td>0.58</td>
-<td>0.12</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Bethlehemtownship</td>
-<td>0.50</td>
-<td>0.03</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1989</td>
-<td>TempleTerracecity</td>
-<td>0.42</td>
-<td>0.09</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1990</td>
-<td>Seasidecity</td>
-<td>0.28</td>
-<td>0.45</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1991</td>
-<td>Waterburytown</td>
-<td>0.31</td>
-<td>0.23</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1992</td>
-<td>Walthamcity</td>
-<td>0.44</td>
-<td>0.19</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1993</td>
-<td>Ontariocity</td>
-<td>0.40</td>
-<td>0.48</td>
-</tr>
-</tbody>
-</table>
-
-<p>1994 rows × 3 columns</p>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/wine.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Plot our data (a nice page on plotting regressions with seaborn is <a href="http://seaborn.pydata.org/tutorial/regression.html#:~:text=Two%20main%20functions%20in%20seaborn%20are%20used%20to,quickly%20choose%20the%20correct%20tool%20for%20particular%20job.">here</a>).</p>
+<p>Look at our data.</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data <span class="op">=</span> df[[<span class="st">'medIncome'</span>, <span class="st">'ViolentCrimesPerPop'</span>]], </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              y <span class="op">=</span> <span class="st">'medIncome'</span>, kind<span class="op">=</span><span class="st">'reg'</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              marker <span class="op">=</span> <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_2_files/figure-html/cell-4-output-1.png" width="565" height="564"></p>
-</div>
-</div>
-<p>We may want to z-transform or log these scores as they are heavily skewed.</p>
-<div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># some values are 0 so 0.1 is added to prevent log giving us infinity</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># there may be a better way to do this!</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:, <span class="st">'ViolentCrimesPerPop_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'ViolentCrimesPerPop'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:,<span class="st">'medIncome_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'medIncome'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_13528/3488182522.py:5: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df_reg.loc[:, 'ViolentCrimesPerPop_log'] = np.log(df_reg['ViolentCrimesPerPop'] + 0.1)
-/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_13528/3488182522.py:6: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df_reg.loc[:,'medIncome_log'] = np.log(df_reg['medIncome'] + 0.1)</code></pre>
-</div>
-</div>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -866,213 +618,333 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">communityname</th>
-<th data-quarto-table-cell-role="th">medIncome</th>
-<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
-<th data-quarto-table-cell-role="th">ViolentCrimesPerPop_log</th>
-<th data-quarto-table-cell-role="th">medIncome_log</th>
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Lakewoodcity</td>
-<td>0.37</td>
-<td>0.20</td>
-<td>-1.203973</td>
-<td>-0.755023</td>
+<td>1</td>
+<td>14.23</td>
+<td>1.71</td>
+<td>2.43</td>
+<td>15.6</td>
+<td>127</td>
+<td>2.80</td>
+<td>3.06</td>
+<td>0.28</td>
+<td>2.29</td>
+<td>5.64</td>
+<td>1.04</td>
+<td>3.92</td>
+<td>1065</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Tukwilacity</td>
-<td>0.31</td>
-<td>0.67</td>
-<td>-0.261365</td>
-<td>-0.891598</td>
+<td>1</td>
+<td>13.20</td>
+<td>1.78</td>
+<td>2.14</td>
+<td>11.2</td>
+<td>100</td>
+<td>2.65</td>
+<td>2.76</td>
+<td>0.26</td>
+<td>1.28</td>
+<td>4.38</td>
+<td>1.05</td>
+<td>3.40</td>
+<td>1050</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Aberdeentown</td>
+<td>1</td>
+<td>13.16</td>
+<td>2.36</td>
+<td>2.67</td>
+<td>18.6</td>
+<td>101</td>
+<td>2.80</td>
+<td>3.24</td>
 <td>0.30</td>
-<td>0.43</td>
-<td>-0.634878</td>
-<td>-0.916291</td>
+<td>2.81</td>
+<td>5.68</td>
+<td>1.03</td>
+<td>3.17</td>
+<td>1185</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>Willingborotownship</td>
-<td>0.58</td>
-<td>0.12</td>
-<td>-1.514128</td>
-<td>-0.385662</td>
+<td>1</td>
+<td>14.37</td>
+<td>1.95</td>
+<td>2.50</td>
+<td>16.8</td>
+<td>113</td>
+<td>3.85</td>
+<td>3.49</td>
+<td>0.24</td>
+<td>2.18</td>
+<td>7.80</td>
+<td>0.86</td>
+<td>3.45</td>
+<td>1480</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>Bethlehemtownship</td>
-<td>0.50</td>
-<td>0.03</td>
-<td>-2.040221</td>
-<td>-0.510826</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1989</td>
-<td>TempleTerracecity</td>
-<td>0.42</td>
-<td>0.09</td>
-<td>-1.660731</td>
-<td>-0.653926</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1990</td>
-<td>Seasidecity</td>
-<td>0.28</td>
-<td>0.45</td>
-<td>-0.597837</td>
-<td>-0.967584</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1991</td>
-<td>Waterburytown</td>
-<td>0.31</td>
-<td>0.23</td>
-<td>-1.108663</td>
-<td>-0.891598</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1992</td>
-<td>Walthamcity</td>
-<td>0.44</td>
-<td>0.19</td>
-<td>-1.237874</td>
-<td>-0.616186</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1993</td>
-<td>Ontariocity</td>
-<td>0.40</td>
-<td>0.48</td>
-<td>-0.544727</td>
-<td>-0.693147</td>
+<td>1</td>
+<td>13.24</td>
+<td>2.59</td>
+<td>2.87</td>
+<td>21.0</td>
+<td>118</td>
+<td>2.80</td>
+<td>2.69</td>
+<td>0.39</td>
+<td>1.82</td>
+<td>4.32</td>
+<td>1.04</td>
+<td>2.93</td>
+<td>735</td>
 </tr>
 </tbody>
 </table>
 
-<p>1994 rows × 5 columns</p>
 </div>
 </div>
+</div>
+<p>There is a column called Class label that gives us the ground truth. The wines come from three different cultivars. Knowing the actual grouping helps us to identify how well our methods can capture this ground truth.</p>
+<p>Following our process above, we should first get a sense of our data.</p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+<td>178.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>1.938202</td>
+<td>13.000618</td>
+<td>2.336348</td>
+<td>2.366517</td>
+<td>19.494944</td>
+<td>99.741573</td>
+<td>2.295112</td>
+<td>2.029270</td>
+<td>0.361854</td>
+<td>1.590899</td>
+<td>5.058090</td>
+<td>0.957449</td>
+<td>2.611685</td>
+<td>746.893258</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>0.775035</td>
+<td>0.811827</td>
+<td>1.117146</td>
+<td>0.274344</td>
+<td>3.339564</td>
+<td>14.282484</td>
+<td>0.625851</td>
+<td>0.998859</td>
+<td>0.124453</td>
+<td>0.572359</td>
+<td>2.318286</td>
+<td>0.228572</td>
+<td>0.709990</td>
+<td>314.907474</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>1.000000</td>
+<td>11.030000</td>
+<td>0.740000</td>
+<td>1.360000</td>
+<td>10.600000</td>
+<td>70.000000</td>
+<td>0.980000</td>
+<td>0.340000</td>
+<td>0.130000</td>
+<td>0.410000</td>
+<td>1.280000</td>
+<td>0.480000</td>
+<td>1.270000</td>
+<td>278.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>1.000000</td>
+<td>12.362500</td>
+<td>1.602500</td>
+<td>2.210000</td>
+<td>17.200000</td>
+<td>88.000000</td>
+<td>1.742500</td>
+<td>1.205000</td>
+<td>0.270000</td>
+<td>1.250000</td>
+<td>3.220000</td>
+<td>0.782500</td>
+<td>1.937500</td>
+<td>500.500000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>2.000000</td>
+<td>13.050000</td>
+<td>1.865000</td>
+<td>2.360000</td>
+<td>19.500000</td>
+<td>98.000000</td>
+<td>2.355000</td>
+<td>2.135000</td>
+<td>0.340000</td>
+<td>1.555000</td>
+<td>4.690000</td>
+<td>0.965000</td>
+<td>2.780000</td>
+<td>673.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>3.000000</td>
+<td>13.677500</td>
+<td>3.082500</td>
+<td>2.557500</td>
+<td>21.500000</td>
+<td>107.000000</td>
+<td>2.800000</td>
+<td>2.875000</td>
+<td>0.437500</td>
+<td>1.950000</td>
+<td>6.200000</td>
+<td>1.120000</td>
+<td>3.170000</td>
+<td>985.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>3.000000</td>
+<td>14.830000</td>
+<td>5.800000</td>
+<td>3.230000</td>
+<td>30.000000</td>
+<td>162.000000</td>
+<td>3.880000</td>
+<td>5.080000</td>
+<td>0.660000</td>
+<td>3.580000</td>
+<td>13.000000</td>
+<td>1.710000</td>
+<td>4.000000</td>
+<td>1680.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>No missing data. The scales of our features vary (e.g., Magnesium is in the 100s whereas Hue is in the low single digits).</p>
+<p>How about our feature distributions?</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df.melt(id_vars<span class="op">=</span><span class="st">'Class label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data <span class="op">=</span> df_reg[[<span class="st">'medIncome_log'</span>, <span class="st">'ViolentCrimesPerPop_log'</span>]], </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'ViolentCrimesPerPop_log'</span>, </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>              y <span class="op">=</span> <span class="st">'medIncome_log'</span>, kind<span class="op">=</span><span class="st">'reg'</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>              marker <span class="op">=</span> <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sns.violinplot(data <span class="op">=</span> df_long, x <span class="op">=</span> <span class="st">'variable'</span>, y <span class="op">=</span> <span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;Axes: xlabel='variable', ylabel='value'&gt;</code></pre>
+</div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_2_files/figure-html/cell-7-output-1.png" width="576" height="564"></p>
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-7-output-2.png" width="645" height="429"></p>
 </div>
 </div>
-<p>Is log transforming our variables the right thing to do here?</p>
-<p>Fit our regression to the log transformed data.</p>
+<p>Makes sense to normalise our data.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Please note that <code>Class label</code> is a numerical column that in fact describes the ground truth categories, so it doesn’t make sense to normalise that, and therefore, <strong>we should exclude <code>Class label</code> from the normalisation.</strong></p>
+</div>
+</div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop_log'</span>]]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome_log'</span>]]</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Violent Crimes Per Population'</span>)</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y, y_hat))</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>MSE: 0.1531885348757034
-R^2: 0.22763497704356928
-var: medIncome_log    0.198436
-dtype: float64</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_2_files/figure-html/cell-8-output-2.png" width="600" height="429"></p>
-</div>
-</div>
-<p>Has our log transformation distorted the pattern in the data?</p>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Violent Crimes Per Population'</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y, y_hat))</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>MSE: 0.03592636778157073
-R^2: 0.17996313165549482
-var: medIncome    0.043833
-dtype: float64</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_2_files/figure-html/cell-9-output-2.png" width="589" height="429"></p>
-</div>
-</div>
-<p>What is the relationship between violent crime and median income? Why might this be?</p>
-<p>Assuming the log data is fine, have we overfit the model? Remember that a good model (which accurately models the relationship between violent crimes per population) need to be robust when faced with new data.</p>
-<p>Kfold cross validation splits data into train and test subsets. We can then fit the regression to the training set and see how well it does for the test set.</p>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> KFold</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># get four splits, Each split contains a </span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># test series and a train series.</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>kf <span class="op">=</span> KFold(n_splits<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lists to store our statistics</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>r_vals <span class="op">=</span> []</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>MSEs <span class="op">=</span> []</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>medIncome_coef <span class="op">=</span> []</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> train_index, test_index <span class="kw">in</span> kf.split(X):</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fit our model and extract statistics</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> LinearRegression()</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    model.fit(X.iloc[train_index], y.iloc[train_index])</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    y_hat <span class="op">=</span> model.predict(X.iloc[test_index])</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    MSEs.append(metrics.mean_squared_error(y.iloc[test_index], y_hat))</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    medIncome_coef.append(model.coef_[<span class="dv">0</span>][<span class="dv">0</span>])</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    r_vals.append(metrics.r2_score(y.iloc[test_index], y_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'MSE'</span> : MSEs, <span class="st">'medIncome coefficient'</span> : medIncome_coef, <span class="st">'r squared'</span> : r_vals}</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store labels as a variable before removing them from the dataframe</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>class_labels <span class="op">=</span> df[<span class="st">"Class label"</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df.iloc[:,<span class="dv">1</span>:]</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># create a scaler object</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> MinMaxScaler()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>df_norm <span class="op">=</span> pd.DataFrame(scaler.fit_transform(df_subset), columns <span class="op">=</span> df_subset.columns)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Re-add class labels in the first position</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>df_norm.insert(<span class="dv">0</span>, <span class="st">"Class label"</span>, class_labels)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>df_norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -1080,35 +952,866 @@ dtype: float64</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">MSE</th>
-<th data-quarto-table-cell-role="th">medIncome coefficient</th>
-<th data-quarto-table-cell-role="th">r squared</th>
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>0.035727</td>
-<td>-0.403609</td>
-<td>0.130479</td>
+<td>1</td>
+<td>0.842105</td>
+<td>0.191700</td>
+<td>0.572193</td>
+<td>0.257732</td>
+<td>0.619565</td>
+<td>0.627586</td>
+<td>0.573840</td>
+<td>0.283019</td>
+<td>0.593060</td>
+<td>0.372014</td>
+<td>0.455285</td>
+<td>0.970696</td>
+<td>0.561341</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>0.035904</td>
-<td>-0.389344</td>
-<td>0.162820</td>
+<td>1</td>
+<td>0.571053</td>
+<td>0.205534</td>
+<td>0.417112</td>
+<td>0.030928</td>
+<td>0.326087</td>
+<td>0.575862</td>
+<td>0.510549</td>
+<td>0.245283</td>
+<td>0.274448</td>
+<td>0.264505</td>
+<td>0.463415</td>
+<td>0.780220</td>
+<td>0.550642</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>0.040777</td>
-<td>-0.353379</td>
-<td>0.200139</td>
+<td>1</td>
+<td>0.560526</td>
+<td>0.320158</td>
+<td>0.700535</td>
+<td>0.412371</td>
+<td>0.336957</td>
+<td>0.627586</td>
+<td>0.611814</td>
+<td>0.320755</td>
+<td>0.757098</td>
+<td>0.375427</td>
+<td>0.447154</td>
+<td>0.695971</td>
+<td>0.646933</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>0.032255</td>
-<td>-0.378883</td>
-<td>0.182403</td>
+<td>1</td>
+<td>0.878947</td>
+<td>0.239130</td>
+<td>0.609626</td>
+<td>0.319588</td>
+<td>0.467391</td>
+<td>0.989655</td>
+<td>0.664557</td>
+<td>0.207547</td>
+<td>0.558360</td>
+<td>0.556314</td>
+<td>0.308943</td>
+<td>0.798535</td>
+<td>0.857347</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>0.581579</td>
+<td>0.365613</td>
+<td>0.807487</td>
+<td>0.536082</td>
+<td>0.521739</td>
+<td>0.627586</td>
+<td>0.495781</td>
+<td>0.490566</td>
+<td>0.444795</td>
+<td>0.259386</td>
+<td>0.455285</td>
+<td>0.608059</td>
+<td>0.325963</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">173</td>
+<td>3</td>
+<td>0.705263</td>
+<td>0.970356</td>
+<td>0.582888</td>
+<td>0.510309</td>
+<td>0.271739</td>
+<td>0.241379</td>
+<td>0.056962</td>
+<td>0.735849</td>
+<td>0.205047</td>
+<td>0.547782</td>
+<td>0.130081</td>
+<td>0.172161</td>
+<td>0.329529</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">174</td>
+<td>3</td>
+<td>0.623684</td>
+<td>0.626482</td>
+<td>0.598930</td>
+<td>0.639175</td>
+<td>0.347826</td>
+<td>0.282759</td>
+<td>0.086498</td>
+<td>0.566038</td>
+<td>0.315457</td>
+<td>0.513652</td>
+<td>0.178862</td>
+<td>0.106227</td>
+<td>0.336662</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>3</td>
+<td>0.589474</td>
+<td>0.699605</td>
+<td>0.481283</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.210345</td>
+<td>0.073840</td>
+<td>0.566038</td>
+<td>0.296530</td>
+<td>0.761092</td>
+<td>0.089431</td>
+<td>0.106227</td>
+<td>0.397290</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>3</td>
+<td>0.563158</td>
+<td>0.365613</td>
+<td>0.540107</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.231034</td>
+<td>0.071730</td>
+<td>0.754717</td>
+<td>0.331230</td>
+<td>0.684300</td>
+<td>0.097561</td>
+<td>0.128205</td>
+<td>0.400856</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>3</td>
+<td>0.815789</td>
+<td>0.664032</td>
+<td>0.737968</td>
+<td>0.716495</td>
+<td>0.282609</td>
+<td>0.368966</td>
+<td>0.088608</td>
+<td>0.811321</td>
+<td>0.296530</td>
+<td>0.675768</td>
+<td>0.105691</td>
+<td>0.120879</td>
+<td>0.201141</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 14 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape from wide to long format</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_norm.melt(id_vars<span class="op">=</span><span class="st">'Class label'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create seaborn violin plot</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>my_plot <span class="op">=</span> sns.violinplot(data <span class="op">=</span> df_long, x <span class="op">=</span> <span class="st">'variable'</span>, y <span class="op">=</span> <span class="st">'value'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Rotate x-axis labels</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>my_plot.set_xticklabels(my_plot.get_xticklabels(), rotation<span class="op">=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>[Text(0, 0, 'Alcohol'),
+ Text(1, 0, 'Malic acid'),
+ Text(2, 0, 'Ash'),
+ Text(3, 0, 'Alcalinity of ash'),
+ Text(4, 0, 'Magnesium'),
+ Text(5, 0, 'Total phenols'),
+ Text(6, 0, 'Flavanoids'),
+ Text(7, 0, 'Nonflavanoid phenols'),
+ Text(8, 0, 'Proanthocyanins'),
+ Text(9, 0, 'Color intensity'),
+ Text(10, 0, 'Hue'),
+ Text(11, 0, 'OD280/OD315 of diluted wines'),
+ Text(12, 0, 'Proline ')]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-9-output-2.png" width="600" height="624"></p>
+</div>
+</div>
+<p>Are there any patterns?</p>
+<p>How about a pairplot?</p>
+<div class="cell page-columns page-full" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.pairplot(data <span class="op">=</span> df_norm.iloc[:,<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-10-output-1.png" width="3062" height="3061"></p>
+</div>
+</div>
+<p>Hmm, a few interesting correlations. Some of our variables are skewed. We could apply some PCA here to look at fewer dimension or even log transform some of the skewed variables.</p>
+</section>
+<section id="cluster-analysis" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="cluster-analysis"><span class="header-section-number">22.2</span> Cluster analysis</h2>
+<p>For now we will just run a kmeans cluster and then check our results against the ground truth.</p>
+<section id="determining-the-number-of-clusters" class="level3" data-number="22.2.1">
+<h3 data-number="22.2.1" class="anchored" data-anchor-id="determining-the-number-of-clusters"><span class="header-section-number">22.2.1</span> Determining the number of clusters</h3>
+<p>Lets decide how many clusters we need.</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>inertias <span class="op">=</span> []</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> ks:</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit model to samples</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    model.fit(df.iloc[:,<span class="dv">1</span>:])</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the inertia to the list of inertias</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    inertias.append(model.inertia_)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>plt.plot(ks, inertias, <span class="st">'-o'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'number of clusters, k'</span>)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'inertia'</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(ks)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-11-output-1.png" width="597" height="443"></p>
+</div>
+</div>
+<p>What happens if we use the normalised data instead?</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>inertias <span class="op">=</span> []</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> ks:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Fit model to samples</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    model.fit(df_norm.iloc[:,<span class="dv">1</span>:])</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the inertia to the list of inertias</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    inertias.append(model.inertia_)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>plt.plot(ks, inertias, <span class="st">'-o'</span>, color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'number of clusters, k'</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'inertia'</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(ks)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-12-output-1.png" width="585" height="429"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pause for thought
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Both of the graphs are the same. Is that what you would expect?</p>
+</div>
+</div>
+<p>Three clusters seems about right (and matches our number of origonal labels).</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Class label'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>Class label
+2    71
+1    59
+3    48
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="computing-the-clusters" class="level3" data-number="22.2.2">
+<h3 data-number="22.2.2" class="anchored" data-anchor-id="computing-the-clusters"><span class="header-section-number">22.2.2</span> Computing the clusters</h3>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df.iloc[:,<span class="dv">1</span>:])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df.iloc[:,<span class="dv">1</span>:].values), index <span class="op">=</span> df.index)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
+<th data-quarto-table-cell-role="th">Three clusters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>14.23</td>
+<td>1.71</td>
+<td>2.43</td>
+<td>15.6</td>
+<td>127</td>
+<td>2.80</td>
+<td>3.06</td>
+<td>0.28</td>
+<td>2.29</td>
+<td>5.64</td>
+<td>1.04</td>
+<td>3.92</td>
+<td>1065</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>13.20</td>
+<td>1.78</td>
+<td>2.14</td>
+<td>11.2</td>
+<td>100</td>
+<td>2.65</td>
+<td>2.76</td>
+<td>0.26</td>
+<td>1.28</td>
+<td>4.38</td>
+<td>1.05</td>
+<td>3.40</td>
+<td>1050</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>13.16</td>
+<td>2.36</td>
+<td>2.67</td>
+<td>18.6</td>
+<td>101</td>
+<td>2.80</td>
+<td>3.24</td>
+<td>0.30</td>
+<td>2.81</td>
+<td>5.68</td>
+<td>1.03</td>
+<td>3.17</td>
+<td>1185</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>14.37</td>
+<td>1.95</td>
+<td>2.50</td>
+<td>16.8</td>
+<td>113</td>
+<td>3.85</td>
+<td>3.49</td>
+<td>0.24</td>
+<td>2.18</td>
+<td>7.80</td>
+<td>0.86</td>
+<td>3.45</td>
+<td>1480</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>13.24</td>
+<td>2.59</td>
+<td>2.87</td>
+<td>21.0</td>
+<td>118</td>
+<td>2.80</td>
+<td>2.69</td>
+<td>0.39</td>
+<td>1.82</td>
+<td>4.32</td>
+<td>1.04</td>
+<td>2.93</td>
+<td>735</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">173</td>
+<td>3</td>
+<td>13.71</td>
+<td>5.65</td>
+<td>2.45</td>
+<td>20.5</td>
+<td>95</td>
+<td>1.68</td>
+<td>0.61</td>
+<td>0.52</td>
+<td>1.06</td>
+<td>7.70</td>
+<td>0.64</td>
+<td>1.74</td>
+<td>740</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">174</td>
+<td>3</td>
+<td>13.40</td>
+<td>3.91</td>
+<td>2.48</td>
+<td>23.0</td>
+<td>102</td>
+<td>1.80</td>
+<td>0.75</td>
+<td>0.43</td>
+<td>1.41</td>
+<td>7.30</td>
+<td>0.70</td>
+<td>1.56</td>
+<td>750</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>3</td>
+<td>13.27</td>
+<td>4.28</td>
+<td>2.26</td>
+<td>20.0</td>
+<td>120</td>
+<td>1.59</td>
+<td>0.69</td>
+<td>0.43</td>
+<td>1.35</td>
+<td>10.20</td>
+<td>0.59</td>
+<td>1.56</td>
+<td>835</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>3</td>
+<td>13.17</td>
+<td>2.59</td>
+<td>2.37</td>
+<td>20.0</td>
+<td>120</td>
+<td>1.65</td>
+<td>0.68</td>
+<td>0.53</td>
+<td>1.46</td>
+<td>9.30</td>
+<td>0.60</td>
+<td>1.62</td>
+<td>840</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>3</td>
+<td>14.13</td>
+<td>4.10</td>
+<td>2.74</td>
+<td>24.5</td>
+<td>96</td>
+<td>2.05</td>
+<td>0.76</td>
+<td>0.56</td>
+<td>1.35</td>
+<td>9.20</td>
+<td>0.61</td>
+<td>1.60</td>
+<td>560</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 15 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples using normalised dataframe</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df_norm.iloc[:,<span class="dv">1</span>:])</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>df_norm[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df_norm.iloc[:,<span class="dv">1</span>:].values), index <span class="op">=</span> df_norm.index)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>df_norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
+<th data-quarto-table-cell-role="th">Three clusters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>0.842105</td>
+<td>0.191700</td>
+<td>0.572193</td>
+<td>0.257732</td>
+<td>0.619565</td>
+<td>0.627586</td>
+<td>0.573840</td>
+<td>0.283019</td>
+<td>0.593060</td>
+<td>0.372014</td>
+<td>0.455285</td>
+<td>0.970696</td>
+<td>0.561341</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1</td>
+<td>0.571053</td>
+<td>0.205534</td>
+<td>0.417112</td>
+<td>0.030928</td>
+<td>0.326087</td>
+<td>0.575862</td>
+<td>0.510549</td>
+<td>0.245283</td>
+<td>0.274448</td>
+<td>0.264505</td>
+<td>0.463415</td>
+<td>0.780220</td>
+<td>0.550642</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1</td>
+<td>0.560526</td>
+<td>0.320158</td>
+<td>0.700535</td>
+<td>0.412371</td>
+<td>0.336957</td>
+<td>0.627586</td>
+<td>0.611814</td>
+<td>0.320755</td>
+<td>0.757098</td>
+<td>0.375427</td>
+<td>0.447154</td>
+<td>0.695971</td>
+<td>0.646933</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1</td>
+<td>0.878947</td>
+<td>0.239130</td>
+<td>0.609626</td>
+<td>0.319588</td>
+<td>0.467391</td>
+<td>0.989655</td>
+<td>0.664557</td>
+<td>0.207547</td>
+<td>0.558360</td>
+<td>0.556314</td>
+<td>0.308943</td>
+<td>0.798535</td>
+<td>0.857347</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1</td>
+<td>0.581579</td>
+<td>0.365613</td>
+<td>0.807487</td>
+<td>0.536082</td>
+<td>0.521739</td>
+<td>0.627586</td>
+<td>0.495781</td>
+<td>0.490566</td>
+<td>0.444795</td>
+<td>0.259386</td>
+<td>0.455285</td>
+<td>0.608059</td>
+<td>0.325963</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">173</td>
+<td>3</td>
+<td>0.705263</td>
+<td>0.970356</td>
+<td>0.582888</td>
+<td>0.510309</td>
+<td>0.271739</td>
+<td>0.241379</td>
+<td>0.056962</td>
+<td>0.735849</td>
+<td>0.205047</td>
+<td>0.547782</td>
+<td>0.130081</td>
+<td>0.172161</td>
+<td>0.329529</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">174</td>
+<td>3</td>
+<td>0.623684</td>
+<td>0.626482</td>
+<td>0.598930</td>
+<td>0.639175</td>
+<td>0.347826</td>
+<td>0.282759</td>
+<td>0.086498</td>
+<td>0.566038</td>
+<td>0.315457</td>
+<td>0.513652</td>
+<td>0.178862</td>
+<td>0.106227</td>
+<td>0.336662</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>3</td>
+<td>0.589474</td>
+<td>0.699605</td>
+<td>0.481283</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.210345</td>
+<td>0.073840</td>
+<td>0.566038</td>
+<td>0.296530</td>
+<td>0.761092</td>
+<td>0.089431</td>
+<td>0.106227</td>
+<td>0.397290</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>3</td>
+<td>0.563158</td>
+<td>0.365613</td>
+<td>0.540107</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.231034</td>
+<td>0.071730</td>
+<td>0.754717</td>
+<td>0.331230</td>
+<td>0.684300</td>
+<td>0.097561</td>
+<td>0.128205</td>
+<td>0.400856</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>3</td>
+<td>0.815789</td>
+<td>0.664032</td>
+<td>0.737968</td>
+<td>0.716495</td>
+<td>0.282609</td>
+<td>0.368966</td>
+<td>0.088608</td>
+<td>0.811321</td>
+<td>0.296530</td>
+<td>0.675768</td>
+<td>0.105691</td>
+<td>0.120879</td>
+<td>0.201141</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 15 columns</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="clusters-and-ground-truth" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="clusters-and-ground-truth"><span class="header-section-number">22.3</span> Clusters and Ground Truth</h2>
+<p>Now that we have created three clusters, we may ask ourselves: Do our cluster labels match our ground truth? Did our cluster model capture reality?</p>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ct <span class="op">=</span> pd.crosstab(df[<span class="st">'Three clusters'</span>], df[<span class="st">'Class label'</span>])</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ct</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Three clusters</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>50</td>
+<td>19</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>46</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>13</td>
+<td>20</td>
+<td>29</td>
 </tr>
 </tbody>
 </table>
@@ -1116,25 +1819,684 @@ dtype: float64</code></pre>
 </div>
 </div>
 </div>
-<p>Does our model produce similiar coefficients with subsets of the data?</p>
-<p>We can do this using an inbuild sklearn function (see <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html">here</a>).</p>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cross_val_score(model, x, y, cv<span class="op">=</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[0.13047946 0.16281953 0.20013867 0.18240261]</code></pre>
-</div>
-</div>
-<p>What do these values tell us about our model and data?</p>
-<p>You might want to carry out <a href="https://heartbeat.fritz.ai/implementing-multiple-linear-regression-using-sklearn-43b3d3f2fe8b">multiple regression</a> with more than one predictor variable, or reduce the number of dimensions, or perhaps address different questions using a clustering algorithm instead with all or a subset of features.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>ct_norm <span class="op">=</span> pd.crosstab(df_norm[<span class="st">'Three clusters'</span>], df_norm[<span class="st">'Class label'</span>])</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>ct_norm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
 
 
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Class label</th>
+<th data-quarto-table-cell-role="th">1</th>
+<th data-quarto-table-cell-role="th">2</th>
+<th data-quarto-table-cell-role="th">3</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Three clusters</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>59</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>63</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>6</td>
+<td>48</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>It might be easier to see as a stacked plot (see <a href="https://stackoverflow.com/questions/43544694/using-pandas-crosstab-with-seaborn-stacked-barplots">this post</a>).</p>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>ct.plot.bar(stacked<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Class label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>&lt;matplotlib.legend.Legend at 0x147c5dd10&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-18-output-2.png" width="566" height="425"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ct_norm.plot.bar(stacked<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Class label'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>&lt;matplotlib.legend.Legend at 0x147c55ad0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-19-output-2.png" width="566" height="425"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How has the kmeans model done compared to our ground truth?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check the difference between the clusters using the original dataframe and the normalised dataframe.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We need to be really careful here. We notice that it is not easily possible to compare the known class labels to clustering labels. The reason is that the clustering algorithm labels are just arbitrary and not assigned to any deterministic criteria. Each time you run the algorithm, you might get a different id for the labels. <strong>The reason is that the label itself doesn’t actually mean anything, what is important is the list of items that are in the same cluster and their relations.</strong></p>
+</div>
+</div>
+<section id="principal-components-analysis" class="level3" data-number="22.3.1">
+<h3 data-number="22.3.1" class="anchored" data-anchor-id="principal-components-analysis"><span class="header-section-number">22.3.1</span> Principal Components Analysis</h3>
+<p>A way to come over this ambiguity and evaluate the results is to look at a visualisations of the results and compare. But this brings in the question of what type of visualisation to use for looking at the clusters. An immediate alternative is to use scatterplots. However, it is not clear which axis to use for clustering. A common method to apply at this stage is to make use of PCA to get a 2D plane where we can project the data points and visualise them over this projection.</p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We will be excluding the column `Class label` located in the first position from the PCA.</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>14.23</td>
+<td>1.71</td>
+<td>2.43</td>
+<td>15.6</td>
+<td>127</td>
+<td>2.80</td>
+<td>3.06</td>
+<td>0.28</td>
+<td>2.29</td>
+<td>5.64</td>
+<td>1.04</td>
+<td>3.92</td>
+<td>1065</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>13.20</td>
+<td>1.78</td>
+<td>2.14</td>
+<td>11.2</td>
+<td>100</td>
+<td>2.65</td>
+<td>2.76</td>
+<td>0.26</td>
+<td>1.28</td>
+<td>4.38</td>
+<td>1.05</td>
+<td>3.40</td>
+<td>1050</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>13.16</td>
+<td>2.36</td>
+<td>2.67</td>
+<td>18.6</td>
+<td>101</td>
+<td>2.80</td>
+<td>3.24</td>
+<td>0.30</td>
+<td>2.81</td>
+<td>5.68</td>
+<td>1.03</td>
+<td>3.17</td>
+<td>1185</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>14.37</td>
+<td>1.95</td>
+<td>2.50</td>
+<td>16.8</td>
+<td>113</td>
+<td>3.85</td>
+<td>3.49</td>
+<td>0.24</td>
+<td>2.18</td>
+<td>7.80</td>
+<td>0.86</td>
+<td>3.45</td>
+<td>1480</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>13.24</td>
+<td>2.59</td>
+<td>2.87</td>
+<td>21.0</td>
+<td>118</td>
+<td>2.80</td>
+<td>2.69</td>
+<td>0.39</td>
+<td>1.82</td>
+<td>4.32</td>
+<td>1.04</td>
+<td>2.93</td>
+<td>735</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">173</td>
+<td>13.71</td>
+<td>5.65</td>
+<td>2.45</td>
+<td>20.5</td>
+<td>95</td>
+<td>1.68</td>
+<td>0.61</td>
+<td>0.52</td>
+<td>1.06</td>
+<td>7.70</td>
+<td>0.64</td>
+<td>1.74</td>
+<td>740</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">174</td>
+<td>13.40</td>
+<td>3.91</td>
+<td>2.48</td>
+<td>23.0</td>
+<td>102</td>
+<td>1.80</td>
+<td>0.75</td>
+<td>0.43</td>
+<td>1.41</td>
+<td>7.30</td>
+<td>0.70</td>
+<td>1.56</td>
+<td>750</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>13.27</td>
+<td>4.28</td>
+<td>2.26</td>
+<td>20.0</td>
+<td>120</td>
+<td>1.59</td>
+<td>0.69</td>
+<td>0.43</td>
+<td>1.35</td>
+<td>10.20</td>
+<td>0.59</td>
+<td>1.56</td>
+<td>835</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>13.17</td>
+<td>2.59</td>
+<td>2.37</td>
+<td>20.0</td>
+<td>120</td>
+<td>1.65</td>
+<td>0.68</td>
+<td>0.53</td>
+<td>1.46</td>
+<td>9.30</td>
+<td>0.60</td>
+<td>1.62</td>
+<td>840</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>14.13</td>
+<td>4.10</td>
+<td>2.74</td>
+<td>24.5</td>
+<td>96</td>
+<td>2.05</td>
+<td>0.76</td>
+<td>0.56</td>
+<td>1.35</td>
+<td>9.20</td>
+<td>0.61</td>
+<td>1.60</td>
+<td>560</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 13 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We will be excluding the column `Class label` located in the first position from the PCA.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_norm.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Alcohol</th>
+<th data-quarto-table-cell-role="th">Malic acid</th>
+<th data-quarto-table-cell-role="th">Ash</th>
+<th data-quarto-table-cell-role="th">Alcalinity of ash</th>
+<th data-quarto-table-cell-role="th">Magnesium</th>
+<th data-quarto-table-cell-role="th">Total phenols</th>
+<th data-quarto-table-cell-role="th">Flavanoids</th>
+<th data-quarto-table-cell-role="th">Nonflavanoid phenols</th>
+<th data-quarto-table-cell-role="th">Proanthocyanins</th>
+<th data-quarto-table-cell-role="th">Color intensity</th>
+<th data-quarto-table-cell-role="th">Hue</th>
+<th data-quarto-table-cell-role="th">OD280/OD315 of diluted wines</th>
+<th data-quarto-table-cell-role="th">Proline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.842105</td>
+<td>0.191700</td>
+<td>0.572193</td>
+<td>0.257732</td>
+<td>0.619565</td>
+<td>0.627586</td>
+<td>0.573840</td>
+<td>0.283019</td>
+<td>0.593060</td>
+<td>0.372014</td>
+<td>0.455285</td>
+<td>0.970696</td>
+<td>0.561341</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.571053</td>
+<td>0.205534</td>
+<td>0.417112</td>
+<td>0.030928</td>
+<td>0.326087</td>
+<td>0.575862</td>
+<td>0.510549</td>
+<td>0.245283</td>
+<td>0.274448</td>
+<td>0.264505</td>
+<td>0.463415</td>
+<td>0.780220</td>
+<td>0.550642</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.560526</td>
+<td>0.320158</td>
+<td>0.700535</td>
+<td>0.412371</td>
+<td>0.336957</td>
+<td>0.627586</td>
+<td>0.611814</td>
+<td>0.320755</td>
+<td>0.757098</td>
+<td>0.375427</td>
+<td>0.447154</td>
+<td>0.695971</td>
+<td>0.646933</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.878947</td>
+<td>0.239130</td>
+<td>0.609626</td>
+<td>0.319588</td>
+<td>0.467391</td>
+<td>0.989655</td>
+<td>0.664557</td>
+<td>0.207547</td>
+<td>0.558360</td>
+<td>0.556314</td>
+<td>0.308943</td>
+<td>0.798535</td>
+<td>0.857347</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.581579</td>
+<td>0.365613</td>
+<td>0.807487</td>
+<td>0.536082</td>
+<td>0.521739</td>
+<td>0.627586</td>
+<td>0.495781</td>
+<td>0.490566</td>
+<td>0.444795</td>
+<td>0.259386</td>
+<td>0.455285</td>
+<td>0.608059</td>
+<td>0.325963</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">173</td>
+<td>0.705263</td>
+<td>0.970356</td>
+<td>0.582888</td>
+<td>0.510309</td>
+<td>0.271739</td>
+<td>0.241379</td>
+<td>0.056962</td>
+<td>0.735849</td>
+<td>0.205047</td>
+<td>0.547782</td>
+<td>0.130081</td>
+<td>0.172161</td>
+<td>0.329529</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">174</td>
+<td>0.623684</td>
+<td>0.626482</td>
+<td>0.598930</td>
+<td>0.639175</td>
+<td>0.347826</td>
+<td>0.282759</td>
+<td>0.086498</td>
+<td>0.566038</td>
+<td>0.315457</td>
+<td>0.513652</td>
+<td>0.178862</td>
+<td>0.106227</td>
+<td>0.336662</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">175</td>
+<td>0.589474</td>
+<td>0.699605</td>
+<td>0.481283</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.210345</td>
+<td>0.073840</td>
+<td>0.566038</td>
+<td>0.296530</td>
+<td>0.761092</td>
+<td>0.089431</td>
+<td>0.106227</td>
+<td>0.397290</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">176</td>
+<td>0.563158</td>
+<td>0.365613</td>
+<td>0.540107</td>
+<td>0.484536</td>
+<td>0.543478</td>
+<td>0.231034</td>
+<td>0.071730</td>
+<td>0.754717</td>
+<td>0.331230</td>
+<td>0.684300</td>
+<td>0.097561</td>
+<td>0.128205</td>
+<td>0.400856</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">177</td>
+<td>0.815789</td>
+<td>0.664032</td>
+<td>0.737968</td>
+<td>0.716495</td>
+<td>0.282609</td>
+<td>0.368966</td>
+<td>0.088608</td>
+<td>0.811321</td>
+<td>0.296530</td>
+<td>0.675768</td>
+<td>0.105691</td>
+<td>0.120879</td>
+<td>0.201141</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 13 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span>n_components)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>df_pca <span class="op">=</span> pca.fit(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>df_pca_vals <span class="op">=</span> df_pca.transform(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are repeating the same, with the normalised dataframe.</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span>n_components)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>df_pca_norm <span class="op">=</span> pca.fit(df_norm.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>df_pca_norm_vals <span class="op">=</span> df_pca_norm.transform(df_norm.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Grab our projections and plot along with our cluster names.</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Store components as a new column in the original dataframe.</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c1'</span>] <span class="op">=</span> [item[<span class="dv">0</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'c2'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_vals]</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Class label'</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Known labels visualised over PCs (Original data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>Text(0.5, 1.0, 'Known labels visualised over PCs (Original data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-24-output-2.png" width="612" height="449"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are repeating the same, with the normalised dataframe.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Store components as a new column in the normalised dataframe.</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>df_norm[<span class="st">'c1'</span>] <span class="op">=</span> [item[<span class="dv">0</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_norm_vals]</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>df_norm[<span class="st">'c2'</span>] <span class="op">=</span> [item[<span class="dv">1</span>] <span class="cf">for</span> item <span class="kw">in</span> df_pca_norm_vals]</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df_norm, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Class label'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Known labels visualised over PCs (Normalised data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>Text(0.5, 1.0, 'Known labels visualised over PCs (Normalised data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-25-output-2.png" width="614" height="449"></p>
+</div>
+</div>
+<p>In the figure above, we colored the points based on the actual labels, we observe that there has been several misclassifications in the figure above (i.e., in the algorithm’s results). So one may choose to use an alternative algorithm or devise a better distance metric.</p>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs (Original data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs (Original data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-26-output-2.png" width="612" height="449"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We are repeating the same, with the normalised dataframe.</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df_norm, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs (Normalised data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs (Normalised data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-27-output-2.png" width="614" height="449"></p>
+</div>
+</div>
+<p>This shows the parallelism between the clustering algorithm and PCA. By looking at the PCA loadings, we can find out what the x-axis mean and try to interpret the clusters (We leave this as an additional exercise for those interested).</p>
+<p>How might your interpret the above plots? Did the kmeans model identify the ground truth?</p>
+<p>How robust is our clustering? It may be that the kmeans algorithm becamse stuck or that a few outliers have biased the clustering.</p>
+<p>Two ways to check are:</p>
+<ul>
+<li>Running the model multiple times with different initial values.</li>
+<li>Removing some data and running the modelling multiple times.</li>
+</ul>
+</section>
+<section id="running-the-model-multiple-times" class="level3" data-number="22.3.2">
+<h3 data-number="22.3.2" class="anchored" data-anchor-id="running-the-model-multiple-times"><span class="header-section-number">22.3.2</span> Running the model multiple times</h3>
+<p>Run the below cell a few times. What do you see?</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, init<span class="op">=</span><span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>].values), index <span class="op">=</span> df.index)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs (Original data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs (Original data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-28-output-2.png" width="612" height="449"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, init<span class="op">=</span><span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>df_norm_k_means <span class="op">=</span> k_means.fit(df_norm.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>df_norm[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_norm_k_means.predict(df_norm.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>].values), index <span class="op">=</span> df.index)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df_norm, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs (Normalised data)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs (Normalised data)')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-29-output-2.png" width="614" height="449"></p>
+</div>
+</div>
+</section>
+<section id="removing-some-data" class="level3" data-number="22.3.3">
+<h3 data-number="22.3.3" class="anchored" data-anchor-id="removing-some-data"><span class="header-section-number">22.3.3</span> Removing some data</h3>
+<p>How about with only 80% of the data?</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_sample <span class="op">=</span> df.sample(frac<span class="op">=</span><span class="fl">0.8</span>, replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a KMeans instance with k clusters: model</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>k_means <span class="op">=</span> KMeans(n_clusters<span class="op">=</span><span class="dv">3</span>, init<span class="op">=</span><span class="st">'random'</span>, n_init <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit model to samples</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>df_k_means <span class="op">=</span> k_means.fit(df_sample.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>])</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>df_sample[<span class="st">'Three clusters'</span>] <span class="op">=</span> pd.Series(df_k_means.predict(df_sample.iloc[:,<span class="dv">1</span>:<span class="dv">14</span>].values), index <span class="op">=</span> df_sample.index)</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.scatterplot(data <span class="op">=</span> df_sample, x <span class="op">=</span> <span class="st">'c1'</span>, y <span class="op">=</span> <span class="st">'c2'</span>, hue <span class="op">=</span> <span class="st">'Three clusters'</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Results of the algorithm visualised over PCs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>Text(0.5, 1.0, 'Results of the algorithm visualised over PCs')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_2_files/figure-html/cell-30-output-2.png" width="612" height="449"></p>
+</div>
+</div>
+<p>We may want to automate the process of resampling the data or rerunning the model then perhaps plotting the different inertia values or creating different plots.</p>
+<p>Do you think our clustering algorithm is stable and provide similiar results even when some data is removed or the initial values are random?</p>
+<p>If so, then is our algorithm capturing the ground truth?</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-cortezWineQuality2009" class="csl-entry" role="listitem">
+Cortez, Paulo, A Cerdeira, F Almeida, T Matos, and J. Reis. 2009. <span>“Wine <span>Quality</span>.”</span> <span>UCI Machine Learning Repository</span>. <a href="https://doi.org/10.24432/C56S3T">https://doi.org/10.24432/C56S3T</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1373,12 +2735,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1388,7 +2750,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://warwick.ac.uk/fac/cross_fac/cim/">Centre for Interdisciplinary Methodologies</a></div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_2.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">

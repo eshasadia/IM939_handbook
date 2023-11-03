@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Science Across Disciplines - 23&nbsp; Lab: Investigating multidimensional scaling</title>
+<title>Data Science Across Disciplines - 23&nbsp; Lab: Cross validation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,11 +101,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta name="twitter:title" content="Data Science Across Disciplines - 23&nbsp; Lab: Investigating multidimensional scaling">
+<meta name="twitter:title" content="Data Science Across Disciplines - 23&nbsp; Lab: Cross validation">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/figs/output.png">
-<meta name="twitter:image-height" content="10051">
-<meta name="twitter:image-width" content="10044">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_5/IM939_Lab_5_3_files/figure-html/cell-4-output-1.png">
+<meta name="twitter:image-height" content="1128">
+<meta name="twitter:image-width" content="1130">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../content/sessions/session-05.html">Multi-model thinking and rigour</a></li><li class="breadcrumb-item"><a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -366,19 +366,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Lab: Working with multiple models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../content/labs/Lab_5/IM939_Lab_5_3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -541,20 +541,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#a-small-todo-for-you" id="toc-a-small-todo-for-you" class="nav-link active" data-scroll-target="#a-small-todo-for-you"><span class="header-section-number">23.0.1</span> A small TODO for you:</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_3.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Investigating multidimensional scaling</span></h1>
+<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></h1>
 </div>
 
 
@@ -569,80 +563,178 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Here we look at some London Borough data.</p>
+<p>Details of the crime dataset are <a href="https://archive.ics.uci.edu/ml/datasets/Communities+and+Crime">here</a>.</p>
+<p>We are going to examine the data, fit and then cross-validate a regression model.</p>
 <div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/london-borough-profilesV3.xlsx'</span>, engine <span class="op">=</span> <span class="st">'openpyxl'</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'data/censusCrimeClean.csv'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>Index(['Code', 'Area/INDICATOR', 'Inner/ Outer London',
-       'GLA Population Estimate 2013', 'GLA Household Estimate 2013',
-       'Inland Area (Hectares)', 'Population density (per hectare) 2013',
-       'Average Age, 2013', 'Proportion of population aged 0-15, 2013',
-       'Proportion of population of working-age, 2013',
-       'Proportion of population aged 65 and over, 2013',
-       '% of resident population born abroad (2013)',
-       'Largest migrant population by country of birth (2013)',
-       '% of largest migrant population (2013)',
-       'Second largest migrant population by country of birth (2013)',
-       '% of second largest migrant population (2013)',
-       'Third largest migrant population by country of birth (2013)',
-       '% of third largest migrant population (2013)',
-       '% of population from BAME groups (2013)',
-       '% people aged 3+ whose main language is not English (2011 census)',
-       'Overseas nationals entering the UK (NINo), (2013/14)',
-       'New migrant (NINo) rates, (2013/14)', 'Employment rate (%) (2013/14)',
-       'Male employment rate (2013/14)', 'Female employment rate (2013/14)',
-       'Unemployment rate (2013/14)', 'Youth Unemployment rate (2013/14)',
-       'Proportion of 16-18 year olds who are NEET (%) (2013)',
-       'Proportion of the working-age population who claim benefits (%) (Feb-2014)',
-       '% working-age with a disability (2012)',
-       'Proportion of working age people with no qualifications (%) 2013',
-       'Proportion of working age people in London with degree or equivalent and above (%) 2013',
-       'Gross Annual Pay, (2013)', 'Gross Annual Pay - Male (2013)',
-       'Gross Annual Pay - Female (2013)',
-       '% adults that volunteered in past 12 months (2010/11 to 2012/13)',
-       'Number of jobs by workplace (2012)',
-       '% of employment that is in public sector (2012)', 'Jobs Density, 2012',
-       'Number of active businesses, 2012',
-       'Two-year business survival rates 2012',
-       'Crime rates per thousand population 2013/14',
-       'Fires per thousand population (2013)',
-       'Ambulance incidents per hundred population (2013)',
-       'Median House Price, 2013',
-       'Average Band D Council Tax charge (£), 2014/15',
-       'New Homes (net) 2012/13', 'Homes Owned outright, (2013) %',
-       'Being bought with mortgage or loan, (2013) %',
-       'Rented from Local Authority or Housing Association, (2013) %',
-       'Rented from Private landlord, (2013) %',
-       '% of area that is Greenspace, 2005', 'Total carbon emissions (2012)',
-       'Household Waste Recycling Rate, 2012/13',
-       'Number of cars, (2011 Census)',
-       'Number of cars per household, (2011 Census)',
-       '% of adults who cycle at least once per month, 2011/12',
-       'Average Public Transport Accessibility score, 2012',
-       'Indices of Multiple Deprivation 2010 Rank of Average Score',
-       'Income Support claimant rate (Feb-14)',
-       '% children living in out-of-work families (2013)',
-       'Achievement of 5 or more A*- C grades at GCSE or equivalent including English and Maths, 2012/13',
-       'Rates of Children Looked After (2013)',
-       '% of pupils whose first language is not English (2014)',
-       'Male life expectancy, (2010-12)', 'Female life expectancy, (2010-12)',
-       'Teenage conception rate (2012)',
-       'Life satisfaction score 2012-13 (out of 10)',
-       'Worthwhileness score 2012-13 (out of 10)',
-       'Happiness score 2012-13 (out of 10)',
-       'Anxiety score 2012-13 (out of 10)', 'Political control in council',
-       'Proportion of seats won by Conservatives in 2014 election',
-       'Proportion of seats won by Labour in 2014 election',
-       'Proportion of seats won by Lib Dems in 2014 election',
-       'Turnout at 2014 local elections'],
-      dtype='object')</code></pre>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">communityname</th>
+<th data-quarto-table-cell-role="th">fold</th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">householdsize</th>
+<th data-quarto-table-cell-role="th">racepctblack</th>
+<th data-quarto-table-cell-role="th">racePctWhite</th>
+<th data-quarto-table-cell-role="th">racePctAsian</th>
+<th data-quarto-table-cell-role="th">racePctHisp</th>
+<th data-quarto-table-cell-role="th">agePct12t21</th>
+<th data-quarto-table-cell-role="th">agePct12t29</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">NumStreet</th>
+<th data-quarto-table-cell-role="th">PctForeignBorn</th>
+<th data-quarto-table-cell-role="th">PctBornSameState</th>
+<th data-quarto-table-cell-role="th">PctSameHouse85</th>
+<th data-quarto-table-cell-role="th">PctSameCity85</th>
+<th data-quarto-table-cell-role="th">PctSameState85</th>
+<th data-quarto-table-cell-role="th">LandArea</th>
+<th data-quarto-table-cell-role="th">PopDens</th>
+<th data-quarto-table-cell-role="th">PctUsePubTrans</th>
+<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Lakewoodcity</td>
+<td>1</td>
+<td>0.19</td>
+<td>0.33</td>
+<td>0.02</td>
+<td>0.90</td>
+<td>0.12</td>
+<td>0.17</td>
+<td>0.34</td>
+<td>0.47</td>
+<td>...</td>
+<td>0.0</td>
+<td>0.12</td>
+<td>0.42</td>
+<td>0.50</td>
+<td>0.51</td>
+<td>0.64</td>
+<td>0.12</td>
+<td>0.26</td>
+<td>0.20</td>
+<td>0.20</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Tukwilacity</td>
+<td>1</td>
+<td>0.00</td>
+<td>0.16</td>
+<td>0.12</td>
+<td>0.74</td>
+<td>0.45</td>
+<td>0.07</td>
+<td>0.26</td>
+<td>0.59</td>
+<td>...</td>
+<td>0.0</td>
+<td>0.21</td>
+<td>0.50</td>
+<td>0.34</td>
+<td>0.60</td>
+<td>0.52</td>
+<td>0.02</td>
+<td>0.12</td>
+<td>0.45</td>
+<td>0.67</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Aberdeentown</td>
+<td>1</td>
+<td>0.00</td>
+<td>0.42</td>
+<td>0.49</td>
+<td>0.56</td>
+<td>0.17</td>
+<td>0.04</td>
+<td>0.39</td>
+<td>0.47</td>
+<td>...</td>
+<td>0.0</td>
+<td>0.14</td>
+<td>0.49</td>
+<td>0.54</td>
+<td>0.67</td>
+<td>0.56</td>
+<td>0.01</td>
+<td>0.21</td>
+<td>0.02</td>
+<td>0.43</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Willingborotownship</td>
+<td>1</td>
+<td>0.04</td>
+<td>0.77</td>
+<td>1.00</td>
+<td>0.08</td>
+<td>0.12</td>
+<td>0.10</td>
+<td>0.51</td>
+<td>0.50</td>
+<td>...</td>
+<td>0.0</td>
+<td>0.19</td>
+<td>0.30</td>
+<td>0.73</td>
+<td>0.64</td>
+<td>0.65</td>
+<td>0.02</td>
+<td>0.39</td>
+<td>0.28</td>
+<td>0.12</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Bethlehemtownship</td>
+<td>1</td>
+<td>0.01</td>
+<td>0.55</td>
+<td>0.02</td>
+<td>0.95</td>
+<td>0.09</td>
+<td>0.05</td>
+<td>0.38</td>
+<td>0.38</td>
+<td>...</td>
+<td>0.0</td>
+<td>0.11</td>
+<td>0.72</td>
+<td>0.64</td>
+<td>0.61</td>
+<td>0.53</td>
+<td>0.04</td>
+<td>0.09</td>
+<td>0.02</td>
+<td>0.03</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 102 columns</p>
 </div>
 </div>
+</div>
+<p>One hundred features. Too many for us to visualise at once.</p>
+<p>Instead, we can pick out particular variables and carry out a linear regression. To make our work simple we will look at ViolentCrimesPerPop as our dependent variable and medIncome as our indpendent variable.</p>
+<p>We may wonder if there is more violent crime in low income areas.</p>
+<p>Let us create a new dataframe containing our regression variables. We do not have to do this I find it makes our work clearer.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_reg <span class="op">=</span> df[[<span class="st">'communityname'</span>, <span class="st">'medIncome'</span>, <span class="st">'ViolentCrimesPerPop'</span>]]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -651,363 +743,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Code</th>
-<th data-quarto-table-cell-role="th">Area/INDICATOR</th>
-<th data-quarto-table-cell-role="th">Inner/ Outer London</th>
-<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
-<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
-<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
-<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
-<th data-quarto-table-cell-role="th">Average Age, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">Teenage conception rate (2012)</th>
-<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Anxiety score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Political control in council</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
-<th data-quarto-table-cell-role="th">Turnout at 2014 local elections</th>
+<th data-quarto-table-cell-role="th">communityname</th>
+<th data-quarto-table-cell-role="th">medIncome</th>
+<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>E09000001</td>
-<td>City of London</td>
-<td>Inner London</td>
-<td>8000</td>
-<td>4514.371383</td>
-<td>290.4</td>
-<td>27.525868</td>
-<td>41.303887</td>
-<td>7.948036</td>
-<td>77.541617</td>
-<td>...</td>
-<td>.</td>
-<td>8.10</td>
-<td>8.23</td>
-<td>7.44</td>
-<td>x</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>Lakewoodcity</td>
+<td>0.37</td>
+<td>0.20</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>E09000002</td>
-<td>Barking and Dagenham</td>
-<td>Outer London</td>
-<td>195600</td>
-<td>73261.408580</td>
-<td>3610.8</td>
-<td>54.160527</td>
-<td>33.228935</td>
-<td>26.072939</td>
-<td>63.835021</td>
-<td>...</td>
-<td>35.4</td>
-<td>7.06</td>
-<td>7.57</td>
-<td>6.97</td>
-<td>3.3</td>
-<td>Lab</td>
-<td>0.000000</td>
-<td>100.000000</td>
-<td>0.000000</td>
-<td>38.16</td>
+<td>Tukwilacity</td>
+<td>0.31</td>
+<td>0.67</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>E09000003</td>
-<td>Barnet</td>
-<td>Outer London</td>
-<td>370000</td>
-<td>141385.794900</td>
-<td>8674.8</td>
-<td>42.651374</td>
-<td>36.896246</td>
-<td>20.886408</td>
-<td>65.505593</td>
-<td>...</td>
-<td>14.7</td>
-<td>7.35</td>
-<td>7.79</td>
-<td>7.27</td>
-<td>2.63</td>
-<td>Cons</td>
-<td>50.793651</td>
-<td>42.857143</td>
-<td>1.587302</td>
-<td>41.1</td>
+<td>Aberdeentown</td>
+<td>0.30</td>
+<td>0.43</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>E09000004</td>
-<td>Bexley</td>
-<td>Outer London</td>
-<td>236500</td>
-<td>94701.226400</td>
-<td>6058.1</td>
-<td>39.044243</td>
-<td>38.883039</td>
-<td>20.282830</td>
-<td>63.146450</td>
-<td>...</td>
-<td>25.8</td>
-<td>7.47</td>
-<td>7.75</td>
-<td>7.21</td>
-<td>3.22</td>
-<td>Cons</td>
-<td>71.428571</td>
-<td>23.809524</td>
-<td>0.000000</td>
-<td>not avail</td>
+<td>Willingborotownship</td>
+<td>0.58</td>
+<td>0.12</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>E09000005</td>
-<td>Brent</td>
-<td>Outer London</td>
-<td>320200</td>
-<td>114318.553900</td>
-<td>4323.3</td>
-<td>74.063670</td>
-<td>35.262694</td>
-<td>20.462585</td>
-<td>68.714872</td>
+<td>Bethlehemtownship</td>
+<td>0.50</td>
+<td>0.03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
 <td>...</td>
-<td>19.6</td>
-<td>7.23</td>
-<td>7.32</td>
-<td>7.09</td>
-<td>3.33</td>
-<td>Lab</td>
-<td>9.523810</td>
-<td>88.888889</td>
-<td>1.587302</td>
-<td>33</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1989</td>
+<td>TempleTerracecity</td>
+<td>0.42</td>
+<td>0.09</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1990</td>
+<td>Seasidecity</td>
+<td>0.28</td>
+<td>0.45</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1991</td>
+<td>Waterburytown</td>
+<td>0.31</td>
+<td>0.23</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1992</td>
+<td>Walthamcity</td>
+<td>0.44</td>
+<td>0.19</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1993</td>
+<td>Ontariocity</td>
+<td>0.40</td>
+<td>0.48</td>
 </tr>
 </tbody>
 </table>
 
-<p>5 rows × 76 columns</p>
+<p>1994 rows × 3 columns</p>
 </div>
 </div>
 </div>
-<p>Lots of different features. We also have really odd NaN values such as x and not available. We can try and get rid of this.</p>
+<p>Plot our data (a nice page on plotting regressions with seaborn is <a href="http://seaborn.pydata.org/tutorial/regression.html#:~:text=Two%20main%20functions%20in%20seaborn%20are%20used%20to,quickly%20choose%20the%20correct%20tool%20for%20particular%20job.">here</a>).</p>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> isnumber(x):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">float</span>(x)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span>:</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="bu">len</span>(x) <span class="op">&gt;</span> <span class="dv">1</span>) <span class="op">&amp;</span> (<span class="st">"not avail"</span> <span class="kw">not</span> <span class="kw">in</span> x):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># apply isnumber function to every element</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df.applymap(isnumber)]</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_80700/310294434.py:12: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
-  df = df[df.applymap(isnumber)]</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Code</th>
-<th data-quarto-table-cell-role="th">Area/INDICATOR</th>
-<th data-quarto-table-cell-role="th">Inner/ Outer London</th>
-<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
-<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
-<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
-<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
-<th data-quarto-table-cell-role="th">Average Age, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">Teenage conception rate (2012)</th>
-<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Anxiety score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Political control in council</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
-<th data-quarto-table-cell-role="th">Turnout at 2014 local elections</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>E09000001</td>
-<td>City of London</td>
-<td>Inner London</td>
-<td>8000</td>
-<td>4514.371383</td>
-<td>290.4</td>
-<td>27.525868</td>
-<td>41.303887</td>
-<td>7.948036</td>
-<td>77.541617</td>
-<td>...</td>
-<td>NaN</td>
-<td>8.10</td>
-<td>8.23</td>
-<td>7.44</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>E09000002</td>
-<td>Barking and Dagenham</td>
-<td>Outer London</td>
-<td>195600</td>
-<td>73261.408580</td>
-<td>3610.8</td>
-<td>54.160527</td>
-<td>33.228935</td>
-<td>26.072939</td>
-<td>63.835021</td>
-<td>...</td>
-<td>35.4</td>
-<td>7.06</td>
-<td>7.57</td>
-<td>6.97</td>
-<td>3.3</td>
-<td>Lab</td>
-<td>0.000000</td>
-<td>100.000000</td>
-<td>0.000000</td>
-<td>38.16</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>E09000003</td>
-<td>Barnet</td>
-<td>Outer London</td>
-<td>370000</td>
-<td>141385.794900</td>
-<td>8674.8</td>
-<td>42.651374</td>
-<td>36.896246</td>
-<td>20.886408</td>
-<td>65.505593</td>
-<td>...</td>
-<td>14.7</td>
-<td>7.35</td>
-<td>7.79</td>
-<td>7.27</td>
-<td>2.63</td>
-<td>Cons</td>
-<td>50.793651</td>
-<td>42.857143</td>
-<td>1.587302</td>
-<td>41.1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>E09000004</td>
-<td>Bexley</td>
-<td>Outer London</td>
-<td>236500</td>
-<td>94701.226400</td>
-<td>6058.1</td>
-<td>39.044243</td>
-<td>38.883039</td>
-<td>20.282830</td>
-<td>63.146450</td>
-<td>...</td>
-<td>25.8</td>
-<td>7.47</td>
-<td>7.75</td>
-<td>7.21</td>
-<td>3.22</td>
-<td>Cons</td>
-<td>71.428571</td>
-<td>23.809524</td>
-<td>0.000000</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>E09000005</td>
-<td>Brent</td>
-<td>Outer London</td>
-<td>320200</td>
-<td>114318.553900</td>
-<td>4323.3</td>
-<td>74.063670</td>
-<td>35.262694</td>
-<td>20.462585</td>
-<td>68.714872</td>
-<td>...</td>
-<td>19.6</td>
-<td>7.23</td>
-<td>7.32</td>
-<td>7.09</td>
-<td>3.33</td>
-<td>Lab</td>
-<td>9.523810</td>
-<td>88.888889</td>
-<td>1.587302</td>
-<td>33</td>
-</tr>
-</tbody>
-</table>
-
-<p>5 rows × 76 columns</p>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data <span class="op">=</span> df[[<span class="st">'medIncome'</span>, <span class="st">'ViolentCrimesPerPop'</span>]], </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'ViolentCrimesPerPop'</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              y <span class="op">=</span> <span class="st">'medIncome'</span>, kind<span class="op">=</span><span class="st">'reg'</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              marker <span class="op">=</span> <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-4-output-1.png" width="565" height="564"></p>
 </div>
 </div>
-</div>
-<p>That looks much cleaner.</p>
-<p>Replace the NaN values in numeric columns with the mean.</p>
+<p>We may want to z-transform or log these scores as they are heavily skewed.</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get only numeric columns</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">=</span> df._get_numeric_data()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># some values are 0 so 0.1 is added to prevent log giving us infinity</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># there may be a better way to do this!</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:, <span class="st">'ViolentCrimesPerPop_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'ViolentCrimesPerPop'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df_reg.loc[:,<span class="st">'medIncome_log'</span>] <span class="op">=</span> np.log(df_reg[<span class="st">'medIncome'</span>] <span class="op">+</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_24111/3488182522.py:5: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_reg.loc[:, 'ViolentCrimesPerPop_log'] = np.log(df_reg['ViolentCrimesPerPop'] + 0.1)
+/var/folders/7v/zl9mv52s3ls94kntlt_l9ryh0000gq/T/ipykernel_24111/3488182522.py:6: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df_reg.loc[:,'medIncome_log'] = np.log(df_reg['medIncome'] + 0.1)</code></pre>
+</div>
 </div>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> euclidean_distances</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># keep place names and store them in a variable</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>placeNames <span class="op">=</span> df[<span class="st">"Area/INDICATOR"</span>]</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># let's fill the missing values with mean()</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">=</span> numericColumns.fillna(numericColumns.mean())</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># let's centralize the data</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>numericColumns <span class="op">-=</span> numericColumns.mean()</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># now we compute the euclidean distances between the columns by passing the same data twice</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># the resulting data matrix now has the pairwise distances between the boroughs.</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">CAUTION</span><span class="co">: note that we are now building a distance matrix in a high-dimensional data space</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co"># remember the Curse of Dimensionality -- we need to be cautious with the distance values</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>distMatrix <span class="op">=</span> euclidean_distances(numericColumns, numericColumns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Check to make sure everything looks ok.</p>
-<div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numericColumns.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -1015,321 +866,275 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">GLA Population Estimate 2013</th>
-<th data-quarto-table-cell-role="th">GLA Household Estimate 2013</th>
-<th data-quarto-table-cell-role="th">Inland Area (Hectares)</th>
-<th data-quarto-table-cell-role="th">Population density (per hectare) 2013</th>
-<th data-quarto-table-cell-role="th">Average Age, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population aged 0-15, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population of working-age, 2013</th>
-<th data-quarto-table-cell-role="th">Proportion of population aged 65 and over, 2013</th>
-<th data-quarto-table-cell-role="th">% of population from BAME groups (2013)</th>
-<th data-quarto-table-cell-role="th">% people aged 3+ whose main language is not English (2011 census)</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">Average Public Transport Accessibility score, 2012</th>
-<th data-quarto-table-cell-role="th">Indices of Multiple Deprivation 2010 Rank of Average Score</th>
-<th data-quarto-table-cell-role="th">Income Support claimant rate (Feb-14)</th>
-<th data-quarto-table-cell-role="th">Rates of Children Looked After (2013)</th>
-<th data-quarto-table-cell-role="th">Life satisfaction score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Worthwhileness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Happiness score 2012-13 (out of 10)</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Conservatives in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Labour in 2014 election</th>
-<th data-quarto-table-cell-role="th">Proportion of seats won by Lib Dems in 2014 election</th>
+<th data-quarto-table-cell-role="th">communityname</th>
+<th data-quarto-table-cell-role="th">medIncome</th>
+<th data-quarto-table-cell-role="th">ViolentCrimesPerPop</th>
+<th data-quarto-table-cell-role="th">ViolentCrimesPerPop_log</th>
+<th data-quarto-table-cell-role="th">medIncome_log</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>-247760.606061</td>
-<td>-97761.616805</td>
-<td>-4473.681818</td>
-<td>-43.279630</td>
-<td>5.426932</td>
-<td>-11.500067</td>
-<td>8.480871</td>
-<td>3.019196</td>
-<td>-17.390874</td>
-<td>-4.491385</td>
-<td>...</td>
-<td>3.753658</td>
-<td>157.424242</td>
-<td>-1.726749</td>
-<td>42.212121</td>
-<td>0.816364</td>
-<td>0.651212</td>
-<td>0.23303</td>
-<td>0.000000</td>
-<td>0.000000</td>
-<td>-8.881784e-16</td>
+<td>Lakewoodcity</td>
+<td>0.37</td>
+<td>0.20</td>
+<td>-1.203973</td>
+<td>-0.755023</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>-60160.606061</td>
-<td>-29014.579608</td>
-<td>-1153.281818</td>
-<td>-16.644971</td>
-<td>-2.648021</td>
-<td>6.624837</td>
-<td>-5.225725</td>
-<td>-1.399112</td>
-<td>5.764246</td>
-<td>-2.905288</td>
-<td>...</td>
-<td>-0.882730</td>
-<td>-82.575758</td>
-<td>1.787041</td>
-<td>20.212121</td>
-<td>-0.223636</td>
-<td>-0.008788</td>
-<td>-0.23697</td>
-<td>-32.854444</td>
-<td>43.384181</td>
-<td>-6.598065e+00</td>
+<td>Tukwilacity</td>
+<td>0.31</td>
+<td>0.67</td>
+<td>-0.261365</td>
+<td>-0.891598</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>114239.393939</td>
-<td>39109.806712</td>
-<td>3910.718182</td>
-<td>-28.154125</td>
-<td>1.019290</td>
-<td>1.438305</td>
-<td>-3.555153</td>
-<td>2.116847</td>
-<td>-2.799300</td>
-<td>1.775548</td>
-<td>...</td>
-<td>-0.883020</td>
-<td>71.424242</td>
-<td>-0.517827</td>
-<td>-18.787879</td>
-<td>0.066364</td>
-<td>0.211212</td>
-<td>0.06303</td>
-<td>17.939207</td>
-<td>-13.758676</td>
-<td>-5.010764e+00</td>
+<td>Aberdeentown</td>
+<td>0.30</td>
+<td>0.43</td>
+<td>-0.634878</td>
+<td>-0.916291</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>-19260.606061</td>
-<td>-7574.761788</td>
-<td>1294.018182</td>
-<td>-31.761255</td>
-<td>3.006083</td>
-<td>0.834727</td>
-<td>-5.914296</td>
-<td>5.079569</td>
-<td>-20.328016</td>
-<td>-15.598200</td>
-<td>...</td>
-<td>-1.364540</td>
-<td>69.424242</td>
-<td>-0.018377</td>
-<td>-8.787879</td>
-<td>0.186364</td>
-<td>0.171212</td>
-<td>0.00303</td>
-<td>38.574127</td>
-<td>-32.806295</td>
-<td>-6.598065e+00</td>
+<td>Willingborotownship</td>
+<td>0.58</td>
+<td>0.12</td>
+<td>-1.514128</td>
+<td>-0.385662</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>64439.393939</td>
-<td>12042.565712</td>
-<td>-440.781818</td>
-<td>3.258171</td>
-<td>-0.614262</td>
-<td>1.014482</td>
-<td>-0.345874</td>
-<td>-0.668608</td>
-<td>25.000030</td>
-<td>15.521631</td>
+<td>Bethlehemtownship</td>
+<td>0.50</td>
+<td>0.03</td>
+<td>-2.040221</td>
+<td>-0.510826</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
 <td>...</td>
-<td>-0.174795</td>
-<td>-69.575758</td>
-<td>0.001370</td>
-<td>-6.787879</td>
-<td>-0.053636</td>
-<td>-0.258788</td>
-<td>-0.11697</td>
-<td>-23.330634</td>
-<td>32.273070</td>
-<td>-5.010764e+00</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1989</td>
+<td>TempleTerracecity</td>
+<td>0.42</td>
+<td>0.09</td>
+<td>-1.660731</td>
+<td>-0.653926</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1990</td>
+<td>Seasidecity</td>
+<td>0.28</td>
+<td>0.45</td>
+<td>-0.597837</td>
+<td>-0.967584</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1991</td>
+<td>Waterburytown</td>
+<td>0.31</td>
+<td>0.23</td>
+<td>-1.108663</td>
+<td>-0.891598</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1992</td>
+<td>Walthamcity</td>
+<td>0.44</td>
+<td>0.19</td>
+<td>-1.237874</td>
+<td>-0.616186</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1993</td>
+<td>Ontariocity</td>
+<td>0.40</td>
+<td>0.48</td>
+<td>-0.544727</td>
+<td>-0.693147</td>
 </tr>
 </tbody>
 </table>
 
-<p>5 rows × 41 columns</p>
+<p>1994 rows × 5 columns</p>
 </div>
 </div>
 </div>
-<p>We can plot out our many dimension space by uncommenting the code below (also note down how long does this take).</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data <span class="op">=</span> df_reg[[<span class="st">'medIncome_log'</span>, <span class="st">'ViolentCrimesPerPop_log'</span>]], </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'ViolentCrimesPerPop_log'</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>              y <span class="op">=</span> <span class="st">'medIncome_log'</span>, kind<span class="op">=</span><span class="st">'reg'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>              marker <span class="op">=</span> <span class="st">'.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-7-output-1.png" width="576" height="564"></p>
+</div>
+</div>
+<p>Is log transforming our variables the right thing to do here?</p>
+<p>Fit our regression to the log transformed data.</p>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import seaborn as sns</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot = sns.pairplot(numericColumns)</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#sns_plot.savefig("figs/output.png")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> metrics</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop_log'</span>]]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome_log'</span>]]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Violent Crimes Per Population'</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y, y_hat))</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MSE: 0.1531885348757034
+R^2: 0.22763497704356928
+var: medIncome_log    0.198436
+dtype: float64</code></pre>
 </div>
-<p>Given that this takes quite a while (around 10 minutes), this is the image that would result from uncommenting and running the code above.</p>
-<p><img src="figs/output.png" class="img-fluid"></p>
-<p>Dimension reduction will help us here!</p>
-<p>We could apply various different types of dimension reduction here. We are specifically going to capture the dissimilarity in the data using <a href="https://scikit-learn.org/stable/modules/manifold.html#multidimensional-scaling">multidimensional scaling</a>. Our distance matrix will come in useful here.</p>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-8-output-2.png" width="600" height="429"></p>
+</div>
+</div>
+<p>Has our log transformation distorted the pattern in the data?</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> manifold</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for instance, typing distMatrix.shape on the console gives:</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Out[115]: (38, 38) # i.e., the number of rows</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># first we generate an MDS object and extract the projections</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>mds <span class="op">=</span> manifold.MDS(n_components <span class="op">=</span> <span class="dv">2</span>, max_iter<span class="op">=</span><span class="dv">3000</span>, n_init<span class="op">=</span><span class="dv">1</span>, dissimilarity<span class="op">=</span><span class="st">"precomputed"</span>, normalized_stress<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> mds.fit_transform(distMatrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>y_hat <span class="op">=</span> model.predict(x)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y,<span class="st">'o'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y_hat, <span class="st">'r'</span>, alpha <span class="op">=</span> <span class="fl">0.5</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Violent Crimes Per Population'</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"MSE:"</span>, metrics.mean_squared_error(y_hat, y))</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"R^2:"</span>, metrics.r2_score(y, y_hat))</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">"var:"</span>, y.var())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>MSE: 0.03592636778157073
+R^2: 0.17996313165549482
+var: medIncome    0.043833
+dtype: float64</code></pre>
 </div>
-<p>To interpret what is happening, let us plot the boroughs on the projected two dimensional space.</p>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab_5_3_files/figure-html/cell-9-output-2.png" width="589" height="429"></p>
+</div>
+</div>
+<p>What is the relationship between violent crime and median income? Why might this be?</p>
+<p>Assuming the log data is fine, have we overfit the model? Remember that a good model (which accurately models the relationship between violent crimes per population) need to be robust when faced with new data.</p>
+<p>Kfold cross validation splits data into train and test subsets. We can then fit the regression to the training set and see how well it does for the test set.</p>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'MDS on only London boroughs'</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y[:, <span class="dv">0</span>], Y[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">"#D06B36"</span>, s <span class="op">=</span> <span class="dv">100</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, linewidth<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-10-output-1.png" width="1240" height="1294"></p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> KFold</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># get four splits, Each split contains a </span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># test series and a train series.</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>kf <span class="op">=</span> KFold(n_splits<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>Our data also include happiness metrics. Pulling these out of our data and carrying out more multidimensional scaling can help us see how the boroughs differ in happiness.</p>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>dataOnEmotions <span class="op">=</span> numericColumns[[<span class="st">"Life satisfaction score 2012-13 (out of 10)"</span>, <span class="st">"Worthwhileness score 2012-13 (out of 10)"</span>,<span class="st">"Happiness score 2012-13 (out of 10)"</span>]]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a new distance matrix to represent "emotional distance"s</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>distMatrix2 <span class="op">=</span> euclidean_distances(dataOnEmotions, dataOnEmotions)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># compute a new "embedding" (machine learners' word for projection)</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>Y2 <span class="op">=</span> mds.fit_transform(distMatrix2)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># let's look at the results</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">emotional</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y2[:, <span class="dv">0</span>], Y2[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">"#D06B36"</span>, s <span class="op">=</span> <span class="dv">100</span>, alpha <span class="op">=</span> <span class="fl">0.8</span>, linewidth<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-11-output-1.png" width="1298" height="1294"></p>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lists to store our statistics</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>r_vals <span class="op">=</span> []</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>MSEs <span class="op">=</span> []</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>medIncome_coef <span class="op">=</span> []</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> train_index, test_index <span class="kw">in</span> kf.split(X):</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fit our model and extract statistics</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> LinearRegression()</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    model.fit(X.iloc[train_index], y.iloc[train_index])</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    y_hat <span class="op">=</span> model.predict(X.iloc[test_index])</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    MSEs.append(metrics.mean_squared_error(y.iloc[test_index], y_hat))</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    medIncome_coef.append(model.coef_[<span class="dv">0</span>][<span class="dv">0</span>])</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    r_vals.append(metrics.r2_score(y.iloc[test_index], y_hat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
 <div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[[ 0.2271398  -1.04240068]
- [ 0.26251126  0.17972657]
- [ 0.00390035 -0.21903333]
- [ 0.00138482 -0.2617964 ]
- [-0.02236505  0.2944913 ]
- [-0.17389157 -0.41496015]
- [-0.01597349  0.23197449]
- [ 0.09765126  0.29907574]
- [-0.25905729  0.05671686]
- [-0.22523866  0.02833316]
- [ 0.13044353  0.16816905]
- [ 0.16297356  0.27561721]
- [ 0.2595173   0.06555536]
- [ 0.02948884  0.17346685]
- [-0.16592169 -0.03144032]
- [-0.04671937 -0.13903436]
- [-0.12595688 -0.10674683]
- [-0.0792539  -0.04423151]
- [ 0.17722654  0.52220617]
- [-0.21816217 -0.57321356]
- [-0.03620132  0.11992019]
- [ 0.19240728  0.29779961]
- [ 0.12618701 -0.06185706]
- [ 0.07368873  0.10010972]
- [-0.12722117  0.06315405]
- [-0.1777722   0.09054863]
- [-0.1150014  -0.19368075]
- [ 0.03991431 -0.07060854]
- [ 0.0647058   0.04268436]
- [-0.11578733 -0.00896943]
- [ 0.02696866 -0.11011052]
- [-0.07633466  0.03385581]
- [ 0.1047491   0.23467831]]</code></pre>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'MSE'</span> : MSEs, <span class="st">'medIncome coefficient'</span> : medIncome_coef, <span class="st">'r squared'</span> : r_vals}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">MSE</th>
+<th data-quarto-table-cell-role="th">medIncome coefficient</th>
+<th data-quarto-table-cell-role="th">r squared</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.035727</td>
+<td>-0.403609</td>
+<td>0.130479</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.035904</td>
+<td>-0.389344</td>
+<td>0.162820</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.040777</td>
+<td>-0.353379</td>
+<td>0.200139</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.032255</td>
+<td>-0.378883</td>
+<td>0.182403</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
-<p>We may want to look at if the general happiness rating captures the position of the boroughs. To do this we need to assign colours based on the binned happiness score.</p>
+</div>
+<p>Does our model produce similiar coefficients with subsets of the data?</p>
+<p>We can do this using an inbuild sklearn function (see <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html">here</a>).</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness <span class="op">=</span> np.asarray(dataOnEmotions[[<span class="st">"Life satisfaction score 2012-13 (out of 10)"</span>]]).flatten()</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed.shape)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness.shape</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>colorMappingValuesHappiness</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">#c = colorMappingValuesCrime, cmap = plt.cm.Greens</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> cross_val_score</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_reg[[<span class="st">'ViolentCrimesPerPop'</span>]]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_reg[[<span class="st">'medIncome'</span>]]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LinearRegression()</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>model.fit(x, y)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cross_val_score(model, x, y, cv<span class="op">=</span><span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>(33, 2)</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>array([ 0.81636364, -0.22363636,  0.06636364,  0.18636364, -0.05363636,
-        0.34636364, -0.06363636, -0.28363636, -0.04363636, -0.10363636,
-       -0.12363636, -0.21363636, -0.05363636, -0.08363636,  0.05636364,
-        0.11636364,  0.06636364,  0.01636364, -0.20363636,  0.39636364,
-        0.00636364, -0.19363636, -0.05363636, -0.10363636, -0.06363636,
-       -0.00363636,  0.13636364, -0.01363636, -0.03363636, -0.00363636,
-       -0.04363636, -0.05363636, -0.19363636])</code></pre>
+<pre><code>[0.13047946 0.16281953 0.20013867 0.18240261]</code></pre>
 </div>
 </div>
-<p>Finally, we can plot this. What can you see?</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's look at the results</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">emotional</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.scatter(results_fixed[:, 0], results_fixed[:, 1], c = colorMappingValuesHappiness, cmap='viridis')</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(results_fixed[:, <span class="dv">0</span>], results_fixed[:, <span class="dv">1</span>], c <span class="op">=</span> colorMappingValuesHappiness, s <span class="op">=</span> <span class="dv">100</span>, cmap<span class="op">=</span>plt.cm.Greens)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-14-output-1.png" width="1298" height="1294"></p>
-</div>
-</div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get the data columns relating to emotions and feelings</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>dataOnDiversity <span class="op">=</span> numericColumns[[<span class="st">"Proportion of population aged 0-15, 2013"</span>, <span class="st">"Proportion of population of working-age, 2013"</span>, <span class="st">"Proportion of population aged 65 and over, 2013"</span>, <span class="st">"</span><span class="sc">% o</span><span class="st">f population from BAME groups (2013)"</span>, <span class="st">"% people aged 3+ whose main language is not English (2011 census)"</span>]]</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a new distance matrix to represent "emotional distance"s</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>distMatrix3 <span class="op">=</span> euclidean_distances(dataOnDiversity, dataOnDiversity)</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>mds <span class="op">=</span> manifold.MDS(n_components <span class="op">=</span> <span class="dv">2</span>, max_iter<span class="op">=</span><span class="dv">3000</span>, n_init<span class="op">=</span><span class="dv">1</span>, dissimilarity<span class="op">=</span><span class="st">"precomputed"</span>, normalized_stress <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>Y <span class="op">=</span> mds.fit_transform(distMatrix3)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualising the data.</span></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>fig.set_size_inches(<span class="dv">15</span>, <span class="dv">15</span>)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'An </span><span class="ch">\"</span><span class="st">diversity</span><span class="ch">\"</span><span class="st"> look at London boroughs'</span>)</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>ax.scatter(Y[:, <span class="dv">0</span>], Y[:, <span class="dv">1</span>], s <span class="op">=</span> <span class="dv">100</span>, c <span class="op">=</span> colorMappingValuesHappiness, cmap<span class="op">=</span>plt.cm.Greens)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_5_3_files/figure-html/cell-15-output-1.png" width="1218" height="1294"></p>
-</div>
-</div>
-<p>This looks very different to the one above on “emotion” related variables. Our job now is to relate these two projections to one another. Do you see similarities? Do you see clusters of boroughs? Can you reflect on how you can relate and combine these two maps conceptually?</p>
-<section id="a-small-todo-for-you" class="level3" data-number="23.0.1">
-<h3 data-number="23.0.1" class="anchored" data-anchor-id="a-small-todo-for-you"><span class="header-section-number">23.0.1</span> A small TODO for you:</h3>
-<p>Q: Can you think of other maps that you can produce with this data? Have a look at the variables once again and try to produce new “perspectives” to the data and see what they have to say.</p>
+<p>What do these values tell us about our model and data?</p>
+<p>You might want to carry out <a href="https://heartbeat.fritz.ai/implementing-multiple-linear-regression-using-sklearn-43b3d3f2fe8b">multiple regression</a> with more than one predictor variable, or reduce the number of dimensions, or perhaps address different questions using a clustering algorithm instead with all or a subset of features.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1568,7 +1373,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../content/labs/Lab_5/IM939_Lab_5_2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Cross validation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Lab: Clustering and Ground Truth</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1583,7 +1388,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left"><a href="https://warwick.ac.uk/fac/cross_fac/cim/">Centre for Interdisciplinary Methodologies</a></div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_5/IM939_Lab_5_3.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
