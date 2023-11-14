@@ -2261,7 +2261,7 @@ Column: Political control in council  is not a numeric column</code></pre>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-12-output-1.png" width="1317" height="1294"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-12-output-1.png" width="1314" height="1294"></p>
 </div>
 </div>
 <p>Here, we are projecting all the numeric variables, so it is difficult to get a sense of what these components represent and how to interpret the visualisation. We may want to project only a subset of features.</p>
@@ -2313,7 +2313,7 @@ Note
 <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y2[:, <span class="dv">0</span>][i],Y2[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-13-output-1.png" width="1229" height="1294"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-13-output-1.png" width="1296" height="1294"></p>
 </div>
 </div>
 <p>The location of the different boroughs on the 2 dimensional multidimensional scaling space from the happiness metrics is</p>
@@ -2321,39 +2321,39 @@ Note
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>results_fixed <span class="op">=</span> Y2.copy()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_fixed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[ 0.60690874  0.88126107]
- [-0.30829977 -0.1250887 ]
- [ 0.23923301 -0.01845532]
- [ 0.28048623 -0.00645086]
- [-0.16970918 -0.22887465]
- [ 0.41621688  0.17243392]
- [-0.15006356 -0.14105456]
- [-0.31069576 -0.05039394]
- [-0.07247499  0.21347362]
- [-0.04202045  0.18345357]
- [-0.16983422 -0.14725997]
- [-0.27377934 -0.17984578]
- [-0.02653188 -0.29180928]
- [-0.14614853 -0.08460196]
- [ 0.03405621  0.12833383]
- [ 0.15419555  0.02191653]
- [ 0.11306192  0.09624842]
- [ 0.05562918  0.04592631]
- [-0.44135315 -0.33719563]
- [ 0.54725614  0.27543774]
- [-0.09315157 -0.02190107]
- [-0.282353   -0.22644677]
- [ 0.0945766  -0.14817537]
- [-0.07697941 -0.10694072]
- [-0.05892255  0.0838072 ]
- [-0.08930146  0.12959987]
- [ 0.20121123  0.09353933]
- [ 0.0938819  -0.0642754 ]
- [-0.01639439 -0.101386  ]
- [ 0.01624594  0.07831249]
- [ 0.13387386 -0.05203588]
- [-0.02382213  0.03825561]
- [-0.23499804 -0.10980763]]</code></pre>
+<pre><code>[[-0.96842689 -0.45475988]
+ [ 0.30884742  0.15179769]
+ [-0.16691283 -0.15803682]
+ [-0.10177693 -0.25768786]
+ [ 0.05785895  0.27427657]
+ [-0.19834493 -0.41277366]
+ [ 0.16569283  0.13333937]
+ [ 0.24063752  0.21942675]
+ [-0.18913393  0.08113099]
+ [-0.1598099   0.04904532]
+ [ 0.13658172  0.1767544 ]
+ [ 0.19499445  0.26719731]
+ [ 0.29875164  0.0257805 ]
+ [ 0.11141595  0.13492429]
+ [ 0.04459044 -0.14066626]
+ [-0.02600529 -0.16833037]
+ [-0.06882347 -0.1317033 ]
+ [-0.03540934 -0.0644621 ]
+ [ 0.22277681  0.50326906]
+ [-0.38808697 -0.47422441]
+ [ 0.1254132   0.01958298]
+ [ 0.18626664  0.30951748]
+ [-0.07094936  0.07075891]
+ [ 0.07928372  0.10396892]
+ [ 0.06468159 -0.04256096]
+ [ 0.12678319 -0.10240873]
+ [-0.07785182 -0.21537067]
+ [-0.0153771  -0.065743  ]
+ [ 0.05253965  0.05991075]
+ [-0.02558256 -0.03995683]
+ [-0.10504585 -0.05529746]
+ [ 0.0201215  -0.01035603]
+ [ 0.16029994  0.21365705]]</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="14">
@@ -2399,7 +2399,7 @@ Note
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (results_fixed[:, <span class="dv">0</span>][i],results_fixed[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-18-output-1.png" width="1229" height="1294"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-18-output-1.png" width="1296" height="1294"></p>
 </div>
 </div>
 </section>
@@ -2425,7 +2425,7 @@ Note
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, txt <span class="kw">in</span> <span class="bu">enumerate</span>(placeNames):</span>
 <span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    ax.annotate(txt, (Y[:, <span class="dv">0</span>][i],Y[:, <span class="dv">1</span>][i]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display column-page">
-<p><img src="IM939_Lab_5_1_files/figure-html/cell-19-output-1.png" width="1218" height="1294"></p>
+<p><img src="IM939_Lab_5_1_files/figure-html/cell-19-output-1.png" width="1215" height="1294"></p>
 </div>
 </div>
 </section>

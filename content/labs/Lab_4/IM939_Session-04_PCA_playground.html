@@ -557,7 +557,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_4/IM939_Session-04_PCA_playground.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -595,7 +595,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>column_names <span class="op">=</span> [<span class="st">"Sepal Length"</span>, <span class="st">"Sepal Width"</span>, <span class="st">"Petal Length"</span>, <span class="st">"Petal Width"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="exploratory-analysis" class="level2" data-number="15.1">
+<section id="exploratory-analysis" class="level2 page-columns page-full" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="exploratory-analysis"><span class="header-section-number">15.1</span> Exploratory analysis</h2>
 <p>Let’s do a bit of exploratory analysis to check the characteristics of the features and look for redundancies</p>
 <div class="cell" data-execution_count="2">
@@ -624,7 +624,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="IM939_Session-04_PCA_playground_files/figure-html/cell-3-output-1.png" width="633" height="629"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="3">
+<div class="cell page-columns page-full" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It would be good to have a look at the pairwise correlations. </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This might help one to identify some redundant variables at least as long as pairs of dimensions are considered.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -633,7 +633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">## we are cheating here and using a copy of the Iris data as made available as a Pandas DataFrame within the Seaborn package</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">"iris"</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>sns.pairplot(df, hue<span class="op">=</span><span class="st">"species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display column-page">
 <p><img src="IM939_Session-04_PCA_playground_files/figure-html/cell-4-output-1.png" width="1068" height="943"></p>
 </div>
 </div>
