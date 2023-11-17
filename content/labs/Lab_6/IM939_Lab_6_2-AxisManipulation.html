@@ -865,23 +865,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="7">
 
 <style>
-  #altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b.vega-embed {
+  #altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b.vega-embed details,
-  #altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b.vega-embed details summary {
+  #altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0.vega-embed details,
+  #altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b"></div>
+<div id="altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b") {
-      outputDiv = document.getElementById("altair-viz-193f7f1fbb2b4e72b2a6ed2898f96a8b");
+    if (outputDiv.id !== "altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0") {
+      outputDiv = document.getElementById("altair-viz-ded6ced72a7f49b3b14b61a1ed49f6e0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -934,7 +934,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note the need for the alt column. What happens if you do not provide an alt column?</p>
 <p>Passing the domain option to the scale of the Y axis allows us to choose the y axis range.</p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df_swing).mark_bar().encode(</span>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alt.Chart(df_swing).mark_bar(clip<span class="op">=</span><span class="va">True</span>).encode(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'candidate_name'</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>alt.Y(<span class="st">'pct_estimate'</span>, scale<span class="op">=</span>alt.Scale(domain<span class="op">=</span>[<span class="dv">42</span>,<span class="dv">53</span>])),</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'candidate_name'</span>,</span>
@@ -943,23 +943,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-display" data-execution_count="8">
 
 <style>
-  #altair-viz-6f3e702136614aabbe9487add87aa534.vega-embed {
+  #altair-viz-c04994ad5377410eacaac7ce4e6b8e98.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-6f3e702136614aabbe9487add87aa534.vega-embed details,
-  #altair-viz-6f3e702136614aabbe9487add87aa534.vega-embed details summary {
+  #altair-viz-c04994ad5377410eacaac7ce4e6b8e98.vega-embed details,
+  #altair-viz-c04994ad5377410eacaac7ce4e6b8e98.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-6f3e702136614aabbe9487add87aa534"></div>
+<div id="altair-viz-c04994ad5377410eacaac7ce4e6b8e98"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6f3e702136614aabbe9487add87aa534") {
-      outputDiv = document.getElementById("altair-viz-6f3e702136614aabbe9487add87aa534");
+    if (outputDiv.id !== "altair-viz-c04994ad5377410eacaac7ce4e6b8e98") {
+      outputDiv = document.getElementById("altair-viz-c04994ad5377410eacaac7ce4e6b8e98");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1005,7 +1005,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-479201b73ec2a715fd8b64d63ba1170e"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "candidate_name", "type": "nominal"}, "column": {"field": "state", "header": {"labelOrient": "bottom"}, "spacing": 5, "type": "ordinal"}, "x": {"field": "candidate_name", "type": "nominal"}, "y": {"field": "pct_estimate", "scale": {"domain": [42, 53]}, "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-479201b73ec2a715fd8b64d63ba1170e": [{"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 47.46643, "pct_trend_adjusted": 47.44781}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 50.22, "pct_trend_adjusted": 50.20422}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.86992, "pct_trend_adjusted": 51.84517}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.17806, "pct_trend_adjusted": 51.15482}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 49.09162, "pct_trend_adjusted": 49.08035}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 48.72237, "pct_trend_adjusted": 48.70539}, {"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 48.57118, "pct_trend_adjusted": 48.58794}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 45.57216, "pct_trend_adjusted": 45.55034}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 42.63638, "pct_trend_adjusted": 42.66826}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 43.20577, "pct_trend_adjusted": 43.23326}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.68101, "pct_trend_adjusted": 46.61909}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.11074, "pct_trend_adjusted": 46.10181}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-479201b73ec2a715fd8b64d63ba1170e"}, "mark": {"type": "bar", "clip": true}, "encoding": {"color": {"field": "candidate_name", "type": "nominal"}, "column": {"field": "state", "header": {"labelOrient": "bottom"}, "spacing": 5, "type": "ordinal"}, "x": {"field": "candidate_name", "type": "nominal"}, "y": {"field": "pct_estimate", "scale": {"domain": [42, 53]}, "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-479201b73ec2a715fd8b64d63ba1170e": [{"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 47.46643, "pct_trend_adjusted": 47.44781}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 50.22, "pct_trend_adjusted": 50.20422}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.86992, "pct_trend_adjusted": 51.84517}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.17806, "pct_trend_adjusted": 51.15482}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 49.09162, "pct_trend_adjusted": 49.08035}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 48.72237, "pct_trend_adjusted": 48.70539}, {"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 48.57118, "pct_trend_adjusted": 48.58794}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 45.57216, "pct_trend_adjusted": 45.55034}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 42.63638, "pct_trend_adjusted": 42.66826}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 43.20577, "pct_trend_adjusted": 43.23326}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.68101, "pct_trend_adjusted": 46.61909}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.11074, "pct_trend_adjusted": 46.10181}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
@@ -1020,29 +1020,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'candidate_name'</span>,</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    column <span class="op">=</span> alt.Column(<span class="st">'state:O'</span>, spacing <span class="op">=</span> <span class="dv">5</span>, header <span class="op">=</span> alt.Header(labelOrient <span class="op">=</span> <span class="st">"bottom"</span>)),</span>
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>).properties(</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">60</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="dv">20</span>,</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    height<span class="op">=</span><span class="dv">600</span></span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 
 <style>
-  #altair-viz-de2d212e663d4b448dd75c801f4b80f9.vega-embed {
+  #altair-viz-4031865857e54a17889451413efcbaa6.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-de2d212e663d4b448dd75c801f4b80f9.vega-embed details,
-  #altair-viz-de2d212e663d4b448dd75c801f4b80f9.vega-embed details summary {
+  #altair-viz-4031865857e54a17889451413efcbaa6.vega-embed details,
+  #altair-viz-4031865857e54a17889451413efcbaa6.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-de2d212e663d4b448dd75c801f4b80f9"></div>
+<div id="altair-viz-4031865857e54a17889451413efcbaa6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-de2d212e663d4b448dd75c801f4b80f9") {
-      outputDiv = document.getElementById("altair-viz-de2d212e663d4b448dd75c801f4b80f9");
+    if (outputDiv.id !== "altair-viz-4031865857e54a17889451413efcbaa6") {
+      outputDiv = document.getElementById("altair-viz-4031865857e54a17889451413efcbaa6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1088,7 +1088,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-479201b73ec2a715fd8b64d63ba1170e"}, "mark": {"type": "bar", "clip": true}, "encoding": {"color": {"field": "candidate_name", "type": "nominal"}, "column": {"field": "state", "header": {"labelOrient": "bottom"}, "spacing": 5, "type": "ordinal"}, "x": {"field": "candidate_name", "type": "nominal"}, "y": {"field": "pct_estimate", "scale": {"domain": [42, 53]}, "type": "quantitative"}}, "height": 600, "width": 60, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-479201b73ec2a715fd8b64d63ba1170e": [{"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 47.46643, "pct_trend_adjusted": 47.44781}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 50.22, "pct_trend_adjusted": 50.20422}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.86992, "pct_trend_adjusted": 51.84517}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.17806, "pct_trend_adjusted": 51.15482}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 49.09162, "pct_trend_adjusted": 49.08035}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 48.72237, "pct_trend_adjusted": 48.70539}, {"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 48.57118, "pct_trend_adjusted": 48.58794}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 45.57216, "pct_trend_adjusted": 45.55034}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 42.63638, "pct_trend_adjusted": 42.66826}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 43.20577, "pct_trend_adjusted": 43.23326}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.68101, "pct_trend_adjusted": 46.61909}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.11074, "pct_trend_adjusted": 46.10181}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-479201b73ec2a715fd8b64d63ba1170e"}, "mark": {"type": "bar", "clip": true}, "encoding": {"color": {"field": "candidate_name", "type": "nominal"}, "column": {"field": "state", "header": {"labelOrient": "bottom"}, "spacing": 5, "type": "ordinal"}, "x": {"field": "candidate_name", "type": "nominal"}, "y": {"field": "pct_estimate", "scale": {"domain": [42, 53]}, "type": "quantitative"}}, "height": 600, "width": 20, "$schema": "https://vega.github.io/schema/vega-lite/v5.15.1.json", "datasets": {"data-479201b73ec2a715fd8b64d63ba1170e": [{"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 47.46643, "pct_trend_adjusted": 47.44781}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 50.22, "pct_trend_adjusted": 50.20422}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.86992, "pct_trend_adjusted": 51.84517}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 51.17806, "pct_trend_adjusted": 51.15482}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 49.09162, "pct_trend_adjusted": 49.08035}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Joseph R. Biden Jr.", "pct_estimate": 48.72237, "pct_trend_adjusted": 48.70539}, {"cycle": 2020, "state": "Texas", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 48.57118, "pct_trend_adjusted": 48.58794}, {"cycle": 2020, "state": "Pennsylvania", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 45.57216, "pct_trend_adjusted": 45.55034}, {"cycle": 2020, "state": "Minnesota", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 42.63638, "pct_trend_adjusted": 42.66826}, {"cycle": 2020, "state": "Michigan", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 43.20577, "pct_trend_adjusted": 43.23326}, {"cycle": 2020, "state": "Florida", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.68101, "pct_trend_adjusted": 46.61909}, {"cycle": 2020, "state": "Arizona", "modeldate": "11/3/2020", "candidate_name": "Donald Trump", "pct_estimate": 46.11074, "pct_trend_adjusted": 46.10181}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 </div>
@@ -1201,23 +1201,23 @@ dtype: object</code></pre>
 <div class="cell-output cell-output-display" data-execution_count="12">
 
 <style>
-  #altair-viz-50f9c97947e14507b34cf3ccb89e96f7.vega-embed {
+  #altair-viz-9106bb3908da43df950ae247b519ad61.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-50f9c97947e14507b34cf3ccb89e96f7.vega-embed details,
-  #altair-viz-50f9c97947e14507b34cf3ccb89e96f7.vega-embed details summary {
+  #altair-viz-9106bb3908da43df950ae247b519ad61.vega-embed details,
+  #altair-viz-9106bb3908da43df950ae247b519ad61.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-50f9c97947e14507b34cf3ccb89e96f7"></div>
+<div id="altair-viz-9106bb3908da43df950ae247b519ad61"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-50f9c97947e14507b34cf3ccb89e96f7") {
-      outputDiv = document.getElementById("altair-viz-50f9c97947e14507b34cf3ccb89e96f7");
+    if (outputDiv.id !== "altair-viz-9106bb3908da43df950ae247b519ad61") {
+      outputDiv = document.getElementById("altair-viz-9106bb3908da43df950ae247b519ad61");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1493,23 +1493,23 @@ dtype: object</code></pre>
 <div class="cell-output cell-output-display" data-execution_count="16">
 
 <style>
-  #altair-viz-e11e1a22f7dd4364bc089075380bcbe3.vega-embed {
+  #altair-viz-85c506603f9f472cbd7baf56c2746aee.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-e11e1a22f7dd4364bc089075380bcbe3.vega-embed details,
-  #altair-viz-e11e1a22f7dd4364bc089075380bcbe3.vega-embed details summary {
+  #altair-viz-85c506603f9f472cbd7baf56c2746aee.vega-embed details,
+  #altair-viz-85c506603f9f472cbd7baf56c2746aee.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-e11e1a22f7dd4364bc089075380bcbe3"></div>
+<div id="altair-viz-85c506603f9f472cbd7baf56c2746aee"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-e11e1a22f7dd4364bc089075380bcbe3") {
-      outputDiv = document.getElementById("altair-viz-e11e1a22f7dd4364bc089075380bcbe3");
+    if (outputDiv.id !== "altair-viz-85c506603f9f472cbd7baf56c2746aee") {
+      outputDiv = document.getElementById("altair-viz-85c506603f9f472cbd7baf56c2746aee");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
