@@ -995,17 +995,11 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">#You can try playing with the commands below too:</span></span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=df['AgeCohort'].value_counts().index)</span></span>
 <span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#sns.countplot(x="AgeCohort", data=df, order=['0-5', '6-12', '13-17', '18-21', '22-50','51+'])</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  grouped_vals = vals.groupby(grouper)</code></pre>
-</div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>&lt;Axes: xlabel='cat_AgeCohort', ylabel='count'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-19-output-3.png" width="593" height="429"></p>
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-19-output-2.png" width="593" height="429"></p>
 </div>
 </div>
 <p>Why would the data be binned in such “uneven” categories like ‘0-5 years’, ‘6-12’ and ‘22-50’? Instead of even categories e.g.&nbsp;‘0-10’, ‘11-20’, ‘21-30’ etc. or every 5 years ‘0-5’, ‘6-10’ etc.?</p>
@@ -1023,63 +1017,49 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <p>Let’s see how expenditures are distributed across age groups.</p>
 <p>We are going to use a <em>swarm plot</em> which I believe works well here to notice the paradox and “the points are adjusted (only along the categorical axis) so that they don’t overlap. This gives a better representation of the distribution of values, but it does not scale well to large numbers of observations. A swarm plot can be drawn on its own, but it is also a good complement to a box or violin plot in cases where you want to show all observations along with some representation of the underlying distribution.” Read more <a href="https://seaborn.pydata.org/generated/seaborn.swarmplot.html#seaborn.swarmplot">here</a></p>
 <div class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"AgeCohort"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also do a boxplot if you change kind="box"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"AgeCohort"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also do a boxplot if you change kind="box"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 83.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 83.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 35.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 35.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 76.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 58.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 14.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 76.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 84.0% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 58.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 14.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 85.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 42.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 80.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 64.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
-  warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 21.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 84.0% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 86.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 85.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 42.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 80.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 64.8% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 21.7% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 86.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-20-output-6.png" width="469" height="468"></p>
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-20-output-7.png" width="469" height="468"></p>
 </div>
 </div>
 </section>
@@ -1090,49 +1070,31 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <div class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"swarm"</span>, data<span class="op">=</span>df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 50.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 50.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 64.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 64.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 10.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.2% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 11.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 11.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 25.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 25.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 58.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 58.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 69.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 69.4% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 18.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 18.6% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 23.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 23.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 34.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 34.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -1154,44 +1116,26 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> sns.catplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, kind<span class="op">=</span><span class="st">"violin"</span>, inner<span class="op">=</span><span class="va">None</span>, data<span class="op">=</span>df)</span>
 <span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>sns.swarmplot(x<span class="op">=</span><span class="st">"Gender"</span>, y<span class="op">=</span><span class="st">"Expenditures"</span>, color<span class="op">=</span><span class="st">"k"</span>, size<span class="op">=</span><span class="dv">3</span>, data<span class="op">=</span>df, ax<span class="op">=</span>g.ax)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):</code></pre>
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 12.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.5% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>&lt;Axes: xlabel='Gender', ylabel='Expenditures'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3544: UserWarning: 7.0% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 13.1% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
+  warnings.warn(msg, UserWarning)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:3370: UserWarning: 10.9% of the points cannot be placed; you may want to decrease the size of the markers or use stripplot.
   warnings.warn(msg, UserWarning)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-22-output-4.png" width="469" height="468"></p>
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-22-output-6.png" width="469" height="468"></p>
 </div>
 </div>
 </section>
@@ -1199,12 +1143,12 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <h3 data-number="30.4.4" class="anchored" data-anchor-id="mean-expenditures"><span class="header-section-number">30.4.4</span> Mean Expenditures</h3>
 <p>This was a quick visual analysis. Let’s check means to see how it looks like by age, ethnicity and gender. Why would it be also good to check medians here?</p>
 <div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">#By default the aggreggate function is mean</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">#By default the aggreggate function is mean</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
@@ -1260,7 +1204,7 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Gender'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Gender'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
@@ -1292,7 +1236,7 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
@@ -1340,29 +1284,17 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <p>Let’s try to go a bit more in-depth . We know that gender doesn’t show many differences. In age there are not big differences except for one case. Let’s focus on ethnicity then.</p>
 <p><em>We are going to use Seaborn’s ‘catplot’. In the <a href="https://seaborn.pydata.org/tutorial/categorical.html">documentation</a> we can read what are the error bars here: “In seaborn, the barplot() function operates on a full dataset and applies a function to obtain the estimate (taking the mean by default). When there are multiple observations in each category, it also uses bootstrapping to compute a confidence interval around the estimate, which is plotted using error bars.”</em></p>
 <div class="cell" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, </span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>            kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>df)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also run a nested table, but the chart might be more straightforward in analysis.</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co">#np.round(df.pivot_table(index=['cat_AgeCohort','Ethnicity'], values=['Expenditures']), 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"Ethnicity"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>            kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>df)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">#you can also run a nested table, but the chart might be more straightforward in analysis.</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">#np.round(df.pivot_table(index=['cat_AgeCohort','Ethnicity'], values=['Expenditures']), 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-26-output-2.png" width="473" height="468"></p>
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-26-output-1.png" width="473" height="468"></p>
 </div>
 </div>
 <div class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(df.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
@@ -1419,7 +1351,7 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 <p>So there are big differences in the averages between ethnicities. Does it mean there is discrimination?</p>
 <div class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Ethnicity'</span>).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>df.groupby(<span class="st">'Ethnicity'</span>).count()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
@@ -1531,9 +1463,9 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 <p>You will notce that the proportions of the state are similar to proportions of this case study. Hispanic and White non-Hispanic constitute a majority of California’s population.</p>
 <p>Let’s focus on the top 2 biggest groups. We can see there is a difference in the average expenditures between the White non-Hispanic and Hispanic groups.</p>
 <div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">##selecting cases that are either 'Hispanic' or 'White non Hispanic' </span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>Hispanic <span class="op">=</span> df[(df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'Hispanic'</span>) <span class="op">|</span> (df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'White not Hispanic'</span>)]</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>Hispanic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">##selecting cases that are either 'Hispanic' or 'White non Hispanic' </span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>Hispanic <span class="op">=</span> df[(df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'Hispanic'</span>) <span class="op">|</span> (df[<span class="st">"Ethnicity"</span>] <span class="op">==</span> <span class="st">'White not Hispanic'</span>)]</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>Hispanic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
@@ -1670,7 +1602,7 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(Hispanic.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>, <span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(Hispanic.pivot_table(index<span class="op">=</span>[<span class="st">'Ethnicity'</span>, <span class="st">'cat_AgeCohort'</span>], values<span class="op">=</span>[<span class="st">'Expenditures'</span>]), <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
@@ -1730,23 +1662,9 @@ Name: cat_AgeCohort, dtype: object</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, hue<span class="op">=</span><span class="st">"Ethnicity"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>Hispanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  grouped_vals = vals.groupby(grouper)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  grouped_vals = vals.groupby(grouper)
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/categorical.py:641: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  grouped_vals = vals.groupby(grouper)</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(x<span class="op">=</span><span class="st">"cat_AgeCohort"</span>, y<span class="op">=</span><span class="st">'Expenditures'</span>, hue<span class="op">=</span><span class="st">"Ethnicity"</span>, kind<span class="op">=</span><span class="st">"bar"</span>, data<span class="op">=</span>Hispanic)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-31-output-2.png" width="620" height="468"></p>
+<p><img src="IM939_Lab_6_5-Simpsons_Paradox_files/figure-html/cell-31-output-1.png" width="620" height="468"></p>
 </div>
 </div>
 <p>Let’s get back to our original question : does discrimination exist in this case?</p>
