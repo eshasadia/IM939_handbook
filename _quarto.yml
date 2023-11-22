@@ -91,7 +91,6 @@ book:
         - content/labs/Lab_7/IM939_Lab7-Part1.ipynb
         - content/labs/Lab_7/IM939_Lab7-Part2.ipynb
         - content/labs/Lab_7/IM939_Lab7-Part3.ipynb
-        - content/labs/Lab_7/IM939_Lab7-Simpsons_Paradox2.ipynb
     - part: "Data Science Workshop"
       chapters:
         - content/sessions/session-08.md
