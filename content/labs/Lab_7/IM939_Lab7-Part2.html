@@ -122,7 +122,7 @@ div.csl-indent {
 
 <meta name="twitter:title" content="Data Science Across Disciplines - 33&nbsp; Lab: Poverty and Inequality">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/df421c5b-1-image-6.png">
+<meta name="twitter:image" content="https://warwickcim.github.io/IM939_handbook/content/labs/Lab_7/IM939_Lab7-Part2_files/figure-html/5b31f876-1-image-6.png">
 <meta name="twitter:image-height" content="649">
 <meta name="twitter:image-width" content="1184">
 <meta name="twitter:card" content="summary_large_image">
@@ -568,7 +568,7 @@ div.csl-indent {
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/WarwickCIM/IM939_handbook/blob/main/content/labs/Lab_7/IM939_Lab7-Part2.ipynb" class="toc-action">Edit this page</a></p><p><a href="https://github.com/WarwickCIM/IM939_handbook/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -598,19 +598,15 @@ div.csl-indent {
 <p>By looking into 6 variables, you can investigate some major inequalites across the globe.</p>
 <section id="source" class="level2" data-number="33.1">
 <h2 data-number="33.1" class="anchored" data-anchor-id="source"><span class="header-section-number">33.1</span> Source</h2>
-<p>In this lab, we will be using <a href="https://databank.worldbank.org/source/world-development-indicators#">World Development Indicators dataset</a> from worldbank, which contains the following features:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="IM939_Lab7-Part2_files/figure-html/df421c5b-1-image-6.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Features’ definitions</figcaption>
-</figure>
-</div>
+<p>In this lab, we will be using <a href="https://databank.worldbank.org/source/world-development-indicators#">World Development Indicators dataset</a> from the World Bank, which contains the following features:<img src="IM939_Lab7-Part2_files/figure-html/5b31f876-1-image-6.png" class="img-fluid" alt="features world bank development indicators"></p>
 </section>
-<section id="reading-the-dataset" class="level2" data-number="33.2">
+<section id="reading-the-dataset" class="level2 page-columns page-full" data-number="33.2">
 <h2 data-number="33.2" class="anchored" data-anchor-id="reading-the-dataset"><span class="header-section-number">33.2</span> Reading the dataset</h2>
 <div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/WDI_countries_v2.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Data4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">'data/WDI_countries_v2.xlsx'</span>, sheet_name<span class="op">=</span><span class="st">'Data4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s have a look at our dataset</p>
 <div class="cell" data-execution_count="2">
@@ -689,7 +685,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="missing-values" class="level3" data-number="33.2.1">
+<section id="missing-values" class="level3 page-columns page-full" data-number="33.2.1">
 <h3 data-number="33.2.1" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">33.2.1</span> Missing values</h3>
 <p>Let’s check if we have any missing data</p>
 <div class="cell" data-execution_count="3">
@@ -722,8 +718,10 @@ Neonatal_death    23
 dtype: int64</code></pre>
 </div>
 </div>
+<p>Looks like there are null values in all but one column (Country Code)</p>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at the distribution of values in the birthrate and deathrate columns</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -732,7 +730,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at the distribution of values in terms of male and female life expectancy</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -741,7 +740,8 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'GNI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at the distribution of the Gross National Income (surely we expect to see outliers!)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'GNI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
@@ -750,44 +750,146 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#This is code for standarization  </span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Get column names first</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#names = df.columns</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>df_stand <span class="op">=</span> df[[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>, <span class="st">'GNI'</span>, <span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>, <span class="st">'Neonatal_death'</span>]]</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> df_stand.columns</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Create the Scaler object</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> preprocessing.StandardScaler()</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit your data on the scaler object</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> scaler.fit_transform(df_stand)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame(df2, columns<span class="op">=</span>names)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>df2.tail()</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>df2, orient<span class="op">=</span><span class="st">"h"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):</code></pre>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># So, as expected, the world's wealth is not distributed evenly, but what countries are the outliers as Mary Rouncefield asked?</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># We don't have the geographic coordinates as with our Hate Crime dataset to project on a map</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># But perhaps we can think of other ways to get this information. Following is one way of doing this. </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the 25th and 75th percentile GNI values</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>GNI_quartiles <span class="op">=</span> df[<span class="st">'GNI'</span>].describe()[[<span class="st">'25%'</span>, <span class="st">'75%'</span>]]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the IQR</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>IQR_GNI <span class="op">=</span> GNI_quartiles[<span class="st">'75%'</span>] <span class="op">-</span> GNI_quartiles[<span class="st">'25%'</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the whiskers</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>lb_GNI <span class="op">=</span> GNI_quartiles[<span class="st">'25%'</span>] <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR_GNI</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>ub_GNI <span class="op">=</span> GNI_quartiles[<span class="st">'75%'</span>] <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR_GNI</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieve the outliers</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>outliers_GNI_df <span class="op">=</span> df[(df[<span class="st">'GNI'</span>] <span class="op">&lt;</span> lb_GNI) <span class="op">|</span> (df[<span class="st">'GNI'</span>] <span class="op">&gt;</span> ub_GNI)]</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Country Codes for the outliers</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>outliers_GNI_countries <span class="op">=</span> outliers_GNI_df[<span class="st">'Country Code'</span>]</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>outliers_GNI_countries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>85     HKG
+92     IRL
+115    LUX
+116    MAC
+146    NOR
+158    QAT
+170    SGP
+187    CHE
+203    ARE
+205    USA
+Name: Country Code, dtype: object</code></pre>
 </div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-8-output-2.png" width="654" height="411"></p>
 </div>
-</div>
+<p>Perhaps you can checkout this link if you are doubtful about the <a href="https://wits.worldbank.org/wits/wits/witshelp/content/codes/country_codes.htm">country names and codes</a></p>
 <div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># As with Part 1, let's standardise our data before we attempt further modelling using the data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn <span class="im">import</span> preprocessing</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Get column names first</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>df_stand <span class="op">=</span> df[[<span class="st">'birthrate'</span>, <span class="st">'Deathrate'</span>, <span class="st">'GNI'</span>, <span class="st">'Lifeexp_female'</span>, <span class="st">'Lifeexp_male'</span>, <span class="st">'Neonatal_death'</span>]]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> df_stand.columns</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the Scaler object</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> preprocessing.StandardScaler()</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit our data on the scaler object</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> scaler.fit_transform(df_stand)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Check what type is df2? (Do you recollect this from Part 1?)</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>numpy.ndarray</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's convert the numpy array into a DataFrame before further processing</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame(df2, columns<span class="op">=</span>names)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df2.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">Deathrate</th>
+<th data-quarto-table-cell-role="th">GNI</th>
+<th data-quarto-table-cell-role="th">Lifeexp_female</th>
+<th data-quarto-table-cell-role="th">Lifeexp_male</th>
+<th data-quarto-table-cell-role="th">Neonatal_death</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">211</td>
+<td>-0.727171</td>
+<td>0.200024</td>
+<td>NaN</td>
+<td>0.994355</td>
+<td>0.807538</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">212</td>
+<td>0.982566</td>
+<td>-1.563870</td>
+<td>-0.661830</td>
+<td>0.051167</td>
+<td>0.262031</td>
+<td>-0.233989</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">213</td>
+<td>1.101866</td>
+<td>-0.604926</td>
+<td>NaN</td>
+<td>-0.942333</td>
+<td>-0.798039</td>
+<td>0.209120</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">214</td>
+<td>1.686551</td>
+<td>-0.425077</td>
+<td>-0.813823</td>
+<td>-1.114030</td>
+<td>-1.323007</td>
+<td>0.039069</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">215</td>
+<td>1.124585</td>
+<td>0.117514</td>
+<td>-0.840505</td>
+<td>-1.604284</td>
+<td>-1.462458</td>
+<td>-0.026205</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now that our data has been standardised, let's look at the distribution across all columns</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(data<span class="op">=</span>df2, orient<span class="op">=</span><span class="st">"h"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-11-output-1.png" width="654" height="411"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># There are clearly several outliers in some columns. Let's take a look at the numbers</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -882,214 +984,54 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'birthrate'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at the histogram for birthrate </span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'birthrate'</span>]].plot(kind<span class="op">=</span><span class="st">'hist'</span>, ec<span class="op">=</span><span class="st">'black'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;Axes: ylabel='Frequency'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-10-output-2.png" width="585" height="411"></p>
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-13-output-2.png" width="585" height="411"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sns.pairplot(data <span class="op">=</span> df.iloc[:,<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1119: FutureWarning: use_inf_as_na option is deprecated and will be removed in a future version. Convert inf values to NaN before operating instead.
-  with pd.option_context('mode.use_inf_as_na', True):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):
-/Users/u2071219/anaconda3/envs/IM939/lib/python3.11/site-packages/seaborn/_oldcore.py:1498: FutureWarning: is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, CategoricalDtype) instead
-  if pd.api.types.is_categorical_dtype(vector):</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-11-output-4.png" width="1416" height="1415"></p>
+<p>Tip for reflection: Is the above a unimodal or bimodal distribution? Positive or negative skew - We have worked on this in earlier labs. Try to recollect/revisit and reflect. Can we see/say any better with a kernel density plot?</p>
+<div class="cell page-columns page-full" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's create a pairwise plot as we have done many times before to get an idea about the relationship between variables  </span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sns.pairplot(data <span class="op">=</span> df.iloc[:,<span class="dv">1</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display column-page">
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-14-output-1.png" width="1416" height="1415"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'birthrate'</span>, y <span class="op">=</span> <span class="st">'Deathrate'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<p>Hmmm, some likely positive and negative correlations</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's check the relationship between birthrate and deathrate</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df.plot(x <span class="op">=</span> <span class="st">'birthrate'</span>, y <span class="op">=</span> <span class="st">'Deathrate'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>&lt;Axes: xlabel='birthrate', ylabel='Deathrate'&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-12-output-2.png" width="585" height="432"></p>
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-15-output-2.png" width="585" height="432"></p>
 </div>
 </div>
-<div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sn</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>corrMatrix <span class="op">=</span> df.corr(numeric_only<span class="op">=</span><span class="va">True</span>).<span class="bu">round</span>(<span class="dv">1</span>)  <span class="co">#I added here ".round(1)" so that's easier to read given number of variables</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>sn.heatmap(corrMatrix, annot<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's create a heatmap like we did in Part 1</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>corrMatrix <span class="op">=</span> df.corr(numeric_only<span class="op">=</span><span class="va">True</span>).<span class="bu">round</span>(<span class="dv">1</span>) <span class="co"># Again, round(1) so that it's easier to read given number of variables</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corrMatrix, annot<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-13-output-1.png" width="645" height="508"></p>
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-16-output-1.png" width="645" height="508"></p>
 </div>
 </div>
 </section>
 </section>
 <section id="how-quickly-are-populations-growing" class="level2" data-number="33.3">
 <h2 data-number="33.3" class="anchored" data-anchor-id="how-quickly-are-populations-growing"><span class="header-section-number">33.3</span> How quickly are populations growing?</h2>
-<p>This question can be investigated by calculating birth rate minus death rate. Results range from -?? (a decreasing population) to +?? (an increasing population). The mean is around ??, but what does it signify?</p>
-<div class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'pop'</span>] <span class="op">=</span> df[<span class="st">'birthrate'</span>] <span class="op">-</span> df[<span class="st">'Deathrate'</span>]</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<p>This question can be investigated by calculating birth rate minus death rate.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's add a new column to our DataFrame to indicate the rate of population change (assuming the absence of migration)</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'pop_change_rate'</span>] <span class="op">=</span> df[<span class="st">'birthrate'</span>] <span class="op">-</span> df[<span class="st">'Deathrate'</span>]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -1104,7 +1046,7 @@ dtype: int64</code></pre>
 <th data-quarto-table-cell-role="th">Lifeexp_female</th>
 <th data-quarto-table-cell-role="th">Lifeexp_male</th>
 <th data-quarto-table-cell-role="th">Neonatal_death</th>
-<th data-quarto-table-cell-role="th">pop</th>
+<th data-quarto-table-cell-role="th">pop_change_rate</th>
 </tr>
 </thead>
 <tbody>
@@ -1169,15 +1111,33 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'pop'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's look at the distribution of our new rate of population change column </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df.boxplot(column<span class="op">=</span>[<span class="st">'pop_change_rate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="IM939_Lab7-Part2_files/figure-html/cell-15-output-2.png" width="566" height="416"></p>
+<p><img src="IM939_Lab7-Part2_files/figure-html/cell-18-output-2.png" width="566" height="416"></p>
 </div>
 </div>
+<p>Let’s investigate the values in the column more deeply:</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pop_change_rate_summary <span class="op">=</span> df[<span class="st">'pop_change_rate'</span>].describe()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>pop_change_rate_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>count    205.000000
+mean      12.063639
+std       10.477867
+min       -6.500000
+25%        2.700000
+50%       11.213000
+75%       20.582000
+max       37.811000
+Name: pop_change_rate, dtype: float64</code></pre>
+</div>
+</div>
+<p>The results range from -6.5 (a decreasing population) to +37.811 (an increasing population). The mean is around 12.06. What does this signify?</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
