@@ -46,11 +46,16 @@ Consider yourself/your team to be a data scientists aiming to support:
 - Patient looking for self help -- how to visualise information to inform them?
 - GP giving advice to a patient -- how to visualise information to support their conversation?
 
-***Tasks to complete***
+
+::: callout-caution
+
+### Tasks to complete
 
 - [ ] **T1:** Explore the datasets through the webpages above to get yourself familiar.
 - [ ] **T2:** Identify a stakeholder and agree on a situation
 - [ ] **T3:** Use this persona template from servicedesigntools.org [[link to template page](https://servicedesigntools.org/tools/personas)] to help outline a stakeholder persona. Consider how you can help your stakeholder through data when responding to these challenges.
+
+:::
 
 ### Step-2: Identify analytical questions and data
 
@@ -59,10 +64,14 @@ Consider yourself/your team to be a data scientists aiming to support:
 - Choose features that are relevant and speculate what you can achieve with them
 - Consider if you can make use of any design thinking tools, some examples here: https://www.designkit.org/methods, for instance, you can reflect on this brainstorming guidance to help with your discussions as a group: https://www.designkit.org/methods/brainstorm
 
-***Tasks to complete***
+::: callout-caution
+
+### Tasks to complete
 
 - [ ] **T4:** Develop one or two analytical questions that you want to address
 - [ ] **T5:** Clarify which data variables you will be using in your analysis in order to answer your research question
+
+:::
 
 ### Step-3: Plan an analysis approach/strategy
 
@@ -71,20 +80,28 @@ Consider yourself/your team to be a data scientists aiming to support:
 - Also identify which data variables could be used with which technique.
 - You can already use a Jupyter Notebook document as a template. Set some headers to indicate the different stages of your analysis.
 
-***Tasks to complete***
+::: callout-caution
 
-- [ ] **T6:** Develop an analysis plan on which techniques you want to use and which data variables you will incorporate. 
+### Tasks to complete
 
-### Step-4: Conduct your analysis 
+- [ ] **T6:** Develop an analysis plan on which techniques you want to use and which data variables you will incorporate.
+
+:::
+
+### Step-4: Conduct your analysis
 
 - Conduct the analysis following your plan. You might find yourself reflecting back on your decisions in the earlier steps and doing things differently to your plan.
 - Make good use of exploratory analysis, you might find out that data is different to what you were expecting it to be or new patterns might emerge.
 - Think of how you can visualise the data and the results from the tools you use
 - Make use of existing Jupyter Notebooks and pieces of code from the labs
 
-***Tasks to complete***
+::: callout-caution
+
+### Tasks to complete
 
 - [ ] **T7:** Conduct your analysis using Jupyter Notebook by documenting your decisions as you go along.
+
+:::
 
 ### Step-5: Presenting the results (Note: To be presented on Week-10)
 
@@ -95,9 +112,13 @@ Consider yourself/your team to be a data scientists aiming to support:
   - List your analytical questions
   - Present some results from your analysis
 
-***Tasks to complete***
+::: callout-caution
+
+### Tasks to complete
 
 - [ ] **T8:** Prepare to present your results
+
+:::
 
 ::: callout-note
 We'll tell you how to get your slides to us
