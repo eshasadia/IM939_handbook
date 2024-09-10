@@ -3,11 +3,11 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - altair=5.1.*
-  - geopandas=0.14.*
-  - pandas=2.1.*
+  - altair=5.4.*
+  - geopandas=1.0.*
+  - pandas=2.2.*
   - pip
-  - python=3.11.4
+  - python=3.12.4
   - jupyterlab
   - openpyxl
   - scikit-learn
